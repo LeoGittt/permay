@@ -1020,7 +1020,7 @@ export const products = [
     name: "TRATAMIENTO ACONDICIONADOR INTENSIVO 1 MINUTO X250",
     description: "",
     price: 7300,
-    image: "",
+    image: "data:image/jpeg;base64,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",
   },
   {
     id: 101,
@@ -1029,7 +1029,7 @@ export const products = [
     name: "BAÑO DE CREMA CABELLOS SECOS X250",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_999574-MLU71133284513_082023-C.jpg",
   },
   {
     id: 102,
@@ -1038,7 +1038,7 @@ export const products = [
     name: "BAÑO DE CREMA EXTRA BRILO X250",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://sergioperfumerias.com/wp-content/uploads/2021/11/7794260006744-bano-de-crema-system3-cutiplus-extra-brillo-250grs-600x600.jpg",
   },
   {
     id: 103,
@@ -1047,7 +1047,7 @@ export const products = [
     name: "BAÑO DE CREMA OLEOS VITALES X250",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/204511-5085f82f60d6668d1416040830496536-640-0.jpg",
   },
   {
     id: 104,
@@ -1056,7 +1056,7 @@ export const products = [
     name: "baño de crema detox x250",
     description: "",
     price: 6100,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/mascara-detox-editada1-907d952c711ff874ad16207649431386-640-0.jpg",
   },
   {
     id: 105,
@@ -1065,7 +1065,7 @@ export const products = [
     name: "BAÑO DE CREMA CHIA Y JENGIBRE X250",
     description: "",
     price: 6400,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/204511-5085f82f60d6668d1416040830496536-480-0.jpg",
   },
   {
     id: 106,
@@ -1074,7 +1074,7 @@ export const products = [
     name: "baño de crema lino x500",
     description: "",
     price: 15000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReuS2ESRgL-ss6UJPYFHlMPwGcQaumPdI1sQ&s",
   },
   {
     id: 107,
@@ -1083,7 +1083,7 @@ export const products = [
     name: "baño de crema triaminico x470",
     description: "",
     price: 15700,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4gAgrTTDN4_V1r4xl1Ar1fEs1jOZBvBG3Dg&s",
   },
   {
     id: 108,
@@ -1092,7 +1092,7 @@ export const products = [
     name: "BAÑO DE CREMA KERATINICO X250",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://www.casaflorian.com.ar/wp-content/uploads/2023/03/205-511-01_A.jpg",
   },
   {
     id: 109,
@@ -1101,7 +1101,7 @@ export const products = [
     name: "BAÑO DE CREMA CABELLOS CON COLOR X250",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_2X_879313-MLA31019219497_062019-N.webp",
   },
   {
     id: 110,
@@ -1110,7 +1110,7 @@ export const products = [
     name: "ENJUAGUE CABELLOS CON RULOS X375",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/557/823/products/20221-6ab91e9dc0e10dc43b16209261881924-640-0.jpg",
   },
   {
     id: 111,
@@ -1119,7 +1119,7 @@ export const products = [
     name: "ENJUAGUE ACONDICIONADOR CABELLOS TEÑIDOS CON GIRASOL X375",
     description: "",
     price: 5400,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/310/155/products/system-3-acondicionador-oleos-vitales-x375ml1-90e064c6f18295503716084325998346-640-01-40b151a5fa7ad005cb16270661563997-480-0.jpg",
   },
   {
     id: 112,
@@ -1128,7 +1128,7 @@ export const products = [
     name: "ENJUAGUE ACONDICIONADOR CABELLOS SECOS OLIVO X375",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/329/249/products/d_720769-mla49533290129_032022-o-821cf6f1863b19191916494340320740-640-0.jpg",
   },
   {
     id: 113,
@@ -1137,7 +1137,7 @@ export const products = [
     name: "ENJUAGUE ACONDICIONADOR ORTIGA X375",
     description: "",
     price: 6300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrryMFtJ9YOAFwlbilIKFIG8LWTeUPTzyFDA&s",
   },
   {
     id: 114,
@@ -1146,7 +1146,7 @@ export const products = [
     name: "tin cana 2 en 1 X5ML",
     description: "",
     price: 500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJUpcQ1mqGzYLlBxbislEDN_vTj6ZZdeq54Q&s",
   },
   {
     id: 115,
@@ -1155,7 +1155,7 @@ export const products = [
     name: "decolorante rapido tan natural x20 gr",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/23691-485faff26efe632d3016734523333456-240-0.jpg",
   },
   {
     id: 116,
@@ -1164,7 +1164,7 @@ export const products = [
     name: "polvo decolorante rapido 70 gr",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd8pQaLBqxdM1Dtxr8aYgJGeLLqK0vkDbexA&s",
   },
   {
     id: 117,
@@ -1173,7 +1173,7 @@ export const products = [
     name: "enjuague uso diario palta y lino 375",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/20221-4622072fb5a888aa8c16044123507580-240-0.jpg",
   },
   {
     id: 118,
@@ -1182,7 +1182,7 @@ export const products = [
     name: "enjuague manzanilla x375",
     description: "",
     price: 7400,
-    image: "",
+    image: "https://www.casaflorian.com.ar/wp-content/uploads/2023/03/205-556-01_A.jpg",
   },
   {
     id: 119,
@@ -1191,7 +1191,7 @@ export const products = [
     name: "ENJUAGUE ACONDICIONADOR ARGININA X375",
     description: "",
     price: 7400,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/310/155/products/system-3-acondicionador-oleos-vitales-x375ml1-90e064c6f18295503716084325998346-640-01-40b151a5fa7ad005cb16270661563997-480-0.jpg",
   },
   {
     id: 120,
@@ -1200,7 +1200,7 @@ export const products = [
     name: "ENJUAGUE VITAMINIZADO X375",
     description: "",
     price: 8400,
-    image: "",
+    image: "https://www.perfushopping.com.ar/2178-large_default/system-3-enjuague-keratina-x375.jpg",
   },
   {
     id: 121,
@@ -1209,7 +1209,7 @@ export const products = [
     name: "ENJUAGUE CABELLOS CON COLOR X375",
     description: "",
     price: 8000,
-    image: "",
+    image: "https://www.anikashop.com.ar/product_images/i/271/Enjuague%20Keratinico%20375ml-System%203-7794260006331__21477_zoom.jpg",
   },
   {
     id: 122,
@@ -1218,7 +1218,7 @@ export const products = [
     name: "ENJUAGUE CABELLOS SECOS X375",
     description: "",
     price: 8000,
-    image: "",
+    image: "https://www.perfushopping.com.ar/2179-large_default/system-3-enjuague-triaminico-x375.jpg",
   },
   {
     id: 123,
@@ -1227,7 +1227,7 @@ export const products = [
     name: "ENJUAGUE FRIZZ CONTROL X375",
     description: "",
     price: 8200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/20221-4622072fb5a888aa8c16044123507580-240-0.jpg",
   },
   {
     id: 124,
@@ -1236,7 +1236,7 @@ export const products = [
     name: "ENJUAGUE CUTIPLUS EXTRABRILLO X375",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqPvlZNaO_7JXqJCP45e1d_HMq7Yua5JF_4A&s",
   },
   {
     id: 125,
@@ -1245,7 +1245,7 @@ export const products = [
     name: "ENJUAGUE OLEOS VITALES X375",
     description: "",
     price: 6300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/20441-08d645738ab2538d6016044139413617-640-0.jpg",
   },
   {
     id: 126,
@@ -1254,7 +1254,7 @@ export const products = [
     name: "ENJUAGUE DETOX X375",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGhXr4C9ci_t_6PLO0T0Tra2TNS4HqlyyQw&s",
   },
   {
     id: 127,
@@ -1263,7 +1263,7 @@ export const products = [
     name: "ENJUAGUE PH ACIDO CON ACIDO HIALURONICO",
     description: "",
     price: 6400,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTue-1FnWRm3qr8v5K4H3CaQe_tH56asPMg5Q&s",
   },
   {
     id: 128,
@@ -1272,7 +1272,7 @@ export const products = [
     name: "ENJUAGUE KERATINICO DOYPACK X900",
     description: "",
     price: 9800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBndjuKgDSaeJ90zLQtpQLAR8S3dA8OQDfw&s",
   },
   {
     id: 129,
@@ -1281,7 +1281,7 @@ export const products = [
     name: "ENJUAGUE TRIAMINICO DOYPACK X900",
     description: "",
     price: 11400,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/887/684/products/enj-triaminico1-3a3e90743c6197f9b716370919951843-480-0.jpg",
   },
   {
     id: 130,
@@ -1290,7 +1290,7 @@ export const products = [
     name: "ENJUAGUE OLEOS VITALES X900",
     description: "",
     price: 11600,
-    image: "",
+    image: "https://esteticaenlinea.com.ar/cdn/shop/files/Disenosintitulo_13_e3874b87-0e62-4ae4-a01b-d6f1216724a2_512x384.png?v=1690211495",
   },
   {
     id: 131,
@@ -1299,7 +1299,7 @@ export const products = [
     name: "ENJUAGUE CHIA Y JENGIBRE X375",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/enjuague-verde-editado11-dbbc21a326c051f58616207648341235-640-0.jpg",
   },
   {
     id: 132,
@@ -1308,7 +1308,7 @@ export const products = [
     name: "ENJUAGUE CELULAS MADRE X375",
     description: "",
     price: 9400,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_803123-MLA84178257076_052025-AB.webp",
   },
   {
     id: 133,
@@ -1317,7 +1317,7 @@ export const products = [
     name: "ENJUAGUE ULTRAHIDRATANTE X375",
     description: "",
     price: 7200,
-    image: "",
+    image: "https://www.casaflorian.com.ar/wp-content/uploads/2023/04/205-538-01_A-247x247.jpg",
   },
   {
     id: 134,
@@ -1326,7 +1326,7 @@ export const products = [
     name: "ENJUAGUE CBD CON CANNABIDOL X375",
     description: "",
     price: 10800,
-    image: "",
+    image: "https://www.casaflorian.com.ar/wp-content/uploads/2023/04/205-538-01_A-247x247.jpg",
   },
   {
     id: 135,
@@ -1335,7 +1335,7 @@ export const products = [
     name: "ENJUAGUE TRIAMINICO X375",
     description: "",
     price: 7100,
-    image: "",
+    image: "https://www.perfushopping.com.ar/2179-large_default/system-3-enjuague-triaminico-x375.jpg",
   },
   {
     id: 136,
@@ -1344,7 +1344,7 @@ export const products = [
     name: "ENJUAGUE KERATINICO X375",
     description: "",
     price: 6000,
-    image: "",
+    image: "https://www.anikashop.com.ar/product_images/i/271/Enjuague%20Keratinico%20375ml-System%203-7794260006331__21477_zoom.jpg",
   },
   {
     id: 137,
@@ -1353,7 +1353,7 @@ export const products = [
     name: "enjuague uso diario dp x220 gr",
     description: "",
     price: 2900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_753991-MLA69357688458_052023-C.jpg",
   },
   {
     id: 138,
@@ -1362,7 +1362,7 @@ export const products = [
     name: "locion caida cabello x60ml",
     description: "",
     price: 5900,
-    image: "",
+    image: "https://dcdn-us.mitiendanube.com/stores/745/315/products/bifase-cutiplus1-8ad5d2a3af1034dc3c16178912586306-1024-1024.jpg",
   },
   {
     id: 139,
@@ -1371,7 +1371,7 @@ export const products = [
     name: "MASCARA CAPILAR CON ACEITE DE MACADAMIA",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/204511-5085f82f60d6668d1416040830496536-640-0.jpg",
   },
   {
     id: 140,
@@ -1380,7 +1380,7 @@ export const products = [
     name: "MASCARA ANTI REFLEJOS NARANJA",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/20941-2d71259a6647c3519e16176740133486-640-0.jpg",
   },
   {
     id: 141,
@@ -1389,7 +1389,7 @@ export const products = [
     name: "MASCARA CABELLOS CON COLOR SACHET CHICOX24U",
     description: "",
     price: 1100,
-    image: "",
+    image: "https://vlasy.com.ar/wp-content/uploads/2021/08/Diseno-sin-titulo-84.png",
   },
   {
     id: 142,
@@ -1398,7 +1398,7 @@ export const products = [
     name: "MASCARA CABELLOS SECOS SACHET CHICO X24U",
     description: "",
     price: 1200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/br18-023165f3a32d43d9fc17157839871647-640-0.jpg",
   },
   {
     id: 143,
