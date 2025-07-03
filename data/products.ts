@@ -473,7 +473,7 @@ export const products = [
     description: "",
     price: 10400,
     image:
-      "https://biferdil.com.ar/wp-content/uploads/2020/08/KERATINA1044-400ML.png",
+      "https://shoppicture.ww-api.com/pretty_pict/v1/800x1200/50x50/v1/commerce_pict/2586605/1717611469682_3063203/7791001003482_182-champu-kerat-1044-x-400-1.jpeg",
   },
   {
     id: 46,
@@ -483,7 +483,7 @@ export const products = [
     description: "",
     price: 16100,
     image:
-      "https://biferdil.com.ar/wp-content/uploads/2020/08/SULFATE-FREE.png",
+      "https://shoppicture.ww-api.com/pretty_pict/v1/400x600/50x50/v1/commerce_pict/2586605/1713900897176_3633708/7791001004359-imagen-1.jpeg",
   },
   {
     id: 47,
@@ -493,7 +493,7 @@ export const products = [
     description: "",
     price: 11500,
     image:
-      "https://biferdil.com.ar/wp-content/uploads/2020/08/SEMILLA-DE-LINO.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZiU4YM7ZHbiIAjUcKWB17p1fbpHPQ6TKkwQ&s",
   },
   {
     id: 48,
@@ -503,7 +503,7 @@ export const products = [
     description: "",
     price: 10700,
     image:
-      "https://biferdil.com.ar/wp-content/uploads/2020/08/NUTRI-VITAMINA-E.png",
+      "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/2911311_f.jpg",
   },
   {
     id: 49,
@@ -512,7 +512,7 @@ export const products = [
     name: "SHAMPOO CON BIOXIDIL X250",
     description: "",
     price: 19600,
-    image: "https://biferdil.com.ar/wp-content/uploads/2020/08/BIOXIDIL.png",
+    image: "https://www.puntodesalud.com.ar/17055-large_default/biferdil-shampoo-con-bioxidil-x-250-ml.jpg",
   },
   {
     id: 50,
@@ -522,7 +522,7 @@ export const products = [
     description: "",
     price: 16200,
     image:
-      "https://biferdil.com.ar/wp-content/uploads/2020/08/SHAMPOO-1007.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAHUJV_UGzpq-PW71hHBTVj5WjpMhwEdWTKQ&s",
   },
   {
     id: 51,
@@ -541,7 +541,7 @@ export const products = [
     name: "SHAMPOO PARA CAIDA Y CASPA DE ORTIGA",
     description: "",
     price: 11700,
-    image: "https://i.imgur.com/placeholder2.jpg",
+    image: "https://shoppicture.ww-api.com/pretty_pict/v1/800x/50x50/v1/commerce_pict/2586605/1688656291804_28/7791001007930_328-champu-caspa-caida-ort-climba-x-295.jpeg",
   },
   {
     id: 53,
@@ -550,7 +550,7 @@ export const products = [
     name: "SHAMPOO GEL POTENCIALIZADO 1007 X400",
     description: "",
     price: 12800,
-    image: "https://www.biferdil.com/products/shampoo-gel-potencializado-1007",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrk-ZHUNbdjwlsfq5jqXzPNXgluQRzUxUPg&s",
   },
   {
     id: 54,
@@ -559,7 +559,7 @@ export const products = [
     name: "SHAMPOO GEL POTENCIALIZADO 1007 X800",
     description: "",
     price: 21900,
-    image: "https://www.biferdil.com/products/shampoo-estimulante-1008",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiPLb1WimipKdGltC9VYffvVkDWoIWnKwecg&s",
   },
   {
     id: 55,
@@ -568,7 +568,7 @@ export const products = [
     name: "SHAMPOO PHYTOPLUS CITRICO X400",
     description: "",
     price: 11400,
-    image: "https://listado.mercadolibre.com.ar/biferdil-shampoo-anticaida",
+    image: "https://shoppicture.ww-api.com/pretty_pict/v1/800x1200/50x50/v1/commerce_pict/2586605/1717609309483_3302381/7791001009873_383-champu-phytoplus-ctrico-x-4001.jpeg",
   },
   {
     id: 56,
@@ -578,7 +578,7 @@ export const products = [
     description: "",
     price: 9900,
     image:
-      "https://www.perfumeriaspigmento.com.ar/shampoo-energizante-anticaida-con-cafeina",
+      "https://shoppicture.ww-api.com/pretty_pict/v1/800x1200/50x50/v1/commerce_pict/2586605/1717611109317_3056221/7791001009859-imagen-1-1.jpeg",
   },
   {
     id: 57,
@@ -588,7 +588,7 @@ export const products = [
     description: "",
     price: 16000,
     image:
-      "https://listado.mercadolibre.com.ar/biferdil-shampoo-neutro-algas-x-800-ml",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReJgww90gnUHWqVJCx2lnDbwAJnUSFDQs4EA&s",
   },
   {
     id: 58,
@@ -598,7 +598,7 @@ export const products = [
     description: "",
     price: 12000,
     image:
-      "http://googleusercontent.com/image_collection/image_retrieval/10650740886248969948",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkpL3BLUDTxvf5EaCooZtxE4eFyy7RwsSbsA&s",
   },
   {
     id: 59,
@@ -608,7 +608,7 @@ export const products = [
     description: "",
     price: 11000,
     image:
-      "http://googleusercontent.com/image_collection/image_retrieval/3994757119289578573",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBIsjlDxXM8olmrOjDCwsG1eoZu8VfQbDq2w&s",
   },
   {
     id: 60,
@@ -618,7 +618,7 @@ export const products = [
     description: "",
     price: 10700,
     image:
-      "http://googleusercontent.com/image_collection/image_retrieval/17709916432847803147",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLremCA671aOqskWZyekuEapwCYK3R-tRs6A&s",
   },
   {
     id: 61,
@@ -1929,7 +1929,7 @@ export const products = [
     name: "AMPOLLA CONCENTRADO TRIAMINICO",
     description: "",
     price: 3300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/290-1-c2009ae8f3143ed04817061968873955-640-0.jpg",
   },
   {
     id: 202,
@@ -1938,7 +1938,7 @@ export const products = [
     name: "AMPOLLA RESTAURADORA KERATINICO",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/292-1-d29e0472eef3eb2c1e17061968827820-640-0.jpg",
   },
   {
     id: 203,
@@ -1947,7 +1947,7 @@ export const products = [
     name: "AMPOLLA FRIZZ CONTROL",
     description: "",
     price: 3300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/386/751/products/2024-1-f4b98249a959ede8c517067104844925-480-0.jpg",
   },
   {
     id: 204,
@@ -1956,7 +1956,7 @@ export const products = [
     name: "COSMETICO SUAVE X125",
     description: "",
     price: 6600,
-    image: "",
+    image: "https://commerce.meital.com.ar/image/cache/catalog/VARIOS/D_NQ_NP_638306-MLA40958699838_022020-W-228x228.jpg",
   },
   {
     id: 205,
@@ -1965,7 +1965,7 @@ export const products = [
     name: "COSMETICO SUAVE X100",
     description: "",
     price: 5400,
-    image: "",
+    image: "https://commerce.meital.com.ar/image/cache/catalog/VARIOS/D_NQ_NP_655918-MLA40958669194_022020-W-500x500.jpg",
   },
   {
     id: 206,
@@ -1974,7 +1974,7 @@ export const products = [
     name: "BRILLO SILICONADO SPRAY X440ML",
     description: "",
     price: 13000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_779213-MLA46721535416_072021-O.webp",
   },
   {
     id: 207,
@@ -1983,7 +1983,7 @@ export const products = [
     name: "FIJADOR SPRAY X500 FIRME",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmzijoBzkWbKVFH3qCnqRMKAPx-iL_Fi9hvg&s",
   },
   {
     id: 208,
@@ -1992,7 +1992,7 @@ export const products = [
     name: "FIJADOR SPRAY X500 NORMAL",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_955144-MLA46494386690_062021-O.webp",
   },
   {
     id: 209,
@@ -2001,7 +2001,7 @@ export const products = [
     name: "FIJADOR LACA EXTRAFIRME X420",
     description: "",
     price: 10400,
-    image: "",
+    image: "https://dcdn-us.mitiendanube.com/stores/001/303/727/products/laca1-3c3a5a53ad1b6cb5ff16354406956831-640-0.jpg",
   },
   {
     id: 210,
@@ -2010,7 +2010,7 @@ export const products = [
     name: "MOUSSE X420",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/mousse-modelador-x-420-ml-opcion1-2b79d9e010454c162216025944990159-1024-1024.jpg",
   },
   {
     id: 211,
@@ -2019,7 +2019,7 @@ export const products = [
     name: "CERA NUTRIENTE X230",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/887/684/products/opcion-cera-nutriente-x2001-71003014439f20b38b16373405154237-640-0.jpg",
   },
   {
     id: 212,
@@ -2028,7 +2028,7 @@ export const products = [
     name: "CERA NUTRIENTE X900",
     description: "",
     price: 10300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/tratamiento-cera-nutriente-capilar-x-1480-ml-opcion1-eb0e4cb3a304615db416025949474504-1024-1024.jpg",
   },
   {
     id: 213,
@@ -2037,7 +2037,7 @@ export const products = [
     name: "CERA MODELADORA X55",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/02009-a4ccbb6ebe4ac2581c17013697926681-480-0.jpg",
   },
   {
     id: 214,
@@ -2046,7 +2046,7 @@ export const products = [
     name: "CREMA DE PEINAR NUTRITIVA BBH 10 EN 1 X225",
     description: "",
     price: 9000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/tratamiento-bb-hair-10-en-1-x-225-ml-opcion1-9fd581ffe23acd516216025948804743-1024-1024.jpg",
   },
   {
     id: 215,
@@ -2055,7 +2055,7 @@ export const products = [
     name: "MODELADOR QUERATINICO BIFASE X250",
     description: "",
     price: 8600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdIriP53lTP09iXMcCuOxIvd0LzrDcDy8v-w&s",
   },
   {
     id: 216,
@@ -2064,7 +2064,7 @@ export const products = [
     name: "AMPOLLA COMPUESTO TECNICO X18U TRANSPARENTE",
     description: "",
     price: 3300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLYNjKvFEvRX2rGWfdvNMyDwe-XvqYM3cQA&s",
   },
   {
     id: 217,
@@ -2073,7 +2073,7 @@ export const products = [
     name: "AMPOLLA HIDRONUTRITIVA KERATINA X18U NARANJA",
     description: "",
     price: 3300,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_915665-MLA43594109624_092020-O.webp",
   },
   {
     id: 218,
@@ -2083,7 +2083,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 2000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/148/833/products/opcion-salon1-6a6edd62a0f12c3b3c16958275007306-640-0.png",
   },
   {
     id: 219,
@@ -2092,7 +2092,7 @@ export const products = [
     name: "PROTECTOR TERMICO BBH 10 EN 1 X200ML",
     description: "",
     price: 7800,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_848755-MLA82348097482_022025-O.webp",
   },
   {
     id: 220,
@@ -2102,7 +2102,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 1800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOkz4cw8-6UIGCqQg2xTME7pZxzm4QgqrpA&s",
   },
   {
     id: 221,
@@ -2111,7 +2111,7 @@ export const products = [
     name: "SERUM TRAVELKIT X10ML",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/fidelite-girasol-editado-159f77ae5bc334586217062894831141-1024-1024.jpg",
   },
   {
     id: 222,
@@ -2120,7 +2120,7 @@ export const products = [
     name: "MASCARA COCO Y VAINILLA X1KG",
     description: "",
     price: 10400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36196-thickbox_default/mascara-coco-y-vainilla-x-1-kg-fidelite.jpg",
   },
   {
     id: 223,
@@ -2129,7 +2129,7 @@ export const products = [
     name: "MASCARA ALMENDRA X1KG",
     description: "",
     price: 10400,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_888480-MLA40294179685_122019-O.webp",
   },
   {
     id: 224,
@@ -2138,7 +2138,7 @@ export const products = [
     name: "MASCARA KERATINA X1KG",
     description: "",
     price: 10400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36023-thickbox_default/mascara-keratina-x-1-kg-fidelite.jpg",
   },
   {
     id: 225,
@@ -2147,7 +2147,7 @@ export const products = [
     name: "MASCARA COCO Y VAINILLA X270",
     description: "",
     price: 3700,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36162-thickbox_default/mascara-coco-y-vainilla-x-270-gr-fidelite.jpg",
   },
   {
     id: 226,
@@ -2156,7 +2156,7 @@ export const products = [
     name: "MASCARA ALMENDRA X270",
     description: "",
     price: 3700,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgEfxAtezQinMPeeJ4ldpGlGKXK1kwiDDNGA&s",
   },
   {
     id: 227,
@@ -2165,7 +2165,7 @@ export const products = [
     name: "MASCARA KERATINA X270",
     description: "",
     price: 3700,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36160-large_default/mascara-keratina-x-270-gr-fidelite.jpg",
   },
   {
     id: 228,
@@ -2174,7 +2174,7 @@ export const products = [
     name: "MASCARA COLORMASTER EXTRA ACIDA X1KG",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36195-thickbox_default/mascara-extra-acida-ph35-x-1-kg-color-master-fidelite.jpg",
   },
   {
     id: 229,
@@ -2183,7 +2183,7 @@ export const products = [
     name: "MASCARA COLORMASTER EXTRA ACIDA X270",
     description: "",
     price: 3400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36161-thickbox_default/mascara-extra-acida-ph35-x-270-gr-color-master-fidelite.jpg",
   },
   {
     id: 230,
@@ -2192,7 +2192,7 @@ export const products = [
     name: "MASCARA CAVIAR HIDRONUTRITIVA X1KG",
     description: "",
     price: 11400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36189-large_default/mascara-caviar-x-1-kg-fidelite.jpg",
   },
   {
     id: 231,
@@ -2201,7 +2201,7 @@ export const products = [
     name: "MASCARA ARGAN X1KG",
     description: "",
     price: 13500,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36037-thickbox_default/mascara-argan-x-1-kg-mythical-fidelite.jpg",
   },
   {
     id: 232,
@@ -2210,7 +2210,7 @@ export const products = [
     name: "MASCARA CAVIAR HIDRONUTRITIVA X250",
     description: "",
     price: 5000,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36190-thickbox_default/mascara-caviar-x-250-ml-fidelite.jpg",
   },
   {
     id: 233,
@@ -2219,7 +2219,7 @@ export const products = [
     name: "MASCARA ARGAN X250",
     description: "",
     price: 6300,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36036-thickbox_default/mascara-argan-x-250-gr-mythical-fidelite.jpg",
   },
   {
     id: 234,
@@ -2228,7 +2228,7 @@ export const products = [
     name: "SHAMPOO NEUTRO COLORMASTER 5 LITROS ",
     description: "",
     price: 21200,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/10077-thickbox_default/shampoo-neutro-color-master-x-5-lt-fidelite.jpg",
   },
   {
     id: 235,
@@ -2237,7 +2237,7 @@ export const products = [
     name: "ACONDICIONADOR COLORMASTER 5 LITROS ",
     description: "",
     price: 21200,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/22636-thickbox_default/acondicionador-acido-5-litros-color-master-fidelite.jpg",
   },
   {
     id: 236,
@@ -2246,7 +2246,7 @@ export const products = [
     name: "SHAMPOO EXTRA ACIDO COLORMASTER 5 LITROS",
     description: "",
     price: 23100,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/14613-98cdedfba53ce965fc16978149132287-1024-1024.jpg",
   },
   {
     id: 237,
@@ -2255,7 +2255,7 @@ export const products = [
     name: "Color master Shampoo neutro x 1 lt",
     description: "",
     price: 5400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36198-large_default/shampoo-neutro-color-master-x-1-lt-fidelite.jpg",
   },
   {
     id: 238,
@@ -2264,7 +2264,7 @@ export const products = [
     name: "Color master Conditioner acidox 1 lt",
     description: "",
     price: 5400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36200-thickbox_default/acondicionador-acido-x-1-lt-color-master-fidelite.jpg",
   },
   {
     id: 239,
@@ -2273,7 +2273,7 @@ export const products = [
     name: "Color master Shampoo Acido x 1 lt",
     description: "",
     price: 6100,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/22628-thickbox_default/shampoo-acido-color-master-x-1-lt-fidelite.jpg",
   },
   {
     id: 240,
@@ -2282,7 +2282,7 @@ export const products = [
     name: "Color master Shampoo neutro x 230 ml",
     description: "",
     price: 2800,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/22621-thickbox_default/shampoo-neutro-color-master-x-230-ml-fidelite.jpg",
   },
   {
     id: 241,
@@ -2291,7 +2291,7 @@ export const products = [
     name: "Color master conditioner acido x 230 ml",
     description: "",
     price: 2800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/14610-9337df9490f375fe3b169781496218101-6d1324245964f9739116978149761637-1024-1024.jpg",
   },
   {
     id: 242,
@@ -2300,7 +2300,7 @@ export const products = [
     name: "Color master Shampoo acido x 230 ml",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/22629-large_default/shampoo-acido-color-master-x-230-ml-fidelite.jpg",
   },
   {
     id: 243,
@@ -2309,7 +2309,7 @@ export const products = [
     name: "Shampoo keratina x 230 ml",
     description: "",
     price: 2900,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36020-large_default/shampoo-keratina-x-230-ml-fidelite.jpg",
   },
   {
     id: 244,
@@ -2318,7 +2318,7 @@ export const products = [
     name: "Conditioner keratina x 230 ml",
     description: "",
     price: 2900,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36021-thickbox_default/acondicionador-keratina-x230-ml-fidelite.jpg",
   },
   {
     id: 245,
@@ -2327,7 +2327,7 @@ export const products = [
     name: "REINBENTION SHAMPOO VIOLETA X230ML",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoye-1c4deVIsDYiyGaNtyOwYHP7VXN4sTqg&s",
   },
   {
     id: 246,
@@ -2336,7 +2336,7 @@ export const products = [
     name: "REINBENTION CONDITIONER TONO 7-9 X230ML",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQufzgq5MJCo75PD_Fk9tLhulSrxSTvnY7NEA&s",
   },
   {
     id: 247,
@@ -2345,7 +2345,7 @@ export const products = [
     name: "REINBENTION CONDITIONER TONO +10 X230ML",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Eefulz5UqGChC-_Ws7tbNK3GHAgK3Dg7Pg&s",
   },
   {
     id: 248,
@@ -2354,7 +2354,7 @@ export const products = [
     name: "Ultra black mascara matizador x 270 (gris platino)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3J6u8L-gRuzaNQchhLy8Esw8pGYrNC-mBYw&s",
   },
   {
     id: 249,
@@ -2363,7 +2363,7 @@ export const products = [
     name: "Ultra black shampoo matizador x 230 (gris platino)",
     description: "",
     price: 4000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/267/243/products/shampoo-matizador-reinvention-ultra-black-230-ml-b49163755dfb9f77ec17230548869186-640-0.jpg",
   },
   {
     id: 250,
@@ -2372,7 +2372,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Teñidos x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36170-thickbox_default/shampoo-cabellos-tenidos-x-260-ml-caviar-fidelite.jpg",
   },
   {
     id: 251,
@@ -2381,7 +2381,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Secos y cast x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36172-thickbox_default/shampoo-cabellos-secos-y-castigados-x260-ml-caviar-fidelite.jpg",
   },
   {
     id: 252,
@@ -2390,7 +2390,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Grasos x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/shampoo-grasos-editado1-37baea511a5bd366ed16179853614241-1024-1024.jpg",
   },
   {
     id: 253,
@@ -2399,7 +2399,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Normales x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36174-thickbox_default/shampoo-cabellos-normales-x260-ml-caviar-fidelite.jpg",
   },
   {
     id: 254,
@@ -2408,7 +2408,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Teñidos x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36169-large_default/shampoo-cabellos-tenidos-900-ml-caviar-fidelite.jpg",
   },
   {
     id: 255,
@@ -2417,7 +2417,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Secos y cast x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36171-large_default/shampoo-cabellos-secos-y-castigados-x-900-ml-caviar-fidelite.jpg",
   },
   {
     id: 256,
@@ -2426,7 +2426,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Grasos x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/shampoo-graso-x900-edit1-c9dffcb7ce7de3f6c916179855298805-1024-1024.jpg",
   },
   {
     id: 257,
@@ -2435,7 +2435,7 @@ export const products = [
     name: "Caviar Shampoo Cabellos Normales x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36173-thickbox_default/shampoo-cabellos-normales-x900-ml-caviar-fidelite.jpg",
   },
   {
     id: 258,
@@ -2444,7 +2444,7 @@ export const products = [
     name: "Caviar Shampoo keratina x 900 ml",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBXrrLQoV-WpMRtWROMX-an7AmmPSOFsOq9w&s",
   },
   {
     id: 259,
@@ -2453,7 +2453,7 @@ export const products = [
     name: "Caviar conditioner cabellos Teñidos x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36178-large_default/acondicionador-cabellos-tenidos-x260-ml-caviar-fidelite.jpg",
   },
   {
     id: 260,
@@ -2462,7 +2462,7 @@ export const products = [
     name: "Caviar conditioner cabellos Secos y cast x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36180-large_default/acondicionador-cabellos-secos-y-castigados-260-ml-caviar-fidelite.jpg",
   },
   {
     id: 261,
@@ -2471,7 +2471,7 @@ export const products = [
     name: "Caviar conditioner cabellos Grasos x 260 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36182-large_default/acondicionador-cabellos-grasos-260-ml-caviar-fidelite.jpg",
   },
   {
     id: 262,
@@ -2480,7 +2480,7 @@ export const products = [
     name: "Caviar conditioner cabellos Teñidos x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnxM-tCQbLeMxy6_dovhuaXY7HxjiuQdSanQ&s",
   },
   {
     id: 263,
@@ -2489,7 +2489,7 @@ export const products = [
     name: "Caviar conditioner cabellos Secos y cast x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36179-large_default/acondicionador-cabellos-secos-y-castigados-900-ml-caviar-fidelite.jpg",
   },
   {
     id: 264,
@@ -2498,7 +2498,7 @@ export const products = [
     name: "Caviar conditioner Keratina x 900 ml",
     description: "",
     price: 12000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/cabelllos-castigado-acond-editado1-1735dfcec6f02040d416179898132144-1024-1024.jpg",
   },
   {
     id: 265,
@@ -2507,7 +2507,7 @@ export const products = [
     name: "Caviar crema de peinar Rizos x 250 gr",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_746765-MLA76924470285_062024-O.webp",
   },
   {
     id: 266,
@@ -2516,7 +2516,7 @@ export const products = [
     name: "Caviar Mascara hidronutritiva x 250 gr",
     description: "",
     price: 5000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/mascara-violeta-editada-caviar1-0ddb251d0e9c37e10b16179100140290-1024-1024.jpg",
   },
   {
     id: 267,
@@ -2525,7 +2525,7 @@ export const products = [
     name: "Caviar Mascara hidronutritiva x kg",
     description: "",
     price: 11400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36189-large_default/mascara-caviar-x-1-kg-fidelite.jpg",
   },
   {
     id: 268,
@@ -2534,7 +2534,7 @@ export const products = [
     name: "Argan mascara x 250 gr",
     description: "",
     price: 6300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/mascara-argan-chica-editada1-50679b3dd59773e79d16179953460504-1024-1024.jpg",
   },
   {
     id: 269,
@@ -2543,7 +2543,7 @@ export const products = [
     name: "Argan mascara x kg",
     description: "",
     price: 13500,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36037-thickbox_default/mascara-argan-x-1-kg-mythical-fidelite.jpg",
   },
   {
     id: 270,
@@ -2552,7 +2552,7 @@ export const products = [
     name: "Argan Crema de peinar X 250 gr",
     description: "",
     price: 5200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxfyvhvvGM-oK0YJ382Urr6Tmn0kpxWd95SA&s",
   },
   {
     id: 271,
@@ -2561,7 +2561,7 @@ export const products = [
     name: "Argan shampoo x 260 ml",
     description: "",
     price: 5700,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36035-thickbox_default/shampoo-argan-x-260-ml-mythical-fidelite.jpg",
   },
   {
     id: 272,
@@ -2570,7 +2570,7 @@ export const products = [
     name: "Argan shampoo x 900 ml",
     description: "",
     price: 13600,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/argan-shampoo-grande-editado1-fca96bb3678ec0cd7716179947686412-1024-1024.jpg",
   },
   {
     id: 273,
@@ -2579,7 +2579,7 @@ export const products = [
     name: "Argan conditioner x 260 ml",
     description: "",
     price: 5700,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/14715-7e07a2dbb77fdfb9ea16978146644593-1024-1024.jpg",
   },
   {
     id: 274,
@@ -2588,7 +2588,7 @@ export const products = [
     name: "Argan conditioner x 900 ml",
     description: "",
     price: 13600,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36314-thickbox_default/acondicionador-argan-900-ml-mythical-fidelite.jpg",
   },
   {
     id: 275,
@@ -2597,7 +2597,7 @@ export const products = [
     name: "Argan Brillo oil SHINE MIST X 120 ml",
     description: "",
     price: 10200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWCC1rc3-nKVkWD3BvL18BBehnxx_8_eznGw&s",
   },
   {
     id: 276,
@@ -2606,7 +2606,7 @@ export const products = [
     name: "Argan Elixir x 120 ml",
     description: "",
     price: 16700,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36038-thickbox_default/elixir-oil-argan-x120-ml-fidelite-mythical.jpg",
   },
   {
     id: 277,
@@ -2615,7 +2615,7 @@ export const products = [
     name: "Argan elixir 1TRAVELKIT 10ML",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB_On6HQEEhshYHJtnzGx39O234V8U8lEFRg&s",
   },
   {
     id: 278,
@@ -2624,7 +2624,7 @@ export const products = [
     name: "Boubble shock 12 x 20 capsula",
     description: "",
     price: 2000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_872912-MLA32699876396_102019-O.webp",
   },
   {
     id: 279,
@@ -2633,7 +2633,7 @@ export const products = [
     name: "Ampolla lino x 12",
     description: "",
     price: 1800,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36183-thickbox_default/caja-ampollas-semilla-de-lino-12-unid-x-15-ml-fidelite.jpg",
   },
   {
     id: 280,
@@ -2642,7 +2642,7 @@ export const products = [
     name: "Ampolla keratina x 12",
     description: "",
     price: 1800,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36184-thickbox_default/caja-ampollas-keratina-12-unid-x15-ml-cu-fidelite.jpg",
   },
   {
     id: 281,
@@ -2651,7 +2651,7 @@ export const products = [
     name: "Ampolla nutritiva instantanea x 12",
     description: "",
     price: 1800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/instantaneo-x-12-editada1-de0e3758ed8bfe5a7316953988506968-1024-1024.jpg",
   },
   {
     id: 282,
@@ -2660,7 +2660,7 @@ export const products = [
     name: "Ampolla Argan x 12",
     description: "",
     price: 1800,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36187-thickbox_default/caja-ampollas-argan-12-unid-x15-ml-c-u-mythical-fidelite.jpg",
   },
   {
     id: 283,
@@ -2669,7 +2669,7 @@ export const products = [
     name: "Ampolla Caviar hidronutritiva x 12",
     description: "",
     price: 1800,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_999236-MLA50012619944_052022-O.webp",
   },
   {
     id: 284,
@@ -2678,7 +2678,7 @@ export const products = [
     name: "Aceite reparador de puntas Girasol x 30 ml",
     description: "",
     price: 8000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1svpzmwjRm82v9MxGEmyLPoB0nIy8Afdfig&s",
   },
   {
     id: 285,
@@ -2687,7 +2687,7 @@ export const products = [
     name: "Aceite reparador de puntas lino x 30 ml",
     description: "",
     price: 8000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHrJ3GxslF7r6La_2r_I8GkYfyyS2d7GgfNw&s",
   },
   {
     id: 286,
@@ -2696,7 +2696,7 @@ export const products = [
     name: "Aceite reparador de puntas CAVIAR x 30 ml",
     description: "",
     price: 12400,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/36194-thickbox_default/serum-reparador-de-puntas-caviar-x30-ml-caviar-fidelite-caviar.jpg",
   },
   {
     id: 287,
@@ -2705,7 +2705,7 @@ export const products = [
     name: "Protector Termico Antiage VIOLETA x 120 ml",
     description: "",
     price: 11300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/291/430/products/protector-termico-caviar1-d94ed9f3cea3f7a92e16147207975682-1024-1024.png",
   },
   {
     id: 288,
@@ -2714,7 +2714,7 @@ export const products = [
     name: "Desenredante instantaneo BIFASE x 250 ml",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/22561-thickbox_default/desenredante-instantaneo-bi-fase-x250-ml-fidelite.jpg",
   },
   {
     id: 289,
@@ -2723,7 +2723,7 @@ export const products = [
     name: "GEL EFECTO HUMEDO X230",
     description: "",
     price: 2800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVOM5oUETXAx6HTZJbg_072VAcrvTDi219Bw&s",
   },
   {
     id: 290,
@@ -2732,7 +2732,7 @@ export const products = [
     name: "Gel humedo fijacion extrema x 230 gr",
     description: "",
     price: 6300,
-    image: "",
+    image: "https://dcdn-us.mitiendanube.com/stores/002/450/812/products/d_nq_np_2x_833186-mlu78202955646_082024-f-4e1278f387337e803717296936859748-1024-1024.webp",
   },
   {
     id: 291,
@@ -2741,7 +2741,7 @@ export const products = [
     name: "QUITAMANCHAS X125",
     description: "",
     price: 4400,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_960077-MLA54977066850_042023-O.webp",
   },
   {
     id: 292,
@@ -2750,7 +2750,7 @@ export const products = [
     name: "CAVIAR PLEX PASO 3 ACONDICIONADOR X230",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://www.stockinlavanda.com.ar/21043-thickbox_default/acondicionador-caviar-plex-n3-230-ml-caviar-fidelite.jpg",
   },
   {
     id: 293,
@@ -2759,7 +2759,7 @@ export const products = [
     name: "Argan Mascara x 250 g",
     description: "",
     price: 3900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaUrLhj6SAkQtxffBU0ZEDHzZN-FefHjU7VA&s",
   },
   {
     id: 294,
@@ -2768,7 +2768,7 @@ export const products = [
     name: "Argan Ampolla x 15 ml x 12 unidades",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/ampolla-argan-editada1-03179bdab6e79d3a7216512588611738-640-0.jpg",
   },
   {
     id: 295,
@@ -2777,7 +2777,7 @@ export const products = [
     name: "Argan Shampoo x 250 ml",
     description: "",
     price: 2800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCqTUgcZjs0AYk8pJcNwyHSFGcc0VBqWvjQQ&s",
   },
   {
     id: 296,
@@ -2786,7 +2786,7 @@ export const products = [
     name: "Argan Crema de peinar x 250 gr",
     description: "",
     price: 2900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/031/514/products/crema-de-peinar-x250gr-argan-bekim1-01187576cda407a4f316210095855795-640-0.jpg",
   },
   {
     id: 297,
@@ -2795,7 +2795,7 @@ export const products = [
     name: "Gel Supreme fixer x 250 gr",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/423/621/products/gel-bekim-supreme-fixer1-5851ee79450bd71a1a16275883618817-640-0.jpg",
   },
   {
     id: 298,
@@ -2804,7 +2804,7 @@ export const products = [
     name: "Karité Mascara x 250 gr",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/031/514/products/mascara-karite-x-250-bekim1-5869c01203990b5e6616210111122308-240-0.jpg",
   },
   {
     id: 299,
@@ -2813,7 +2813,7 @@ export const products = [
     name: "Karité Crema de peinar x 250 gr",
     description: "",
     price: 2600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1JgnqXATE_SZIHrBxruVN2brkadIMnts5cg&s",
   },
   {
     id: 300,
@@ -2822,7 +2822,7 @@ export const products = [
     name: "SHAMPOO 250 ML KARITE",
     description: "",
     price: 2600,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/091/175/products/sh-karite-bekim-x-250ml1-1820ae78178828a25716530006416912-1024-1024.jpg",
   },
   {
     id: 301,
