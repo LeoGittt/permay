@@ -2831,7 +2831,7 @@ export const products = [
     name: "After color Mascara x 250 gr",
     description: "",
     price: 3900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYzwgK0MFeFsd4NeEvo3AFc1VmWmwQwWDcw&s",
   },
   {
     id: 302,
@@ -2840,7 +2840,7 @@ export const products = [
     name: "After color Shampoo x 250 ml",
     description: "",
     price: 2800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/412/934/products/shampoo-after-color-x-250-g1-b410fba843af96410516644599465414-1024-1024.png",
   },
   {
     id: 303,
@@ -2849,7 +2849,7 @@ export const products = [
     name: "After color Ampolla x 15 ml x 12 unidades",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5pViRVNxK3D2BYa6vd11Y8J022CazDAHP9Q&s",
   },
   {
     id: 304,
@@ -2858,7 +2858,7 @@ export const products = [
     name: "Sublime 5.4 Protector termico x 135 ml",
     description: "",
     price: 5000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/091/175/products/sublime-protector-bekim1-e48171fb20fbb2b3af16656875937390-1024-1024.jpg",
   },
   {
     id: 305,
@@ -2867,7 +2867,7 @@ export const products = [
     name: "Memory curly girl Shampoo x 250 ml    RULOS",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/338/453/products/_dsc02981-21a70b9d21581669f516249923234947-480-0.jpg",
   },
   {
     id: 306,
@@ -2876,7 +2876,7 @@ export const products = [
     name: "Memory curly girl Acondicionador x 250 ml    RULOS",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/338/453/products/_dsc02971-f2f4e53a4a77cb8b0216249924414103-480-0.jpg",
   },
   {
     id: 307,
@@ -2885,7 +2885,7 @@ export const products = [
     name: "Memory curly girl Mascarilla x 250 gr    RULOS",
     description: "",
     price: 4400,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_836366-MLA83989559130_052025-O.webp",
   },
   {
     id: 308,
@@ -2894,7 +2894,7 @@ export const products = [
     name: "Memory curly girl Crema de peinar x 250 gr    RULOS",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC5C4hiHZMdAdPkIepWHMfKS84QR6ptpHOlA&s",
   },
   {
     id: 309,
@@ -2903,7 +2903,7 @@ export const products = [
     name: "Matizador Shampoo violeta x 250 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_876627-MLA70852111220_082023-O.webp",
   },
   {
     id: 310,
@@ -2912,7 +2912,7 @@ export const products = [
     name: "Matizador Shampoo azul x 250 ml",
     description: "",
     price: 4600,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_860219-MLA54587037218_032023-O.webp",
   },
   {
     id: 311,
@@ -2921,7 +2921,7 @@ export const products = [
     name: "Alisado Argan liss x 1 lt",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjf9JShlX9WCFtbBvNtstb9ff9AFFeX5TOIA&s",
   },
   {
     id: 312,
@@ -2930,7 +2930,7 @@ export const products = [
     name: "Alisado Plastificado x 1 lt",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uI6OefZG7BTLM_1HziHTLdCpokpkM94VAQ&s",
   },
   {
     id: 313,
@@ -2939,7 +2939,7 @@ export const products = [
     name: "Bottox x 1 lt",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/004/765/951/products/diseno-sin-titulo-39-a0f0fd0ab9724836cb17174247288087-1024-1024.png",
   },
   {
     id: 314,
@@ -2948,7 +2948,7 @@ export const products = [
     name: "Shock de keratina- complex keratin x 1 lt",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF-FFJ6TAaWeCGZhI1qLtslqMNocEtt_vatg&s",
   },
   {
     id: 315,
@@ -2957,7 +2957,7 @@ export const products = [
     name: "Alisado cacao premium extra forte x 1 lt",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://magha.com.ar/wp-content/uploads/2024/10/BRA005-768x768.jpg",
   },
   {
     id: 316,
@@ -2966,7 +2966,7 @@ export const products = [
     name: "Keratina liquida x 250 ml",
     description: "",
     price: 3300,
-    image: "",
+    image: "https://mmdistribuidora.com.ar/wp-content/uploads/2024/10/BRA009.jpg",
   },
   {
     id: 317,
@@ -2975,7 +2975,7 @@ export const products = [
     name: "Botox liquido x 250 ml",
     description: "",
     price: 3300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlJWloAO4ddCbsRpx6h9Hx3CRX2Mo32LIniA&s",
   },
   {
     id: 318,
@@ -2984,7 +2984,7 @@ export const products = [
     name: "Smart bottox violeta x 500",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShk81P6FT_on00hX6m8d5nFINvRFjl3ZcsOA&s",
   },
   {
     id: 319,
@@ -2993,7 +2993,7 @@ export const products = [
     name: "Blow out biotina capilar A3 x 500 ml",
     description: "",
     price: 10500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRE-2HJnYzZvObHzidNDv5lF4V16Qtoze7SQ&s",
   },
   {
     id: 320,
@@ -3002,7 +3002,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA 10 VOLUMENES X 1L",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_806473-MLA44001355086_112020-O.webp",
   },
   {
     id: 321,
@@ -3011,7 +3011,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA 20 VOLUMENES X 1L",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKlSeSGJOewOMz17s-QJNgxlYQF0FHF2HVNA&s",
   },
   {
     id: 322,
@@ -3020,7 +3020,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA 30 VOLUMENES X 1L",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_803824-MLA44001037671_112020-O.webp",
   },
   {
     id: 323,
@@ -3029,7 +3029,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA 40 VOLUMENES X 1L",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_897700-MLA77217313830_072024-O.webp",
   },
   {
     id: 324,
@@ -3039,7 +3039,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 7500,
-    image: "",
+    image: "https://esteticaenlinea.com.ar/cdn/shop/products/Disenosintitulo_2d1a6666-e7d7-44ad-8d84-74495f7325a0.png?v=1631621446",
   },
   {
     id: 325,
@@ -3048,7 +3048,7 @@ export const products = [
     name: "AMPOLLA SEMI DI LINO AZUL CON ENJUAGUE",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://farmacialesce.com.ar/wp-content/uploads/2024/07/ampolla-azul-editada1-7b73f8c4c7ebd7b5ae16112555204743-1024-1024.webp",
   },
   {
     id: 326,
@@ -3057,7 +3057,7 @@ export const products = [
     name: "AMPOLLA SEMI DI LINO VIOLETA SIN ENJUAGUE",
     description: "",
     price: 2000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/091/175/products/ampolla-shine-lotion-alfaparf-2db9718f85831c686d17055246265159-1024-1024.jpg",
   },
   {
     id: 327,
@@ -3066,7 +3066,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA 10 VOLUMENES X 1L",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_806473-MLA44001355086_112020-O.webp",
   },
   {
     id: 328,
@@ -3075,7 +3075,7 @@ export const products = [
     name: "SHAMPOO DESAMARILLADOR 300 ML",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://farmacityar.vtexassets.com/arquivos/ids/255096/219374_shampoo-alta-moda-e-desamarillador-x-300-ml_imagen--1.jpg?v=638512141186900000",
   },
   {
     id: 329,
@@ -3084,7 +3084,7 @@ export const products = [
     name: "MASCARA DESAMARILLADORA 300ML",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/412/934/products/altamoda-mascara-cabellos-rubios-x-300-ml1-15fad4540398fabc3016788098357101-640-0.png",
   },
   {
     id: 330,
@@ -3093,7 +3093,7 @@ export const products = [
     name: "SHAMPOO BIOPLEX X1.9L",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdSWTvQGZpCc5RS9WFdyU45ScJE4duEHjQHA&s",
   },
   {
     id: 331,
@@ -3102,7 +3102,7 @@ export const products = [
     name: "ENJUAGUE BIOPLEX X1.9L",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_816113-MLA85349144947_052025-O.webp",
   },
   {
     id: 332,
@@ -3111,7 +3111,7 @@ export const products = [
     name: "SHAMPOO REGENERADOR BIOPLEX X250ML",
     description: "",
     price: 4100,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/nov-editdo-9dc6896a9cd928afb117514922712720-1024-1024.jpg",
   },
   {
     id: 333,
@@ -3120,7 +3120,7 @@ export const products = [
     name: "BALSAMO REGENERADOR BIOPLEX X250ML",
     description: "",
     price: 4100,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/balsamo-nov-03f8259232855e7e3817056030188180-480-0.jpg",
   },
   {
     id: 334,
@@ -3129,7 +3129,7 @@ export const products = [
     name: "NUTRICION REGENERADORA BIOPLEX X250GR",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://www.novcosmetica.com.ar/img/productos/BIOPLEX-Nutricion220_WEB.jpg",
   },
   {
     id: 335,
@@ -3138,7 +3138,7 @@ export const products = [
     name: "POLVO DECOLORANTE NOV 50 GR",
     description: "",
     price: 2500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/119/724/products/polvo-decolorante1-41ff248d7549fc86ff16510712001235-640-0.png",
   },
   {
     id: 336,
@@ -3147,7 +3147,7 @@ export const products = [
     name: "Bioplex aditivo ampollas x15",
     description: "",
     price: 1300,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/inov1302u-b4f0a8ae93e8b1506a17000639073477-1024-1024.jpg",
   },
   {
     id: 337,
@@ -3156,7 +3156,7 @@ export const products = [
     name: "Ampolla KERATINA x 15",
     description: "",
     price: 1300,
-    image: "",
+    image: "https://http2.mlstatic.com/D_757874-MLA84934220536_052025-O.jpg",
   },
   {
     id: 338,
@@ -3165,7 +3165,7 @@ export const products = [
     name: "Ampolla LINO x 15",
     description: "",
     price: 1300,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_828198-MLA74841364340_032024-O.webp",
   },
   {
     id: 339,
@@ -3174,7 +3174,7 @@ export const products = [
     name: "Ampolla ARGAN x 15",
     description: "",
     price: 1300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc09Mf0lSUWlCxfUNc3tUXcRtaZ1NsVLbuww&s",
   },
   {
     id: 340,
@@ -3183,7 +3183,7 @@ export const products = [
     name: "Ampolla Quinto Elemento x 15",
     description: "",
     price: 1300,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_843335-MLU72576424272_112023-O.webp",
   },
   {
     id: 341,
@@ -3192,7 +3192,7 @@ export const products = [
     name: "Decolorante LUREX EXTRA X 700",
     description: "",
     price: 16000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_833758-MLA84177056376_052025-O.webp",
   },
   {
     id: 342,
@@ -3201,7 +3201,7 @@ export const products = [
     name: "Shampoo x 3.9 litro Keratina",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdnd-3Nl-WQCgKEKp2BeXMm8-J55t7fn0RIg&s",
   },
   {
     id: 343,
@@ -3210,7 +3210,7 @@ export const products = [
     name: "Shampoo x 3.9 litro Lino",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_707637-MLA31635392957_072019-O.webp",
   },
   {
     id: 344,
@@ -3219,7 +3219,7 @@ export const products = [
     name: "Shampoo x 3.9 litro Argan",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_974496-MLA74118276396_012024-O.webp",
   },
   {
     id: 345,
@@ -3228,7 +3228,7 @@ export const products = [
     name: "Shampoo x 3.9 litro Neutro",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_719075-MLA51484032698_092022-O.jpg",
   },
   {
     id: 346,
@@ -3237,7 +3237,7 @@ export const products = [
     name: "Shampoo x 3.9 litro Almendra Acido",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_872004-MLU72756427380_112023-O.webp",
   },
   {
     id: 347,
@@ -3246,7 +3246,7 @@ export const products = [
     name: "SHAMPOO X 1.9 LITRO NEUTRO",
     description: "",
     price: 7100,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_639472-MLU72648836737_112023-O.webp",
   },
   {
     id: 348,
@@ -3255,7 +3255,7 @@ export const products = [
     name: "Shampoo x 250 ml Quinto elemento Light and clean",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRes9ONB0mUuY0rmATv1OsNW2WJO4HTAFumEA&s",
   },
   {
     id: 349,
@@ -3264,7 +3264,7 @@ export const products = [
     name: "Shampoo x 250 ml Argan ( secos y deteriorados)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://www.wendy.com.ar/wp-content/uploads/2023/01/NATIVE-A_Shampoo_240_WEB.jpg",
   },
   {
     id: 350,
@@ -3273,7 +3273,7 @@ export const products = [
     name: "Shampoo x 250 ml Lino ( deshidratados)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/267/243/products/shampoo-nov-aceite-de-lino-x-240-ml1-e858824f0645df52e716837490125772-640-0.jpg",
   },
   {
     id: 351,
@@ -3282,7 +3282,7 @@ export const products = [
     name: "Shampoo x 250 ml Keratina ( quebradizos y maltrat)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://cdn.v2.tiendanegocio.com/gallery/23142/img_23142_18e42f7d066.jpeg?class=sm",
   },
   {
     id: 352,
@@ -3291,7 +3291,7 @@ export const products = [
     name: "Shampoo x 250 ml Almendra",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/179/607/products/shampoo-almendra-x-250ml1-64e25cb1aed2539d0516064663548570-480-0.jpg",
   },
   {
     id: 353,
@@ -3300,7 +3300,7 @@ export const products = [
     name: "Shampoo x 250 ml Neutro",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPGw0-WG3IuNZZjIRTzTtnW5-aN1rJi9BBgQ&s",
   },
   {
     id: 354,
@@ -3309,7 +3309,7 @@ export const products = [
     name: "Shampoo x 250 ml biohidratante c/creatina ( alisados)",
     description: "",
     price: 3400,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh9tikH4T9I6jgPi-e38tjUPM2G0LycMXW7Q&s",
   },
   {
     id: 355,
@@ -3318,7 +3318,7 @@ export const products = [
     name: "Crema de peinar sin enjuague KEEP CURLY x 250 NUEVO",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_700609-MLA76781189492_062024-O.webp",
   },
   {
     id: 356,
@@ -3327,7 +3327,7 @@ export const products = [
     name: "Multi-X- crema multibeneficios sin enjuague x 125 gr",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpLSN3rQ5Qlx_-WV2tpqUsX0645lPBV4MyoQ&s",
   },
   {
     id: 357,
@@ -3336,7 +3336,7 @@ export const products = [
     name: "Nutricion regenerador BIOPLEX x 980 gr",
     description: "",
     price: 7800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/nv3618-a87676bc2b2e6bcf5d17170905237646-480-0.png",
   },
   {
     id: 358,
@@ -3345,7 +3345,7 @@ export const products = [
     name: "Balsam x 3.9 litros Keratina",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTRESmP5X670rIQuxKQsbibWaYYeETYyW1Ww&s",
   },
   {
     id: 359,
@@ -3354,7 +3354,7 @@ export const products = [
     name: "Balsam x 3.9 litros Argan",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_600469-MLA52642707041_112022-O.webp",
   },
   {
     id: 360,
@@ -3363,7 +3363,7 @@ export const products = [
     name: "Balsam x 3.9 litros lino",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_726399-MLA51695565502_092022-O.webp",
   },
   {
     id: 361,
@@ -3372,7 +3372,7 @@ export const products = [
     name: "Balsam x 3.9 litros Almendra",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBgCkYIVaMzk67TpZD6RWIqmxWhMPV5YY3HA&s",
   },
   {
     id: 362,
@@ -3381,7 +3381,7 @@ export const products = [
     name: "Balsam x 250 ml Quinto elemento Light and soft",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/004/765/951/products/qe-balsam_240_web-5b8cf9a9e7dbf16be717188143687844-480-0.jpg",
   },
   {
     id: 363,
@@ -3390,7 +3390,7 @@ export const products = [
     name: "Balsam x 250 ml Argan ( secos y deteriorados)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://www.novcosmetica.com.ar/img/productos/NATIVE-A_Balsam_240_WEB.jpg",
   },
   {
     id: 364,
@@ -3399,7 +3399,7 @@ export const products = [
     name: "Balsam x 250 ml Lino ( deshidratados)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMV1SZAJIexv6gE8h1Xpe99bqmadda60vcew&s",
   },
   {
     id: 365,
@@ -3408,7 +3408,7 @@ export const products = [
     name: "Balsam x 250 ml Keratina ( quebradizos y maltrat)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://cdn.v2.tiendanegocio.com/gallery/23142/img_23142_18e42f76254.jpeg?class=sm",
   },
   {
     id: 366,
@@ -3417,7 +3417,7 @@ export const products = [
     name: "Balsam x 250 ml Almendra",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://www.novcosmetica.com.ar/img/productos/ALMENDRA_Balsam-250_WEB2.jpg",
   },
   {
     id: 367,
@@ -3426,7 +3426,7 @@ export const products = [
     name: "Balsam x 250 ml biohidratante c/creatina ( alisados)",
     description: "",
     price: 3400,
-    image: "",
+    image: "https://http2.mlstatic.com/D_745026-MLA74135895246_012024-C.jpg",
   },
   {
     id: 368,
@@ -3435,7 +3435,7 @@ export const products = [
     name: "Nutricion x 980 gr Keratina",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/inov50011-ac23d3583b42c5a89c17000631001222-480-0.jpg",
   },
   {
     id: 369,
@@ -3444,7 +3444,7 @@ export const products = [
     name: "Nutricion x 980 gr Lino",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_905076-MLA87095346133_072025-O.webp",
   },
   {
     id: 370,
@@ -3453,7 +3453,7 @@ export const products = [
     name: "Nutricion x 980 gr Argan",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_775199-MLA74087945600_012024-O.webp",
   },
   {
     id: 371,
@@ -3462,7 +3462,7 @@ export const products = [
     name: "Nutricion X 980 gr Almendra Acido",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/179/607/products/nutricion-de-almendra-980gr1-ab291c33b9446b8d0415933098798151-640-0.jpg",
   },
   {
     id: 372,
@@ -3471,7 +3471,7 @@ export const products = [
     name: "Nutricion x 980 Quinto elemento",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://www.novcosmetica.com.ar/img/productos/QE-Nutricion_980_WEB.jpg",
   },
   {
     id: 373,
@@ -3480,7 +3480,7 @@ export const products = [
     name: "Nutricion X 240 ml Keratina",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3LoBUu0ppJaM9wwtnbStBLV8Ay3g4_jlVwQ&s",
   },
   {
     id: 374,
@@ -3489,7 +3489,7 @@ export const products = [
     name: "Nutricion X 240 ml Lino",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUMwHyfCswdshVNo1xKxHY4-dr-YNGjIhaBw&s",
   },
   {
     id: 375,
@@ -3498,7 +3498,7 @@ export const products = [
     name: "Nutricion X 240 ml Argan",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4mjp-zlwYrasw4WKqZ8LD9UNU3aZ7V5cJtQ&s",
   },
   {
     id: 376,
@@ -3507,7 +3507,7 @@ export const products = [
     name: "Magic Serum Reparador de puntes x 50 ml",
     description: "",
     price: 5900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_919097-MLU74116297448_012024-O.webp",
   },
   {
     id: 377,
@@ -3516,7 +3516,7 @@ export const products = [
     name: "CERA MODELADORA X70",
     description: "",
     price: 4000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhb8AjHB6WubYuFoHKrE9-LHK83lfflPe4Q&s",
   },
   {
     id: 378,
@@ -3525,7 +3525,7 @@ export const products = [
     name: "Brillo Restaurador de puntas x 210 ml",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/115/078/products/20240227_200219-7581c69b1bf5a2cf7a17090752215662-640-0.png",
   },
   {
     id: 379,
@@ -3534,7 +3534,7 @@ export const products = [
     name: "Fijador spray extrafuerte x 360 ml",
     description: "",
     price: 6000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/em1004-6c642b17ede448efa317000621026664-640-0.jpg",
   },
   {
     id: 380,
@@ -3543,7 +3543,7 @@ export const products = [
     name: "Fijador spray fuerte x 360 ml",
     description: "",
     price: 6000,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/em1004-6c642b17ede448efa317000621026664-640-0.jpg",
   },
   {
     id: 381,
@@ -3552,7 +3552,7 @@ export const products = [
     name: "Mousse fijador x 210 ml",
     description: "",
     price: 5600,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/em1008-3a9f0017ce3f10968a17000621224970-1024-1024.jpg",
   },
   {
     id: 382,
@@ -3561,7 +3561,7 @@ export const products = [
     name: "Secaesmalte en aerosol x 210 ml",
     description: "",
     price: 5200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/em1006-33df9cdf825ea2601e17000620590189-480-0.jpg",
   },
   {
     id: 383,
@@ -3570,7 +3570,7 @@ export const products = [
     name: "Alisado Manzana x 1000 cc",
     description: "",
     price: 15200,
-    image: "",
+    image: "https://mmdistribuidora.com.ar/wp-content/uploads/2024/10/EV03.jpg",
   },
   {
     id: 384,
@@ -3579,7 +3579,7 @@ export const products = [
     name: "Alisado Chocolate x 1000 cc",
     description: "",
     price: 15200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7qWUx0anUwAVEqjg872s-LWqk8o8YmTNHcA&s",
   },
   {
     id: 385,
@@ -3588,7 +3588,7 @@ export const products = [
     name: "Alisado Lima x 1000 cc",
     description: "",
     price: 15200,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_671617-MLA75346925127_032024-O.webp",
   },
   {
     id: 386,
@@ -3597,7 +3597,7 @@ export const products = [
     name: "Alisado Keratin 2,3 x 1000 cc",
     description: "",
     price: 15200,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_793140-MLA79339037936_092024-O.webp",
   },
   {
     id: 387,
@@ -3606,7 +3606,7 @@ export const products = [
     name: "Alisado fortex gol x 1000 cc",
     description: "",
     price: 15200,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_830708-MLA69626403431_052023-O.webp",
   },
   {
     id: 388,
@@ -3615,7 +3615,7 @@ export const products = [
     name: "Botox capilar x 1000",
     description: "",
     price: 15200,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_928032-MLA82967615313_032025-O.webp",
   },
   {
     id: 389,
@@ -3624,7 +3624,7 @@ export const products = [
     name: "AMPOLLA PROTECTORA PLEX X3ML",
     description: "",
     price: 2700,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/AMPOLLA-PLEX_1080x.jpg?v=1750165589",
   },
   {
     id: 390,
@@ -3633,7 +3633,7 @@ export const products = [
     name: "AMPOLLA SILVER X9ML",
     description: "",
     price: 2400,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpQT4_N2MaJESTAuN0L5OGRxqQOWGJd6o3fg&s",
   },
   {
     id: 391,
@@ -3643,7 +3643,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 3200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/003/619/233/products/photoroom-20231021_152134-c662e677015902ffc516979129940790-1024-1024.png",
   },
   {
     id: 392,
@@ -3652,7 +3652,7 @@ export const products = [
     name: "Shampoo BTX con Acido Hialuronico + aminoacidos X350",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/Mesadetrabajo18_6ee2a153-7591-460c-9340-b1c598e78470_800x.png?v=1750168909",
   },
   {
     id: 393,
@@ -3661,7 +3661,7 @@ export const products = [
     name: "Acondicionador BTX con Acido Hialuronico + aminoacidos X350",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/btx-acondicionador1-c0e894eccae80436ff15548350731480-480-0.jpg",
   },
   {
     id: 394,
@@ -3670,7 +3670,7 @@ export const products = [
     name: "Shampoo BIOLISS (sin Sulfato) X350",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwpoHXzr_ftyb6E9GBLcLqIvGJWU-Wyn2_ig&s",
   },
   {
     id: 395,
@@ -3679,7 +3679,7 @@ export const products = [
     name: "Shampoo BIOLISS (sin Sulfato) X900",
     description: "",
     price: 17500,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/products/Sintitulo-1_13.png?v=1750168919",
   },
   {
     id: 396,
@@ -3688,7 +3688,7 @@ export const products = [
     name: "Acondicionador BIOLISS (sin Sulfato) X350",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/Mesadetrabajo20_91004ccc-da8d-4441-8b8c-e0ed0d51e6ac.png?v=1750168918",
   },
   {
     id: 397,
@@ -3697,7 +3697,7 @@ export const products = [
     name: "Acondicionador BIOLISS (sin Sulfato) X900",
     description: "",
     price: 17500,
-    image: "",
+    image: "https://tiendapeluqueros.com.ar/wb/wp-content/uploads/2023/03/acondicionador-bioliss-900ml-bonmetique.jpg",
   },
   {
     id: 398,
@@ -3706,7 +3706,7 @@ export const products = [
     name: "Shampoo BLACK x350ml",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/Mesadetrabajo17_27eeca73-0810-45ff-a33d-f4acbee5d7dd_800x.png?v=1750168803",
   },
   {
     id: 399,
@@ -3715,7 +3715,7 @@ export const products = [
     name: "Acondicionador BLACK x350ml",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6VubEMHQSXls44OnB3pVz8ilaBhHeewFt6Q&s",
   },
   {
     id: 400,
@@ -3724,7 +3724,7 @@ export const products = [
     name: "Mascara matizadora BLACK x300ml",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/products/Sintitulo-1_5_afd216cf-902d-46c4-931c-6bd26236ea8c_800x.png?v=1750168802",
   },
   {
     id: 401,
