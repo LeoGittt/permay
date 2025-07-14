@@ -3733,7 +3733,7 @@ export const products = [
     name: "Shampoo SILVER X350",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/SHAMPOOSILVER_fc8e4180-a151-48ac-9f4f-d3f369aeb2ac.png?v=1750168816",
   },
   {
     id: 402,
@@ -3742,7 +3742,7 @@ export const products = [
     name: "Acondicionador SILVER X350",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/products/Sintitulo-1_6_900x.png?v=1750168903",
   },
   {
     id: 403,
@@ -3751,7 +3751,7 @@ export const products = [
     name: "MASCARA SILVER X300",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4t-CWcES0opwBzenP5k22a1o3uFbtMSXsg&s",
   },
   {
     id: 404,
@@ -3760,7 +3760,7 @@ export const products = [
     name: "Shampoo Neutro DETOX X350",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNxm4Czx4lJeqGRpN3762H-KFow-gHJHD5wg&s",
   },
   {
     id: 405,
@@ -3769,7 +3769,7 @@ export const products = [
     name: "Shampoo Rulos y Ondas X350",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn0JOldRwiYhIVhuipJqkWhGxrDy4qdMCxMg&s",
   },
   {
     id: 406,
@@ -3778,7 +3778,7 @@ export const products = [
     name: "Acondicionador Rulos y Ondas X350",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/Mesadetrabajo28.png?v=1750168806",
   },
   {
     id: 407,
@@ -3787,7 +3787,7 @@ export const products = [
     name: "Activador de Rulos con Aceite de Macadamia X300",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/activador-rulos1-eeb25201b1182b92fc15548367250032-1024-1024.jpg",
   },
   {
     id: 408,
@@ -3796,7 +3796,7 @@ export const products = [
     name: "Shampoo Acide (antioxidante) X350",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdaNclJFBY8FTYhRinkw5EHyGnW8Ezdrf0NA&s",
   },
   {
     id: 409,
@@ -3805,7 +3805,7 @@ export const products = [
     name: "Tratamiento Acide (antioxidante) X350",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QqLfViQjSriUMkBB_HdovF8dAmli2Hhq3Q&s",
   },
   {
     id: 410,
@@ -3814,7 +3814,7 @@ export const products = [
     name: "Tratamiento Acide (antioxidante) X900",
     description: "",
     price: 13500,
-    image: "",
+    image: "https://dcdn-us.mitiendanube.com/stores/004/987/895/products/sin-titulo-1-08-2b9a65b9e8f32e880417371396174459-480-0.jpg",
   },
   {
     id: 411,
@@ -3823,7 +3823,7 @@ export const products = [
     name: "Shampoo Restaurador 2 minutos X350",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/Mesadetrabajo23_73f242b2-b968-422d-b02c-2abef53f1d6e_800x.png?v=1750168924",
   },
   {
     id: 412,
@@ -3832,7 +3832,7 @@ export const products = [
     name: "Shampoo Restaurador 2 minutos X900",
     description: "",
     price: 13500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_875287-MLA51162529975_082022-O.webp",
   },
   {
     id: 413,
@@ -3841,7 +3841,7 @@ export const products = [
     name: "Restaurador 2 minutos con KERATINA X350",
     description: "",
     price: 7500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/887/684/products/bonmetique-restaurador-2-min1-b5cb8b26cd59e0f05b15968122279516-640-0.jpg",
   },
   {
     id: 414,
@@ -3850,7 +3850,7 @@ export const products = [
     name: "Restaurador 2 minutos con KERATINA X900",
     description: "",
     price: 13500,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/products/Sintitulo-1_2.png?v=1750168922",
   },
   {
     id: 415,
@@ -3859,7 +3859,7 @@ export const products = [
     name: "Protector Termico",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/protector-termico-editado1-488550e10c044c824316300978613273-1024-1024.jpg",
   },
   {
     id: 416,
@@ -3868,7 +3868,7 @@ export const products = [
     name: "Control Style Fijador Suave",
     description: "",
     price: 6800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/887/684/products/bonmetique-control1-3dbd0b7b52994ab7ba15967410693702-640-0.jpg",
   },
   {
     id: 417,
@@ -3877,7 +3877,7 @@ export const products = [
     name: "2 Phase Nutritivo",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYLKqWm_0HSXUcUMMRS5J5rTl6jtNsJLTYBg&s",
   },
   {
     id: 418,
@@ -3886,7 +3886,7 @@ export const products = [
     name: "Cera Modeladora",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/products/Sintitulo-1_8.png?v=1750168892",
   },
   {
     id: 419,
@@ -3895,7 +3895,7 @@ export const products = [
     name: "Ampolla Mejorador de Tinción - Anticana -",
     description: "",
     price: 1300,
-    image: "",
+    image: "https://www.plumari.com.ar/wp-content/uploads/2016/07/Anticana-480x420.png",
   },
   {
     id: 420,
@@ -3904,7 +3904,7 @@ export const products = [
     name: "Ampollas Intensificador COBRIZOS",
     description: "",
     price: 2000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReWmztc1DIw31oaevnEsY8szLw4ws-Ly7dKg&s",
   },
   {
     id: 421,
@@ -3913,7 +3913,7 @@ export const products = [
     name: "Ampollas Intensificador Rojo",
     description: "",
     price: 2000,
-    image: "",
+    image: "https://tiendapeluqueros.com.ar/wb/wp-content/uploads/2024/09/ampolla-rojos-unidad.jpg",
   },
   {
     id: 422,
@@ -3922,7 +3922,7 @@ export const products = [
     name: "Polvo Decolorante 20 GR",
     description: "",
     price: 2500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAr6fLbvb1-Rm9xIV3oNgZu6v4wlURWFfCUg&s",
   },
   {
     id: 423,
@@ -3931,7 +3931,7 @@ export const products = [
     name: "Polvo Decolorante 1+3 MADE IN ITALY 70 GR",
     description: "",
     price: 4500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsngoTWnLMdiouKbrN4I-1DsevlRsy9gvVsQ&s",
   },
   {
     id: 424,
@@ -3941,7 +3941,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 2000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoX3m6_8wexpOTIkI4Y2_VD8GFnMFGNCWZ3w&s",
   },
   {
     id: 425,
@@ -3950,7 +3950,7 @@ export const products = [
     name: "Coloracion semipermanente Fantasia - unidad",
     description: "",
     price: 2000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjlW-sukz_ggnB1sjmXRa79C_WSLolKD2WkQ&s",
   },
   {
     id: 426,
@@ -3959,7 +3959,7 @@ export const products = [
     name: "Polvo Decolorante-resultado perfecto-sobre x 30 g.- unidad.-",
     description: "",
     price: 1600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8HkTCkG9r2fr0HzCMWfh5_tO5-avuzpvKAg&s",
   },
   {
     id: 427,
@@ -3968,7 +3968,7 @@ export const products = [
     name: "Polvo Decolorante-resultado perfecto-sobre x 70 g.- unidad.-",
     description: "",
     price: 3100,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDoCBNXrSNMtFQ6Z6Z0SZOdVQnJJcs_QBNIA&s",
   },
   {
     id: 428,
@@ -3977,7 +3977,7 @@ export const products = [
     name: "Oleo Keratina y Argán-frasco x 60 ml",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ5liGKXlp1MHTT6wl7w4orCZF2Ocq0LFeuw&s",
   },
   {
     id: 429,
@@ -3986,7 +3986,7 @@ export const products = [
     name: "Shampoo Neutro-pre tratamiento-sobre x 10 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/shampoo-neutro-x-10-gr-mary-bosques1-bf0b0c0aadf453d10015996000157894-1024-1024.jpg",
   },
   {
     id: 430,
@@ -3995,7 +3995,7 @@ export const products = [
     name: "Glaseado de Keratina-blindaje en caliente-sobre x 10 g",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUHyC62v1VcgOCtZxG5Wj5h33yC78iDJfnew&s",
   },
   {
     id: 431,
@@ -4004,7 +4004,7 @@ export const products = [
     name: "Brillo 3 D-plastificante capilar-sobre x 10 g",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2Bk0jUZ24eFdrtxX2oHdPZVSmmbJJMUonQ&s",
   },
   {
     id: 432,
@@ -4013,7 +4013,7 @@ export const products = [
     name: "Shock Acido-equilibrante post tratamientos quimicos-sobre x 20 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2d6pn6DFke0KZu3xkC13_RZv0ZPPUj6jm0w&s",
   },
   {
     id: 433,
@@ -4022,7 +4022,7 @@ export const products = [
     name: "911 Capilar-rescate inmediato-sin enjuage-sobre x 10 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJnJ83R27fpdXuOkSkC5fB7AOy4y-_ur2kgg&s",
   },
   {
     id: 434,
@@ -4031,7 +4031,7 @@ export const products = [
     name: "Crema de Argan-regeneración capilar con células madre-sobre x 20 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://d22fxaf9t8d39k.cloudfront.net/45db8c018813221b2228f3783848fd493ac4feb6246e22a5c106e1795d48e990105509.jpeg",
   },
   {
     id: 435,
@@ -4040,7 +4040,7 @@ export const products = [
     name: "Keratina Express-crema para peinar-sin enjuague-sobre x 10 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2UxEl__jSepAN-JUWicM1dn1dDBs7o7lQ-A&s",
   },
   {
     id: 436,
@@ -4049,7 +4049,7 @@ export const products = [
     name: "3' Minutos-tratamiento reparador intensivo-sobre x 20 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/tratamiento-reparador-3-minutos-x-20-gr-mary-bosques1-fd1b67204d2b27af0b15996002100247-480-0.jpg",
   },
   {
     id: 437,
@@ -4058,7 +4058,7 @@ export const products = [
     name: "Ablandador de Canas-con extracto de almendras-sobre x 10 ml.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://www.wendy.com.ar/wp-content/uploads/2023/05/descarga-2-10.jpg",
   },
   {
     id: 438,
@@ -4067,7 +4067,7 @@ export const products = [
     name: "Botoxx Capilar-reestructurante y rejuvenecedor-sobre x 20 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/botoxx-capilar-x-20-gr-mary-bosques1-2fd23220c5c71a50fe15995983705010-1024-1024.jpg",
   },
   {
     id: 439,
@@ -4076,7 +4076,7 @@ export const products = [
     name: "Oleo Keratina y Argan EN CREMA-ungüento capilar-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/oleo-en-crema-keratina-y-argan-x-20-gr-mary-bosques1-c13107ce95ea76486b15995996660602-1024-1024.jpg",
   },
   {
     id: 440,
@@ -4085,7 +4085,7 @@ export const products = [
     name: "Oleo Keratina y Argán-sobre x 10 ml.",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/oleo-keratina-y-argan-con-lino-x-10-ml-mary-bosques1-134788100e3470193f15995997044674-640-0.jpg",
   },
   {
     id: 441,
@@ -4094,7 +4094,7 @@ export const products = [
     name: "Keratina en Crema-keratinizacion capilar-sobre x 20 g.",
     description: "",
     price: 900,
-    image: "",
+    image: "https://distribuidoraelizabeth.com.ar/assets/uploads/c168f1e72122f9aa196d106f1e901f96.png",
   },
   {
     id: 442,
@@ -4103,7 +4103,7 @@ export const products = [
     name: "60 Segundos-tratamiento reparador diario-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/tratamiento-reparador-diario-60-segundos-x-20-gr-mary-bosques1-485b8593f01efdb26315996002306859-1024-1024.jpg",
   },
   {
     id: 443,
@@ -4112,7 +4112,7 @@ export const products = [
     name: "Cristales de Keratina-pura keratina para tu color-sobre x 10 ml",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/cristales-de-keratina-x-10-ml-mary-bosques1-6bf7a8cf607c57dfe215995988531680-640-0.jpg",
   },
   {
     id: 444,
@@ -4121,7 +4121,7 @@ export const products = [
     name: "Crema de Coco y Almendras-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/crema-de-coco-x-20-gr-mary-bosques1-100f5a51722904e28e15995986575760-1024-1024.jpg",
   },
   {
     id: 445,
@@ -4130,7 +4130,7 @@ export const products = [
     name: "Palta en Crema-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://cdn.batitienda.com/baticloud/images/product_picture_ee2682be299048f991aa1fe52cc77f5b_638581269033791797_0_m.jpg",
   },
   {
     id: 446,
@@ -4139,7 +4139,7 @@ export const products = [
     name: "Shampoo Pro K-uso frecuente-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://www.wendy.com.ar/wp-content/uploads/2023/05/images-33-1.jpg",
   },
   {
     id: 447,
@@ -4148,7 +4148,7 @@ export const products = [
     name: "Acondicionador Pro K-uso frecuente-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://d22fxaf9t8d39k.cloudfront.net/bd2134103076f5e3315a98a996f47fe056f18bb622681f6e82b885a9bd0d1b91105509.jpeg",
   },
   {
     id: 448,
@@ -4157,7 +4157,7 @@ export const products = [
     name: "Crema antiamarillos-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/crema-anti-amarillos-x-20-gr-mary-bosques1-99799fcf9dd8f1d87215995984823127-1024-1024.jpg",
   },
   {
     id: 449,
@@ -4166,7 +4166,7 @@ export const products = [
     name: "Shock Acido Express-restaurador instantáneo-sin enjuague-sobre x 10 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSguViQUvj8Fkxt5qKx3-MDt0Sl4QgtJsBzmA&s",
   },
   {
     id: 450,
@@ -4175,7 +4175,7 @@ export const products = [
     name: "Lifting en crema-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/pouch-lifting-en-crema1-32868d0c3df201a54a16420863314271-1024-1024.jpg",
   },
   {
     id: 451,
@@ -4184,7 +4184,7 @@ export const products = [
     name: "Cicatri Total-sobre x 20 g",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5VTsRB4SHx73GFk_Gn0wv6xghz0PVhbqciA&s",
   },
   {
     id: 452,
@@ -4193,7 +4193,7 @@ export const products = [
     name: "B5 Pro Vitamina recuperador capílar sobre",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxBem1d52bYXQLSfJw0PnjSsEAA9o5eBKO_w&s",
   },
   {
     id: 453,
@@ -4202,7 +4202,7 @@ export const products = [
     name: "Keratina en Crema-keratinizacion capilar-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCfsTt1Pmgjp8TwasjFj94LNVErcYSFReK-w&s",
   },
   {
     id: 454,
@@ -4211,7 +4211,7 @@ export const products = [
     name: "Crema de Argan-regeneración capilar con células madre-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://cdn.batitienda.com/baticloud/images/product_picture_160f48cc5930471e8e66c9b6f7ac42c2_638374027986687690_0_m.jpg",
   },
   {
     id: 455,
@@ -4220,7 +4220,7 @@ export const products = [
     name: "3' Minutos-tratamiento reparador intensivo-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy-LN090kA0egLUYsux8k7r43MIsiVzTNYJA&s",
   },
   {
     id: 456,
@@ -4229,7 +4229,7 @@ export const products = [
     name: "Shock Acido-equilibrante post tratamientos quimicos-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8sht_HhYCitHJ2r-z5YGVyEG5XB0YM9MB4A&s",
   },
   {
     id: 457,
@@ -4238,7 +4238,7 @@ export const products = [
     name: "Botoxx Capilar-reestructurante y rejuvenecedor-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_692142-MLA72308666531_102023-O.webp",
   },
   {
     id: 458,
@@ -4247,7 +4247,7 @@ export const products = [
     name: "Crema de Coco y Almendras-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/crema-de-coco-doypack-x-250-gr-mary-bosques1-ec96cc37194794bf7815958915426659-1024-1024.jpg",
   },
   {
     id: 459,
@@ -4256,7 +4256,7 @@ export const products = [
     name: "Palta en Crema-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/palta-en-crema-doypack-x-250-gr-mary-bosques1-623a44518ce45214d815958914688363-1024-1024.jpg",
   },
   {
     id: 460,
@@ -4265,7 +4265,7 @@ export const products = [
     name: "60 Segundos-tratamiento reparador diario-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGm_pXsuwDj-_6jlFqcD02QPGxf1_qGn4gA&s",
   },
   {
     id: 461,
@@ -4274,7 +4274,7 @@ export const products = [
     name: "Crema antiamarillos-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBWUuNSzpdpoXkW4HrGTMI4dkBlqwy0xRpyw&s",
   },
   {
     id: 462,
@@ -4283,7 +4283,7 @@ export const products = [
     name: "Lifting en crema-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyZUJ5X1I6nYzqYOHtICD5o6CK6ipeJZwksw&s",
   },
   {
     id: 463,
@@ -4292,7 +4292,7 @@ export const products = [
     name: "Oleo Keratina y Argan EN CREMA-ungüento capilar-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/244/041/products/doypack-oleo-en-crema1-801d25a08c433a0fa216420876711609-480-0.jpg",
   },
   {
     id: 464,
@@ -4301,7 +4301,7 @@ export const products = [
     name: "Cicatri Total-doypack x 250 g.",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2LT2xh7_LkutRVy-2yfOgiJSzKvQC9OzyHw&s",
   },
   {
     id: 465,
@@ -4310,7 +4310,7 @@ export const products = [
     name: "B5 Pro Vitamina recuperador capilar doypack x 250 gs",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://cosmetica-capilar.com.ar/wp-content/uploads/2024/08/800x1071_SOBRE_GRANDE_PRO-VITAMINA-B5.jpg",
   },
   {
     id: 466,
@@ -4319,7 +4319,7 @@ export const products = [
     name: "Veganos-doypack x 250 g.- mango y café verde",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3kQU1kBcCMVRXhdIJsGHTVvljRrNmNdl6lQ&s",
   },
   {
     id: 467,
@@ -4328,7 +4328,7 @@ export const products = [
     name: "Veganos-doypack x 250 g.- naranja y papaya",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Lkg-75abDMi6Him_QIa84RRAWvzzLiea0Q&s",
   },
   {
     id: 468,
@@ -4337,7 +4337,7 @@ export const products = [
     name: "Veganos-doypack x 250 g.- banana y kiwi",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHyY8BRI4zhm7juwPUjWPxTRwuH7Nlg6xXtw&s",
   },
   {
     id: 469,
@@ -4346,7 +4346,7 @@ export const products = [
     name: "Keratina Express-crema para peinar-sin enjuague-pomo x 150 g.",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_981710-MLA42646843859_072020-O.webp",
   },
   {
     id: 470,
@@ -4355,7 +4355,7 @@ export const products = [
     name: "Emulsion Hidratante-rulos perfectos-sin enjuague-pomo x 150 g.",
     description: "",
     price: 4500,
-    image: "",
+    image: "https://distribuidoraelizabeth.com.ar/assets/uploads/449a7583cbbe46eee9b9e9562466faa4.jpg",
   },
   {
     id: 471,
@@ -4364,7 +4364,7 @@ export const products = [
     name: "Aceite Natural-con extracto de almendras-frasco x 60 ml",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://www.casaflorian.com.ar/wp-content/uploads/2023/02/104-016-01_A.jpg",
   },
   {
     id: 472,
@@ -4373,7 +4373,7 @@ export const products = [
     name: "Argan express sin enjuague sobre x 20 gr",
     description: "",
     price: 900,
-    image: "",
+    image: "https://cdn.v2.tiendanegocio.com/gallery/24718/img_24718_194183e063d.png?class=sm",
   },
   {
     id: 473,
@@ -4382,7 +4382,7 @@ export const products = [
     name: "Argan Crema de peinar Express x 150 gr",
     description: "",
     price: 6800,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_870203-MLA81500335458_012025-O.webp",
   },
   {
     id: 474,
@@ -4391,7 +4391,7 @@ export const products = [
     name: "911 capilar caja SOBRE x 10 gr--rescate inmediato s/enj",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJnJ83R27fpdXuOkSkC5fB7AOy4y-_ur2kgg&s",
   },
   {
     id: 475,
@@ -4400,7 +4400,7 @@ export const products = [
     name: "911 capilar frasco x 60 gr",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/mb1026-adfffa8e422d1de09417195153875968-480-0.png",
   },
   {
     id: 476,
@@ -4409,7 +4409,7 @@ export const products = [
     name: "911 con enjuague SOBRE x 20 gr",
     description: "",
     price: 900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-iz7vME_4BarluP1df06hFIfeUJuC-gYNg&s",
   },
   {
     id: 477,
@@ -4418,7 +4418,7 @@ export const products = [
     name: "911 Tratamiento doy pack x 250 gr",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_905721-MLA84486663901_052025-O.webp",
   },
   {
     id: 478,
@@ -4427,7 +4427,7 @@ export const products = [
     name: "Pincel tintura grande 50101",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_609325-MLA72413064580_102023-O.webp",
   },
   {
     id: 479,
@@ -4436,7 +4436,7 @@ export const products = [
     name: "Pincel tintura chico 50102",
     description: "",
     price: 1000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjHHmeTff3vONz4Xa3gtIeGa0FqPy4miqkaQ&s",
   },
   {
     id: 480,
@@ -4445,7 +4445,7 @@ export const products = [
     name: "Gorro termico ELECTRICO C/ ENCHUFE",
     description: "",
     price: 18000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_753824-MLA51341054599_082022-O.webp",
   },
   {
     id: 481,
@@ -4454,7 +4454,7 @@ export const products = [
     name: "Gorros de ducha colores 503",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_932522-MLA80786252270_112024-O.webp",
   },
   {
     id: 482,
@@ -4463,7 +4463,7 @@ export const products = [
     name: "Gorros de ducha transparente 502",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_746723-MLA52988107811_122022-O.jpg",
   },
   {
     id: 483,
@@ -4472,7 +4472,7 @@ export const products = [
     name: "Gorro termico ELECTRICO C/ ENCHUFE",
     description: "",
     price: 18000,
-    image: "",
+    image: "https://esteticaenlinea.com.ar/cdn/shop/files/Disenosintitulo_6_a38c8b39-2056-446b-949c-02f2f5d40ca2_500x500.png?v=1698410090",
   },
   {
     id: 484,
@@ -4481,7 +4481,7 @@ export const products = [
     name: "Gorros de ducha colores 503",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDS7Bf29BLBOLQMECaSlvkulTBFjdeswIBSw&s",
   },
   {
     id: 485,
@@ -4490,7 +4490,7 @@ export const products = [
     name: "Gorros de ducha transparente 502",
     description: "",
     price: 1500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_923881-CBT78066753486_082024-C.jpg",
   },
   {
     id: 486,
@@ -4499,7 +4499,7 @@ export const products = [
     name: "Peinador tela para corte 519",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/031/514/products/capa-lisa-art-5191-56d57191122a56c63e16933356402036-480-0.jpg",
   },
   {
     id: 487,
@@ -4508,7 +4508,7 @@ export const products = [
     name: "Peinador plastico p/ tintura 516",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_609671-MLA85159422244_052025-O.webp",
   },
   {
     id: 488,
@@ -4517,7 +4517,7 @@ export const products = [
     name: "Cepillo Escova polvo",
     description: "",
     price: 6000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSykJHzOg82oltRVr5Bn8ycjV6DMwqIiNA6yg&s",
   },
   {
     id: 489,
@@ -4526,7 +4526,7 @@ export const products = [
     name: "Gel After day x 250 gr",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/423/621/products/gel-mais-cachos-nuevo1-07197f661a532fd27616740629487657-1024-1024.png",
   },
   {
     id: 490,
@@ -4535,7 +4535,7 @@ export const products = [
     name: "Gel After day x 1 kilo GELATINA",
     description: "",
     price: 11200,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_917735-MLU74229296762_022024-O.webp",
   },
   {
     id: 491,
@@ -4544,7 +4544,7 @@ export const products = [
     name: "Crema de peinar",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/980/156/products/1705088791051-95ca5aa7c212e0d31717103520135119-1024-1024.jpg",
   },
   {
     id: 492,
@@ -4553,7 +4553,7 @@ export const products = [
     name: "Mais Lisos x kg ( LIBERADO)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_933735-MLM45824037274_052021-O.webp",
   },
   {
     id: 493,
@@ -4562,7 +4562,7 @@ export const products = [
     name: "Abacate bomba de vitaminas X kg( VEGANO)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://images.fravega.com/f1000/d88ebe879b0b70c1979c650e9b873697.jpg",
   },
   {
     id: 494,
@@ -4571,7 +4571,7 @@ export const products = [
     name: "Babosa hidronutritivo x kg ( LIBERADO)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_892171-MLA33047841268_112019-O.webp",
   },
   {
     id: 495,
@@ -4580,7 +4580,7 @@ export const products = [
     name: "Divino Potinho KID x kg ( LIBERADO)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb370lfwGfo8FjZ0eqNEBA3ZwNGSLPBOg2Dw&s",
   },
   {
     id: 496,
@@ -4589,7 +4589,7 @@ export const products = [
     name: "Dona Skala 2 en 1 x kg ( LIBERADO)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRun9r_jhctQ3rGKj_DVFaZroMOfILCC2mE9Q&s",
   },
   {
     id: 497,
@@ -4598,7 +4598,7 @@ export const products = [
     name: "Bomba SOS",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/bomba-de-vitaminas-editada1-59f89354f209f8780816185922497024-640-0.jpg",
   },
   {
     id: 498,
@@ -4607,7 +4607,7 @@ export const products = [
     name: "Mais Cachos",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9m9FbypraT7pRkhWwcObBWm6F2hyMUsFg0w&s",
   },
   {
     id: 499,
@@ -4616,7 +4616,7 @@ export const products = [
     name: "Manteca de Karite",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/manteca-de-karite-editada1-55de842208a28cb53a16185948427649-1024-1024.jpg",
   },
   {
     id: 500,
@@ -4625,7 +4625,7 @@ export const products = [
     name: "Vinagre de MACA",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_693794-MLU77433381804_072024-O.webp",
   },
   {
     id: 501,
