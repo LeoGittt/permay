@@ -4634,7 +4634,7 @@ export const products = [
     name: "Oleo de Coco",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcg4179d3xko5Fu7KiG3dvSw0FjQcea-3w6g&s",
   },
   {
     id: 502,
@@ -4643,7 +4643,7 @@ export const products = [
     name: "Amido de Milho",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_726281-MLA73844820159_012024-O.jpg",
   },
   {
     id: 503,
@@ -4652,7 +4652,7 @@ export const products = [
     name: "Divino Potao",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt19oZM153rQSP1S027rLJvzD94pD-dd-SLg&s",
   },
   {
     id: 504,
@@ -4661,7 +4661,7 @@ export const products = [
     name: "Oleo de Argan",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/argan-editado-16068bb6f44f546f2817253876792207-1024-1024.jpg",
   },
   {
     id: 505,
@@ -4670,7 +4670,7 @@ export const products = [
     name: "Maracuja",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/423/621/products/maracuja-9899f3255deff59b9617012719593864-1024-1024.png",
   },
   {
     id: 506,
@@ -4679,7 +4679,7 @@ export const products = [
     name: "Coctel de Frutas kid",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/coquetel-editado-f95111ffd23f11b3c817253882152922-1024-1024.jpg",
   },
   {
     id: 507,
@@ -4688,7 +4688,7 @@ export const products = [
     name: "Potao Desmaiado",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://lasmargaritas.vtexassets.com/arquivos/ids/2165407-800-auto?v=638409161261100000&width=800&height=auto&aspect=true",
   },
   {
     id: 508,
@@ -4697,7 +4697,7 @@ export const products = [
     name: "Potao de Amor",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://www.siemprefarmacias.com.ar/contenido/productos/original/2024/04/12/1712944325-2434.webp",
   },
   {
     id: 509,
@@ -4706,7 +4706,7 @@ export const products = [
     name: "Café Verde",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF-vQ1yicyt4JFoNhWeWVz4yuxAdohQWnKZA&s",
   },
   {
     id: 510,
@@ -4715,7 +4715,7 @@ export const products = [
     name: "Mais Crespos",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQdlJ8OYzyULvJp4Iuf_lUWcipC1aSpIv79A&s",
   },
   {
     id: 511,
@@ -4724,7 +4724,7 @@ export const products = [
     name: "Jaborandi",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/jaborandi-editada1-0d36109c95f56faa6a16185949832841-1024-1024.jpg",
   },
   {
     id: 512,
@@ -4733,7 +4733,7 @@ export const products = [
     name: "Maionese",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_857346-MLA73616706618_122023-O.jpg",
   },
   {
     id: 513,
@@ -4742,7 +4742,7 @@ export const products = [
     name: "Mango",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_746109-MLA72841807726_112023-O.webp",
   },
   {
     id: 514,
@@ -4751,7 +4751,7 @@ export const products = [
     name: "Banana",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_644297-MLA45278561262_032021-O.webp",
   },
   {
     id: 515,
@@ -4760,7 +4760,7 @@ export const products = [
     name: "Ceramida",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://m.media-amazon.com/images/I/8120x13-6BL._UF1000,1000_QL80_.jpg",
   },
   {
     id: 516,
@@ -4769,7 +4769,7 @@ export const products = [
     name: "Caju",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSrXLoLjMfU2p64pUbPxYxY3jTZOdknKyqOg&s",
   },
   {
     id: 517,
@@ -4778,7 +4778,7 @@ export const products = [
     name: "Banho de cristal",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/003/862/088/products/diseno-sin-titulo-15-96c29cae4308cb6bc217005771342857-1024-1024.png",
   },
   {
     id: 518,
@@ -4787,7 +4787,7 @@ export const products = [
     name: "Lama Negra",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjnLHEK6XaW66liw-8F0YVJZ6GvebvKI9R0A&s",
   },
   {
     id: 519,
@@ -4796,7 +4796,7 @@ export const products = [
     name: "Argila Branca",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/argila-edtiado-7ac861030a76b5d60317253884114610-1024-1024.jpg",
   },
   {
     id: 520,
@@ -4805,7 +4805,7 @@ export const products = [
     name: "Leite Vegetal",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhBPGA3XgUFF5dFJBcQT8lomkl9esv2KWO_w&s",
   },
   {
     id: 521,
@@ -4814,7 +4814,7 @@ export const products = [
     name: "Bomba 12 EN 1",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZZrvmJ-NqYLo3czJZS7Y8IeNE-IzFzbNtlw&s",
   },
   {
     id: 522,
@@ -4823,7 +4823,7 @@ export const products = [
     name: "Genetics",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://vlasy.com.ar/wp-content/uploads/2022/02/skala-genetiqs.jpg",
   },
   {
     id: 523,
@@ -4832,7 +4832,7 @@ export const products = [
     name: "Divino Cor para cabellos teñidos",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/003/862/088/products/diseno-sin-titulo-29-72720d854856e930ca17005856769941-1024-1024.png",
   },
   {
     id: 524,
@@ -4841,7 +4841,7 @@ export const products = [
     name: "Mais Cachiños KID",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_871345-MLA71673279507_092023-O.webp",
   },
   {
     id: 525,
@@ -4850,7 +4850,7 @@ export const products = [
     name: "Mais Cresphinos KID",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_648467-MLU70537295717_072023-O.webp",
   },
   {
     id: 526,
@@ -4859,7 +4859,7 @@ export const products = [
     name: "Colageno Vegetal",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/980/156/products/565-fdf1ed7169fc09939b17381917391762-1024-1024.jpg",
   },
   {
     id: 527,
@@ -4868,7 +4868,7 @@ export const products = [
     name: "Cacao",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkWQ_4j3nwG6vU5j2bNO3xdAczqLzPLpKOA&s",
   },
   {
     id: 528,
@@ -4877,7 +4877,7 @@ export const products = [
     name: "Bomba Biotina",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://lasmargaritas.vtexassets.com/arquivos/ids/3616708/TRAT-X1000-BOMBA-BIOTINA-SKALA.jpg?v=638847252431030000",
   },
   {
     id: 529,
@@ -4886,7 +4886,7 @@ export const products = [
     name: "Raizes do Morro",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_802697-MLA74039974067_012024-O.webp",
   },
   {
     id: 530,
@@ -4895,7 +4895,7 @@ export const products = [
     name: "Acachonados",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFZemzXVjKjm2rF9RPK1LnVQZs9ZigAym-Q&s",
   },
   {
     id: 531,
@@ -4904,7 +4904,7 @@ export const products = [
     name: "Amido de Milho KID",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_601095-MLU69223185159_052023-O.webp",
   },
   {
     id: 532,
@@ -4913,7 +4913,7 @@ export const products = [
     name: "Nueva MELANCIA",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/003/862/088/products/melancia-186577f855e0ee693717295527912534-480-0.png",
   },
   {
     id: 533,
@@ -4922,7 +4922,7 @@ export const products = [
     name: "Nueva COCO",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpHtFMQieO6sTyitJV3cfRozO3BkbKZtltA&s",
   },
   {
     id: 534,
@@ -4931,7 +4931,7 @@ export const products = [
     name: "Nueva UVA",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACPsdUAHTrmMv723JnITtZQiO7QTbna_Gsg&s",
   },
   {
     id: 535,
@@ -4940,7 +4940,7 @@ export const products = [
     name: "Nueva MORANGO",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://lasmargaritas.vtexassets.com/arquivos/ids/3606088/TRAT-X1000-MORANGO-SKALA.jpg?v=638840477686030000",
   },
   {
     id: 536,
@@ -4949,7 +4949,7 @@ export const products = [
     name: "Nueva Acido glicolico",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4K2QMObUBtKRBUZAEAcrLJW6sa9OlmkXlPg&s",
   },
   {
     id: 537,
@@ -4958,7 +4958,7 @@ export const products = [
     name: "ACLARANTE INSTANTANEO CON MANZANILLA X125",
     description: "",
     price: 6200,
-    image: "",
+    image: "https://farmacityar.vtexassets.com/arquivos/ids/259958-800-auto?v=638609863865070000&width=800&height=auto&aspect=true",
   },
   {
     id: 538,
@@ -4967,7 +4967,7 @@ export const products = [
     name: "Savia Verde FRASCO X420",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzH_-EkU3G4IqcJaqOSMCYV4DJEpoahCIYpQ&s",
   },
   {
     id: 539,
@@ -4976,7 +4976,7 @@ export const products = [
     name: "Sh.Ortiga + Concentr.Puro Ortiga",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk_k_ETxSKEZ5p52yVVD6oDSM4iH9bTMDAGg&s",
   },
   {
     id: 540,
@@ -4985,7 +4985,7 @@ export const products = [
     name: "Enjuague Tratante Ortiga X410",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt_LqWp06TbTDWYUe0gKRlrFHkFlZbVhYurg&s",
   },
   {
     id: 541,
@@ -4994,7 +4994,7 @@ export const products = [
     name: "Loción Tónica Ortiga X120",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyRZpFZnZ_PHOd58zIjQ7jp_Xc3Qt4AQEQSA&s",
   },
   {
     id: 542,
@@ -5003,7 +5003,7 @@ export const products = [
     name: "Loción Tónica Ortiga Concentrada X60",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDCI5F9sRUCElA7i320bqJNQRapVbGM5gRiQ&s",
   },
   {
     id: 543,
@@ -5012,7 +5012,7 @@ export const products = [
     name: "Sh. Detox Natural X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQND6Q17F6936Z3PdbPvGKbSjhVcpuIOwd7Og&s",
   },
   {
     id: 544,
@@ -5021,7 +5021,7 @@ export const products = [
     name: "Acond. Detox Natural X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_823702-MLA49244248743_032022-O.webp",
   },
   {
     id: 545,
@@ -5030,7 +5030,7 @@ export const products = [
     name: "Shampoo Pelo Mixto X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmXcpUoMRzNYlIai81U9HibTBWgtndkfKQQ&s",
   },
   {
     id: 546,
@@ -5039,7 +5039,7 @@ export const products = [
     name: "Acondicionador Pelo Mixto X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5QZHuEFhGdir5HZ7zZv68nXugdJOCk402Iw&s",
   },
   {
     id: 547,
@@ -5048,7 +5048,7 @@ export const products = [
     name: "Shampoo Engrosador X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://www.uomax.com.ar/5509-large_default/shampoo-capilatis-engrosador-x-410-ml.jpg",
   },
   {
     id: 548,
@@ -5057,7 +5057,7 @@ export const products = [
     name: "Acondicionador Engrosador X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://cdn.batitienda.com/baticloud/images/product_picture_2c194cb1eddd49898925d609f6ff0d84_637726023216973786_0_m.jpg",
   },
   {
     id: 549,
@@ -5066,7 +5066,7 @@ export const products = [
     name: "Shampoo Iluminador Puro Rubio X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS4RXTOk1lw2QcL5OMrk2hdL7LlJ7lgFK5L0AmoQaz-w2Z6cbmXyBDkFbOVwDpCCRGy9Q36ZUub4qjVjK4lTskCJ3v58Pt_jQBezqUQjnp-2pbyamuZcYxnxg",
   },
   {
     id: 550,
@@ -5075,7 +5075,7 @@ export const products = [
     name: "Acond. Iluminador Puro Rubio X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYqfjNYKdpD2uFh3jbv9F6dmsaUJuU57loaw&s",
   },
   {
     id: 551,
@@ -5084,7 +5084,7 @@ export const products = [
     name: "Shampoo Brillo Extremo X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Kg71pRS1YwTQAttOZooYoV7X7P1BUrugWw&s",
   },
   {
     id: 552,
@@ -5093,7 +5093,7 @@ export const products = [
     name: "Acondicionador Brillo Extremo X420",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/2912441_f.jpg",
   },
   {
     id: 553,
@@ -5102,7 +5102,7 @@ export const products = [
     name: "Sh. Nectar Ilumi. X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_826115-MLA41296144111_032020-O.webp",
   },
   {
     id: 554,
@@ -5111,7 +5111,7 @@ export const products = [
     name: "Acond. Nectar Ilumin. X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_826115-MLA41296144111_032020-O.webp",
   },
   {
     id: 555,
@@ -5120,7 +5120,7 @@ export const products = [
     name: "Sh. Elixir Rep. Prof. X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7kjw76rTVS5NUJDdSrBAng4yIN9XV1L7-Q&s",
   },
   {
     id: 556,
@@ -5129,7 +5129,7 @@ export const products = [
     name: "Acond. Elixir Rep. Prof. X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_892750-MLA46249372760_062021-O.webp",
   },
   {
     id: 557,
@@ -5138,7 +5138,7 @@ export const products = [
     name: "Sh. Shock Brillo Fab. X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmFH1DZHQkZ_Kkj88Vcq6vJ0K1aLVN1EH8vA&s",
   },
   {
     id: 558,
@@ -5147,7 +5147,7 @@ export const products = [
     name: "Acond. Shock Brillo Fab. X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://soylola.com/20673-thickbox_default/acond-inecto-brillo-fab-x400cc.jpg",
   },
   {
     id: 559,
@@ -5156,7 +5156,7 @@ export const products = [
     name: "Sh. Blindaje C. Frizz X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://simplicityar.vtexassets.com/arquivos/ids/156894-800-auto?v=638198468418470000&width=800&height=auto&aspect=true",
   },
   {
     id: 560,
@@ -5165,7 +5165,7 @@ export const products = [
     name: "Acond. Blindaje C. Frizz X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRkPfCB66yV7HTWOFth-soCEt84wGooE3LQ&s",
   },
   {
     id: 561,
@@ -5174,7 +5174,7 @@ export const products = [
     name: "Sh. Detox Purificante X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP5LKapLDINP2flS8xoLLJLofMR9cEa16UcA&s",
   },
   {
     id: 562,
@@ -5183,7 +5183,7 @@ export const products = [
     name: "Sh. Fuerza Extrema X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQewUQgH98zNZvgYG5hANXD-xFnXkvJaReK7A&s",
   },
   {
     id: 563,
@@ -5192,7 +5192,7 @@ export const products = [
     name: "Acond.Fuerza Extrema X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWWOAQlepx0aG_tqwh_Inp-EO8y68xeO0TKA&s",
   },
   {
     id: 564,
@@ -5201,7 +5201,7 @@ export const products = [
     name: "Sh. Bomba Carbon Pur.X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7wzZEYAIG8FR_Kztpx1yWWkRYHHLRqTWo9A&s",
   },
   {
     id: 565,
@@ -5210,7 +5210,7 @@ export const products = [
     name: "Ac. Bomba Carbon Pur.X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://soylola.com/42620-large_default/acond-inecto-bomba-carbon-pur-x-400ml.jpg",
   },
   {
     id: 566,
@@ -5219,7 +5219,7 @@ export const products = [
     name: "Savia Aminoenriquecida X400",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbBlDOBAKe9aodcH6J8OzqPfSh6m5pruGWSw&s",
   },
   {
     id: 567,
@@ -5228,7 +5228,7 @@ export const products = [
     name: "Savia Natural X400",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3KNNUUR0F9KyqTyxIDpL-001tEpg9M1eHQ&s",
   },
   {
     id: 568,
@@ -5237,7 +5237,7 @@ export const products = [
     name: "Oleo Fabuloso Coco X95",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://farmaciaacosta.com.ar/wp-content/uploads/2024/05/INECTO-OLEO-FABULOSO-AC-COCO-x-95.png",
   },
   {
     id: 569,
@@ -5246,7 +5246,7 @@ export const products = [
     name: "Oleo Fabuloso Macadamia X95",
     description: "",
     price: 10900,
-    image: "",
+    image: "https://farmaciaacosta.com.ar/wp-content/uploads/2024/05/INECTO-OLEO-FABULOSO-AC-MACADAMIA-x-95.png",
   },
   {
     id: 570,
@@ -5255,7 +5255,7 @@ export const products = [
     name: "CREMA DE PEINAR Elixir de Reparación Profunda con Argan y Jalea Real X300",
     description: "",
     price: 6000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQdWJIKyrX20OivMq4kJPn9rXbMSpSiNTvTw&s",
   },
   {
     id: 571,
@@ -5264,7 +5264,7 @@ export const products = [
     name: "CREMA DE PEINAR Rulos Definidos X300",
     description: "",
     price: 6000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3K0Qr3dj_XCm1hmWAwsAVmVYeNx4SsiaZ9w&s",
   },
   {
     id: 572,
@@ -5273,7 +5273,7 @@ export const products = [
     name: "7 Oleos Mágicos X15ML",
     description: "",
     price: 2500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/188/259/products/tratamiento_ampolla-7-oleos-magicos1-7d7d1b9d218415a86916340778330549-1024-10241-204d044d44c9c12aa016585408729408-480-0.jpg",
   },
   {
     id: 573,
@@ -5282,7 +5282,7 @@ export const products = [
     name: "Bomba Nutrición X15ML",
     description: "",
     price: 2600,
-    image: "",
+    image: "https://cdn.batitienda.com/baticloud/images/product_ad79ca21c9684ccfac3c2fd2d2b3c490_637276103445734606_0_m.jpg",
   },
   {
     id: 574,
@@ -5291,7 +5291,7 @@ export const products = [
     name: "Clásico con Vit E y Filtro Solar X30ML",
     description: "",
     price: 5900,
-    image: "",
+    image: "https://perfugroupar.vtexassets.com/arquivos/ids/170529-800-auto?v=637763183186670000&width=800&height=auto&aspect=true",
   },
   {
     id: 575,
@@ -5300,7 +5300,7 @@ export const products = [
     name: "Keratina Líquida X30ML",
     description: "",
     price: 5900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ02AbowMBwP64b-P5GyeYkPuA9kdqaZMqP1g&s",
   },
   {
     id: 576,
@@ -5309,7 +5309,7 @@ export const products = [
     name: "Argán de Morocco X30ML",
     description: "",
     price: 5900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrt3xjNb-_ecbdead-WZDKOA2guEVTEbsrJA&s",
   },
   {
     id: 577,
@@ -5318,7 +5318,7 @@ export const products = [
     name: "ACEITE INECTO ACLARANTE X150ML",
     description: "",
     price: 3900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoYdblEPMBdPKoTWIJU42hUMGnZWIWusQNRw&s",
   },
   {
     id: 578,
@@ -5327,7 +5327,7 @@ export const products = [
     name: "LIQUIDO PARA PERMANENTE Cabellos Delicados, NORMALES O FUERTES X150",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcj-roSm4D4JG7CRC74JBQnmdcdAu4cb1w6Q&s",
   },
   {
     id: 579,
@@ -5336,7 +5336,7 @@ export const products = [
     name: "NEUTRALIZANTE PARA PERMANENTES X850ML",
     description: "",
     price: 7700,
-    image: "",
+    image: "https://www.casaflorian.com.ar/wp-content/uploads/2023/03/225-808-02_A.jpg",
   },
   {
     id: 580,
@@ -5345,7 +5345,7 @@ export const products = [
     name: "NEUTRALIZANTE PARA PERMANENTES X150ML",
     description: "",
     price: 3800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/804/620/products/tratamiento_liquido-neutralizante-permanentes-x150ml1-53046d707d45b301a316340784538654-640-0.jpg",
   },
   {
     id: 581,
@@ -5354,7 +5354,7 @@ export const products = [
     name: "MASCARA 3 MINUTOS ELIXI DE REPARACION PROFUNDA CON ARGAN Y JALEA REAL X250ML",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/804/620/products/tratamiento_mascara-3-elixir-de-reparacion-profunda1-9e0f12d8ebda059c7416340701444351-1024-1024.jpg",
   },
   {
     id: 582,
@@ -5363,7 +5363,7 @@ export const products = [
     name: "MASCARA 3 MINUTOS SHOCK DE BRILLO FABULOSO PH ACIDO 250 ML",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCcFmC0NMGVa484YdZtY7-ntgKNJ-kS-YNEA&s",
   },
   {
     id: 583,
@@ -5372,7 +5372,7 @@ export const products = [
     name: "MASCARA 3 MINUTOS BLINDAJE CONTROL FRIZZ CON COCO Y KARITE 250 ML",
     description: "",
     price: 5800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWsVB4HwmAN652ic7M7trx_iE8TF_ogwgfcw&s",
   },
   {
     id: 584,
@@ -5381,7 +5381,7 @@ export const products = [
     name: "Sh. BTX X400",
     description: "",
     price: 7700,
-    image: "",
+    image: "https://soylola.com/36971-large_default/sh-claridge-botox-x400-cc.jpg",
   },
   {
     id: 585,
@@ -5390,7 +5390,7 @@ export const products = [
     name: "Acond. BTX X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077121-92e917341f0b86892d16861580736118-480-0.jpg",
   },
   {
     id: 586,
@@ -5399,7 +5399,7 @@ export const products = [
     name: "Sh Control Caida X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403074391-17077a02dec58a14fa16861581818993-640-0.jpg",
   },
   {
     id: 587,
@@ -5408,7 +5408,7 @@ export const products = [
     name: "Acond Control Caida X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403074461-6351ea03303c29e95616861582028666-240-0.jpg",
   },
   {
     id: 588,
@@ -5417,7 +5417,7 @@ export const products = [
     name: "Sh. ORO DE ARGAN X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://pedidosfarma.vtexassets.com/arquivos/ids/203294/7794740307651-Shampoo-Proactive-Oro-de-Argan-de-Marruegos-x-400.png?v=638422187066700000",
   },
   {
     id: 589,
@@ -5426,7 +5426,7 @@ export const products = [
     name: "Acond. ORO DE ARGAN X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEMTTLM8z__ilqTKnwu_RB7ZNmgo7Psj6AQ&s",
   },
   {
     id: 590,
@@ -5435,7 +5435,7 @@ export const products = [
     name: "Sh. SHOCK DE KERATINA X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://soylola.com/36978-large_default/sh-claridge-keratina-x400cc.jpg",
   },
   {
     id: 591,
@@ -5444,7 +5444,7 @@ export const products = [
     name: "Acond. SHOCK DE KERATINA X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403076821-160fac63235db63a8416861580163338-640-0.jpg",
   },
   {
     id: 592,
@@ -5453,7 +5453,7 @@ export const products = [
     name: "Sh. BTX HYALURONIC X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077051-e25c34bba5749afd7616861580398396-640-0.jpg",
   },
   {
     id: 593,
@@ -5462,7 +5462,7 @@ export const products = [
     name: "Acond. BTX HYALURONIC X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077121-92e917341f0b86892d16861580736118-480-0.jpg",
   },
   {
     id: 594,
@@ -5471,7 +5471,7 @@ export const products = [
     name: "Sh. BTX BLOND X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077671-87f28b51fc7c74c64e16861580916623-480-0.jpg",
   },
   {
     id: 595,
@@ -5480,7 +5480,7 @@ export const products = [
     name: "Acond. BTX BLOND X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulbHK_mFLyP7cT_qSzdODmGZYQgxFFcwx0A&s",
   },
   {
     id: 596,
@@ -5489,7 +5489,7 @@ export const products = [
     name: "Sh. STOP FRIZZ X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403078591-dcb1e057097857dc6016861581358343-640-0.jpg",
   },
   {
     id: 597,
@@ -5498,7 +5498,7 @@ export const products = [
     name: "Acond.STOP FRIZZ X400",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://sergioperfumerias.com/wp-content/uploads/2021/06/7794740307866-acondicionador-claridge-proactive-stop-frizz-400-600x600.jpg",
   },
   {
     id: 598,
@@ -5507,7 +5507,7 @@ export const products = [
     name: "Sh. Desamarillador X300",
     description: "",
     price: 8200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/sh-negro-fdo-blanco-1000x10001-492389dd9c2ab9117c16933343760949-480-0.jpg",
   },
   {
     id: 599,
@@ -5516,7 +5516,7 @@ export const products = [
     name: "Sh. AZUL X300",
     description: "",
     price: 8200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/sh-azul-fdo-blanco-1000x100021-a38b35159f029d36ca16861590121493-640-0.jpg",
   },
   {
     id: 600,
