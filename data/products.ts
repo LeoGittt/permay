@@ -6444,7 +6444,7 @@ export const products = [
     name: "FIJADOR ROBY FUERTE NEW FRAG 390ML",
     description: "",
     price: 7600,
-    image: "",
+    image: "https://statics.dinoonline.com.ar/imagenes/medium_150x150/2980121_m.jpg",
   },
   {
     id: 702,
@@ -6453,7 +6453,7 @@ export const products = [
     name: "FIJADOR ROBY NORMAL NEW FRAG 390ML",
     description: "",
     price: 7600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLWiSzHqd3yPZpBJ1FSLv3qsJodLuDhW5f0w&s",
   },
   {
     id: 703,
@@ -6462,7 +6462,7 @@ export const products = [
     name: "FIJADOR ROBY EXTRA FUERTE NEW FRAG 390ML",
     description: "",
     price: 7600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVUPubvsdEqnReLdRgCBywLTpnV1Ukd6c_Ig&s",
   },
   {
     id: 704,
@@ -6471,7 +6471,7 @@ export const products = [
     name: "PROTECTOR TERMICO ROBY 200 ML (NUEVO)",
     description: "",
     price: 5500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzZHAptmq_tfogReqYwAv-FyLawQF428L5Vg&s",
   },
   {
     id: 705,
@@ -6480,7 +6480,7 @@ export const products = [
     name: "MOUSSE CAPILAR ROBY 200 ML (NUEVO)",
     description: "",
     price: 6800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1t74_iAGwXCQTYxCnnHyI04Vbphg7bwREaA&s",
   },
   {
     id: 706,
@@ -6489,7 +6489,7 @@ export const products = [
     name: "ABLANDADOR DE CANAS ISSUE SACHET 15 ML ESTUCHE 24u",
     description: "",
     price: 300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTjlq55eNv5XJCdv3xaVAns0BkCl6uHHNwhg&s",
   },
   {
     id: 707,
@@ -6498,7 +6498,7 @@ export const products = [
     name: "TRATAMIENTO ISSUE EXTRA REPARACION x 150g (NUEVO)",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Z_7sFGIo5Q_I0mZ00qaD0gJ7su2lkOHtzA&s",
   },
   {
     id: 708,
@@ -6507,7 +6507,7 @@ export const products = [
     name: "TRATAMIENTO ISSUE BRILLO EXTREMO x 150g (NUEVO)",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://simplicityar.vtexassets.com/arquivos/ids/162039-800-auto?v=638215917183030000&width=800&height=auto&aspect=true",
   },
   {
     id: 709,
@@ -6516,7 +6516,7 @@ export const products = [
     name: "TRATAMIENTO ISSUE SHOCK NUTRICION x 150g (NUEVO)",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYvrSJ9FKOjN2dMxwFjZUto8weUEq9Y-WeDg&s",
   },
   {
     id: 710,
@@ -6525,7 +6525,7 @@ export const products = [
     name: "TRATAMIENTO ISSUE CANAS FABULOSAS x 150g (NUEVO)",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1XGvFds1I9U3sog-qycRTkUpprZkvydKguQ&s",
   },
   {
     id: 711,
@@ -6534,7 +6534,7 @@ export const products = [
     name: "TRATAMIENTO ISSUE PROTECCION DEL COLOR x 160g (NUEVO)",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_P24eFHi0yLaX9D4bZWLL2BzXWNyo4gi_3g&s",
   },
   {
     id: 712,
@@ -6544,7 +6544,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 3500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_892378-MLA46451360683_062021-O.jpg",
   },
   {
     id: 713,
@@ -6554,7 +6554,7 @@ export const products = [
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 3900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_736842-MLA72703988177_112023-O.webp",
   },
   {
     id: 714,
@@ -6563,7 +6563,7 @@ export const products = [
     name: "ACTIVE CLASSIC DOYP 700G",
     description: "",
     price: 13500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzMpX-ASeLwezAnIm6cG002zdvd9jmPulYcQ&s",
   },
   {
     id: 715,
@@ -6572,7 +6572,7 @@ export const products = [
     name: "BLANC NATURE DOYP 700G",
     description: "",
     price: 16900,
-    image: "",
+    image: "https://edusil.com.uy/wp-content/uploads/2022/02/Dise%C3%B1o-sin-t%C3%ADtulo40.png",
   },
   {
     id: 716,
@@ -6581,7 +6581,7 @@ export const products = [
     name: "WHITE & WHITE x 700 GR",
     description: "",
     price: 18900,
-    image: "",
+    image: "https://lasmargaritas.vtexassets.com/arquivos/ids/1630757-800-auto?v=638082590734000000&width=800&height=auto&aspect=true",
   },
   {
     id: 717,
@@ -6590,7 +6590,7 @@ export const products = [
     name: "ACLARO CON PLEX x 700 GR",
     description: "",
     price: 19900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTRwdCDr4YqnxUwDCitUdjb_tU8AQ6lSpw7A&s",
   },
   {
     id: 718,
@@ -6599,7 +6599,7 @@ export const products = [
     name: "ISSUE SALOON ACO SOFT & SHINE DP 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://perfumeriasfabilu.com.ar/wp-content/uploads/2023/05/ISSUE-8.png",
   },
   {
     id: 719,
@@ -6608,7 +6608,7 @@ export const products = [
     name: "ISSUE SALOON SHA SOFT & SHINE DP 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9rUFs0xDyW6bztQ8MWcX7vxHwAbeI44NQmg&s",
   },
   {
     id: 720,
@@ -6617,7 +6617,7 @@ export const products = [
     name: "ISSUE SALOON ACO NEUTRO & DETOX DP x 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://www.lacoopeencasa.coop/media/lcec/publico/articulos/c/1/4/c142e3d70f210fc6fb3905ddf0f80881",
   },
   {
     id: 721,
@@ -6626,7 +6626,7 @@ export const products = [
     name: "ISSUE SALOON SHA NEUTRO & DETOX DP x 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://www.lacoopeencasa.coop/media/lcec/publico/articulos/c/1/4/c142e3d70f210fc6fb3905ddf0f80881",
   },
   {
     id: 722,
@@ -6635,7 +6635,7 @@ export const products = [
     name: "ISSUE SALOON ACO NEUTRO & DETOX x 1LT",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_922576-MLA54760048561_032023-O.webp",
   },
   {
     id: 723,
@@ -6644,7 +6644,7 @@ export const products = [
     name: "ISSUE SALOON SHA NEUTRO & DETOX x 1LT",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_922576-MLA54760048561_032023-O.webp",
   },
   {
     id: 724,
@@ -6653,7 +6653,7 @@ export const products = [
     name: "ISSUE SALOON SHA INTENSE REPAIR DP x 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA2EV9gHjHKJqDjgt1c4Sofy9Obyzy8iQKGg&s",
   },
   {
     id: 725,
@@ -6662,7 +6662,7 @@ export const products = [
     name: "ISSUE SALOON ACO COLOR PROTECT DP x 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHIThi6ofbgjzZOZZBHXkYHtibegKqxqtrjA&s",
   },
   {
     id: 726,
@@ -6671,7 +6671,7 @@ export const products = [
     name: "ISSUE SALOON SH COLOR PROTECT DP x 900ml",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/files/SHcolor_protect_doypack.jpg?v=1750166150",
   },
   {
     id: 727,
@@ -6680,7 +6680,7 @@ export const products = [
     name: "ISSUE SALOON MÁSCARA COLOR PROTECT 1KG",
     description: "",
     price: 13000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_960475-MLA49900749058_052022-O.webp",
   },
   {
     id: 728,
@@ -6689,7 +6689,7 @@ export const products = [
     name: "ISSUE SALOON SERUM COLOR PROTECT 60ML",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/284/054/products/color_protect_60g-2-74ca4a14f1199aa81417030787835010-1024-1024.jpg",
   },
   {
     id: 729,
@@ -6698,7 +6698,7 @@ export const products = [
     name: "ISSUE SALOON LEAVE IN INT REPAIR 200ML",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtHMi1gt67kGZ2e8oswvY9YkTEPPUqspGRDg&s",
   },
   {
     id: 730,
@@ -6707,7 +6707,7 @@ export const products = [
     name: "ISSUE SALOON MÁSCARA INTENSE REPAIR 1KG",
     description: "",
     price: 13000,
-    image: "",
+    image: "https://tiendapeluqueros.com.ar/wb/wp-content/uploads/2023/03/mascara-intense-repair-1kg-issue.jpg",
   },
   {
     id: 731,
@@ -6716,7 +6716,7 @@ export const products = [
     name: "ISSUE SALOON SERUM INTENSE REPAIR 60 ML",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/284/054/products/intense_repair_60ml-1-b966fd1e571a5447a017030221147115-1024-1024.jpg",
   },
   {
     id: 732,
@@ -6725,7 +6725,7 @@ export const products = [
     name: "ISSUE SALOON TRATAMIENTO BIFÁSICO 200ML",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://bertoldi.com.ar/cdn/shop/products/Sintitulo-1-2020-08-07T162253.272_800x.png?v=1750168251",
   },
   {
     id: 733,
@@ -6734,7 +6734,7 @@ export const products = [
     name: "ISSUE SALOON SHOCK BRILLO SOFT&SHINE x 60ml",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe6pbg8iXwaPkzMsIT_TXuruyMkTXY3S5L8w&s",
   },
   {
     id: 734,
@@ -6743,7 +6743,7 @@ export const products = [
     name: "Sh ISSUE SALOON PROF Silv Blonde 250ml",
     description: "",
     price: 7700,
-    image: "",
+    image: "https://lasmargaritas.vtexassets.com/arquivos/ids/1630759/Shampoo-Para-Cabellos-Rubios-Silver-Blonde-x250ml-Issue-Professional.jpg?v=638082594989630000",
   },
   {
     id: 735,
@@ -6752,7 +6752,7 @@ export const products = [
     name: "Sh ISSUE SALOON PROF Silv Blonde 900ml",
     description: "",
     price: 9500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUlOQ6OjoxWEahdWNWfuX73zDy1o8-2LV0zw&s",
   },
   {
     id: 736,
@@ -6761,7 +6761,7 @@ export const products = [
     name: "Másc ISSUE SALOON PROF Silv Blonde 200gr",
     description: "",
     price: 7200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO595GfBHqPGAKIPYXh8Xpb0G0HoI_clZW-Q&s",
   },
   {
     id: 737,
@@ -6770,7 +6770,7 @@ export const products = [
     name: "ALISADO KERATINICO DE 1 LITRO BLANCO",
     description: "",
     price: 14900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "https://tonosdistribuciones.com.ar/tonos/wp-content/uploads/2021/06/shock-liss.png",
   },
   {
     id: 738,
