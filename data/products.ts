@@ -9085,7 +9085,7 @@ export const products = [
     name: "FIJADOR DE MAQUILLAJE",
     description: "",
     price: 9800,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/luminous-21-9f1601edab71f0a3f316884809511296-1024-1024.png",
   },
   {
     id: 1003,
@@ -9094,7 +9094,7 @@ export const products = [
     name: "AUTOBRONCEANTE",
     description: "",
     price: 13800,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2HzjDJgAg0LIMvzVvI7QCBAtGxRnX3F85VA&s",
   },
   {
     id: 1004,
@@ -9103,7 +9103,7 @@ export const products = [
     name: "PAULVIC SEXY - 212 SEXY - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://moreta.com.ar/wp-content/uploads/2023/10/00893__78179_std.jpg",
   },
   {
     id: 1005,
@@ -9112,7 +9112,7 @@ export const products = [
     name: "PAULVIC RED - RED DOOR - ELIZABETH ARDEN X60ML",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2PewL1GtqXjGCnJwzsk_NOfvghrFd5UJu9A&s",
   },
   {
     id: 1006,
@@ -9121,7 +9121,7 @@ export const products = [
     name: "WITCH NIGHT - HALLOWEEN - J. DEL POZO X60ML",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://farmaciaspatagonicasar.vtexassets.com/arquivos/ids/171674/030.jpg?v=638640955856000000",
   },
   {
     id: 1007,
@@ -9130,7 +9130,7 @@ export const products = [
     name: "FLORES ROJAS - FLOWER - KENZO X60ML",
     description: "",
     price: 11900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOWeDujLDTD7lq79joZJvPVQcl8cl2NDZIwQ&s",
   },
   {
     id: 1008,
