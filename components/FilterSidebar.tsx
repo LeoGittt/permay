@@ -56,55 +56,18 @@ export function FilterSidebar({
   const totalFilters = selectedBrands.length + selectedCategories.length
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h3 className="font-semibold text-lg">Filtros</h3>
-        {totalFilters > 0 && <Badge variant="secondary">{totalFilters}</Badge>}
+    <div className="space-y-4 sm:space-y-6 h-full overflow-y-auto">
+      <div className="flex items-center justify-between sticky top-0 bg-white pb-2 border-b">
+        <h3 className="font-semibold text-base sm:text-lg">Filtros</h3>
+        {totalFilters > 0 && <Badge variant="secondary" className="text-xs">{totalFilters}</Badge>}
       </div>
 
-      <div>
-        <h4 className="font-medium mb-3">Marcas</h4>
-        <div className="space-y-2 max-h-48 overflow-y-auto">
-          {brands.map((brand) => (
-            <div key={brand} className="flex items-center space-x-2">
-              <Checkbox
-                id={brand}
-                checked={selectedBrands.includes(brand)}
-                onCheckedChange={(checked) => handleBrandChange(brand, checked as boolean)}
-              />
-              <Label htmlFor={brand} className="text-sm cursor-pointer">
-                {brand}
-              </Label>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <Separator />
-
-      <div>
-        <h4 className="font-medium mb-3">Categorías</h4>
-        <div className="space-y-2 max-h-48 overflow-y-auto">
-          {categories.map((category) => (
-            <div key={category} className="flex items-center space-x-2">
-              <Checkbox
-                id={category}
-                checked={selectedCategories.includes(category)}
-                onCheckedChange={(checked) => handleCategoryChange(category, checked as boolean)}
-              />
-              <Label htmlFor={category} className="text-sm cursor-pointer">
-                {category.split("/").pop()}
-              </Label>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <Separator />
-
-      <div>
-        <h4 className="font-medium mb-3">Precio</h4>
-        <div className="space-y-4">
+      {/* Rango de Precio - Primero en móvil */}
+      <div className="bg-gray-50 p-3 sm:p-4 rounded-lg border">
+        <h4 className="font-medium mb-3 text-sm sm:text-base">
+          Precio
+        </h4>
+        <div className="space-y-3 sm:space-y-4">
           <Slider
             value={priceRange}
             onValueChange={setPriceRange}
@@ -113,21 +76,74 @@ export function FilterSidebar({
             step={1000}
             className="w-full"
           />
-          <div className="flex justify-between text-sm text-gray-600">
-            <span>{formatPrice(priceRange[0])}</span>
-            <span>{formatPrice(priceRange[1])}</span>
+          <div className="flex justify-between text-xs sm:text-sm text-gray-600 font-medium">
+            <span className="bg-white px-2 py-1 rounded border">{formatPrice(priceRange[0])}</span>
+            <span className="bg-white px-2 py-1 rounded border">{formatPrice(priceRange[1])}</span>
           </div>
         </div>
       </div>
 
-      <Button
-        variant="outline"
-        onClick={onClearFilters}
-        className="w-full bg-transparent"
-        disabled={totalFilters === 0}
-      >
-        Limpiar filtros
-      </Button>
+      {/* Marcas */}
+      <div className="bg-white border rounded-lg p-3 sm:p-4">
+        <h4 className="font-medium mb-3 text-sm sm:text-base flex items-center">
+          Marcas
+          {selectedBrands.length > 0 && (
+            <Badge variant="outline" className="ml-2 text-xs">{selectedBrands.length}</Badge>
+          )}
+        </h4>
+        <div className="space-y-2 max-h-32 sm:max-h-48 overflow-y-auto border rounded p-2">
+          {brands.map((brand) => (
+            <div key={brand} className="flex items-center space-x-2 p-1 hover:bg-gray-50 rounded">
+              <Checkbox
+                id={brand}
+                checked={selectedBrands.includes(brand)}
+                onCheckedChange={(checked) => handleBrandChange(brand, checked as boolean)}
+                className="flex-shrink-0"
+              />
+              <Label htmlFor={brand} className="text-xs sm:text-sm cursor-pointer flex-1 leading-relaxed">
+                {brand}
+              </Label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Categorías */}
+      <div className="bg-white border rounded-lg p-3 sm:p-4">
+        <h4 className="font-medium mb-3 text-sm sm:text-base flex items-center">
+          Categorías
+          {selectedCategories.length > 0 && (
+            <Badge variant="outline" className="ml-2 text-xs">{selectedCategories.length}</Badge>
+          )}
+        </h4>
+        <div className="space-y-2 max-h-32 sm:max-h-48 overflow-y-auto border rounded p-2">
+          {categories.map((category) => (
+            <div key={category} className="flex items-center space-x-2 p-1 hover:bg-gray-50 rounded">
+              <Checkbox
+                id={category}
+                checked={selectedCategories.includes(category)}
+                onCheckedChange={(checked) => handleCategoryChange(category, checked as boolean)}
+                className="flex-shrink-0"
+              />
+              <Label htmlFor={category} className="text-xs sm:text-sm cursor-pointer flex-1 leading-relaxed">
+                {category.split("/").pop()}
+              </Label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Botón de limpiar filtros */}
+      <div className="sticky bottom-0 bg-white pt-2 border-t">
+        <Button
+          variant="outline"
+          onClick={onClearFilters}
+          className="w-full bg-transparent text-sm hover:bg-red-50 hover:border-red-300 hover:text-red-600"
+          disabled={totalFilters === 0}
+        >
+          Limpiar filtros
+        </Button>
+      </div>
     </div>
   )
 }

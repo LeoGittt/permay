@@ -11,6 +11,7 @@ import { useCart } from "@/hooks/useCart"
 import { useUIState } from "@/hooks/useUIState"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Filter } from "lucide-react"
 
 export default function PermayHome() {
@@ -40,6 +41,10 @@ export default function PermayHome() {
   } = useProducts()
 
   const { cart, addToCart, removeFromCart, updateQuantity, getCartTotal, getCartItemsCount } = useCart()
+
+  // Calcular filtros activos
+  const activeFiltersCount = selectedBrands.length + selectedCategories.length + 
+    (priceRange[0] > 0 || priceRange[1] < 100000 ? 1 : 0)
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -75,17 +80,22 @@ export default function PermayHome() {
             <div className="flex justify-between items-center mb-4 sm:mb-6 lg:hidden">
               <Sheet open={isMobileFiltersOpen} onOpenChange={setIsMobileFiltersOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+                  <Button variant="outline" size="sm" className="text-xs sm:text-sm relative">
                     <Filter className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                     Filtros
+                    {activeFiltersCount > 0 && (
+                      <Badge className="ml-2 h-5 w-5 p-0 bg-permay-primary text-xs flex items-center justify-center">
+                        {activeFiltersCount}
+                      </Badge>
+                    )}
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-[280px] sm:w-80">
-                  <SheetHeader>
-                    <SheetTitle>Filtros</SheetTitle>
-                    <SheetDescription>Filtra los productos por marca, categoría y precio</SheetDescription>
+                <SheetContent side="left" className="w-[300px] sm:w-96 p-0 flex flex-col">
+                  <SheetHeader className="px-4 py-4 border-b bg-white">
+                    <SheetTitle className="text-left">Filtros</SheetTitle>
+                    <SheetDescription className="text-left">Filtra los productos por marca, categoría y precio</SheetDescription>
                   </SheetHeader>
-                  <div className="mt-6">
+                  <div className="flex-1 overflow-hidden px-4 py-4">
                     <FilterSidebar
                       brands={brands}
                       categories={categories}
