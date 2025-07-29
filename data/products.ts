@@ -6779,7 +6779,7 @@ export const products = [
     name: "ALISADO KERATINICO DE 1 LITRO CHOCOLATE",
     description: "",
     price: 14900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "placeholder.svg",
   },
   {
     id: 739,
@@ -6788,7 +6788,7 @@ export const products = [
     name: "SHOCKDE KERATINA ELLE 350ML",
     description: "",
     price: 8900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "placeholder.svg",
   },
   {
     id: 740,
@@ -6797,7 +6797,7 @@ export const products = [
     name: "SHAMPOO BIDON 5 LITROS NEUTRO",
     description: "",
     price: 9500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/22.jpeg",
   },
   {
     id: 741,
@@ -6806,7 +6806,7 @@ export const products = [
     name: "SHAMPOO BIDON 5 LITROS DE COCO",
     description: "",
     price: 9500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/23.jpeg",
   },
   {
     id: 742,
@@ -6815,7 +6815,7 @@ export const products = [
     name: "SHAMPOO BIDON 5 LITROS FRUTOS ROJOS",
     description: "",
     price: 9500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/placeholder.svg",
   },
   {
     id: 743,
@@ -6824,7 +6824,7 @@ export const products = [
     name: "ACONDICIONADOR BIDON 5 LITROS",
     description: "",
     price: 9500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/24.jpeg",
   },
   {
     id: 744,
@@ -6833,7 +6833,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 100ML 9/20/30/40/50 VOLUMENES",
     description: "",
     price: 1000,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/1.jpeg",
   },
   {
     id: 745,
@@ -6842,7 +6842,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 100ML 9/20/30/40/50/100 VOLUMENES",
     description: "",
     price: 1000,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/2.jpeg",
   },
   {
     id: 746,
@@ -6851,7 +6851,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 10 VOLUMENES",
     description: "",
     price: 4500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/3.jpeg",
   },
   {
     id: 747,
@@ -6860,7 +6860,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 20 VOLUMENES",
     description: "",
     price: 4900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/4.jpeg",
   },
   {
     id: 748,
@@ -6869,7 +6869,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 30 VOLUMENES",
     description: "",
     price: 5200,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/5.jpeg",
   },
   {
     id: 749,
@@ -6878,7 +6878,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 40 VOLUMENES",
     description: "",
     price: 5500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/6.jpeg",
   },
   {
     id: 750,
@@ -6887,7 +6887,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 50 VOLUMENES",
     description: "",
     price: 5900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "placeholder.svg",
   },
   {
     id: 751,
@@ -6896,7 +6896,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 10 VOLUMENES",
     description: "",
     price: 2900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/7.jpeg",
   },
   {
     id: 752,
@@ -6905,7 +6905,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 20 VOLUMENES",
     description: "",
     price: 3500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/8.jpeg",
   },
   {
     id: 753,
@@ -6914,7 +6914,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 30 VOLUMENES",
     description: "",
     price: 3900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/9.jpeg",
   },
   {
     id: 754,
@@ -6923,7 +6923,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 40 VOLUMENES",
     description: "",
     price: 4500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/10.jpeg",
   },
   {
     id: 755,
@@ -6932,7 +6932,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 50 VOLUMENES",
     description: "",
     price: 4900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/11.jpeg",
   },
   {
     id: 756,
@@ -6941,7 +6941,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 100 VOLUMENES",
     description: "",
     price: 6500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "placeholder.svg",
   },
   {
     id: 757,
@@ -6950,7 +6950,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 9/ VOLUMENES",
     description: "",
     price: 11500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/12.jpeg",
   },
   {
     id: 758,
@@ -6959,7 +6959,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 20 VOLUMENES",
     description: "",
     price: 14500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/13.jpeg",
   },
   {
     id: 759,
@@ -6968,7 +6968,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 30 VOLUMENES",
     description: "",
     price: 15900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/14.jpeg",
   },
   {
     id: 760,
@@ -6977,7 +6977,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 40 VOLUMENES",
     description: "",
     price: 17900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/15.jpeg",
   },
   {
     id: 761,
@@ -6986,7 +6986,7 @@ export const products = [
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 50 VOLUMENES",
     description: "",
     price: 18900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "placeholder.svg",
   },
   {
     id: 762,
@@ -6995,7 +6995,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 10 VOLUMENES",
     description: "",
     price: 7900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/16.jpeg",
   },
   {
     id: 763,
@@ -7004,7 +7004,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 20 VOLUMENES",
     description: "",
     price: 8500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/17.jpeg",
   },
   {
     id: 764,
@@ -7013,7 +7013,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 30 VOLUMENES",
     description: "",
     price: 9900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/18.jpeg",
   },
   {
     id: 765,
@@ -7022,7 +7022,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 40 VOLUMENES",
     description: "",
     price: 10900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/19.jpeg",
   },
   {
     id: 766,
@@ -7031,7 +7031,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 50 VOLUMENES",
     description: "",
     price: 13500,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/20.jpeg",
   },
   {
     id: 767,
@@ -7040,7 +7040,7 @@ export const products = [
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 100 VOLUMENES",
     description: "",
     price: 20900,
-    image: "FOTOS Y DESCRIPCION FABRI",
+    image: "/fotos/21.jpeg",
   },
   {
     id: 768,
