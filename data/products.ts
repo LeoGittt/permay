@@ -2506,7 +2506,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CREMA DE PEINAR",
     name: "Caviar crema de peinar Rizos x 250 gr",
     description: "",
-    price: 8500,
+    price: 4200,
     image: "https://http2.mlstatic.com/D_NQ_NP_746765-MLA76924470285_062024-O.webp",
   },
   {
@@ -2731,7 +2731,7 @@ export const products = [
     category: "CUIDADO CAPILAR/GEL FIJADOR",
     name: "Gel humedo fijacion extrema x 230 gr",
     description: "",
-    price: 6300,
+    price: 9000,
     image: "https://dcdn-us.mitiendanube.com/stores/002/450/812/products/d_nq_np_2x_833186-mlu78202955646_082024-f-4e1278f387337e803717296936859748-1024-1024.webp",
   },
   {
@@ -12437,4 +12437,6 @@ export const products = [
     price: 3900,
     image: "https://http2.mlstatic.com/D_NQ_NP_896451-MLA50044753094_052022-O.webp",
   },
+  
+  
 ];
