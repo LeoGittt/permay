@@ -11823,7 +11823,7 @@ export const products = [
     name: "CEPILLO PALETA NEUMATICO PREMIUM IONICO JESSAMY",
     description: "",
     price: 7500,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kYmrhtIES9Ryq2enES_tHRTPkbLLbjhQpg&s",
+    image: "https://http2.mlstatic.com/D_NQ_NP_648736-MLU75118875943_032024-O.webp",
   },
   {
     id: 1304,
@@ -11832,7 +11832,7 @@ export const products = [
     name: "CEPILLO NEUMATICO PALETA COLOR",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbBDBukUm2fjyPGQrcS8wg1mWA5gVdG00eFg&s",
   },
   {
     id: 1305,
@@ -11841,7 +11841,7 @@ export const products = [
     name: "CEPILLO NEUMATICO METALIZADO",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://salondepeinadorar.vtexassets.com/arquivos/ids/164571-800-auto?v=637895087530730000&width=800&height=auto&aspect=true",
   },
   {
     id: 1306,
@@ -11850,7 +11850,7 @@ export const products = [
     name: "CEPILLO DELFIN GRANDE",
     description: "",
     price: 4500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfgqhc0Ztq_GbuglstrbJMJWnbnykTCG3Rng&s",
   },
   {
     id: 1307,
@@ -11859,7 +11859,7 @@ export const products = [
     name: "PERFILADORES DE CEJAS X3",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/165/821/products/perfikl-7607f72dde596e58eb17202730823608-640-0.webp",
   },
   {
     id: 1308,
@@ -11868,7 +11868,7 @@ export const products = [
     name: "ALICATE CORTA UÑAS",
     description: "",
     price: 1800,
-    image: "",
+    image: "https://www.uomax.com.ar/4159-large_default/alicate-pelliza-corta-u%C3%B1as.jpg",
   },
   {
     id: 1309,
@@ -11877,7 +11877,7 @@ export const products = [
     name: "ALICATE CORTA CUTICULAS",
     description: "",
     price: 7900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB-Y3nnLWwqttNW1J3u19vPiFJVE_LnwGaiQ&s",
   },
   {
     id: 1310,
@@ -11886,7 +11886,7 @@ export const products = [
     name: "TIJERAS CORTA CUTICULAS",
     description: "",
     price: 8900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAxHawJV18IGUQDr-lb6AmZtHcoGNwRY0Rpw&s",
   },
   {
     id: 1311,
@@ -11895,7 +11895,7 @@ export const products = [
     name: "CAJITA HOJAS NAVAJAS DORCO",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_813404-MLA43973098914_112020-O.webp",
   },
   {
     id: 1312,
@@ -11904,7 +11904,7 @@ export const products = [
     name: "CAJITA HOJAS NAVAJAS FEATHER",
     description: "",
     price: 2500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpcHsO37UBMJIDYHLUHlOpKyKmiYw8vzdzAw&s",
   },
   {
     id: 1313,
@@ -11913,7 +11913,7 @@ export const products = [
     name: "CLIPS OGIB CORTAS RUBIAS X12",
     description: "",
     price: 600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd8q35cv4RucDN14lgwJcc96-BieYO7WIXjA&s",
   },
   {
     id: 1314,
@@ -11922,7 +11922,7 @@ export const products = [
     name: "CLIPS OGIB LARGAS RUBIAS X12",
     description: "",
     price: 1200,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_964617-MLA80900602300_122024-O.webp",
   },
   {
     id: 1315,
@@ -11931,7 +11931,7 @@ export const products = [
     name: "CLIPS OGIB CORTAS NEGRAS X12",
     description: "",
     price: 600,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxCXogOuY_RdRMIqj-Pb0r9acrZcF-xJnnvw&s",
   },
   {
     id: 1316,
@@ -11940,7 +11940,7 @@ export const products = [
     name: "CLIPS OGIB LARGAS NEGRAS X12",
     description: "",
     price: 1200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4H8B8Ybh1Jb7ZSD4ExYR7BO1OOQ4NES3dw&s",
   },
   {
     id: 1317,
@@ -11949,7 +11949,7 @@ export const products = [
     name: "REXONA HOMBRE X150ML ANTITRANSPIRANTE",
     description: "",
     price: 3500,
-    image: "",
+    image: "https://farmacityar.vtexassets.com/arquivos/ids/246960/139429_antitranspirante-masculino-rexona-sensitive-x-150-ml_imagen-1.jpg?v=638302959455770000",
   },
   {
     id: 1318,
@@ -11958,7 +11958,7 @@ export const products = [
     name: "DOVE ORIGINAL ROLL ON X50 ML",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://simplicityar.vtexassets.com/arquivos/ids/166358/46007_antitranspirante-femenino-dove-bolilla-original-x-50-ml_imagen-1.jpg?v=638224481892030000",
   },
   {
     id: 1319,
@@ -11967,7 +11967,7 @@ export const products = [
     name: "OLD SPICE FRESH X50G",
     description: "",
     price: 7000,
-    image: "",
+    image: "https://farmacityar.vtexassets.com/arquivos/ids/256739/230797_desodorante-old-spice-fresh-x-50-g_imagen--1.jpg?v=638530350225930000",
   },
   {
     id: 1320,
@@ -11976,7 +11976,7 @@ export const products = [
     name: "DOVE ORIGINAL X150ML",
     description: "",
     price: 4500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3vQnLJN7i2WCKv_PengJibDh8xq8RVDpVg&s",
   },
   {
     id: 1321,
@@ -11985,7 +11985,7 @@ export const products = [
     name: "BIOBELLUS ACEITE MASAJES X500ML NEUTRO",
     description: "",
     price: 11500,
-    image: "",
+    image: "https://http2.mlstatic.com/D_Q_NP_700797-MLU73663954385_122023-O.webp",
   },
   {
     id: 1322,
@@ -11994,7 +11994,7 @@ export const products = [
     name: "BIOBELLUS ACEITE MASAJES X250ML NEUTRO",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzRzdUo4eKu7S-X_IuGwpZhfcsL-QWMOxr1w&s",
   },
   {
     id: 1323,
@@ -12003,7 +12003,7 @@ export const products = [
     name: "BIOBELLUS GEL NEUTRO X1KG",
     description: "",
     price: 7800,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_771532-MLA43761892765_102020-O.webp",
   },
   {
     id: 1324,
@@ -12012,7 +12012,7 @@ export const products = [
     name: "ITEA X450 GR",
     description: "",
     price: 9900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUOB2ILPLJ_pNlU5KDZZwOD_YuCzatMOgyMA&s",
   },
   {
     id: 1325,
@@ -12021,7 +12021,7 @@ export const products = [
     name: "ITEA X250 GR CON ALOE VERA",
     description: "",
     price: 6500,
-    image: "",
+    image: "https://d1on8qs0xdu5jz.cloudfront.net/webapp/images/productos/b/0000007000/7482.jpg",
   },
   {
     id: 1326,
@@ -12030,7 +12030,7 @@ export const products = [
     name: "ITEA X150GR SIN ALOE VERA",
     description: "",
     price: 4500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxxjrFWUpMmQl8QkwgFfB0vrPTWMZiI6tPaQ&s",
   },
   {
     id: 1327,
@@ -12039,7 +12039,7 @@ export const products = [
     name: "ITEA X150 GR CON ALOE VERA",
     description: "",
     price: 4900,
-    image: "",
+    image: "https://storage.googleapis.com/dev-mercadofarma/production/media/images/catalog/product/d159f33929d5488abc65a7fcda186ae6/638470578308568558_0itea-crema-ordene-aloe-vera-u.png",
   },
   {
     id: 1328,
@@ -12048,7 +12048,7 @@ export const products = [
     name: "CREMA HINDS ROSA X350 GR",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOABu69Zn-AU-1sovuHuOiFGMsVjNhN9GutQ&s",
   },
   {
     id: 1329,
@@ -12057,7 +12057,7 @@ export const products = [
     name: "NIVEA CORPORAL HIDRONUTRITIVA AZUL 5 EN 1 X400ML",
     description: "",
     price: 9800,
-    image: "",
+    image: "https://www.uomax.com.ar/11754-large_default/crema-corporal-nivea-milk-nutritiva-5-en-1-para-piel-extra-seca-x400ml.jpg",
   },
   {
     id: 1330,
@@ -12066,7 +12066,7 @@ export const products = [
     name: "ASAD EAU DE PARFUM MASCULINO 100ML",
     description: "",
     price: 64900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/004/407/494/products/asad-d1a6c449c4071fd13017149465284044-1024-1024.webp",
   },
   {
     id: 1331,
@@ -12075,7 +12075,7 @@ export const products = [
     name: "FAKHAR PRIDE BLACK MASCULINO 100ML",
     description: "",
     price: 64900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/004/403/862/products/fackar2-c9e51e767c10a881e817292240123892-1024-1024.jpg",
   },
   {
     id: 1332,
@@ -12084,7 +12084,7 @@ export const products = [
     name: "QAED AL FURSAN MASCULINO EAU 100ML",
     description: "",
     price: 49900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/071/596/products/375x500-67996-copia1-d5340251121577eed716858354034228-640-0.jpg",
   },
   {
     id: 1333,
@@ -12093,7 +12093,7 @@ export const products = [
     name: "THE KINGDOM MAN 100ML MASCULINO",
     description: "",
     price: 69900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/004/407/494/products/the-kingdom-man-95d919d540c95d6a3717364437624305-640-0.webp",
   },
   {
     id: 1334,
@@ -12102,7 +12102,7 @@ export const products = [
     name: "AFNAN 9PM BLACK MASCULINO 100ML",
     description: "",
     price: 69900,
-    image: "",
+    image: "https://d3cdlnm7te7ky2.cloudfront.net/media/catalog/product/cache/1f1b8d9a1b49678555bea203c2f52e39/1/5/156230-b-9pm-black-edp-100ml.jpg",
   },
   {
     id: 1335,
@@ -12111,7 +12111,7 @@ export const products = [
     name: "BADEE AL OUD HONOR & GLORY 100ML UNISEX",
     description: "",
     price: 69900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuWEGgU1m5OVkacykI5Tr-HkFVe6yiH4bvQ&s",
   },
   {
     id: 1336,
@@ -12120,7 +12120,7 @@ export const products = [
     name: "KHAMRAH BLACK 100ML MASCULINO",
     description: "",
     price: 69900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGividqpt5hq74kkQeCRaqNLxXiqXScgXZBQ&s",
   },
   {
     id: 1337,
@@ -12129,7 +12129,7 @@ export const products = [
     name: "SECADOR REVLON 2000W",
     description: "",
     price: 52900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfwCtQasTLF-mE9a4-i5w0z_R4XgHuVecoWw&s",
   },
   {
     id: 1338,
@@ -12138,7 +12138,7 @@ export const products = [
     name: "RECORTADOR DE NARIZ OREJAS Y CEJAS",
     description: "",
     price: 24900,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoRfRccS5bMLp8r23twNcq7Q9VhVoE6_8CMA&s",
   },
   {
     id: 1339,
@@ -12147,7 +12147,7 @@ export const products = [
     name: "ARCAMETAL CALENTADOR DE CERA 800 GR",
     description: "",
     price: 46900,
-    image: "",
+    image: "https://images.fravega.com/f500/5acc043977ee9a838650893275346085.jpg",
   },
   {
     id: 1340,
@@ -12156,7 +12156,7 @@ export const products = [
     name: "DEPIKIT KIT DE DEPILACION",
     description: "",
     price: 44900,
-    image: "",
+    image: "https://esteticaenlinea.com.ar/cdn/shop/files/Disenosintitulo_61_d6d41130-c6be-4934-8844-3bcbd9dc2f8b_512x512.png?v=1720458844",
   },
   {
     id: 1341,
@@ -12165,7 +12165,7 @@ export const products = [
     name: "PATILLERA/RECORTADORA DE BARBA",
     description: "",
     price: 35900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/198/447/products/descarga-79b85b4fcd9d55a3ca17237569281394-320-0.jpg",
   },
   {
     id: 1342,
@@ -12174,7 +12174,7 @@ export const products = [
     name: "CORTADORA DE PELO COMBO CUIT WAHL",
     description: "",
     price: 55900,
-    image: "",
+    image: "https://wahlargentina.vteximg.com.br/arquivos/ids/155494-1000-1000/79450-308.hero.jpg?v=637964387554330000",
   },
   {
     id: 1343,
@@ -12183,7 +12183,7 @@ export const products = [
     name: "CORTADORA DE PELO KEMEI 1986",
     description: "",
     price: 66900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_717594-MLU75965934373_042024-O.webp",
   },
   {
     id: 1344,
@@ -12192,7 +12192,7 @@ export const products = [
     name: "PESTAÑAS MAGNETICAS",
     description: "",
     price: 6900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/449/287/products/d_nq_np_2x_911599-mla48201472970_112021-f1-b5d89bc8c60914def416748529062061-480-0.jpg",
   },
   {
     id: 1345,
@@ -12201,7 +12201,7 @@ export const products = [
     name: "PLANCHA STUDIO 9 ROSEGOLD SLIM",
     description: "",
     price: 45900,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/001/284/054/products/whatsapp-image-2024-10-18-at-14-30-43-9a0ed8556bc8aeac4b17292731561412-1024-1024.jpeg",
   },
   {
     id: 1346,
@@ -12210,7 +12210,7 @@ export const products = [
     name: "PLANCHA STUDIO 9 WIDE PRECISION",
     description: "",
     price: 59900,
-    image: "",
+    image: "https://simplicityar.vtexassets.com/arquivos/ids/164074/217989_plancha-para-pelo-studio-9-professional-x-wide-precision_imagen-1.jpg?v=638219221800470000",
   },
   {
     id: 1347,
@@ -12219,7 +12219,7 @@ export const products = [
     name: "GORROS DOMPEL",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/002/412/934/products/gorro-para-mechas-romana-f31-c6dda2a6ae8243271916752808217953-1024-1024.png",
   },
   {
     id: 1348,
@@ -12228,7 +12228,7 @@ export const products = [
     name: "PEINE PARA WAHL NUMERO 0,5",
     description: "",
     price: 5000,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_830985-MLA31352526265_072019-O.webp",
   },
   {
     id: 1349,
@@ -12237,7 +12237,7 @@ export const products = [
     name: "PEINE PARA WAHL NUMERO 1",
     description: "",
     price: 5000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeTROuxNCTMNavejlan-vuZ5XE3xcbzGUIxg&s",
   },
   {
     id: 1350,
@@ -12246,7 +12246,7 @@ export const products = [
     name: "ACF MASCARA FACIAL DUO MASK PEEL OFF + SERUM (7g + 7g)",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://soylola.com/42248-large_default/mascara-acf-duo-peel-off-serum-7g7g.jpg",
   },
   {
     id: 1351,
@@ -12255,7 +12255,7 @@ export const products = [
     name: "ACF MASCARA FACIAL DUO EXFOLIANTE SCRUB + SERUM",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgJMSFeyMEzu5IZ6O71ONAtUYVlm7S3fKUJQ&s",
   },
   {
     id: 1352,
@@ -12264,7 +12264,7 @@ export const products = [
     name: "ACF MASCARA FACIAL AFTER FUN",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJUFTBK1WhLZEJbfV-hxyntKBiv9Oz2hb5WQ&s",
   },
   {
     id: 1353,
@@ -12273,7 +12273,7 @@ export const products = [
     name: "ACF MASCARA FACIAL RELAJANTE",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiRX6EXk0drTbMGK4rxDB-1jQZz7P-7f3owA&s",
   },
   {
     id: 1354,
@@ -12282,7 +12282,7 @@ export const products = [
     name: "ACF MASCARA FACIAL REAFIRMANTE TRIPLE ACCION",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://lasmargaritas.vtexassets.com/arquivos/ids/1752500-800-auto?v=638187304641570000&width=800&height=auto&aspect=true",
   },
   {
     id: 1355,
@@ -12291,7 +12291,7 @@ export const products = [
     name: "ACF MASCARA FACIAL HIDRATACIÓN PROFUNDA 3D",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://pedidosfarma.vtexassets.com/arquivos/ids/177771-304-304?v=637396009263300000&width=304&height=304&aspect=true",
   },
   {
     id: 1356,
@@ -12300,7 +12300,7 @@ export const products = [
     name: "ACF MASCARA FACIAL DETOX",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsXuONc_rhvxVBR8z_EwUdHYwAPpZlBCt3eg&s",
   },
   {
     id: 1357,
@@ -12309,7 +12309,7 @@ export const products = [
     name: "ACF MASCARA FACIAL BUBBLE",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgsrBhPk6woRkPCBXAQh8BPd0T7UDWJGRaQw&s",
   },
   {
     id: 1358,
@@ -12318,7 +12318,7 @@ export const products = [
     name: "ACF MASCARA FACIAL MALBEC HIDRASKIN",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQF80uSX6r-uKzpoxBUcyaXPWwkYitOVwtg&s",
   },
   {
     id: 1359,
@@ -12327,7 +12327,7 @@ export const products = [
     name: "ACF MASCARA FACIAL ULTRA RADIANCE MASK",
     description: "",
     price: 3200,
-    image: "",
+    image: "https://acdn-us.mitiendanube.com/stores/138/958/products/radiance-editada-5e93f6378360ef882c16287957126532-640-0.jpg",
   },
   {
     id: 1360,
@@ -12336,7 +12336,7 @@ export const products = [
     name: "QUITAESMALTE CUTEX FORTALECEDOR 100ML",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbcLtyk6hOdzvx_1QhYnu1a0-YIJrE2qcRkQ&s",
   },
   {
     id: 1361,
@@ -12345,7 +12345,7 @@ export const products = [
     name: "QUITAESMALTE CUTEX HUMECTANTE 100ML",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7oqJ-zLNSgFxVvfJuVnOmAJmJIBlOcJJdzA&s",
   },
   {
     id: 1362,
@@ -12363,7 +12363,7 @@ export const products = [
     name: "QUITAESMALTE CUTEX HIPOALERGENICO 100ML",
     description: "",
     price: 3000,
-    image: "",
+    image: "https://www.uomax.com.ar/11284-large_default/quitaesmalte-cutex-humectante-x-100-ml.jpg",
   },
   {
     id: 1364,
@@ -12372,7 +12372,7 @@ export const products = [
     name: "TINTE DE CEJAS LIGHT BROWN",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://i0.wp.com/www.cherimoya.pe/wp-content/uploads/2023/10/Tinte-Para-Cejas-1.jpg?fit=600%2C600&ssl=1",
   },
   {
     id: 1365,
@@ -12381,7 +12381,7 @@ export const products = [
     name: "TINTE DE CEJAS DARK BROWN",
     description: "",
     price: 8500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9-kLImpzn7Bhct_PXjrEsNLbP_TdFv2N0ng&s",
   },
   {
     id: 1366,
@@ -12390,7 +12390,7 @@ export const products = [
     name: "MASCARA ESSENCE REPAIR COLLAGENO X500 LICENCIADA",
     description: "",
     price: 49500,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKgHtfJBPzTm4EMJWjHjVO_JzI2-OMx74Mgw&s",
   },
   {
     id: 1367,
@@ -12399,7 +12399,7 @@ export const products = [
     name: "PLASTIFICADO CAPILAR FLASH X250",
     description: "",
     price: 7300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnec14D-se6F-WI0boaqXrugwYAmyrBzBHRg&s",
   },
   {
     id: 1368,
@@ -12408,7 +12408,7 @@ export const products = [
     name: "MASCARA MACA PRETA COLAGENO X500GR",
     description: "",
     price: 20300,
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW2OWVDItYsBJQ-Z_iIReadb0mKKxXM32iqw&s",
   },
   {
     id: 1369,
@@ -12417,7 +12417,7 @@ export const products = [
     name: "BIOTINA B7 60ML",
     description: "",
     price: 12300,
-    image: "",
+    image: "https://m.media-amazon.com/images/I/418Ng04RmML._UF1000,1000_QL80_.jpg",
   },
   {
     id: 1370,
@@ -12426,7 +12426,7 @@ export const products = [
     name: "LATA NIVEA AZUL 150ML",
     description: "",
     price: 4800,
-    image: "",
+    image: "https://farmacityar.vtexassets.com/arquivos/ids/254248-800-auto?v=638484414840700000&width=800&height=auto&aspect=true",
   },
   {
     id: 1371,
@@ -12435,6 +12435,6 @@ export const products = [
     name: "MAGICAP GORRO DESECHABLE",
     description: "",
     price: 3900,
-    image: "",
+    image: "https://http2.mlstatic.com/D_NQ_NP_896451-MLA50044753094_052022-O.webp",
   },
 ];
