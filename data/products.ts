@@ -2101,7 +2101,7 @@ export const products = [
     name: "TINTURA COLORMASTER 60 GR",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 1800,
+    price: 2000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOkz4cw8-6UIGCqQg2xTME7pZxzm4QgqrpA&s",
   },
   {
@@ -2146,7 +2146,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑO DE CREMA",
     name: "MASCARA COCO Y VAINILLA X270",
     description: "",
-    price: 3700,
+    price: 3800,
     image: "https://www.stockinlavanda.com.ar/36162-thickbox_default/mascara-coco-y-vainilla-x-270-gr-fidelite.jpg",
   },
   {
@@ -2155,7 +2155,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑO DE CREMA",
     name: "MASCARA ALMENDRA X270",
     description: "",
-    price: 3700,
+    price: 3800,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgEfxAtezQinMPeeJ4ldpGlGKXK1kwiDDNGA&s",
   },
   {
@@ -2164,7 +2164,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑO DE CREMA",
     name: "MASCARA KERATINA X270",
     description: "",
-    price: 3700,
+    price: 3800,
     image: "https://www.stockinlavanda.com.ar/36160-large_default/mascara-keratina-x-270-gr-fidelite.jpg",
   },
   {
@@ -2776,7 +2776,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOO",
     name: "Argan Shampoo x 250 ml",
     description: "",
-    price: 2800,
+    price: 3000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCqTUgcZjs0AYk8pJcNwyHSFGcc0VBqWvjQQ&s",
   },
   {
@@ -2785,7 +2785,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CREMA DE PEINAR",
     name: "Argan Crema de peinar x 250 gr",
     description: "",
-    price: 2900,
+    price: 3000,
     image: "https://acdn-us.mitiendanube.com/stores/031/514/products/crema-de-peinar-x250gr-argan-bekim1-01187576cda407a4f316210095855795-640-0.jpg",
   },
   {
@@ -2803,7 +2803,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑO DE CREMA",
     name: "Karité Mascara x 250 gr",
     description: "",
-    price: 3500,
+    price: 3900,
     image: "https://acdn-us.mitiendanube.com/stores/031/514/products/mascara-karite-x-250-bekim1-5869c01203990b5e6616210111122308-240-0.jpg",
   },
   {
@@ -2812,7 +2812,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CREMA DE PEINAR",
     name: "Karité Crema de peinar x 250 gr",
     description: "",
-    price: 2600,
+    price: 3000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1JgnqXATE_SZIHrBxruVN2brkadIMnts5cg&s",
   },
   {
@@ -2821,7 +2821,7 @@ export const products = [
     category: "CUIDADO CAPILAR/AMPOLLAS",
     name: "SHAMPOO 250 ML KARITE",
     description: "",
-    price: 2600,
+    price: 3000,
     image: "https://acdn-us.mitiendanube.com/stores/002/091/175/products/sh-karite-bekim-x-250ml1-1820ae78178828a25716530006416912-1024-1024.jpg",
   },
   {
@@ -2839,7 +2839,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "After color Shampoo x 250 ml",
     description: "",
-    price: 2800,
+    price: 3000,
     image: "https://acdn-us.mitiendanube.com/stores/002/412/934/products/shampoo-after-color-x-250-g1-b410fba843af96410516644599465414-1024-1024.png",
   },
   {
@@ -3074,7 +3074,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOO",
     name: "SHAMPOO DESAMARILLADOR 300 ML",
     description: "",
-    price: 5800,
+    price: 6300,
     image: "https://farmacityar.vtexassets.com/arquivos/ids/255096/219374_shampoo-alta-moda-e-desamarillador-x-300-ml_imagen--1.jpg?v=638512141186900000",
   },
   {
@@ -3083,7 +3083,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑO DE CREMA",
     name: "MASCARA DESAMARILLADORA 300ML",
     description: "",
-    price: 5800,
+    price: 7200,
     image: "https://acdn-us.mitiendanube.com/stores/002/412/934/products/altamoda-mascara-cabellos-rubios-x-300-ml1-15fad4540398fabc3016788098357101-640-0.png",
   },
   {
@@ -3642,7 +3642,7 @@ export const products = [
     name: "TINTURA JALEA BONMETIQUE",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 3200,
+    price: 3400,
     image: "https://acdn-us.mitiendanube.com/stores/003/619/233/products/photoroom-20231021_152134-c662e677015902ffc516979129940790-1024-1024.png",
   },
   {
@@ -4957,7 +4957,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SAVIAS",
     name: "ACLARANTE INSTANTANEO CON MANZANILLA X125",
     description: "",
-    price: 6200,
+    price: 6500,
     image: "https://farmacityar.vtexassets.com/arquivos/ids/259958-800-auto?v=638609863865070000&width=800&height=auto&aspect=true",
   },
   {
@@ -4993,7 +4993,7 @@ export const products = [
     category: "CUIDADO CAPILAR/LOCIONES ANTICAIDA",
     name: "Loción Tónica Ortiga X120",
     description: "",
-    price: 6500,
+    price: 5600,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyRZpFZnZ_PHOd58zIjQ7jp_Xc3Qt4AQEQSA&s",
   },
   {
@@ -5002,7 +5002,7 @@ export const products = [
     category: "CUIDADO CAPILAR/LOCIONES ANTICAIDA",
     name: "Loción Tónica Ortiga Concentrada X60",
     description: "",
-    price: 6500,
+    price: 5400,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDCI5F9sRUCElA7i320bqJNQRapVbGM5gRiQ&s",
   },
   {
@@ -5101,7 +5101,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. Nectar Ilumi. X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://http2.mlstatic.com/D_NQ_NP_826115-MLA41296144111_032020-O.webp",
   },
   {
@@ -5110,7 +5110,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. Nectar Ilumin. X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://http2.mlstatic.com/D_NQ_NP_826115-MLA41296144111_032020-O.webp",
   },
   {
@@ -5119,7 +5119,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. Elixir Rep. Prof. X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7kjw76rTVS5NUJDdSrBAng4yIN9XV1L7-Q&s",
   },
   {
@@ -5128,7 +5128,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. Elixir Rep. Prof. X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://http2.mlstatic.com/D_Q_NP_892750-MLA46249372760_062021-O.webp",
   },
   {
@@ -5137,7 +5137,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. Shock Brillo Fab. X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmFH1DZHQkZ_Kkj88Vcq6vJ0K1aLVN1EH8vA&s",
   },
   {
@@ -5146,7 +5146,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. Shock Brillo Fab. X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://soylola.com/20673-thickbox_default/acond-inecto-brillo-fab-x400cc.jpg",
   },
   {
@@ -5155,7 +5155,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. Blindaje C. Frizz X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://simplicityar.vtexassets.com/arquivos/ids/156894-800-auto?v=638198468418470000&width=800&height=auto&aspect=true",
   },
   {
@@ -5164,7 +5164,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. Blindaje C. Frizz X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRkPfCB66yV7HTWOFth-soCEt84wGooE3LQ&s",
   },
   {
@@ -5182,7 +5182,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. Fuerza Extrema X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQewUQgH98zNZvgYG5hANXD-xFnXkvJaReK7A&s",
   },
   {
@@ -5191,7 +5191,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond.Fuerza Extrema X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWWOAQlepx0aG_tqwh_Inp-EO8y68xeO0TKA&s",
   },
   {
@@ -5200,7 +5200,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. Bomba Carbon Pur.X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7wzZEYAIG8FR_Kztpx1yWWkRYHHLRqTWo9A&s",
   },
   {
@@ -5209,7 +5209,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Ac. Bomba Carbon Pur.X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://soylola.com/42620-large_default/acond-inecto-bomba-carbon-pur-x-400ml.jpg",
   },
   {
@@ -5227,7 +5227,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SAVIAS",
     name: "Savia Natural X400",
     description: "",
-    price: 4900,
+    price: 5500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3KNNUUR0F9KyqTyxIDpL-001tEpg9M1eHQ&s",
   },
   {
@@ -5236,7 +5236,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SERUM PARA LAS PUNTAS",
     name: "Oleo Fabuloso Coco X95",
     description: "",
-    price: 10900,
+    price: 12000,
     image: "https://farmaciaacosta.com.ar/wp-content/uploads/2024/05/INECTO-OLEO-FABULOSO-AC-COCO-x-95.png",
   },
   {
@@ -5245,7 +5245,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SERUM PARA LAS PUNTAS",
     name: "Oleo Fabuloso Macadamia X95",
     description: "",
-    price: 10900,
+    price: 12000,
     image: "https://farmaciaacosta.com.ar/wp-content/uploads/2024/05/INECTO-OLEO-FABULOSO-AC-MACADAMIA-x-95.png",
   },
   {
@@ -5263,7 +5263,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "CREMA DE PEINAR Rulos Definidos X300",
     description: "",
-    price: 6000,
+    price: 6500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3K0Qr3dj_XCm1hmWAwsAVmVYeNx4SsiaZ9w&s",
   },
   {
@@ -5281,7 +5281,7 @@ export const products = [
     category: "CUIDADO CAPILAR/AMPOLLAS",
     name: "Bomba Nutrición X15ML",
     description: "",
-    price: 2600,
+    price: 2900,
     image: "https://cdn.batitienda.com/baticloud/images/product_ad79ca21c9684ccfac3c2fd2d2b3c490_637276103445734606_0_m.jpg",
   },
   {
@@ -5317,7 +5317,7 @@ export const products = [
     category: "CUIDADO CAPILAR/VARIOS",
     name: "ACEITE INECTO ACLARANTE X150ML",
     description: "",
-    price: 3900,
+    price: 4100,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoYdblEPMBdPKoTWIJU42hUMGnZWIWusQNRw&s",
   },
   {
@@ -5389,7 +5389,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. BTX X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077121-92e917341f0b86892d16861580736118-480-0.jpg",
   },
   {
@@ -5398,7 +5398,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh Control Caida X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403074391-17077a02dec58a14fa16861581818993-640-0.jpg",
   },
   {
@@ -5407,7 +5407,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond Control Caida X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403074461-6351ea03303c29e95616861582028666-240-0.jpg",
   },
   {
@@ -5416,7 +5416,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. ORO DE ARGAN X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://pedidosfarma.vtexassets.com/arquivos/ids/203294/7794740307651-Shampoo-Proactive-Oro-de-Argan-de-Marruegos-x-400.png?v=638422187066700000",
   },
   {
@@ -5425,7 +5425,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. ORO DE ARGAN X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmEMTTLM8z__ilqTKnwu_RB7ZNmgo7Psj6AQ&s",
   },
   {
@@ -5434,7 +5434,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. SHOCK DE KERATINA X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://soylola.com/36978-large_default/sh-claridge-keratina-x400cc.jpg",
   },
   {
@@ -5443,7 +5443,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. SHOCK DE KERATINA X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403076821-160fac63235db63a8416861580163338-640-0.jpg",
   },
   {
@@ -5452,7 +5452,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. BTX HYALURONIC X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077051-e25c34bba5749afd7616861580398396-640-0.jpg",
   },
   {
@@ -5461,7 +5461,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. BTX HYALURONIC X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077121-92e917341f0b86892d16861580736118-480-0.jpg",
   },
   {
@@ -5470,7 +5470,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. BTX BLOND X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077671-87f28b51fc7c74c64e16861580916623-480-0.jpg",
   },
   {
@@ -5479,7 +5479,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond. BTX BLOND X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulbHK_mFLyP7cT_qSzdODmGZYQgxFFcwx0A&s",
   },
   {
@@ -5488,7 +5488,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. STOP FRIZZ X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403078591-dcb1e057097857dc6016861581358343-640-0.jpg",
   },
   {
@@ -5497,7 +5497,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Acond.STOP FRIZZ X400",
     description: "",
-    price: 6900,
+    price: 8400,
     image: "https://sergioperfumerias.com/wp-content/uploads/2021/06/7794740307866-acondicionador-claridge-proactive-stop-frizz-400-600x600.jpg",
   },
   {
@@ -5515,7 +5515,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. AZUL X300",
     description: "",
-    price: 8200,
+    price: 9000,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/sh-azul-fdo-blanco-1000x100021-a38b35159f029d36ca16861590121493-640-0.jpg",
   },
   {
@@ -5524,7 +5524,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Sh. BLACK X300",
     description: "",
-    price: 11500,
+    price: 13300,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/sh-negro-fdo-blanco-1000x10001-492389dd9c2ab9117c16933343760949-240-0.jpg",
   },
   {
@@ -5533,7 +5533,7 @@ export const products = [
     category: "CUIDADO CAPILAR/AMPOLLAS",
     name: "Ampolla ORO DE ARGAN X15ML",
     description: "",
-    price: 3300,
+    price: 3600,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdT3-eE6hYHKWHpyOeRbKSBackrIcPScx18Q&s",
   },
   {
@@ -5542,7 +5542,7 @@ export const products = [
     category: "CUIDADO CAPILAR/AMPOLLAS",
     name: "Ampollas BTX X15ML",
     description: "",
-    price: 2800,
+    price: 3000,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/btx-amp-1000-x-1000-32081e1ad647aa62f017513699009748-240-0.jpg",
   },
   {
@@ -5551,7 +5551,7 @@ export const products = [
     category: "CUIDADO CAPILAR/AMPOLLAS",
     name: "Ampolla ColorMax X15ML",
     description: "",
-    price: 3000,
+    price: 3300,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/color-max-amp-1000-x-1000-853ea5c367cc1414c917513699376779-640-0.jpg",
   },
   {
@@ -5560,7 +5560,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SERUM PARA LAS PUNTAS",
     name: "NutriSerum X60 X60ML",
     description: "",
-    price: 9800,
+    price: 13000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ36RTr19NxqHCDUcC2FdV5ShVPByYP2xoHMA&s",
   },
   {
@@ -5569,7 +5569,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SERUM PARA LAS PUNTAS",
     name: "Cristales Liquidos X60ML",
     description: "",
-    price: 9800,
+    price: 13000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNol-AL6aOOrryhYnWbCdxzYJQRrjnOpk81w&s",
   },
   {
@@ -5578,7 +5578,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SERUM PARA LAS PUNTAS",
     name: "Vitamina Liquida X60ML",
     description: "",
-    price: 9800,
+    price: 13000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvTSB4vwydJCF0ZG1d7TovktYZfT1oMjhCEA&s",
   },
   {
@@ -5587,7 +5587,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Cr.Peinar RULOS PERFECTOS X300",
     description: "",
-    price: 7400,
+    price: 7900,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403021991-0712c4e62b2d79c31a16861595303579-640-0.jpg",
   },
   {
@@ -5596,7 +5596,7 @@ export const products = [
     category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
     name: "Spray BTX Capilar X210",
     description: "",
-    price: 7300,
+    price: 7900,
     image: "https://sergioperfumerias.com/wp-content/uploads/2021/08/7794740307347-spray-claridge-blindaje-capilar-efecto-BTX-210ml.jpg",
   },
   {
@@ -5605,7 +5605,7 @@ export const products = [
     category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
     name: "Spray TERMO ACTIVO X210",
     description: "",
-    price: 9600,
+    price: 10300,
     image: "https://sergioperfumerias.com/wp-content/uploads/2022/07/7794740307354-spray-claridge-protector-capilar-termoactivo-210ml-600x600.jpg",
   },
   {
@@ -5623,7 +5623,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Shock de Reparación Extrema",
     description: "",
-    price: 1500,
+    price: 1700,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403079271-2a8cd1084c46d0c34116861576455811-640-0.jpg",
   },
   {
@@ -5632,7 +5632,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Shock de Restauración y Brillo",
     description: "",
-    price: 1500,
+    price: 1700,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWIF3dNNLOeN1OoHS4dBfxSDcZyhtHtxXTg&s",
   },
   {
@@ -5641,7 +5641,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Baño de Crema Shock de Keratina X250",
     description: "",
-    price: 7500,
+    price: 8200,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403020451-8740a838a3020e3f8b16861594227275-640-0.jpg",
   },
   {
@@ -5650,7 +5650,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Baño de Crema Oro de Argan X250",
     description: "",
-    price: 7500,
+    price: 8200,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRulcn_2GnrDKW8luPzZk-3nchlsIGTeiKuOA&s",
   },
   {
@@ -5659,7 +5659,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "BTX Capilar Baño de Crema X250",
     description: "",
-    price: 9300,
+    price: 10100,
     image: "https://gpsfarma.com/media/catalog/product/7/7/7794740307392.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265",
   },
   {
@@ -5677,7 +5677,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "B. de Crema BTX Hyaluronic X250",
     description: "",
-    price: 9300,
+    price: 10100,
     image: "https://acdn-us.mitiendanube.com/stores/001/809/820/products/77947403077291-34bd7cb38ad4c97dea16861594858901-640-0.jpg",
   },
   {
@@ -5722,7 +5722,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "OLIO CREMA DE PEINADO T.A RULOS X160",
     description: "",
-    price: 4500,
+    price: 4800,
     image: "https://acdn-us.mitiendanube.com/stores/887/684/products/crema-peinar1-c0395125fd1ec2860515853263100767-640-0.jpg",
   },
   {
@@ -5893,7 +5893,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CERAS",
     name: "CERA BRILLO X20 GR",
     description: "",
-    price: 2500,
+    price: 2700,
     image: "https://soylola.com/15137-medium_default/cera-brillo-olio-ads-x-20cc.jpg",
   },
   {
@@ -5902,7 +5902,7 @@ export const products = [
     category: "CUIDADO CAPILAR/CERAS",
     name: "CERA BRILLO X50",
     description: "",
-    price: 4500,
+    price: 4800,
     image: "https://soylola.com/43926-large_default/cera-brillo-olio-ads-x-50cc.jpg",
   },
   {
@@ -6019,7 +6019,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "BAÑO DE CREMA EN LATA POINT 1KG",
     description: "",
-    price: 21900,
+    price: 19900,
     image: "https://http2.mlstatic.com/D_NQ_NP_877106-MLA31079987719_062019-O.webp",
   },
   {
@@ -6028,7 +6028,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "BAÑO DE CREMA EN LATA KERANPOINT 1KG",
     description: "",
-    price: 21900,
+    price: 19900,
     image: "https://dcdn-us.mitiendanube.com/stores/001/220/916/products/5b10e3f2-c5d2-442f-b2e9-74dcf0b157de_nube-88251d0f82914c8acb15935207774393-640-0.jpg",
   },
   {
@@ -6037,7 +6037,7 @@ export const products = [
     category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "BAÑO DE CREMA EN LATA FLOWING 1KG",
     description: "",
-    price: 21900,
+    price: 19900,
     image: "https://http2.mlstatic.com/D_NQ_NP_938743-MLA76746891839_052024-O.webp",
   },
   {
@@ -6056,7 +6056,7 @@ export const products = [
     name: "TINTURA SIN AMONIACO INOA",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 20900,
+    price: 21900,
     image: "https://lasmargaritas.vtexassets.com/arquivos/ids/2480689/TINT-x60-INOA-LOREAL---combo.jpg?v=638658069218770000",
   },
   {
@@ -6065,7 +6065,7 @@ export const products = [
     category: "CUIDADO CAPILAR/AGUA OXIGENADA",
     name: "AGUA OXIGENADA EN CREMA X1LITRO INOA 20 VOL",
     description: "",
-    price: 28500,
+    price: 29600,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaujGjQ4kkBekAI1P7fayVNSgRrSBDLL78ug&s",
   },
   {
@@ -6351,7 +6351,7 @@ export const products = [
     name: "TINTURA ISSUE SACHET 47GR CON AGUA OXIG DE REGALO",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 2500,
+    price: 1800,
     image: "https://http2.mlstatic.com/D_NQ_NP_660444-MLA43324595059_082020-O.webp",
   },
   {
@@ -6361,7 +6361,7 @@ export const products = [
     name: "TINTURA ISSUE CRAZY COLORS SACHET 47 GR FANTASIA",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 2500,
+    price: 2000,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT58dHwH4XFY6LuQiz_MMpsIFRgCs-pZh7p3w&s",
   },
   {
@@ -6380,7 +6380,7 @@ export const products = [
     category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "POLVO DECOLORANTE ISSUE SACHET 20 GRS",
     description: "",
-    price: 2900,
+    price: 1700,
     image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQG_xisFTSSG8MlHLMXTUZu6AQgFRFvooJDhiW_6mM-MdEthtUffn9iwqb7k6ODKa9wyv6bYqiwj4AkjSSKMt7bmrAFa8ohV__WOQFJEFW9vImtNKT7b_rQ",
   },
   {
@@ -6389,7 +6389,7 @@ export const products = [
     category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "POLVO DECOLORANTE ISSUE SACHET 70 GRS",
     description: "",
-    price: 6700,
+    price: 3700,
     image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRJ5sGzUY_QDn7zBHGe9ZpP9vSQYPoHe19yTDWKRBEFS4DqRhct6sHxXp4nwmj9YlSayFYfXTnGh8XIVvl-pvh4p7JZv0-D2BCQ37HMIA4UCrnm4wG45I4Npw",
   },
   {
@@ -6398,7 +6398,7 @@ export const products = [
     category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "POLVO DECOLORANTE ISSUE SACHET 30 GRS ",
     description: "",
-    price: 3300,
+    price: 2300,
     image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQEQsMZTifmbwGsb8CCNWOMf-ZqAvXgeWQJG5UvHiz8J3BZbIH6SLNwelC1_xGhks-S5mhwlKueAxEx2ztUExwR0S0kld_FRcyka7iqp4OpfMKeiZQ8vVIN",
   },
   {
@@ -6470,7 +6470,7 @@ export const products = [
     category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "PROTECTOR TERMICO ROBY 200 ML (NUEVO)",
     description: "",
-    price: 5500,
+    price: 9500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzZHAptmq_tfogReqYwAv-FyLawQF428L5Vg&s",
   },
   {
@@ -6479,7 +6479,7 @@ export const products = [
     category: "CUIDADO CAPILAR/MOUSSE",
     name: "MOUSSE CAPILAR ROBY 200 ML (NUEVO)",
     description: "",
-    price: 6800,
+    price: 7500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1t74_iAGwXCQTYxCnnHyI04Vbphg7bwREaA&s",
   },
   {
@@ -6543,7 +6543,7 @@ export const products = [
     name: "PROFESSIONAL COLOR x 70 GR + AGUA OXIGENADA",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 3500,
+    price: 3000,
     image: "https://http2.mlstatic.com/D_892378-MLA46451360683_062021-O.jpg",
   },
   {
@@ -6553,7 +6553,7 @@ export const products = [
     name: "NATURAL SHINE x 70 GR + AGUA OXIGENADA",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 3900,
+    price: 3500,
     image: "https://http2.mlstatic.com/D_NQ_NP_736842-MLA72703988177_112023-O.webp",
   },
   {
@@ -8787,7 +8787,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Cr. Limpieza c/Colág. + Té Verde DOROTHY SKIN SECRETS",
     description: "",
-    price: 13500,
+    price: 15600,
     image: "https://bertoldi.com.ar/cdn/shop/files/cremalimpieza-PhotoRoom.png-PhotoRoom.png?v=1750167040",
   },
   {
@@ -8796,7 +8796,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Gel de Limp. Hipoal. sin sulfatos DOROTHY SKIN SECRETS",
     description: "",
-    price: 13500,
+    price: 15600,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/7794740998743_frontbackground-04d248abc235a264d717001487507109-1024-1024.png",
   },
   {
@@ -8814,7 +8814,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Ton. Rehid. Hipoal. c/Miel y Colágeno DOROTHY SKIN SECRETS",
     description: "",
-    price: 14400,
+    price: 16600,
     image: "https://perfugroupar.vtexassets.com/arquivos/ids/156354/7794740560049.jpg?v=637679208893100000",
   },
   {
@@ -8823,7 +8823,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Agua Micelar Hipoal. c/Micelas Purificantes DOROTHY SKIN SECRETS",
     description: "",
-    price: 9300,
+    price: 10800,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/0656005_frontbackground-abce749d541cd5dafa17001503041717-1024-1024.png",
   },
   {
@@ -8832,7 +8832,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Ton. Purific. Hipoal. c/Agua de Flor de Azhar DOROTHY SKIN SECRETS",
     description: "",
-    price: 14400,
+    price: 16600,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/0656006_frontbackground-d67606470e9afa398017001504880119-1024-1024.png",
   },
   {
@@ -8841,7 +8841,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Cr. Gel hidr. AntiStress Hiapol. c/Vit C+Té Verde DOROTHY SKIN SECRETS",
     description: "",
-    price: 20000,
+    price: 21100,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/ecom-2-95d4db9811a60af4c217199418067325-1024-1024.png",
   },
   {
@@ -8868,7 +8868,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Crema Suave Exfoliante Hipoal. c/cáscara de nuez DOROTHY SKIN SECRETS",
     description: "",
-    price: 14400,
+    price: 15200,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/0656007_frontbackground-faa2bae65c75f14eb917001506051180-640-0.png",
   },
   {
@@ -8877,7 +8877,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Leche de Limpieza DOROTHY AVENA Y MIEL",
     description: "",
-    price: 13500,
+    price: 15600,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/7794740560209_frontbackground-ea8554f9a736b6429217005694951451-640-0.png",
   },
   {
@@ -8886,7 +8886,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Emulsion Hidratante Termal DOROTHY AVENA Y MIEL",
     description: "",
-    price: 20000,
+    price: 21100,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5M-8C4A8zy4dIcM_GhL5rU-WFGsbTpa-Rtg&s",
   },
   {
@@ -8895,7 +8895,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Agua Termal DOROTHY AVENA Y MIEL",
     description: "",
-    price: 16100,
+    price: 17000,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/7794740560223_frontbackground-500fff0c40bc54b59217005697421550-640-0.png",
   },
   {
@@ -8949,7 +8949,7 @@ export const products = [
     category: "DERMOCOSMETICA/CREMAS ROSTRO",
     name: "Serum Super Concentrado DOROTHY HYALLURONIC",
     description: "",
-    price: 34700,
+    price: 30500,
     image: "https://bertoldi.com.ar/cdn/shop/products/375042.jpg?v=1750167023",
   },
   {
@@ -9030,7 +9030,7 @@ export const products = [
     category: "MAQUILLAJE/ROSTRO",
     name: "BASES ANTIAGE",
     description: "",
-    price: 15500,
+    price: 21400,
     image: "https://http2.mlstatic.com/D_NQ_NP_882069-MLA74413226399_022024-O.webp",
   },
   {
@@ -9039,7 +9039,7 @@ export const products = [
     category: "MAQUILLAJE/ROSTRO",
     name: "BASES MATTE",
     description: "",
-    price: 15500,
+    price: 19300,
     image: "https://perfugroupar.vtexassets.com/arquivos/ids/155676/7794740160324.jpg?v=637674037455370000",
   },
   {
@@ -9048,7 +9048,7 @@ export const products = [
     category: "MAQUILLAJE/ROSTRO",
     name: "BASES SATIN",
     description: "",
-    price: 15500,
+    price: 19300,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/7794740160379-ebd8893ed6c10dbe1417431049538742-1024-1024.jpg",
   },
   {
@@ -9057,7 +9057,7 @@ export const products = [
     category: "MAQUILLAJE/ROSTRO",
     name: "BASES BB CREAM",
     description: "",
-    price: 8700,
+    price: 11300,
     image: "https://acdn-us.mitiendanube.com/stores/001/134/645/products/foto-producto-dorothy-311-7ed6d3cf8f02ca0a7a16667032313116-1024-1024.jpg",
   },
   {
@@ -9066,7 +9066,7 @@ export const products = [
     category: "MAQUILLAJE/ROSTRO",
     name: "BASES FRESH SKIN",
     description: "",
-    price: 10800,
+    price: 14100,
     image: "https://perfugroupar.vtexassets.com/arquivos/ids/196134/7794740162281-1-.jpg?v=638355713000400000",
   },
   {
@@ -10389,7 +10389,7 @@ export const products = [
     category: "PRODUCTOS DEPILACION",
     name: "DEPIMIEL Loción Dermohigienica x 500cc",
     description: "",
-    price: 9600,
+    price: 5900,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTWh6P8hErOf8O6hNNxFUJ71Xw9kub2gFV0w&s",
   },
   {
@@ -10398,7 +10398,7 @@ export const products = [
     category: "PRODUCTOS DEPILACION",
     name: "DEPIMIEL Oleo Limpiador x 110cc",
     description: "",
-    price: 5800,
+    price: 3900,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIXgMCZYCc56lDyz_tiVsJHRltf7HocAtYrA&s",
   },
   {
@@ -10407,7 +10407,7 @@ export const products = [
     category: "PRODUCTOS DEPILACION",
     name: "DEPIMIEL Oleo Limpiador x 500cc",
     description: "",
-    price: 16500,
+    price: 8900,
     image: "https://esteticaenlinea.com.ar/cdn/shop/files/Disenosintitulo_31_029c3eab-edd6-4a12-b2f5-49412b712add_700x700.png?v=1721314065",
   },
   {
@@ -10416,7 +10416,7 @@ export const products = [
     category: "PRODUCTOS DEPILACION",
     name: "DEPIMIEL Leche de Limpieza x 500cc",
     description: "",
-    price: 9300,
+    price: 5900,
     image: "https://esteticaenlinea.com.ar/cdn/shop/files/Disenosintitulo_48_bc917613-90f8-4bab-807c-975df18310d7_700x700.png?v=1720637023",
   },
   {
@@ -10479,7 +10479,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SERUM PARA LAS PUNTAS",
     name: "SERUM KERATINA X60ML",
     description: "",
-    price: 8500,
+    price: 8900,
     image: "https://esteticaenlinea.com.ar/cdn/shop/files/Disenosintitulo_9_c8abbdb0-0d18-4b65-98f2-5fe94f90fa37.png?v=1693929214",
   },
   {
@@ -10488,7 +10488,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "SPRAY NUTRITIVO CON PLEX X125ML",
     description: "",
-    price: 3800,
+    price: 3900,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Nnc9qKsIAAz7T_bH75ajM7ecpbW-GTmiNw&s",
   },
   {
@@ -10515,7 +10515,7 @@ export const products = [
     category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "TONE PROTECTOR TERMICO 150ML",
     description: "",
-    price: 5900,
+    price: 6500,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRavj1pymwgHQzauC5SWmO8i8YCbEeDbe3-DQ&s",
   },
   {
@@ -11080,7 +11080,7 @@ export const products = [
     id: 1221,
     brand: "ALGABO",
     category: "DERMOCOSMETICA/CREMAS CORPORALES",
-    "": "ALGABO crema 400 ml c/valvula aloe y manzanilla",
+    name: "ALGABO crema 400 ml c/valvula aloe y manzanilla",
     description: "",
     price: 4800,
     image: "https://http2.mlstatic.com/D_Q_NP_631198-MLA84541606164_052025-O.webp",
@@ -11363,7 +11363,7 @@ export const products = [
     name: "FANCIFULL MATIZADOR INSTANTANEO X325 ML",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
-    price: 8900,
+    price: 9500,
     image: "https://acdn-us.mitiendanube.com/stores/138/958/products/fanci-ful-editado1-48aaa1f5ec7218065616186051417849-1024-1024.jpg",
   },
   {
@@ -12389,7 +12389,7 @@ export const products = [
     category: "CUIDADO CAPILAR/ALISADOS",
     name: "MASCARA ESSENCE REPAIR COLLAGENO X500 LICENCIADA",
     description: "",
-    price: 49500,
+    price: 32900,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKgHtfJBPzTm4EMJWjHjVO_JzI2-OMx74Mgw&s",
   },
   {
@@ -12437,6 +12437,204 @@ export const products = [
     price: 3900,
     image: "https://http2.mlstatic.com/D_NQ_NP_896451-MLA50044753094_052022-O.webp",
   },
+  {
+    id: 1372,
+    brand: "FIDELITE",
+    category: "CUIDADO CAPILAR/GEL FIJADOR",
+    name: "GEL SUPER FIX EXTRA DURACION X 230 gr",
+    description: "",
+    price: 6300,
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/14752-__-23072024150111-b206c38a7cfffc0ffc17219377828940-1024-1024.png",
+  },
+  {
+    id: 1373,
+    brand: "BEKIM",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
+    name: "Matizador Mascara violeta x 250 ml",
+    description: "",
+    price: 4400,
+    image: "https://http2.mlstatic.com/D_NQ_NP_631635-MLA73704238184_012024-O.webp",
+  },
+  {
+    id: 1374,
+    brand: "THE REAL BRAZILIAN",
+    category: "CUIDADO CAPILAR/ALISADOS",
+    name: "Alisado Lisplex 1 Ll",
+    description: "",
+    price: 15500,
+    image: "https://acdn-us.mitiendanube.com/stores/004/765/951/products/diseno-sin-titulo-26-d94d663c953cf8610717174257475537-1024-1024.png",
+  },
+   {
+    id: 1375,
+    brand: "NOV",
+    category: "CUIDADO CAPILAR/AMPOLLAS",
+    name: "Bioplex aditivo ampollas x15",
+    description: "",
+    price: 1500,
+    image: "https://acdn-us.mitiendanube.com/stores/002/765/065/products/inov1302u-b4f0a8ae93e8b1506a17000639073477-1024-1024.jpg"
+  },
+  {
+    id: 1376,
+    brand: "INECTO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
+    name: "Sh. Detox Purificante X400",
+    description: "",
+    price: 5500,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP5LKapLDINP2flS8xoLLJLofMR9cEa16UcA&s"
+  },
+  {
+    id: 1377,
+    brand: "INECTO",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
+    name: "CREMA DE PEINAR Elixir de Reparación Prof. X300",
+    description: "",
+    price: 6000,
+    image: "https://http2.mlstatic.com/D_NQ_NP_697581-MLA41874763210_052020-O.webp"
+  },
+  {
+    id: 1378,
+    brand: "INECTO",
+    category: "CUIDADO CAPILAR/VARIOS",
+    name: "LIQUIDO PARA PERMANENTE Cabellos Delicados, NORMALES O FUERTES X500",
+    description: "",
+    price: 13600,
+    image: "https://acdn-us.mitiendanube.com/stores/001/804/620/products/tratamiento_base-de-permanente-cabellos-delicados-x-500ml1-472af6dd7c3badbdbd16340782645922-1024-1024.jpg"
+  },
+  {
+    id: 1379,
+    brand: "INECTO",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
+    name: "INECTO rulos x250",
+    description: "",
+    price: 5100,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstwOKmHDU1hdATUtSByxUuSfIf7vjGynfuw&s"
+  },
+  {
+    id: 1380,
+    brand: "INECTO",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
+    name: "INECTO ondas x240",
+    description: "",
+    price: 5100,
+    image: "https://farmacias.amur.com.ar/media/catalog/product/7/7/7794740435309.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265"
+  },
+  {
+    id: 1381,
+    brand: "INECTO",
+    category: "CUIDADO CAPILAR/GELES PARA PEINAR",
+    name: "INECTO savia x240",
+    description: "",
+    price: 5100,
+    image: "https://sergioperfumerias.com/wp-content/uploads/2025/05/7794740435323-crema-para-peinar-inecto-savia-vegetal-x-240-ml-600x600.webp"
+  },
+  {
+    id: 1382,
+    brand: "CLARIDGE",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
+    name: "Sh. BTX X400",
+    description: "",
+    price: 8400,
+    image: "https://soylola.com/36971-medium_default/sh-claridge-botox-x400-cc.jpg"
+  },
+  {
+    id: 1383,
+    brand: "OLIO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
+    name: "Olio protector extra ácido",
+    description: "",
+    price: 7400,
+    image: "https://acdn-us.mitiendanube.com/stores/001/889/937/products/protector-acido-53236e7dc4d5a2719817459614586525-640-0.jpg"
+  },
+  {
+    id: 1384,
+    brand: "LOREAL PROFESIONAL",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
+    name: "Acondicionador vitamino color spectrum 200ml",
+    description: "",
+    price: 63900,
+    image: "https://acdn-us.mitiendanube.com/stores/001/084/106/products/lp_vcs_2025_conditioner_thumbnails_lps_packshot_1x1_3474637269012_3474637269029-4b14a9e8f70d7103d417427498317827-1024-1024.png"
+  },
+  {
+    id: 1385,
+    brand: "TONE VITAE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
+    name: "TONE VITAE PLEX SPRAY NUTRITIVO X125 ML",
+    description: "",
+    price: 3900,
+    image: "https://esteticaenlinea.com.ar/cdn/shop/files/7000blue_13.png?v=1753294672"
+  },
+  {
+    id: 1386,
+    brand: "TONE VITAE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
+    name: "TONE VITAE PLEX TODO EN UNO",
+    description: "",
+    price: 4900,
+    image: "https://bertoldi.com.ar/cdn/shop/files/ShampooCaida.png?v=1750165778"
+  },
+  {
+    id: 1387,
+    brand: "ARABES",
+    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    name: "ASAD ZANZIBAR 100ML MASCULINO",
+    description: "",
+    price: 45900,
+    image: "https://fimgs.net/mdimg/perfume/social.90713.jpg"
+  },
+  {
+    id: 1388,
+    brand: "ARABES",
+    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    name: "Club de nuit intense x105 masculino",
+    description: "",
+    price: 69900,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR070dkN2ehK3U2AK-TjYfh2x9d9l5lsr8RyQ&s"
+  },
+  {
+    id: 1389,
+    brand: "ARABES",
+    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADAS",
+    name: "Haya 100ml femenino",
+    description: "",
+    price: 64900,
+    image: "https://acdn-us.mitiendanube.com/stores/004/407/494/products/haya-af0a1515bd7c6bffce17189786661381-1024-1024.webp"
+  },
+  {
+    id: 1390,
+    brand: "ARABES",
+    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADAS",
+    name: "Yara rosa 100ml femenino",
+    description: "",
+    price: 62900,
+    image: "https://http2.mlstatic.com/D_NQ_NP_685416-MLU72775594835_112023-O.webp"
+  },
+  {
+    id: 1391,
+    brand: "ARABES",
+    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADAS",
+    name: "Bad femme 100ml femenino",
+    description: "",
+    price: 49900,
+    image: "https://acdn-us.mitiendanube.com/stores/003/226/824/products/1024-x-1024-px-2025-05-09t110443-254-311f0799b0d4f2606217467994870281-1024-1024.jpg"
+  },
+  {
+    id: 1392,
+    brand: "ARABES",
+    category: "FRAGANCIAS/COLONIAS",
+    name: "Body splash imitaciones árabes 100ml",
+    description: "",
+    price: 3900,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC1Sa_-BgU-lcxtmaZ8z7Zdr3uBYiF1EDkIw&s"
+  },
+  {
+    id: 1393,
+    brand: "KARSEELL",
+    category: "CUIDADO CAPILAR/ALISADOS",
+    name: "ACEITE MACA ESSENCE OIL X50 GR",
+    description: "",
+    price: 30900,
+    image: "https://acdn-us.mitiendanube.com/stores/006/234/329/products/2-ddbfac826c2959737e17473491729705-640-0.png"
+  }
   
   
 ];

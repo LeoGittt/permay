@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Grid, List, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -8,6 +7,7 @@ import { ProductCard } from "@/components/ProductCard"
 import { ProductModal } from "@/components/ProductModal"
 import { Pagination } from "@/components/Pagination"
 import { Badge } from "@/components/ui/badge"
+import { useModalHistory } from "@/hooks/useModalHistory"
 import type { Product } from "@/types/product"
 
 interface ProductGridProps {
@@ -35,38 +35,38 @@ export function ProductGrid({
   totalPages,
   onPageChange,
 }: ProductGridProps) {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const { selectedItem: selectedProduct, isOpen, openModal, closeModal } = useModalHistory<Product>()
 
   return (
     <div className="space-y-6">
       {/* Controls */}
-      <div className="bg-white rounded-lg border p-4 shadow-sm">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="flex items-center gap-4">
-            <Badge variant="secondary">{totalProducts} productos</Badge>
+      <div className="bg-white rounded-lg border p-3 sm:p-4 shadow-sm">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+            <Badge variant="secondary" className="w-fit">{totalProducts} productos</Badge>
 
-            <div className="flex items-center gap-1 border rounded-md">
+            <div className="flex items-center gap-1 border rounded-md w-fit">
               <Button
                 variant={viewMode === "grid" ? "default" : "ghost"}
                 size="sm"
                 onClick={() => setViewMode("grid")}
-                className="rounded-r-none"
+                className="rounded-r-none text-xs sm:text-sm"
               >
-                <Grid className="h-4 w-4" />
+                <Grid className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
               <Button
                 variant={viewMode === "list" ? "default" : "ghost"}
                 size="sm"
                 onClick={() => setViewMode("list")}
-                className="rounded-l-none"
+                className="rounded-l-none text-xs sm:text-sm"
               >
-                <List className="h-4 w-4" />
+                <List className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
             </div>
           </div>
 
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className="w-48">
+            <SelectTrigger className="w-full sm:w-48">
               <SelectValue placeholder="Ordenar por" />
             </SelectTrigger>
             <SelectContent>
@@ -90,7 +90,9 @@ export function ProductGrid({
         <>
           <div
             className={
-              viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" : "space-y-4"
+              viewMode === "grid" 
+                ? "grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4" 
+                : "space-y-3 sm:space-y-4"
             }
           >
             {products.map((product) => (
@@ -98,7 +100,7 @@ export function ProductGrid({
                 key={product.id}
                 product={product}
                 onAddToCart={onAddToCart}
-                onViewDetails={setSelectedProduct}
+                onViewDetails={openModal}
                 viewMode={viewMode}
               />
             ))}
@@ -114,8 +116,8 @@ export function ProductGrid({
       {/* Product Modal */}
       <ProductModal
         product={selectedProduct}
-        isOpen={!!selectedProduct}
-        onClose={() => setSelectedProduct(null)}
+        isOpen={isOpen}
+        onClose={closeModal}
         onAddToCart={onAddToCart}
       />
     </div>

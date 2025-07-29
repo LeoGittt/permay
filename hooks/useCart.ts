@@ -1,24 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import type { CartItem } from "@/types/cart"
 import { products } from "@/data/products"
+import { useLocalStorage } from "@/hooks/useLocalStorage"
 
 export function useCart() {
-  const [cart, setCart] = useState<CartItem[]>([])
-
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    const savedCart = localStorage.getItem("permay-cart")
-    if (savedCart) {
-      setCart(JSON.parse(savedCart))
-    }
-  }, [])
-
-  // Save cart to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("permay-cart", JSON.stringify(cart))
-  }, [cart])
+  const [cart, setCart, , isLoaded] = useLocalStorage<CartItem[]>("permay-cart", [])
 
   const addToCart = (productId: number, quantity = 1) => {
     setCart((prevCart) => {

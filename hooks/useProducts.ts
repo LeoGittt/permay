@@ -1,18 +1,60 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useMemo } from "react"
 import { products } from "@/data/products"
+import { useLocalStorage } from "@/hooks/useLocalStorage"
 
 const PRODUCTS_PER_PAGE = 12
 
+interface FilterState {
+  searchTerm: string
+  selectedBrands: string[]
+  selectedCategories: string[]
+  priceRange: number[]
+  sortBy: string
+  viewMode: "grid" | "list"
+  currentPage: number
+}
+
+const defaultFilters: FilterState = {
+  searchTerm: "",
+  selectedBrands: [],
+  selectedCategories: [],
+  priceRange: [0, 100000],
+  sortBy: "name",
+  viewMode: "grid",
+  currentPage: 1,
+}
+
 export function useProducts() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([])
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
-  const [priceRange, setPriceRange] = useState([0, 100000])
-  const [sortBy, setSortBy] = useState("name")
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
-  const [currentPage, setCurrentPage] = useState(1)
+  const [filters, setFilters, removeFilters, isLoaded] = useLocalStorage<FilterState>("permay-filters", defaultFilters)
+
+  const {
+    searchTerm,
+    selectedBrands,
+    selectedCategories,
+    priceRange,
+    sortBy,
+    viewMode,
+    currentPage,
+  } = filters
+
+  // Helper functions to update specific filters
+  const updateFilter = (key: keyof FilterState, value: any, resetPage = true) => {
+    setFilters(prev => ({
+      ...prev,
+      [key]: value,
+      ...(resetPage && { currentPage: 1 })
+    }))
+  }
+
+  const setSearchTerm = (term: string) => updateFilter("searchTerm", term)
+  const setSelectedBrands = (brands: string[]) => updateFilter("selectedBrands", brands)
+  const setSelectedCategories = (categories: string[]) => updateFilter("selectedCategories", categories)
+  const setPriceRange = (range: number[]) => updateFilter("priceRange", range)
+  const setSortBy = (sort: string) => updateFilter("sortBy", sort)
+  const setViewMode = (mode: "grid" | "list") => updateFilter("viewMode", mode, false)
+  const setCurrentPage = (page: number) => updateFilter("currentPage", page, false)
 
   const brands = useMemo(() => [...new Set(products.map((p) => p.brand).filter(Boolean))].sort(), [])
   const categories = useMemo(() => [...new Set(products.map((p) => p.category).filter(Boolean))].sort(), [])
@@ -56,37 +98,14 @@ export function useProducts() {
   }, [filteredProducts, currentPage])
 
   // Reset to first page when filters change
-  const setSearchTermWithReset = (term: string) => {
-    setSearchTerm(term)
-    setCurrentPage(1)
-  }
-
-  const setSelectedBrandsWithReset = (brands: string[]) => {
-    setSelectedBrands(brands)
-    setCurrentPage(1)
-  }
-
-  const setSelectedCategoriesWithReset = (categories: string[]) => {
-    setSelectedCategories(categories)
-    setCurrentPage(1)
-  }
-
-  const setPriceRangeWithReset = (range: number[]) => {
-    setPriceRange(range)
-    setCurrentPage(1)
-  }
-
-  const setSortByWithReset = (sort: string) => {
-    setSortBy(sort)
-    setCurrentPage(1)
-  }
+  const setSearchTermWithReset = (term: string) => setSearchTerm(term)
+  const setSelectedBrandsWithReset = (brands: string[]) => setSelectedBrands(brands)
+  const setSelectedCategoriesWithReset = (categories: string[]) => setSelectedCategories(categories)
+  const setPriceRangeWithReset = (range: number[]) => setPriceRange(range)
+  const setSortByWithReset = (sort: string) => setSortBy(sort)
 
   const clearFilters = () => {
-    setSelectedBrands([])
-    setSelectedCategories([])
-    setPriceRange([0, 100000])
-    setSearchTerm("")
-    setCurrentPage(1)
+    removeFilters()
   }
 
   return {

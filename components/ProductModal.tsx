@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { ShoppingCart, Star, Heart, Minus, Plus } from "lucide-react"
+import { useState, useEffect } from "react"
+import { ShoppingCart, Minus, Plus, X, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -16,7 +16,13 @@ interface ProductModalProps {
 
 export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductModalProps) {
   const [quantity, setQuantity] = useState(1)
-  const [isFavorite, setIsFavorite] = useState(false)
+
+  // Resetear la cantidad cuando se abre un nuevo producto
+  useEffect(() => {
+    if (product) {
+      setQuantity(1)
+    }
+  }, [product])
 
   if (!product) return null
 
@@ -32,92 +38,139 @@ export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductM
     onClose()
   }
 
+  const handleWhatsAppContact = () => {
+    const phoneNumber = "5492613000787"
+    const message = `Hola! Me interesa el producto: ${product.name} - ${product.brand}. ¿Podrías darme más información?`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-xl">{product.name}</DialogTitle>
-          <DialogDescription>
-            {product.brand} - {product.category.split("/").pop()}
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <div className="relative">
-              <img
-                src={product.image || "/placeholder.svg?height=400&width=400"}
-                alt={product.name}
-                className="w-full h-80 object-cover rounded-lg"
-              />
+      <DialogContent 
+        className="max-w-4xl max-h-[95vh] w-[95vw] sm:w-full overflow-y-auto p-0 gap-0 rounded-xl border-0 shadow-2xl"
+        onInteractOutside={(e) => {
+          onClose()
+        }}
+      >
+        <div className="relative bg-white rounded-xl overflow-hidden">
+          {/* Header minimalista */}
+          <div className="sticky top-0 z-10 bg-white border-b px-4 sm:px-6 py-3 sm:py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex-1 min-w-0 mr-3">
+                <DialogTitle className="text-lg sm:text-xl font-bold text-gray-900 line-clamp-2">{product.name}</DialogTitle>
+                <DialogDescription className="text-sm text-gray-600 mt-1 truncate">
+                  {product.brand} • {product.category.split("/").pop()}
+                </DialogDescription>
+              </div>
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-4 right-4 bg-white/90"
-                onClick={() => setIsFavorite(!isFavorite)}
+                onClick={onClose}
+                className="h-8 w-8 rounded-full hover:bg-gray-100 flex-shrink-0"
               >
-                <Heart className={`h-5 w-5 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
+                <X className="h-4 w-4" />
               </Button>
-            </div>
-
-            <div className="flex gap-2">
-              <Badge>{product.brand}</Badge>
-              <Badge variant="outline">{product.category.split("/").pop()}</Badge>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div>
-              <h4 className="font-semibold mb-3">Descripción</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">{product.description}</p>
-            </div>
+          <div className="p-4 sm:p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+              {/* Imagen del producto */}
+              <div className="space-y-3 sm:space-y-4">
+                <div className="relative">
+                  <img
+                    src={product.image || "/placeholder.svg?height=400&width=400"}
+                    alt={product.name}
+                    className="w-full h-64 sm:h-80 object-cover rounded-xl shadow-md"
+                  />
+                </div>
 
-            <div className="space-y-3 bg-gray-50 p-4 rounded-lg">
-              <div className="flex justify-between items-center">
-                <span>Precio unitario:</span>
-                <span className="font-bold text-xl text-permay-primary">{formatPrice(product.price)}</span>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <span>Calificación:</span>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                  <span className="text-sm ml-1">(4.5)</span>
+                {/* Badges */}
+                <div className="flex gap-2 flex-wrap">
+                  <Badge className="bg-permay-primary hover:bg-permay-primary/90 text-xs sm:text-sm rounded-full px-3 py-1">
+                    {product.brand}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs sm:text-sm rounded-full px-3 py-1 border-gray-300">
+                    {product.category.split("/").pop()}
+                  </Badge>
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="font-medium">Cantidad:</span>
-                <div className="flex items-center gap-3">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="h-8 w-8"
+              {/* Información del producto */}
+              <div className="space-y-3 sm:space-y-4">
+                {/* Descripción - solo mostrar si existe */}
+                {product.description && product.description.trim() && (
+                  <div className="bg-gray-50 rounded-xl p-4">
+                    <h4 className="font-semibold mb-2 text-gray-900 text-sm sm:text-base">Descripción</h4>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{product.description}</p>
+                  </div>
+                )}
+
+                {/* Precio */}
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-5 rounded-xl border border-gray-200">
+                  <div className="text-center">
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">Precio</p>
+                    <p className="text-xl sm:text-2xl font-bold text-permay-primary">{formatPrice(product.price)}</p>
+                  </div>
+                </div>
+
+                {/* Selector de cantidad */}
+                <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-medium text-sm sm:text-base">Cantidad:</span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="h-8 w-8 rounded-full border-2"
+                        disabled={quantity <= 1}
+                      >
+                        <Minus className="h-3 w-3 sm:h-4 sm:w-4" />
+                      </Button>
+                      <span className="font-semibold text-base sm:text-lg w-8 text-center">{quantity}</span>
+                      <Button 
+                        variant="outline" 
+                        size="icon" 
+                        onClick={() => setQuantity(quantity + 1)} 
+                        className="h-8 w-8 rounded-full border-2"
+                      >
+                        <Plus className="h-3 w-3 sm:h-4 sm:w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Total */}
+                  <div className="flex justify-between items-center text-base sm:text-lg font-bold border-t pt-3">
+                    <span>Total:</span>
+                    <span className="text-permay-primary">{formatPrice(product.price * quantity)}</span>
+                  </div>
+                </div>
+
+                {/* Botones de acción */}
+                <div className="space-y-2 sm:space-y-3">
+                  {/* Botón agregar al carrito */}
+                  <Button 
+                    onClick={handleAddToCart} 
+                    className="w-full bg-permay-primary hover:bg-permay-primary/90 py-3 text-sm sm:text-base rounded-xl shadow-md hover:shadow-lg transition-all"
                   >
-                    <Minus className="h-4 w-4" />
+                    <ShoppingCart className="h-4 w-4 mr-2" />
+                    Agregar al carrito
                   </Button>
-                  <span className="font-semibold text-lg w-8 text-center">{quantity}</span>
-                  <Button variant="outline" size="icon" onClick={() => setQuantity(quantity + 1)} className="h-8 w-8">
-                    <Plus className="h-4 w-4" />
+
+                  {/* Botón WhatsApp */}
+                  <Button 
+                    onClick={handleWhatsAppContact} 
+                    variant="outline"
+                    className="w-full py-3 text-sm sm:text-base border-green-500 text-green-600 hover:bg-green-50 hover:border-green-600 rounded-xl shadow-sm hover:shadow-md transition-all"
+                  >
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Consultar por WhatsApp
                   </Button>
                 </div>
               </div>
-
-              <div className="flex justify-between items-center text-lg font-bold">
-                <span>Total:</span>
-                <span className="text-permay-primary">{formatPrice(product.price * quantity)}</span>
-              </div>
             </div>
-
-            <Button onClick={handleAddToCart} className="w-full bg-permay-primary hover:bg-permay-primary/90 py-6">
-              <ShoppingCart className="h-5 w-5 mr-2" />
-              Agregar al carrito
-            </Button>
           </div>
         </div>
       </DialogContent>

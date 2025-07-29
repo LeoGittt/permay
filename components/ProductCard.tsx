@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Heart, ShoppingCart, Star, Eye } from "lucide-react"
+import { ShoppingCart, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -15,7 +15,6 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: ProductCardProps) {
-  const [isFavorite, setIsFavorite] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const formatPrice = (price: number) => {
@@ -35,45 +34,33 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
   if (viewMode === "list") {
     return (
       <Card className="hover:shadow-md transition-shadow">
-        <div className="flex p-4 gap-4">
-          <div className="relative w-24 h-24 flex-shrink-0">
+        <div className="flex p-3 sm:p-4 gap-3 sm:gap-4">
+          <div className="relative w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
             <img
               src={product.image || "/placeholder.svg?height=96&width=96"}
               alt={product.name}
               className="w-full h-full object-cover rounded-md"
             />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute -top-2 -right-2 bg-white shadow-sm w-6 h-6"
-              onClick={() => setIsFavorite(!isFavorite)}
-            >
-              <Heart className={`h-3 w-3 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
-            </Button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-between">
+          <div className="flex-1 flex flex-col justify-between min-w-0">
             <div>
-              <div className="flex items-start justify-between mb-2">
-                <div>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-4">
+                <div className="flex-1 min-w-0">
                   <Badge variant="secondary" className="mb-1 text-xs">
                     {product.brand}
                   </Badge>
-                  <h3 className="font-semibold text-sm line-clamp-1">{product.name}</h3>
-                  <p className="text-xs text-gray-500">{product.category.split("/").pop()}</p>
+                  <h3 className="font-semibold text-sm sm:text-base line-clamp-2 sm:line-clamp-1">{product.name}</h3>
+                  <p className="text-xs text-gray-500 capitalize truncate">{product.category.split("/").pop()}</p>
                 </div>
-                <div className="text-right">
-                  <span className="text-lg font-bold text-permay-primary">{formatPrice(product.price)}</span>
-                  <div className="flex items-center gap-1 justify-end">
-                    <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                    <span className="text-xs">4.5</span>
-                  </div>
+                <div className="flex-shrink-0">
+                  <span className="text-base sm:text-lg font-bold text-permay-primary">{formatPrice(product.price)}</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm" onClick={() => onViewDetails(product)} className="flex-1">
+            <div className="flex gap-2 mt-2">
+              <Button variant="outline" size="sm" onClick={() => onViewDetails(product)} className="flex-1 text-xs sm:text-sm">
                 <Eye className="h-3 w-3 mr-1" />
                 Ver
               </Button>
@@ -81,7 +68,7 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
                 size="sm"
                 onClick={handleAddToCart}
                 disabled={isLoading}
-                className="flex-1 bg-permay-primary hover:bg-permay-primary/90"
+                className="flex-1 bg-permay-primary hover:bg-permay-primary/90 text-xs sm:text-sm"
               >
                 <ShoppingCart className="h-3 w-3 mr-1" />
                 {isLoading ? "..." : "Comprar"}
@@ -100,51 +87,43 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
           <img
             src={product.image || "/placeholder.svg?height=200&width=200"}
             alt={product.name}
-            className="w-full h-48 object-cover rounded-t-lg"
+            className="w-full h-36 sm:h-48 object-cover rounded-t-lg"
           />
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-2 right-2 bg-white/90 shadow-sm"
-            onClick={() => setIsFavorite(!isFavorite)}
-          >
-            <Heart className={`h-4 w-4 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
-          </Button>
-
-          <Badge className="absolute top-2 left-2 bg-permay-primary">{product.brand}</Badge>
+          <Badge className="absolute top-2 left-2 bg-permay-primary text-xs">
+            {product.brand}
+          </Badge>
         </div>
       </CardHeader>
 
-      <CardContent className="flex-1 p-4">
-        <div className="space-y-2">
-          <h3 className="font-semibold text-sm line-clamp-2 min-h-[2.5rem]">{product.name}</h3>
-          <p className="text-xs text-gray-500">{product.category.split("/").pop()}</p>
-          <p className="text-xs text-gray-600 line-clamp-2">{product.description}</p>
+      <CardContent className="flex-1 p-3 sm:p-4">
+        <div className="space-y-1 sm:space-y-2">
+          <h3 className="font-semibold text-sm sm:text-base line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">{product.name}</h3>
+          <p className="text-xs text-gray-500 capitalize truncate">{product.category.split("/").pop()}</p>
+          {product.description && product.description.trim() && (
+            <p className="text-xs text-gray-600 line-clamp-2 hidden sm:block">{product.description}</p>
+          )}
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 flex flex-col gap-3">
-        <div className="flex items-center justify-between w-full">
-          <span className="text-lg font-bold text-permay-primary">{formatPrice(product.price)}</span>
-          <div className="flex items-center gap-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm">4.5</span>
-          </div>
+      <CardFooter className="p-3 sm:p-4 pt-0 flex flex-col gap-2 sm:gap-3">
+        <div className="w-full text-center">
+          <span className="text-base sm:text-lg font-bold text-permay-primary">{formatPrice(product.price)}</span>
         </div>
 
         <div className="flex gap-2 w-full">
-          <Button variant="outline" size="sm" onClick={() => onViewDetails(product)} className="flex-1">
-            <Eye className="h-4 w-4 mr-1" />
-            Ver más
+          <Button variant="outline" size="sm" onClick={() => onViewDetails(product)} className="flex-1 text-xs sm:text-sm">
+            <Eye className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+            <span className="hidden sm:inline">Ver más</span>
+            <span className="sm:hidden">Ver</span>
           </Button>
           <Button
             size="sm"
             onClick={handleAddToCart}
             disabled={isLoading}
-            className="flex-1 bg-permay-primary hover:bg-permay-primary/90"
+            className="flex-1 bg-permay-primary hover:bg-permay-primary/90 text-xs sm:text-sm"
           >
-            <ShoppingCart className="h-4 w-4 mr-1" />
+            <ShoppingCart className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
             {isLoading ? "..." : "Comprar"}
           </Button>
         </div>
