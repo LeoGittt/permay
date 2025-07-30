@@ -398,7 +398,7 @@ export const products = [
   {
     id: 38,
     brand: "BIFERDIL",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "CREMA PARA PEINAR RULOS X270",
     description: "",
     price: 11900,
@@ -408,7 +408,7 @@ export const products = [
   {
     id: 39,
     brand: "BIFERDIL",
-    category: "CUIDADO CAPILAR/LOCION ANTICAIDA",
+    category: "CUIDADO CAPILAR/LOCIONES ANTICAIDA",
     name: "LOCION BIOXIDIL FORTALECEDORA Y ENGROSADORA X100",
     description: "",
     price: 24200,
@@ -943,7 +943,7 @@ export const products = [
   {
     id: 93,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/TINTURA",
+    category: "CUIDADO CAPILAR/TINTURAS",
     name: "TINTURA SYSTEM 3 GRIS CON AMONIACO",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
@@ -954,7 +954,7 @@ export const products = [
   {
     id: 94,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/TINTURA",
+    category: "CUIDADO CAPILAR/TINTURAS",
     name: "TINTURA SYSTEM 3 VERDE SIN AMONIACO 0%",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
@@ -965,7 +965,7 @@ export const products = [
   {
     id: 95,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/TINTURA",
+    category: "CUIDADO CAPILAR/TINTURAS",
     name: "TINTURA SYSTEM 3 ROJISIMOS",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
@@ -976,7 +976,7 @@ export const products = [
   {
     id: 96,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "ACONDICIONADOR TRIPLE ACCION SIN ENJUAGUE X150",
     description: "",
     price: 9900,
@@ -986,7 +986,7 @@ export const products = [
   {
     id: 97,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "CREMA PARA PEINAR CABELLOS CON RULOS",
     description: "",
     price: 8600,
@@ -1016,7 +1016,7 @@ export const products = [
   {
     id: 100,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "TRATAMIENTO ACONDICIONADOR INTENSIVO 1 MINUTO X250",
     description: "",
     price: 7300,
@@ -1367,7 +1367,7 @@ export const products = [
   {
     id: 139,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA CAPILAR CON ACEITE DE MACADAMIA",
     description: "",
     price: 7900,
@@ -1376,7 +1376,7 @@ export const products = [
   {
     id: 140,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA ANTI REFLEJOS NARANJA",
     description: "",
     price: 5800,
@@ -1385,7 +1385,7 @@ export const products = [
   {
     id: 141,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA CABELLOS CON COLOR SACHET CHICOX24U",
     description: "",
     price: 1100,
@@ -1394,7 +1394,7 @@ export const products = [
   {
     id: 142,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA CABELLOS SECOS SACHET CHICO X24U",
     description: "",
     price: 1200,
@@ -1403,7 +1403,7 @@ export const products = [
   {
     id: 143,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA BLINDAJE CAPILAR PH ACIDO X250",
     description: "",
     price: 8900,
@@ -1430,7 +1430,7 @@ export const products = [
   {
     id: 146,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/POLVO DECOLORANTE",
+    category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "POLVO DECOLORANTE SYSTEM 3 SIN AMONIACO X70 GR",
     description: "",
     price: 6600,
@@ -1439,7 +1439,7 @@ export const products = [
   {
     id: 147,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "CREMA OXIGENADA SYSTEM 20 VOLUMENES DOYPACK X900",
     description: "",
     price: 8100,
@@ -1448,7 +1448,7 @@ export const products = [
   {
     id: 148,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "CREMA OXIGENADA SYSTEM 15 VOLUMENES DOYPACK X900",
     description: "",
     price: 8600,
@@ -1457,7 +1457,7 @@ export const products = [
   {
     id: 149,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "CREMA OXIGENADA SYSTEM 15 VOLUMENES X90",
     description: "",
     price: 2100,
@@ -1466,7 +1466,7 @@ export const products = [
   {
     id: 150,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "CREMA OXIGENADA SYSTEM 20 VOLUMENES X90",
     description: "",
     price: 2100,
@@ -1475,7 +1475,7 @@ export const products = [
   {
     id: 151,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "CREMA OXIGENADA SYSTEM 30 VOLUMENES X90",
     description: "",
     price: 2100,
@@ -1799,7 +1799,7 @@ export const products = [
   {
     id: 187,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/FIJADOR",
+    category: "CUIDADO CAPILAR/FIJADORES",
     name: "SPRAY ANTI FRIZZ X500",
     description: "",
     price: 4800,
@@ -1808,7 +1808,7 @@ export const products = [
   {
     id: 188,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/FIJADOR",
+    category: "CUIDADO CAPILAR/FIJADORES",
     name: "SPRAY BRILLO X500",
     description: "",
     price: 5000,
@@ -1817,7 +1817,7 @@ export const products = [
   {
     id: 189,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/SPRAY DESENREDANTE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "SPRAY PARA PEINAR CUTIPLUS EXTRABRILLO X200",
     description: "",
     price: 6700,
@@ -1826,7 +1826,7 @@ export const products = [
   {
     id: 190,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/SPRAY DESENREDANTE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "SPRAY PARA PEINAR OLEOS VITALES X200",
     description: "",
     price: 6500,
@@ -1835,7 +1835,7 @@ export const products = [
   {
     id: 191,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/SPRAY DESENREDANTE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "SPRAY PARA PEINAR KERATINICO X200",
     description: "",
     price: 7600,
@@ -1844,7 +1844,7 @@ export const products = [
   {
     id: 192,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/SPRAY DESENREDANTE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "SPRAY PARA PEINAR OLEOS VITALES X200",
     description: "",
     price: 6500,
@@ -1853,7 +1853,7 @@ export const products = [
   {
     id: 193,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/SPRAY DESENREDANTE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "TRATAMIENTO 25 BENEFICIOS X200",
     description: "",
     price: 6700,
@@ -1862,7 +1862,7 @@ export const products = [
   {
     id: 194,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "TRATAMIENTO CAPILAR  ORO BAÑO DE CREMA X250",
     description: "",
     price: 9300,
@@ -1970,7 +1970,7 @@ export const products = [
   {
     id: 206,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/FIJADOR",
+    category: "CUIDADO CAPILAR/FIJADORES",
     name: "BRILLO SILICONADO SPRAY X440ML",
     description: "",
     price: 13000,
@@ -1979,7 +1979,7 @@ export const products = [
   {
     id: 207,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/FIJADOR",
+    category: "CUIDADO CAPILAR/FIJADORES",
     name: "FIJADOR SPRAY X500 FIRME",
     description: "",
     price: 10900,
@@ -1988,7 +1988,7 @@ export const products = [
   {
     id: 208,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/FIJADOR",
+    category: "CUIDADO CAPILAR/FIJADORES",
     name: "FIJADOR SPRAY X500 NORMAL",
     description: "",
     price: 10900,
@@ -1997,7 +1997,7 @@ export const products = [
   {
     id: 209,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/FIJADOR",
+    category: "CUIDADO CAPILAR/FIJADORES",
     name: "FIJADOR LACA EXTRAFIRME X420",
     description: "",
     price: 10400,
@@ -2042,7 +2042,7 @@ export const products = [
   {
     id: 214,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "CREMA DE PEINAR NUTRITIVA BBH 10 EN 1 X225",
     description: "",
     price: 9000,
@@ -2051,7 +2051,7 @@ export const products = [
   {
     id: 215,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/SPRAY DESENREDANTE",
+    category: "CUIDADO CAPILAR/SPRAYS DESENREDANTES",
     name: "MODELADOR QUERATINICO BIFASE X250",
     description: "",
     price: 8600,
@@ -2116,7 +2116,7 @@ export const products = [
   {
     id: 222,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA COCO Y VAINILLA X1KG",
     description: "",
     price: 10400,
@@ -2125,7 +2125,7 @@ export const products = [
   {
     id: 223,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA ALMENDRA X1KG",
     description: "",
     price: 10400,
@@ -2134,7 +2134,7 @@ export const products = [
   {
     id: 224,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA KERATINA X1KG",
     description: "",
     price: 10400,
@@ -2143,7 +2143,7 @@ export const products = [
   {
     id: 225,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA COCO Y VAINILLA X270",
     description: "",
     price: 3800,
@@ -2152,7 +2152,7 @@ export const products = [
   {
     id: 226,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA ALMENDRA X270",
     description: "",
     price: 3800,
@@ -2161,7 +2161,7 @@ export const products = [
   {
     id: 227,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA KERATINA X270",
     description: "",
     price: 3800,
@@ -2170,7 +2170,7 @@ export const products = [
   {
     id: 228,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA COLORMASTER EXTRA ACIDA X1KG",
     description: "",
     price: 8900,
@@ -2179,7 +2179,7 @@ export const products = [
   {
     id: 229,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA COLORMASTER EXTRA ACIDA X270",
     description: "",
     price: 3400,
@@ -2188,7 +2188,7 @@ export const products = [
   {
     id: 230,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA CAVIAR HIDRONUTRITIVA X1KG",
     description: "",
     price: 11400,
@@ -2197,7 +2197,7 @@ export const products = [
   {
     id: 231,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA ARGAN X1KG",
     description: "",
     price: 13500,
@@ -2206,7 +2206,7 @@ export const products = [
   {
     id: 232,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA CAVIAR HIDRONUTRITIVA X250",
     description: "",
     price: 5000,
@@ -2215,7 +2215,7 @@ export const products = [
   {
     id: 233,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA ARGAN X250",
     description: "",
     price: 6300,
@@ -2224,7 +2224,7 @@ export const products = [
   {
     id: 234,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "SHAMPOO NEUTRO COLORMASTER 5 LITROS ",
     description: "",
     price: 21200,
@@ -2233,7 +2233,7 @@ export const products = [
   {
     id: 235,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "ACONDICIONADOR COLORMASTER 5 LITROS ",
     description: "",
     price: 21200,
@@ -2242,7 +2242,7 @@ export const products = [
   {
     id: 236,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "SHAMPOO EXTRA ACIDO COLORMASTER 5 LITROS",
     description: "",
     price: 23100,
@@ -2251,7 +2251,7 @@ export const products = [
   {
     id: 237,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Color master Shampoo neutro x 1 lt",
     description: "",
     price: 5400,
@@ -2260,7 +2260,7 @@ export const products = [
   {
     id: 238,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Color master Conditioner acidox 1 lt",
     description: "",
     price: 5400,
@@ -2269,7 +2269,7 @@ export const products = [
   {
     id: 239,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Color master Shampoo Acido x 1 lt",
     description: "",
     price: 6100,
@@ -2278,7 +2278,7 @@ export const products = [
   {
     id: 240,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Color master Shampoo neutro x 230 ml",
     description: "",
     price: 2800,
@@ -2287,7 +2287,7 @@ export const products = [
   {
     id: 241,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Color master conditioner acido x 230 ml",
     description: "",
     price: 2800,
@@ -2296,7 +2296,7 @@ export const products = [
   {
     id: 242,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Color master Shampoo acido x 230 ml",
     description: "",
     price: 3000,
@@ -2305,7 +2305,7 @@ export const products = [
   {
     id: 243,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo keratina x 230 ml",
     description: "",
     price: 2900,
@@ -2314,7 +2314,7 @@ export const products = [
   {
     id: 244,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Conditioner keratina x 230 ml",
     description: "",
     price: 2900,
@@ -2323,7 +2323,7 @@ export const products = [
   {
     id: 245,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "REINBENTION SHAMPOO VIOLETA X230ML",
     description: "",
     price: 3500,
@@ -2332,7 +2332,7 @@ export const products = [
   {
     id: 246,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "REINBENTION CONDITIONER TONO 7-9 X230ML",
     description: "",
     price: 3500,
@@ -2341,7 +2341,7 @@ export const products = [
   {
     id: 247,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "REINBENTION CONDITIONER TONO +10 X230ML",
     description: "",
     price: 3500,
@@ -2350,7 +2350,7 @@ export const products = [
   {
     id: 248,
     brand: "FIDELITE",
-    category: "MASCARA/BAÑO DE CREMA",
+    category: "MASCARA/BAÑOS DE CREMA",
     name: "Ultra black mascara matizador x 270 (gris platino)",
     description: "",
     price: 5500,
@@ -2359,7 +2359,7 @@ export const products = [
   {
     id: 249,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Ultra black shampoo matizador x 230 (gris platino)",
     description: "",
     price: 4000,
@@ -2368,7 +2368,7 @@ export const products = [
   {
     id: 250,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Teñidos x 260 ml",
     description: "",
     price: 4600,
@@ -2377,7 +2377,7 @@ export const products = [
   {
     id: 251,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Secos y cast x 260 ml",
     description: "",
     price: 4600,
@@ -2386,7 +2386,7 @@ export const products = [
   {
     id: 252,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Grasos x 260 ml",
     description: "",
     price: 4600,
@@ -2395,7 +2395,7 @@ export const products = [
   {
     id: 253,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Normales x 260 ml",
     description: "",
     price: 4600,
@@ -2404,7 +2404,7 @@ export const products = [
   {
     id: 254,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Teñidos x 900 ml",
     description: "",
     price: 12000,
@@ -2413,7 +2413,7 @@ export const products = [
   {
     id: 255,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Secos y cast x 900 ml",
     description: "",
     price: 12000,
@@ -2422,7 +2422,7 @@ export const products = [
   {
     id: 256,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Grasos x 900 ml",
     description: "",
     price: 12000,
@@ -2431,7 +2431,7 @@ export const products = [
   {
     id: 257,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo Cabellos Normales x 900 ml",
     description: "",
     price: 12000,
@@ -2440,7 +2440,7 @@ export const products = [
   {
     id: 258,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Caviar Shampoo keratina x 900 ml",
     description: "",
     price: 8500,
@@ -2449,7 +2449,7 @@ export const products = [
   {
     id: 259,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Caviar conditioner cabellos Teñidos x 260 ml",
     description: "",
     price: 4600,
@@ -2458,7 +2458,7 @@ export const products = [
   {
     id: 260,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Caviar conditioner cabellos Secos y cast x 260 ml",
     description: "",
     price: 4600,
@@ -2467,7 +2467,7 @@ export const products = [
   {
     id: 261,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Caviar conditioner cabellos Grasos x 260 ml",
     description: "",
     price: 4600,
@@ -2476,7 +2476,7 @@ export const products = [
   {
     id: 262,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Caviar conditioner cabellos Teñidos x 900 ml",
     description: "",
     price: 12000,
@@ -2485,7 +2485,7 @@ export const products = [
   {
     id: 263,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Caviar conditioner cabellos Secos y cast x 900 ml",
     description: "",
     price: 12000,
@@ -2494,7 +2494,7 @@ export const products = [
   {
     id: 264,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Caviar conditioner Keratina x 900 ml",
     description: "",
     price: 12000,
@@ -2503,7 +2503,7 @@ export const products = [
   {
     id: 265,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Caviar crema de peinar Rizos x 250 gr",
     description: "",
     price: 4200,
@@ -2512,7 +2512,7 @@ export const products = [
   {
     id: 266,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Caviar Mascara hidronutritiva x 250 gr",
     description: "",
     price: 5000,
@@ -2521,7 +2521,7 @@ export const products = [
   {
     id: 267,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Caviar Mascara hidronutritiva x kg",
     description: "",
     price: 11400,
@@ -2530,7 +2530,7 @@ export const products = [
   {
     id: 268,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Argan mascara x 250 gr",
     description: "",
     price: 6300,
@@ -2539,7 +2539,7 @@ export const products = [
   {
     id: 269,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Argan mascara x kg",
     description: "",
     price: 13500,
@@ -2548,7 +2548,7 @@ export const products = [
   {
     id: 270,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Argan Crema de peinar X 250 gr",
     description: "",
     price: 5200,
@@ -2557,7 +2557,7 @@ export const products = [
   {
     id: 271,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Argan shampoo x 260 ml",
     description: "",
     price: 5700,
@@ -2566,7 +2566,7 @@ export const products = [
   {
     id: 272,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Argan shampoo x 900 ml",
     description: "",
     price: 13600,
@@ -2575,7 +2575,7 @@ export const products = [
   {
     id: 273,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Argan conditioner x 260 ml",
     description: "",
     price: 5700,
@@ -2584,7 +2584,7 @@ export const products = [
   {
     id: 274,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/ENJUAGUE",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Argan conditioner x 900 ml",
     description: "",
     price: 13600,
@@ -2719,7 +2719,7 @@ export const products = [
   {
     id: 289,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/GEL FIJADOR",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "GEL EFECTO HUMEDO X230",
     description: "",
     price: 2800,
@@ -2728,7 +2728,7 @@ export const products = [
   {
     id: 290,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/GEL FIJADOR",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "Gel humedo fijacion extrema x 230 gr",
     description: "",
     price: 9000,
@@ -2755,7 +2755,7 @@ export const products = [
   {
     id: 293,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Argan Mascara x 250 g",
     description: "",
     price: 3900,
@@ -2764,7 +2764,7 @@ export const products = [
   {
     id: 294,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/AMPOLLA",
+    category: "CUIDADO CAPILAR/AMPOLLAS",
     name: "Argan Ampolla x 15 ml x 12 unidades",
     description: "",
     price: 1500,
@@ -2773,7 +2773,7 @@ export const products = [
   {
     id: 295,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Argan Shampoo x 250 ml",
     description: "",
     price: 3000,
@@ -2782,7 +2782,7 @@ export const products = [
   {
     id: 296,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Argan Crema de peinar x 250 gr",
     description: "",
     price: 3000,
@@ -2791,7 +2791,7 @@ export const products = [
   {
     id: 297,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/GELES PARA FIJACION",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "Gel Supreme fixer x 250 gr",
     description: "",
     price: 4900,
@@ -2800,7 +2800,7 @@ export const products = [
   {
     id: 298,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Karité Mascara x 250 gr",
     description: "",
     price: 3900,
@@ -2809,7 +2809,7 @@ export const products = [
   {
     id: 299,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Karité Crema de peinar x 250 gr",
     description: "",
     price: 3000,
@@ -2872,7 +2872,7 @@ export const products = [
   {
     id: 306,
     brand: "BEKIM",
-    category: "CUIDADO CAPILAR/ACONDICIONADORS",
+    category: "CUIDADO CAPILAR/ENJUAGUES",
     name: "Memory curly girl Acondicionador x 250 ml    RULOS",
     description: "",
     price: 3000,
@@ -2998,7 +2998,7 @@ export const products = [
   {
     id: 320,
     brand: "ALFAPARF",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA 10 VOLUMENES X 1L",
     description: "",
     price: 9900,
@@ -3007,7 +3007,7 @@ export const products = [
   {
     id: 321,
     brand: "ALFAPARF",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA 20 VOLUMENES X 1L",
     description: "",
     price: 9900,
@@ -3016,7 +3016,7 @@ export const products = [
   {
     id: 322,
     brand: "ALFAPARF",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA 30 VOLUMENES X 1L",
     description: "",
     price: 9900,
@@ -3025,7 +3025,7 @@ export const products = [
   {
     id: 323,
     brand: "ALFAPARF",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA 40 VOLUMENES X 1L",
     description: "",
     price: 9900,
@@ -3071,7 +3071,7 @@ export const products = [
   {
     id: 328,
     brand: "ALFAPARF ALTAMODA",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "SHAMPOO DESAMARILLADOR 300 ML",
     description: "",
     price: 6300,
@@ -3080,7 +3080,7 @@ export const products = [
   {
     id: 329,
     brand: "ALFAPARF ALTAMODA",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "MASCARA DESAMARILLADORA 300ML",
     description: "",
     price: 7200,
@@ -3188,7 +3188,7 @@ export const products = [
   {
     id: 341,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/POLVO DECOLORANTE",
+    category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "Decolorante LUREX EXTRA X 700",
     description: "",
     price: 16000,
@@ -3197,7 +3197,7 @@ export const products = [
   {
     id: 342,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 3.9 litro Keratina",
     description: "",
     price: 11500,
@@ -3206,7 +3206,7 @@ export const products = [
   {
     id: 343,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 3.9 litro Lino",
     description: "",
     price: 11500,
@@ -3215,7 +3215,7 @@ export const products = [
   {
     id: 344,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 3.9 litro Argan",
     description: "",
     price: 11500,
@@ -3224,7 +3224,7 @@ export const products = [
   {
     id: 345,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 3.9 litro Neutro",
     description: "",
     price: 11500,
@@ -3233,7 +3233,7 @@ export const products = [
   {
     id: 346,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 3.9 litro Almendra Acido",
     description: "",
     price: 11500,
@@ -3242,7 +3242,7 @@ export const products = [
   {
     id: 347,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "SHAMPOO X 1.9 LITRO NEUTRO",
     description: "",
     price: 7100,
@@ -3251,7 +3251,7 @@ export const products = [
   {
     id: 348,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml Quinto elemento Light and clean",
     description: "",
     price: 3200,
@@ -3260,7 +3260,7 @@ export const products = [
   {
     id: 349,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml Argan ( secos y deteriorados)",
     description: "",
     price: 3200,
@@ -3269,7 +3269,7 @@ export const products = [
   {
     id: 350,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml Lino ( deshidratados)",
     description: "",
     price: 3200,
@@ -3278,7 +3278,7 @@ export const products = [
   {
     id: 351,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml Keratina ( quebradizos y maltrat)",
     description: "",
     price: 3200,
@@ -3287,7 +3287,7 @@ export const products = [
   {
     id: 352,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml Almendra",
     description: "",
     price: 3200,
@@ -3296,7 +3296,7 @@ export const products = [
   {
     id: 353,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml Neutro",
     description: "",
     price: 3200,
@@ -3305,7 +3305,7 @@ export const products = [
   {
     id: 354,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/SHAMPOO",
+    category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "Shampoo x 250 ml biohidratante c/creatina ( alisados)",
     description: "",
     price: 3400,
@@ -3431,7 +3431,7 @@ export const products = [
   {
     id: 368,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion x 980 gr Keratina",
     description: "",
     price: 6900,
@@ -3440,7 +3440,7 @@ export const products = [
   {
     id: 369,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion x 980 gr Lino",
     description: "",
     price: 6900,
@@ -3449,7 +3449,7 @@ export const products = [
   {
     id: 370,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion x 980 gr Argan",
     description: "",
     price: 6900,
@@ -3458,7 +3458,7 @@ export const products = [
   {
     id: 371,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion X 980 gr Almendra Acido",
     description: "",
     price: 6900,
@@ -3467,7 +3467,7 @@ export const products = [
   {
     id: 372,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion x 980 Quinto elemento",
     description: "",
     price: 6900,
@@ -3476,7 +3476,7 @@ export const products = [
   {
     id: 373,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion X 240 ml Keratina",
     description: "",
     price: 3000,
@@ -3485,7 +3485,7 @@ export const products = [
   {
     id: 374,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion X 240 ml Lino",
     description: "",
     price: 3000,
@@ -3494,7 +3494,7 @@ export const products = [
   {
     id: 375,
     brand: "NOV",
-    category: "CUIDADO CAPILAR/BAÑO DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Nutricion X 240 ml Argan",
     description: "",
     price: 3000,
@@ -3918,7 +3918,7 @@ export const products = [
   {
     id: 422,
     brand: "BONMETIQUE",
-    category: "CUIDADO CAPILAR/POLVO DECOLORANTE",
+    category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "Polvo Decolorante 20 GR",
     description: "",
     price: 2500,
@@ -3927,7 +3927,7 @@ export const products = [
   {
     id: 423,
     brand: "BONMETIQUE",
-    category: "CUIDADO CAPILAR/POLVO DECOLORANTE",
+    category: "CUIDADO CAPILAR/POLVOS DECOLORANTES",
     name: "Polvo Decolorante 1+3 MADE IN ITALY 70 GR",
     description: "",
     price: 4500,
@@ -4342,7 +4342,7 @@ export const products = [
   {
     id: 469,
     brand: "MARY BOSQUES",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Keratina Express-crema para peinar-sin enjuague-pomo x 150 g.",
     description: "",
     price: 5800,
@@ -4351,7 +4351,7 @@ export const products = [
   {
     id: 470,
     brand: "MARY BOSQUES",
-    category: "CUIDADO CAPILAR/CREMA DE PEINAR",
+    category: "CUIDADO CAPILAR/CREMAS DE PEINAR",
     name: "Emulsion Hidratante-rulos perfectos-sin enjuague-pomo x 150 g.",
     description: "",
     price: 4500,
@@ -6062,7 +6062,7 @@ export const products = [
   {
     id: 660,
     brand: "LOREAL PROFESIONAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA X1LITRO INOA 20 VOL",
     description: "",
     price: 29600,
@@ -6179,7 +6179,7 @@ export const products = [
   {
     id: 673,
     brand: "LOREAL PROFESIONAL",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA X60ML INOA 20 VOL",
     description: "",
     price: 3600,
@@ -6404,7 +6404,7 @@ export const products = [
   {
     id: 697,
     brand: "ISSUE",
-    category: "CUIDADO CAPILAR/AGUA OXIGENADA",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA ISSUE 20 VOL X120ML",
     description: "",
     price: 2000,
@@ -6829,7 +6829,7 @@ export const products = [
   {
     id: 744,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 100ML 9/20/30/40/50 VOLUMENES",
     description: "",
     price: 1000,
@@ -6838,7 +6838,7 @@ export const products = [
   {
     id: 745,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 100ML 9/20/30/40/50/100 VOLUMENES",
     description: "",
     price: 1000,
@@ -6847,7 +6847,7 @@ export const products = [
   {
     id: 746,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 10 VOLUMENES",
     description: "",
     price: 4500,
@@ -6856,7 +6856,7 @@ export const products = [
   {
     id: 747,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 20 VOLUMENES",
     description: "",
     price: 4900,
@@ -6865,7 +6865,7 @@ export const products = [
   {
     id: 748,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 30 VOLUMENES",
     description: "",
     price: 5200,
@@ -6874,7 +6874,7 @@ export const products = [
   {
     id: 749,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 40 VOLUMENES",
     description: "",
     price: 5500,
@@ -6883,7 +6883,7 @@ export const products = [
   {
     id: 750,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 1 LITRO 50 VOLUMENES",
     description: "",
     price: 5900,
@@ -6892,7 +6892,7 @@ export const products = [
   {
     id: 751,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 10 VOLUMENES",
     description: "",
     price: 2900,
@@ -6901,7 +6901,7 @@ export const products = [
   {
     id: 752,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 20 VOLUMENES",
     description: "",
     price: 3500,
@@ -6910,7 +6910,7 @@ export const products = [
   {
     id: 753,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 30 VOLUMENES",
     description: "",
     price: 3900,
@@ -6919,7 +6919,7 @@ export const products = [
   {
     id: 754,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 40 VOLUMENES",
     description: "",
     price: 4500,
@@ -6928,7 +6928,7 @@ export const products = [
   {
     id: 755,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 50 VOLUMENES",
     description: "",
     price: 4900,
@@ -6937,7 +6937,7 @@ export const products = [
   {
     id: 756,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 1 LITRO 100 VOLUMENES",
     description: "",
     price: 6500,
@@ -6946,7 +6946,7 @@ export const products = [
   {
     id: 757,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 9/ VOLUMENES",
     description: "",
     price: 11500,
@@ -6955,7 +6955,7 @@ export const products = [
   {
     id: 758,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 20 VOLUMENES",
     description: "",
     price: 14500,
@@ -6964,7 +6964,7 @@ export const products = [
   {
     id: 759,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 30 VOLUMENES",
     description: "",
     price: 15900,
@@ -6973,7 +6973,7 @@ export const products = [
   {
     id: 760,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 40 VOLUMENES",
     description: "",
     price: 17900,
@@ -6982,7 +6982,7 @@ export const products = [
   {
     id: 761,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA DE 5 LITROS BIDON 50 VOLUMENES",
     description: "",
     price: 18900,
@@ -6991,7 +6991,7 @@ export const products = [
   {
     id: 762,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 10 VOLUMENES",
     description: "",
     price: 7900,
@@ -7000,7 +7000,7 @@ export const products = [
   {
     id: 763,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 20 VOLUMENES",
     description: "",
     price: 8500,
@@ -7009,7 +7009,7 @@ export const products = [
   {
     id: 764,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 30 VOLUMENES",
     description: "",
     price: 9900,
@@ -7018,7 +7018,7 @@ export const products = [
   {
     id: 765,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 40 VOLUMENES",
     description: "",
     price: 10900,
@@ -7027,7 +7027,7 @@ export const products = [
   {
     id: 766,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 50 VOLUMENES",
     description: "",
     price: 13500,
@@ -7036,7 +7036,7 @@ export const products = [
   {
     id: 767,
     brand: "TORRISI OXIDANTES",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA LIQUIDA DE 5 LITROS BIDON 100 VOLUMENES",
     description: "",
     price: 20900,
@@ -7081,7 +7081,7 @@ export const products = [
   {
     id: 772,
     brand: "ALFINOVA",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA X100 ML 10 VOL",
     description: "",
     price: 1200,
@@ -7090,7 +7090,7 @@ export const products = [
   {
     id: 773,
     brand: "ALFINOVA",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA X100 ML 20 VOL",
     description: "",
     price: 1200,
@@ -7099,7 +7099,7 @@ export const products = [
   {
     id: 774,
     brand: "ALFINOVA",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA X100 ML 30 VOL",
     description: "",
     price: 1200,
@@ -7108,7 +7108,7 @@ export const products = [
   {
     id: 775,
     brand: "ALFINOVA",
-    category: "CUIDADO CAPILAR/AGUAS OXIGENADAS",
+    category: "CUIDADO CAPILAR/AGUA OXIGENADAS",
     name: "AGUA OXIGENADA EN CREMA X100 ML 40 VOL",
     description: "",
     price: 1200,
@@ -10602,7 +10602,7 @@ export const products = [
   {
     id: 1168,
     brand: "ALGABO",
-    category: "CUIDADO CAPILAR/GELES PARA FIJACION",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "ALGABO gel capilar pote 350 g 2 efecto humedo",
     description: "",
     price: 3500,
@@ -10611,7 +10611,7 @@ export const products = [
   {
     id: 1169,
     brand: "ALGABO",
-    category: "CUIDADO CAPILAR/GELES PARA FIJACION",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "ALGABO gel capilar pote 350 g 3 extra brillo",
     description: "",
     price: 3500,
@@ -10620,7 +10620,7 @@ export const products = [
   {
     id: 1170,
     brand: "ALGABO",
-    category: "CUIDADO CAPILAR/GELES PARA FIJACION",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "ALGABO gel capilar pote 350 g 4 fijacion fuerte",
     description: "",
     price: 3500,
@@ -12385,7 +12385,7 @@ export const products = [
   },
   {
     id: 1366,
-    brand: "KARSELL",
+    brand: "KARSEELL",
     category: "CUIDADO CAPILAR/ALISADOS",
     name: "MASCARA ESSENCE REPAIR COLLAGENO X500 LICENCIADA",
     description: "",
@@ -12440,7 +12440,7 @@ export const products = [
   {
     id: 1372,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/GEL FIJADOR",
+    category: "CUIDADO CAPILAR/GEL FIJADORES",
     name: "GEL SUPER FIX EXTRA DURACION X 230 gr",
     description: "",
     price: 6300,
@@ -12593,7 +12593,7 @@ export const products = [
   {
     id: 1389,
     brand: "ARABES",
-    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADAS",
+    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADOS",
     name: "Haya 100ml femenino",
     description: "",
     price: 64900,
@@ -12602,7 +12602,7 @@ export const products = [
   {
     id: 1390,
     brand: "ARABES",
-    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADAS",
+    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADOS",
     name: "Yara rosa 100ml femenino",
     description: "",
     price: 62900,
@@ -12611,7 +12611,7 @@ export const products = [
   {
     id: 1391,
     brand: "ARABES",
-    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADAS",
+    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADOS",
     name: "Bad femme 100ml femenino",
     description: "",
     price: 49900,

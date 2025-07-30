@@ -19,17 +19,13 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
       <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between gap-2 sm:gap-4">
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
+            <div className="w-14 h-14 sm:w-20 sm:h-20 relative">
               <Image
                 src="/logo.jpeg"
-                alt="Permay Logo"
+                alt="Logo"
                 fill
                 className="object-contain rounded-lg"
               />
-            </div>
-            <div>
-              <h1 className="text-lg sm:text-xl font-bold text-permay-primary">Permay</h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Perfumeria</p>
             </div>
           </div>
 

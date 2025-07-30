@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Header } from "@/components/Header"
-import { FilterSidebar } from "@/components/FilterSidebar"
+import { FilterCards } from "@/components/FilterCards"
 import { ProductGrid } from "@/components/ProductGrid"
 import { Cart } from "@/components/Cart"
 import { WhatsAppFloat } from "@/components/WhatsAppFloat"
@@ -57,60 +57,22 @@ export default function PermayHome() {
 
       <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
         <div className="flex gap-4 lg:gap-6">
-          {/* Desktop Sidebar */}
-          <aside className="hidden lg:block w-64">
-            <div className="sticky top-24 bg-white rounded-lg border p-4 shadow-sm">
-              <FilterSidebar
-                brands={brands}
-                categories={categories}
-                selectedBrands={selectedBrands}
-                setSelectedBrands={setSelectedBrands}
-                selectedCategories={selectedCategories}
-                setSelectedCategories={setSelectedCategories}
-                priceRange={priceRange}
-                setPriceRange={setPriceRange}
-                onClearFilters={clearFilters}
-              />
-            </div>
-          </aside>
+
 
           {/* Main Content */}
           <main className="flex-1 min-w-0">
-            {/* Mobile Controls */}
-            <div className="flex justify-between items-center mb-4 sm:mb-6 lg:hidden">
-              <Sheet open={isMobileFiltersOpen} onOpenChange={setIsMobileFiltersOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="sm" className="text-xs sm:text-sm relative">
-                    <Filter className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-                    Filtros
-                    {activeFiltersCount > 0 && (
-                      <Badge className="ml-2 h-5 w-5 p-0 bg-permay-primary text-xs flex items-center justify-center">
-                        {activeFiltersCount}
-                      </Badge>
-                    )}
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-[300px] sm:w-96 p-0 flex flex-col">
-                  <SheetHeader className="px-4 py-4 border-b bg-white">
-                    <SheetTitle className="text-left">Filtros</SheetTitle>
-                    <SheetDescription className="text-left">Filtra los productos por marca, categoría y precio</SheetDescription>
-                  </SheetHeader>
-                  <div className="flex-1 overflow-hidden px-4 py-4">
-                    <FilterSidebar
-                      brands={brands}
-                      categories={categories}
-                      selectedBrands={selectedBrands}
-                      setSelectedBrands={setSelectedBrands}
-                      selectedCategories={selectedCategories}
-                      setSelectedCategories={setSelectedCategories}
-                      priceRange={priceRange}
-                      setPriceRange={setPriceRange}
-                      onClearFilters={clearFilters}
-                    />
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+            {/* Filtros mejorados arriba de la grilla */}
+            <FilterCards
+              brands={brands}
+              categories={categories}
+              selectedBrands={selectedBrands}
+              setSelectedBrands={setSelectedBrands}
+              selectedCategories={selectedCategories}
+              setSelectedCategories={setSelectedCategories}
+              priceRange={priceRange}
+              setPriceRange={setPriceRange}
+              onClearFilters={clearFilters}
+            />
 
             <ProductGrid
               products={paginatedProducts}

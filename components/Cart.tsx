@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useEffect } from "react"
 import { ShoppingCart, Minus, Plus, Trash2, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -21,12 +22,30 @@ interface CartProps {
 }
 
 export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, total }: CartProps) {
+
+  useEffect(() => {
+    if (isOpen) {
+      window.history.pushState({ cartOpen: true }, "");
+      const handlePopState = (e: PopStateEvent) => {
+        if (isOpen) {
+          onClose();
+        }
+      };
+      window.addEventListener("popstate", handlePopState);
+      return () => {
+        window.removeEventListener("popstate", handlePopState);
+        // Si el carrito se cierra por otro medio, retroceder el historial para no dejar un estado "extra"
+        if (window.history.state && window.history.state.cartOpen) {
+          window.history.back();
+        }
+      };
+    }
+  }, [isOpen, onClose]);
   const [customerInfo, setCustomerInfo] = useState({
     name: "",
     phone: "",
-    address: "",
-    notes: "",
   })
+  const [paymentMethod, setPaymentMethod] = useState("Efectivo")
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
@@ -42,10 +61,12 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   const generateWhatsAppMessage = () => {
     let message = `🛍️ *PEDIDO PERMAY*\n\n`
     message += `👤 *Cliente:* ${customerInfo.name}\n`
-    message += `📱 *Teléfono:* ${customerInfo.phone}\n`
-    message += `📍 *Dirección:* ${customerInfo.address}\n\n`
+    message += `📱 *Teléfono:* ${customerInfo.phone}\n\n`
 
-    message += `🛒 *PRODUCTOS:*\n`
+    message += `💳 *Forma de pago:* ${paymentMethod}\n`
+    message += `🏬 *Retiro:* Presencial (única opción)\n\n`
+
+    message += ` *PRODUCTOS:*\n`
     cart.forEach((item) => {
       const product = getProduct(item.productId)
       if (product) {
@@ -57,10 +78,6 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
     })
 
     message += `💰 *TOTAL: ${formatPrice(total)}*\n\n`
-
-    if (customerInfo.notes) {
-      message += `📝 *Notas:* ${customerInfo.notes}\n\n`
-    }
 
     message += `¡Gracias por elegir Permay!`
 
@@ -113,32 +130,32 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                   if (!product) return null
 
                   return (
-                    <div key={item.productId} className="bg-gray-50 rounded-lg p-4">
-                      <div className="flex gap-3">
+                    <div key={item.productId} className="bg-gray-50 rounded-lg p-3">
+                      <div className="flex gap-2 items-center">
                         <img
-                          src={product.image || "/placeholder.svg?height=60&width=60"}
+                          src={product.image || "/placeholder.svg?height=40&width=40"}
                           alt={product.name}
-                          className="w-15 h-15 object-cover rounded-md"
+                          className="w-10 h-10 object-cover rounded-md flex-shrink-0"
                         />
-                        <div className="flex-1">
-                          <h4 className="font-medium text-sm line-clamp-2">{product.name}</h4>
-                          <p className="text-xs text-gray-500">{product.brand}</p>
-                          <div className="flex items-center justify-between mt-2">
-                            <span className="font-bold text-permay-primary">{formatPrice(product.price)}</span>
-                            <div className="flex items-center gap-2">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-xs line-clamp-2">{product.name}</h4>
+                          <p className="text-[10px] text-gray-500">{product.brand}</p>
+                          <div className="flex items-center justify-between mt-1">
+                            <span className="font-bold text-permay-primary text-sm">{formatPrice(product.price)}</span>
+                            <div className="flex items-center gap-1">
                               <Button
                                 variant="outline"
                                 size="icon"
-                                className="h-6 w-6 bg-transparent"
+                                className="h-5 w-5 bg-transparent"
                                 onClick={() => onUpdateQuantity(item.productId, Math.max(0, item.quantity - 1))}
                               >
                                 <Minus className="h-3 w-3" />
                               </Button>
-                              <span className="font-medium w-6 text-center text-sm">{item.quantity}</span>
+                              <span className="font-medium w-5 text-center text-xs">{item.quantity}</span>
                               <Button
                                 variant="outline"
                                 size="icon"
-                                className="h-6 w-6 bg-transparent"
+                                className="h-5 w-5 bg-transparent"
                                 onClick={() => onUpdateQuantity(item.productId, item.quantity + 1)}
                               >
                                 <Plus className="h-3 w-3" />
@@ -146,7 +163,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-6 w-6 text-red-500 hover:text-red-700"
+                                className="h-5 w-5 text-red-500 hover:text-red-700"
                                 onClick={() => onRemoveItem(item.productId)}
                               >
                                 <Trash2 className="h-3 w-3" />
@@ -189,35 +206,54 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                     />
                   </div>
                 </div>
-                <div>
-                  <Label htmlFor="address" className="text-sm">
-                    Dirección
-                  </Label>
-                  <Input
-                    id="address"
-                    placeholder="Tu dirección"
-                    value={customerInfo.address}
-                    onChange={(e) => setCustomerInfo({ ...customerInfo, address: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="notes" className="text-sm">
-                    Notas adicionales
-                  </Label>
-                  <Textarea
-                    id="notes"
-                    placeholder="Comentarios sobre tu pedido..."
-                    value={customerInfo.notes}
-                    onChange={(e) => setCustomerInfo({ ...customerInfo, notes: e.target.value })}
-                    rows={2}
-                  />
-                </div>
               </div>
 
               <Separator />
 
-              {/* Total and Checkout */}
+              {/* Pago y Total */}
               <div className="space-y-4 py-4">
+                <div>
+                  <h4 className="font-semibold mb-1">Forma de pago</h4>
+                  <div className="flex flex-col gap-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="Efectivo"
+                        checked={paymentMethod === "Efectivo"}
+                        onChange={() => setPaymentMethod("Efectivo")}
+                        className="accent-green-600"
+                      />
+                      Efectivo
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="Transferencia"
+                        checked={paymentMethod === "Transferencia"}
+                        onChange={() => setPaymentMethod("Transferencia")}
+                        className="accent-green-600"
+                      />
+                      Transferencia bancaria
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="Tarjeta de crédito"
+                        checked={paymentMethod === "Tarjeta de crédito"}
+                        onChange={() => setPaymentMethod("Tarjeta de crédito (hasta 3 cuotas sin interés)")}
+                        className="accent-green-600"
+                      />
+                      Tarjeta de crédito <span className="text-xs text-gray-500">(hasta 3 cuotas sin interés)</span>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-1">Retiro</h4>
+                  <div className="bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">Presencial (única opción)</div>
+                </div>
                 <div className="flex justify-between items-center text-lg font-bold">
                   <span>Total:</span>
                   <span className="text-permay-primary">{formatPrice(total)}</span>
