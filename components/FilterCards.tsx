@@ -207,7 +207,7 @@ export function FilterCards({
               sideOffset={8}
               align="start"
             >
-              <div className="mb-2 flex items-center gap-2 bg-gray-100 rounded px-2 py-1">
+              <div className="mb-2 mt-2 flex items-center gap-2 bg-gray-100 rounded px-2 py-1">
                 <Search size={16} className="text-gray-400" />
                 <input
                   type="text"
@@ -249,7 +249,7 @@ export function FilterCards({
               sideOffset={8}
               align="start"
             >
-              <div className="mb-2 flex items-center gap-2 bg-gray-100 rounded px-2 py-1">
+              <div className="mb-2 mt-2 flex items-center gap-2 bg-gray-100 rounded px-2 py-1">
                 <Search size={16} className="text-gray-400" />
                 <input
                   type="text"
