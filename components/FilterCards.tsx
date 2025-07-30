@@ -215,6 +215,7 @@ export function FilterCards({
                   value={brandSearch}
                   onChange={e => setBrandSearch(e.target.value)}
                   className="bg-transparent outline-none text-sm flex-1"
+                  tabIndex={-1} // <-- evita foco automático
                 />
               </div>
               <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -257,6 +258,7 @@ export function FilterCards({
                   value={categorySearch}
                   onChange={e => setCategorySearch(e.target.value)}
                   className="bg-transparent outline-none text-sm flex-1"
+                  tabIndex={-1} // <-- evita foco automático
                 />
               </div>
               <div className="space-y-2 max-h-48 overflow-y-auto">
