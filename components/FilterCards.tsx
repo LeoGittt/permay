@@ -35,6 +35,7 @@ export function FilterCards({
   const [openBrand, setOpenBrand] = useState(false)
   const [openCategory, setOpenCategory] = useState(false)
   const [openPrice, setOpenPrice] = useState(false)
+  const [openAllCategories, setOpenAllCategories] = useState(false)
   const [brandSearch, setBrandSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
 
@@ -118,48 +119,65 @@ export function FilterCards({
         position: 'sticky',
       }}
     >
-      {/* Tarjetas de categorías funcionales, tipo chip, sin descuentos */}
+      {/* Tarjetas de categorías funcionales, tipo chip, con popover para ver todas */}
       <div className="flex flex-wrap gap-1 mb-2 justify-center">
-        {[
-          "ALISADOS",
-          "SHAMPOOS",
-          "ENJUAGUES",
-          "COLORACIÓN / MATIZADORES / POLVOS / OXIDANTES",
-          "DEPILACION",
-          "BAÑOS DE CREMA",
-          "COLONIAS",
-          "ANTICAÍDA Y CRECIMIENTO",
-          "PROTECTORES SOLARES",
-          "MAQUILLAJE/UÑAS"
-        ].map((catLabel) => {
-          // Normalizar texto para comparación flexible (sin tildes, minúsculas, sin espacios)
-          const normalize = (str: string) => str
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/\s+/g, "")
-            .toLowerCase();
-
-          // Buscar coincidencia parcial en toda la categoría
-          const realCat = categories.find(
-            c => normalize(c).includes(normalize(catLabel))
-          ) || catLabel;
+        {categories.slice(0, 6).map((catLabel) => {
+          const base = catLabel.split("/").pop() ?? catLabel;
           return (
             <button
               key={catLabel}
               type="button"
               onClick={() => {
-                if (!selectedCategories.includes(realCat)) {
-                  setSelectedCategories([...selectedCategories, realCat]);
+                if (!selectedCategories.includes(catLabel)) {
+                  setSelectedCategories([...selectedCategories, catLabel]);
                 }
               }}
               className="bg-purple-400 hover:bg-purple-500 transition-colors rounded-full px-2 py-0.5 text-white text-[10px] font-semibold shadow focus:outline-none truncate max-w-[110px]"
               style={{ lineHeight: '1', minHeight: '20px' }}
-              title={catLabel}
+              title={base}
             >
-              <span className="truncate block w-full">{catLabel}</span>
+              <span className="truncate block w-full">{capitalize(toSingular(base))}</span>
             </button>
           );
         })}
+        {categories.length > 6 && (
+          <Popover open={openAllCategories} onOpenChange={setOpenAllCategories}>
+            <PopoverTrigger asChild>
+              <button
+                className="bg-purple-200 hover:bg-purple-300 transition-colors rounded-full px-2 py-0.5 text-purple-800 text-[10px] font-semibold shadow focus:outline-none truncate max-w-[110px] border border-purple-400"
+                style={{ lineHeight: '1', minHeight: '20px' }}
+                title="Ver todas las categorías"
+                type="button"
+              >
+                Ver todas
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-48 max-h-64 overflow-y-auto p-2">
+              <div className="flex flex-col gap-1">
+                {categories.slice(6).map((catLabel) => {
+                  const base = catLabel.split("/").pop() ?? catLabel;
+                  return (
+                    <button
+                      key={catLabel}
+                      type="button"
+                      onClick={() => {
+                        if (!selectedCategories.includes(catLabel)) {
+                          setSelectedCategories([...selectedCategories, catLabel]);
+                        }
+                        setOpenAllCategories(false);
+                      }}
+                      className="bg-purple-100 hover:bg-purple-300 transition-colors rounded-full px-2 py-0.5 text-purple-800 text-[9px] font-semibold focus:outline-none truncate max-w-[160px] border border-purple-300"
+                      style={{ lineHeight: '1', minHeight: '18px' }}
+                      title={base}
+                    >
+                      <span className="truncate block w-full">{capitalize(toSingular(base))}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </PopoverContent>
+          </Popover>
+        )}
       </div>
 
       {/* Badge general de filtros activos */}
