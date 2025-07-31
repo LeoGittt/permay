@@ -6074,7 +6074,7 @@ export const products = [
     category: "CUIDADO CAPILAR/SHAMPOOS",
     name: "SHAMPOO ABSOLUT REPAIR X1.5L",
     description: "",
-    price: 143900,
+    price: 14390,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf57OzD0_j8UgKiSHmC3oTtxcKQOoDZdsTiQ&s",
   },
   {
