@@ -853,7 +853,7 @@ export const products = [
   {
     id: 84,
     brand: "BIFERDIL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "PANTALLA CAPILAR CON PROTEINAS X150",
     description: "",
     price: 9000,
@@ -903,7 +903,7 @@ export const products = [
   {
     id: 89,
     brand: "BIFERDIL",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "PROTECTOR TERMICO ATOMIZADOR X250",
     description: "",
     price: 12200,
@@ -1358,7 +1358,7 @@ export const products = [
   {
     id: 138,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "locion caida cabello x60ml",
     description: "",
     price: 5900,
@@ -1412,7 +1412,7 @@ export const products = [
   {
     id: 144,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "PROTECTOR TERMICO 2 EN 1 X200",
     description: "",
     price: 5500,
@@ -1421,7 +1421,7 @@ export const products = [
   {
     id: 145,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "PROTECTOR CAPILAR CON FILTRO SOLAR X200",
     description: "",
     price: 6300,
@@ -1952,7 +1952,7 @@ export const products = [
   {
     id: 204,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "COSMETICO SUAVE X125",
     description: "",
     price: 6600,
@@ -1961,7 +1961,7 @@ export const products = [
   {
     id: 205,
     brand: "SYSTEM 3/TAN NATURAL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "COSMETICO SUAVE X100",
     description: "",
     price: 5400,
@@ -2015,7 +2015,7 @@ export const products = [
   {
     id: 211,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "CERA NUTRIENTE X230",
     description: "",
     price: 4900,
@@ -2024,7 +2024,7 @@ export const products = [
   {
     id: 212,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "CERA NUTRIENTE X900",
     description: "",
     price: 10300,
@@ -2088,7 +2088,7 @@ export const products = [
   {
     id: 219,
     brand: "OPCION",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "PROTECTOR TERMICO BBH 10 EN 1 X200ML",
     description: "",
     price: 7800,
@@ -2350,7 +2350,7 @@ export const products = [
   {
     id: 248,
     brand: "FIDELITE",
-    category: "MASCARA/BAÑOS DE CREMA",
+    category: "CUIDADO CAPILAR/BAÑOS DE CREMA",
     name: "Ultra black mascara matizador x 270 (gris platino)",
     description: "",
     price: 5500,
@@ -2701,7 +2701,7 @@ export const products = [
   {
     id: 287,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "Protector Termico Antiage VIOLETA x 120 ml",
     description: "",
     price: 11300,
@@ -2737,7 +2737,7 @@ export const products = [
   {
     id: 291,
     brand: "FIDELITE",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "QUITAMANCHAS X125",
     description: "",
     price: 4400,
@@ -3855,7 +3855,7 @@ export const products = [
   {
     id: 415,
     brand: "BONMETIQUE",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "Protector Termico",
     description: "",
     price: 7900,
@@ -5314,7 +5314,7 @@ export const products = [
   {
     id: 577,
     brand: "INECTO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "ACEITE INECTO ACLARANTE X150ML",
     description: "",
     price: 4100,
@@ -5323,7 +5323,7 @@ export const products = [
   {
     id: 578,
     brand: "INECTO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE Cabellos Delicados, NORMALES O FUERTES X150",
     description: "",
     price: 5500,
@@ -5332,7 +5332,7 @@ export const products = [
   {
     id: 579,
     brand: "INECTO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "NEUTRALIZANTE PARA PERMANENTES X850ML",
     description: "",
     price: 7700,
@@ -5341,7 +5341,7 @@ export const products = [
   {
     id: 580,
     brand: "INECTO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "NEUTRALIZANTE PARA PERMANENTES X150ML",
     description: "",
     price: 3800,
@@ -5593,7 +5593,7 @@ export const products = [
   {
     id: 608,
     brand: "CLARIDGE",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "Spray BTX Capilar X210",
     description: "",
     price: 7900,
@@ -5602,7 +5602,7 @@ export const products = [
   {
     id: 609,
     brand: "CLARIDGE",
-    category: "CUIDADO CAPILAR/PROTECTOR TERMICO",
+    category: "CUIDADO CAPILAR/PROTECTORES TERMICOS",
     name: "Spray TERMO ACTIVO X210",
     description: "",
     price: 10300,
@@ -5683,7 +5683,7 @@ export const products = [
   {
     id: 618,
     brand: "INECTO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "INECTO PERMANENTE X500ML",
     description: "",
     price: 12500,
@@ -5773,7 +5773,7 @@ export const products = [
   {
     id: 628,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "OLIO SILICONAS CAPILARES X150",
     description: "",
     price: 5500,
@@ -5791,7 +5791,7 @@ export const products = [
   {
     id: 630,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PERMANENTE FORTE CABELLOS VIRGENES X125",
     description: "",
     price: 3900,
@@ -5800,7 +5800,7 @@ export const products = [
   {
     id: 631,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE NORMAL CABELLOS NORMALES X125",
     description: "",
     price: 3900,
@@ -5809,7 +5809,7 @@ export const products = [
   {
     id: 632,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE DOLCE CABELLOS TEÑIDOS X125",
     description: "",
     price: 3900,
@@ -5818,7 +5818,7 @@ export const products = [
   {
     id: 633,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE DOLCE X500",
     description: "",
     price: 14000,
@@ -5827,7 +5827,7 @@ export const products = [
   {
     id: 634,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE NORMAL X500",
     description: "",
     price: 14000,
@@ -5836,7 +5836,7 @@ export const products = [
   {
     id: 635,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE FORTE X500",
     description: "",
     price: 14000,
@@ -5845,7 +5845,7 @@ export const products = [
   {
     id: 636,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "NEUTRALIZANTE X1LITRO",
     description: "",
     price: 7000,
@@ -5854,7 +5854,7 @@ export const products = [
   {
     id: 637,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "ABLANDADOR QUERATINICO ALCALINO X500",
     description: "",
     price: 5200,
@@ -5917,7 +5917,7 @@ export const products = [
   {
     id: 644,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "NEUTRALIZANTE X125ML",
     description: "",
     price: 3000,
@@ -5926,7 +5926,7 @@ export const products = [
   {
     id: 645,
     brand: "OLIO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "ABLANDADOR KERATINICO X500ML",
     description: "",
     price: 5200,
@@ -6311,7 +6311,7 @@ export const products = [
   {
     id: 687,
     brand: "ROUBAIX",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO NEUTRALIZANTE X750ML",
     description: "",
     price: 6000,
@@ -6320,7 +6320,7 @@ export const products = [
   {
     id: 688,
     brand: "ROUBAIX",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO ONDULANTE NORMAL Y FUERTE X750ML",
     description: "",
     price: 8600,
@@ -7263,7 +7263,7 @@ export const products = [
   {
     id: 792,
     brand: "MARY STUART",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "MARY STUART X110ML",
     description: "",
     price: 10500,
@@ -7272,7 +7272,7 @@ export const products = [
   {
     id: 793,
     brand: "MARY STUART",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "MARY STUART X55ML",
     description: "",
     price: 7900,
@@ -7488,7 +7488,7 @@ export const products = [
   {
     id: 817,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Crema Bronceadora FPS 6 x 70g",
     description: "",
     price: 8800,
@@ -7497,7 +7497,7 @@ export const products = [
   {
     id: 818,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Crema Bronceadora FPS 8 x 70g",
     description: "",
     price: 9300,
@@ -7506,7 +7506,7 @@ export const products = [
   {
     id: 819,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Crema Bronceadora FPS 18 x 70g",
     description: "",
     price: 10000,
@@ -7515,7 +7515,7 @@ export const products = [
   {
     id: 820,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Crema Bronceadora FPS 30 x 70g",
     description: "",
     price: 10800,
@@ -7524,7 +7524,7 @@ export const products = [
   {
     id: 821,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Crema Sapolan c/Zanahoria FPS 6 x 240g",
     description: "",
     price: 13300,
@@ -7533,7 +7533,7 @@ export const products = [
   {
     id: 822,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Bronceador con Zanahoria FPS 8 x 200g",
     description: "",
     price: 11700,
@@ -7542,7 +7542,7 @@ export const products = [
   {
     id: 823,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar FPS 15 x 200g",
     description: "",
     price: 14000,
@@ -7551,7 +7551,7 @@ export const products = [
   {
     id: 824,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar FPS 30 x 200g",
     description: "",
     price: 15500,
@@ -7560,7 +7560,7 @@ export const products = [
   {
     id: 825,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar FPS 40 x 200 g",
     description: "",
     price: 17400,
@@ -7569,7 +7569,7 @@ export const products = [
   {
     id: 826,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar FPS 50 x 200 g ",
     description: "",
     price: 17700,
@@ -7578,7 +7578,7 @@ export const products = [
   {
     id: 827,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar FacialFPS 50 x 30g",
     description: "",
     price: 11400,
@@ -7587,7 +7587,7 @@ export const products = [
   {
     id: 828,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar Mineral FPS 50 x 50g",
     description: "",
     price: 18500,
@@ -7596,7 +7596,7 @@ export const products = [
   {
     id: 829,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Protector Solar FacialFPS 50 x 100g- NUEVO ",
     description: "",
     price: 24000,
@@ -7605,7 +7605,7 @@ export const products = [
   {
     id: 830,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Aerosol Aceite FPS 6 x 170ml",
     description: "",
     price: 16000,
@@ -7614,7 +7614,7 @@ export const products = [
   {
     id: 831,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Aceite Solar FPS 6 x 195ml",
     description: "",
     price: 16000,
@@ -7623,7 +7623,7 @@ export const products = [
   {
     id: 832,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Aceite Solar FPS 30 x 195ml",
     description: "",
     price: 20900,
@@ -7632,7 +7632,7 @@ export const products = [
   {
     id: 833,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Acelerador de Bronceado Atomizador x 195 ml",
     description: "",
     price: 16900,
@@ -7641,7 +7641,7 @@ export const products = [
   {
     id: 834,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Aerosol Autobronceante x 170 ml",
     description: "",
     price: 13500,
@@ -7650,7 +7650,7 @@ export const products = [
   {
     id: 835,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Emulsion Autrobronceante x 130gr",
     description: "",
     price: 12800,
@@ -7659,7 +7659,7 @@ export const products = [
   {
     id: 836,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Resaltador de Bronceado x 130gr",
     description: "",
     price: 9100,
@@ -7668,7 +7668,7 @@ export const products = [
   {
     id: 837,
     brand: "RAYITO DE SOL",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "Jalea Bronceandora Instantanea  x 70gr",
     description: "",
     price: 9000,
@@ -7713,7 +7713,7 @@ export const products = [
   {
     id: 842,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE  90 ML.  C/Vap. COQUETERIAS",
     description: "",
     price: 6900,
@@ -7722,7 +7722,7 @@ export const products = [
   {
     id: 843,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE  80 ML. C/Vap.COQUETERIAS FLOWERS",
     description: "",
     price: 7600,
@@ -7731,7 +7731,7 @@ export const products = [
   {
     id: 844,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PERFUM  40 ML. C/Vap.MUJERCITAS",
     description: "",
     price: 6300,
@@ -7740,7 +7740,7 @@ export const products = [
   {
     id: 845,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PERFUM  80 ML.  C/Vap.MUJERCITAS",
     description: "",
     price: 7700,
@@ -7749,7 +7749,7 @@ export const products = [
   {
     id: 846,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  123 ML. MUJERCITAS",
     description: "",
     price: 2800,
@@ -7758,7 +7758,7 @@ export const products = [
   {
     id: 847,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PERFUM  50 ML.  C/Vap.MUJERCITAS SOPHIE",
     description: "",
     price: 11900,
@@ -7767,7 +7767,7 @@ export const products = [
   {
     id: 848,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  123 ML. MUJERCITAS SOPHIE",
     description: "",
     price: 2800,
@@ -7776,7 +7776,7 @@ export const products = [
   {
     id: 849,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PERFUM  50 ML.  C/Vap.MUJERCITAS JULIE",
     description: "",
     price: 11900,
@@ -7785,7 +7785,7 @@ export const products = [
   {
     id: 850,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  123 ML. MUJERCITAS JULIE",
     description: "",
     price: 2800,
@@ -7794,7 +7794,7 @@ export const products = [
   {
     id: 851,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "COLONIA  90 ML.  C/Vap.PIBES",
     description: "",
     price: 6800,
@@ -7803,7 +7803,7 @@ export const products = [
   {
     id: 852,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  90 ML.  c/Vap. PACO",
     description: "",
     price: 6900,
@@ -7812,7 +7812,7 @@ export const products = [
   {
     id: 853,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  60 ML.  C/Vap.PACO",
     description: "",
     price: 6300,
@@ -7821,7 +7821,7 @@ export const products = [
   {
     id: 854,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL  150 ML. PACO",
     description: "",
     price: 2800,
@@ -7830,7 +7830,7 @@ export const products = [
   {
     id: 855,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  60 ML.  C/Vap.PACO FUTBOL",
     description: "",
     price: 9900,
@@ -7839,7 +7839,7 @@ export const products = [
   {
     id: 856,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL  150 ML. PACO FUTBOL",
     description: "",
     price: 2800,
@@ -7848,7 +7848,7 @@ export const products = [
   {
     id: 857,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  60 ML. c/vap. PACO SURF",
     description: "",
     price: 9900,
@@ -7857,7 +7857,7 @@ export const products = [
   {
     id: 858,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL  150 ML. PACO SURF",
     description: "",
     price: 2800,
@@ -7866,7 +7866,7 @@ export const products = [
   {
     id: 859,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  90 ML. c/vap.DANIELLE",
     description: "",
     price: 6800,
@@ -7875,7 +7875,7 @@ export const products = [
   {
     id: 860,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "JABONERA CON JABON  75 GRS DANIELLE",
     description: "",
     price: 4400,
@@ -7884,7 +7884,7 @@ export const products = [
   {
     id: 861,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "SHAMPOO  200 ML .DANIELLE",
     description: "",
     price: 5200,
@@ -7893,7 +7893,7 @@ export const products = [
   {
     id: 862,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  90 ML. C/Vap.JOLIE DANIELLE",
     description: "",
     price: 6800,
@@ -7902,7 +7902,7 @@ export const products = [
   {
     id: 866,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL   250 ML CANNON MUSK",
     description: "",
     price: 3800,
@@ -7911,7 +7911,7 @@ export const products = [
   {
     id: 867,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE COLOGNE  250 ML CANNON MUSK",
     description: "",
     price: 6400,
@@ -7920,7 +7920,7 @@ export const products = [
   {
     id: 873,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE CIEL CRYSTAL X80ML ",
     description: "",
     price: 18700,
@@ -7929,7 +7929,7 @@ export const products = [
   {
     id: 874,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE CIEL CRYSTAL X186ML",
     description: "",
     price: 3600,
@@ -7938,7 +7938,7 @@ export const products = [
   {
     id: 875,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "COLONIA CIEL CRYSTAL X250ML",
     description: "",
     price: 7900,
@@ -7947,7 +7947,7 @@ export const products = [
   {
     id: 876,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL ROSE X50 ML EAU DE TOILETTE",
     description: "",
     price: 12900,
@@ -7956,7 +7956,7 @@ export const products = [
   {
     id: 877,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  123 ML. CIEL ROSE",
     description: "",
     price: 3000,
@@ -7965,7 +7965,7 @@ export const products = [
   {
     id: 878,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "COLONIA CIEL NUIT X250ML",
     description: "",
     price: 7900,
@@ -7974,7 +7974,7 @@ export const products = [
   {
     id: 879,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL NUIT X80 ML EAU DE TOILETTE",
     description: "",
     price: 14500,
@@ -7983,7 +7983,7 @@ export const products = [
   {
     id: 880,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  123 ML. CIEL NUIT",
     description: "",
     price: 3100,
@@ -7992,7 +7992,7 @@ export const products = [
   {
     id: 881,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "COLONIA CIEL MAGIC X250ML",
     description: "",
     price: 7900,
@@ -8001,7 +8001,7 @@ export const products = [
   {
     id: 882,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL MAGIC X80 ML EAU DE TOILETTE",
     description: "",
     price: 19900,
@@ -8010,7 +8010,7 @@ export const products = [
   {
     id: 883,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  186 ML. CIEL MAGIC",
     description: "",
     price: 13900,
@@ -8019,7 +8019,7 @@ export const products = [
   {
     id: 884,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL PARADISE X50 ML EAU DE TOILETTE",
     description: "",
     price: 13900,
@@ -8028,7 +8028,7 @@ export const products = [
   {
     id: 885,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL NOIR X80ML EAU DE TOILETTE",
     description: "",
     price: 18700,
@@ -8037,7 +8037,7 @@ export const products = [
   {
     id: 886,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL NOIR X186ML DESODORANTE",
     description: "",
     price: 3600,
@@ -8046,7 +8046,7 @@ export const products = [
   {
     id: 887,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "CIEL NOIR COLONIA X250ML",
     description: "",
     price: 7900,
@@ -8055,7 +8055,7 @@ export const products = [
   {
     id: 888,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM  40 ML.C/VAPO. LEXTREME",
     description: "",
     price: 8900,
@@ -8064,7 +8064,7 @@ export const products = [
   {
     id: 889,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL  123 ML. LEXTREME",
     description: "",
     price: 3000,
@@ -8073,7 +8073,7 @@ export const products = [
   {
     id: 890,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML KEVIN CLASICO",
     description: "",
     price: 13900,
@@ -8082,7 +8082,7 @@ export const products = [
   {
     id: 891,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 100ML KEVIN CLASICO",
     description: "",
     price: 17300,
@@ -8091,7 +8091,7 @@ export const products = [
   {
     id: 892,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "AFTER SHAVE 60ML KEVIN CLASICO",
     description: "",
     price: 8900,
@@ -8100,7 +8100,7 @@ export const products = [
   {
     id: 893,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL X250ML KEVIN CLASICO",
     description: "",
     price: 3800,
@@ -8109,7 +8109,7 @@ export const products = [
   {
     id: 894,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "COLONIA X170ML KEVIN CLASICO",
     description: "",
     price: 7900,
@@ -8118,7 +8118,7 @@ export const products = [
   {
     id: 895,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE KEVIN PARK X250ML",
     description: "",
     price: 3800,
@@ -8127,7 +8127,7 @@ export const products = [
   {
     id: 896,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE KEVIN PARK X60ML",
     description: "",
     price: 14700,
@@ -8136,7 +8136,7 @@ export const products = [
   {
     id: 897,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE KEVIN BLACK X60ML",
     description: "",
     price: 14900,
@@ -8145,7 +8145,7 @@ export const products = [
   {
     id: 898,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE KEVIN BLACK X100ML",
     description: "",
     price: 18800,
@@ -8154,7 +8154,7 @@ export const products = [
   {
     id: 899,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE KEVIN BLACK X250ML",
     description: "",
     price: 3800,
@@ -8163,7 +8163,7 @@ export const products = [
   {
     id: 900,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  100 ML. CHESTER ICE",
     description: "",
     price: 10800,
@@ -8172,7 +8172,7 @@ export const products = [
   {
     id: 901,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE  60 ML. CHESTER ICE",
     description: "",
     price: 8100,
@@ -8181,7 +8181,7 @@ export const products = [
   {
     id: 902,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML C/VAPO. CHESTER ICE",
     description: "",
     price: 9900,
@@ -8190,7 +8190,7 @@ export const products = [
   {
     id: 903,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "LOCION PARA DESPUES DE AFEITAR 100 ML. CHESTER ICE",
     description: "",
     price: 8100,
@@ -8199,7 +8199,7 @@ export const products = [
   {
     id: 904,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL 250 ML. CHESTER ICE",
     description: "",
     price: 3700,
@@ -8208,7 +8208,7 @@ export const products = [
   {
     id: 905,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE COLOGNE 170 ML. CHESTER ICE",
     description: "",
     price: 7900,
@@ -8217,7 +8217,7 @@ export const products = [
   {
     id: 906,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML.C/VAPO. COLBERT CLASICO",
     description: "",
     price: 9300,
@@ -8226,7 +8226,7 @@ export const products = [
   {
     id: 907,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL 150 ML COLBERT CLASICO",
     description: "",
     price: 3800,
@@ -8235,7 +8235,7 @@ export const products = [
   {
     id: 908,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML.C/VAPO. PINO COLBERT",
     description: "",
     price: 8900,
@@ -8244,7 +8244,7 @@ export const products = [
   {
     id: 909,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL 250 ML PINO COLBERT",
     description: "",
     price: 3800,
@@ -8253,7 +8253,7 @@ export const products = [
   {
     id: 910,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60ML COLBERT NOIR",
     description: "",
     price: 10800,
@@ -8262,7 +8262,7 @@ export const products = [
   {
     id: 911,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 100ML COLBERT NOIR",
     description: "",
     price: 12700,
@@ -8271,7 +8271,7 @@ export const products = [
   {
     id: 912,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE 250ML COLBERT NOIR",
     description: "",
     price: 3800,
@@ -8280,7 +8280,7 @@ export const products = [
   {
     id: 913,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML.C/VAPO. COLBERT US",
     description: "",
     price: 10500,
@@ -8289,7 +8289,7 @@ export const products = [
   {
     id: 914,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL 250 ML COLBERT US",
     description: "",
     price: 3800,
@@ -8298,7 +8298,7 @@ export const products = [
   {
     id: 915,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 60ML ACQUA COLBERT",
     description: "",
     price: 11500,
@@ -8307,7 +8307,7 @@ export const products = [
   {
     id: 916,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 100ML ACQUA COLBERT",
     description: "",
     price: 14400,
@@ -8316,7 +8316,7 @@ export const products = [
   {
     id: 917,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE 250ML ACQUA COLBERT",
     description: "",
     price: 3800,
@@ -8325,7 +8325,7 @@ export const products = [
   {
     id: 918,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE X60ML COLBERT SPACE",
     description: "",
     price: 11700,
@@ -8334,7 +8334,7 @@ export const products = [
   {
     id: 919,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE X250ML COLBERT SPACE",
     description: "",
     price: 3800,
@@ -8343,7 +8343,7 @@ export const products = [
   {
     id: 920,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE X100ML COLBERT CODE",
     description: "",
     price: 19200,
@@ -8352,7 +8352,7 @@ export const products = [
   {
     id: 921,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE X250ML COLBERT CODE",
     description: "",
     price: 3800,
@@ -8361,7 +8361,7 @@ export const products = [
   {
     id: 922,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: 'EDT 100 ml. "CLASSIC" c/VAPO.',
     description: "",
     price: 19700,
@@ -8370,7 +8370,7 @@ export const products = [
   {
     id: 923,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: 'EDT 100 ml. "BLUE" c/VAPO.',
     description: "",
     price: 19700,
@@ -8379,7 +8379,7 @@ export const products = [
   {
     id: 924,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: 'EDT 100 ml. "WARRIOR" c/VAPO.',
     description: "",
     price: 19700,
@@ -8388,7 +8388,7 @@ export const products = [
   {
     id: 925,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: 'Deo. en aerosol 150 ml. "CLASSSIC"',
     description: "",
     price: 3300,
@@ -8397,7 +8397,7 @@ export const products = [
   {
     id: 926,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: 'Deo. en aerosol 150 ml. "BLUE"',
     description: "",
     price: 3300,
@@ -8406,7 +8406,7 @@ export const products = [
   {
     id: 927,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: 'Deo. en aerosol 150 ml. "WARRIOR"',
     description: "",
     price: 3300,
@@ -8415,7 +8415,7 @@ export const products = [
   {
     id: 928,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "BROSS LONDON GOLD ARABE X100ML",
     description: "",
     price: 20500,
@@ -8424,7 +8424,7 @@ export const products = [
   {
     id: 929,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE BROSS LONDON GOLD ARABE X250ML",
     description: "",
     price: 3300,
@@ -8433,7 +8433,7 @@ export const products = [
   {
     id: 930,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "COLONIA 95 ML CRANDALL",
     description: "",
     price: 10200,
@@ -8442,7 +8442,7 @@ export const products = [
   {
     id: 931,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL 250 ML CRANDALL",
     description: "",
     price: 3700,
@@ -8451,7 +8451,7 @@ export const products = [
   {
     id: 932,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "EAU DE TOILETTE 80 ML C/VAPO. ALLIANCE CLASICO",
     description: "",
     price: 23900,
@@ -8460,7 +8460,7 @@ export const products = [
   {
     id: 933,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "DESODORANTE AEROSOL 150 ML ALLIANCE CLASICO",
     description: "",
     price: 3900,
@@ -8469,7 +8469,7 @@ export const products = [
   {
     id: 934,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "GINO BOGANI CLASICO EAU DE TOILETTE X90ML",
     description: "",
     price: 28800,
@@ -8478,7 +8478,7 @@ export const products = [
   {
     id: 935,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "GINO BOGANI DESODORANTE X150ML",
     description: "",
     price: 3900,
@@ -8487,7 +8487,7 @@ export const products = [
   {
     id: 936,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN FREEDOM EAU DE TOILETTE X60ML",
     description: "",
     price: 18300,
@@ -8496,7 +8496,7 @@ export const products = [
   {
     id: 937,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN FREEDOM DESODORANTE X250ML",
     description: "",
     price: 4500,
@@ -8505,7 +8505,7 @@ export const products = [
   {
     id: 938,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN ABSOLUTE EAU DE TOILETTE X100ML",
     description: "",
     price: 25900,
@@ -8514,7 +8514,7 @@ export const products = [
   {
     id: 939,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN ABSOLUTE DESODORANTE X250ML",
     description: "",
     price: 4500,
@@ -8523,7 +8523,7 @@ export const products = [
   {
     id: 940,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN PLATINUM EAU DE TOILETTE X100ML",
     description: "",
     price: 20500,
@@ -8532,7 +8532,7 @@ export const products = [
   {
     id: 941,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN PLATINUM EAU DE TOILETTE X250ML",
     description: "",
     price: 4500,
@@ -8541,7 +8541,7 @@ export const products = [
   {
     id: 942,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN METAL DESODORANTE X250ML",
     description: "",
     price: 4500,
@@ -8550,7 +8550,7 @@ export const products = [
   {
     id: 943,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN METAL EAU DE TOILETTE X60ML",
     description: "",
     price: 21500,
@@ -8559,7 +8559,7 @@ export const products = [
   {
     id: 944,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN RED EAU DE TOILETTE X100ML",
     description: "",
     price: 25900,
@@ -8568,7 +8568,7 @@ export const products = [
   {
     id: 945,
     brand: "CANNON",
-    category: "FRAGANCIAS/MASCULINAS/NACIONALES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS NACIONALES",
     name: "KEVIN RED DESODORANTE X250ML",
     description: "",
     price: 4500,
@@ -8577,7 +8577,7 @@ export const products = [
   {
     id: 946,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 50 ML-1 C/VAPO. PRUNE (GRIS) NUMERO 1",
     description: "",
     price: 21500,
@@ -8586,7 +8586,7 @@ export const products = [
   {
     id: 947,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 50 ML-2 C/VAPO. PRUNE (BRONCE NUMERO 2",
     description: "",
     price: 21500,
@@ -8595,7 +8595,7 @@ export const products = [
   {
     id: 948,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 50 ML-3 C/VAPO. PRUNE (COBRE) NUMERO 3",
     description: "",
     price: 21500,
@@ -8604,7 +8604,7 @@ export const products = [
   {
     id: 949,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 50 ML-4 C/VAPO. PRUNE NUMERO 4",
     description: "",
     price: 21500,
@@ -8613,7 +8613,7 @@ export const products = [
   {
     id: 950,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PRUNE (GRIS) NUMERO 1",
     description: "",
     price: 3700,
@@ -8622,7 +8622,7 @@ export const products = [
   {
     id: 951,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PRUNE (BRONCE) NUMERO 2",
     description: "",
     price: 3700,
@@ -8631,7 +8631,7 @@ export const products = [
   {
     id: 952,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PRUNE (COBRE) NUMERO 3",
     description: "",
     price: 3700,
@@ -8640,7 +8640,7 @@ export const products = [
   {
     id: 953,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PRUNE 4 NUMERO 4",
     description: "",
     price: 3700,
@@ -8649,7 +8649,7 @@ export const products = [
   {
     id: 954,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML. C/VAPO. PAULA",
     description: "",
     price: 25800,
@@ -8658,7 +8658,7 @@ export const products = [
   {
     id: 955,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE 100 ML. C/VAPO. PAULA",
     description: "",
     price: 31900,
@@ -8667,7 +8667,7 @@ export const products = [
   {
     id: 956,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PAULA",
     description: "",
     price: 3700,
@@ -8676,7 +8676,7 @@ export const products = [
   {
     id: 957,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML. C/VAPO. CARO CUORE",
     description: "",
     price: 23600,
@@ -8685,7 +8685,7 @@ export const products = [
   {
     id: 958,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE 90 ML.C/VAPO. CARO CUORE",
     description: "",
     price: 29600,
@@ -8694,7 +8694,7 @@ export const products = [
   {
     id: 959,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. CARO CUORE",
     description: "",
     price: 3700,
@@ -8703,7 +8703,7 @@ export const products = [
   {
     id: 960,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE 60 ML. C/VAPO. CARO CUORE AMORE",
     description: "",
     price: 23600,
@@ -8712,7 +8712,7 @@ export const products = [
   {
     id: 961,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE TOILETTE 90 ML.C/VAPO. CARO CUORE AMORE",
     description: "",
     price: 29600,
@@ -8721,7 +8721,7 @@ export const products = [
   {
     id: 962,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. CARO CUORE AMORE",
     description: "",
     price: 3700,
@@ -8730,7 +8730,7 @@ export const products = [
   {
     id: 963,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 100 ML. C/VAPO. PALOMA HERRERA PASSION",
     description: "",
     price: 31400,
@@ -8739,7 +8739,7 @@ export const products = [
   {
     id: 964,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 60 ML.C/VAPO. PALOMA HERRERA PASSION",
     description: "",
     price: 25900,
@@ -8748,7 +8748,7 @@ export const products = [
   {
     id: 965,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PALOMA HERRERA PASSION",
     description: "",
     price: 3700,
@@ -8757,7 +8757,7 @@ export const products = [
   {
     id: 966,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 100 ML. C/VAPO. PALOMA HERRERA CLASICO",
     description: "",
     price: 31400,
@@ -8766,7 +8766,7 @@ export const products = [
   {
     id: 967,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "EAU DE PARFUM 60 ML.C/VAPO. PALOMA HERRERA CLASICO",
     description: "",
     price: 25900,
@@ -8775,7 +8775,7 @@ export const products = [
   {
     id: 968,
     brand: "CANNON",
-    category: "FRAGANCIAS/FEMENINAS/NACIONALES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS NACIONALES",
     name: "DESODORANTE AEROSOL 123 ML. PALOMA HERRERA CLASICO",
     description: "",
     price: 3700,
@@ -9090,7 +9090,7 @@ export const products = [
   {
     id: 1003,
     brand: "DOROTHY GRAY",
-    category: "PROTECTORES SOLARES",
+    category: "DERMOCOSMETICA/PROTECTORES SOLARES",
     name: "AUTOBRONCEANTE",
     description: "",
     price: 13800,
@@ -9099,7 +9099,7 @@ export const products = [
   {
     id: 1004,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC SEXY - 212 SEXY - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9108,7 +9108,7 @@ export const products = [
   {
     id: 1005,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC RED - RED DOOR - ELIZABETH ARDEN X60ML",
     description: "",
     price: 11900,
@@ -9117,7 +9117,7 @@ export const products = [
   {
     id: 1006,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "WITCH NIGHT - HALLOWEEN - J. DEL POZO X60ML",
     description: "",
     price: 11900,
@@ -9126,7 +9126,7 @@ export const products = [
   {
     id: 1007,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "FLORES ROJAS - FLOWER - KENZO X60ML",
     description: "",
     price: 11900,
@@ -9135,7 +9135,7 @@ export const products = [
   {
     id: 1008,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "H WOMAN - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9144,7 +9144,7 @@ export const products = [
   {
     id: 1009,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "TRANSPARENT - RALPH - RALPH LAUREN X60ML",
     description: "",
     price: 11900,
@@ -9153,7 +9153,7 @@ export const products = [
   {
     id: 1010,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "TURBULENCE - ANGEL O DEMONIO - GIVENCHY X60ML",
     description: "",
     price: 11900,
@@ -9162,7 +9162,7 @@ export const products = [
   {
     id: 1011,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "1,4 WOMAN - 212 - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9171,7 +9171,7 @@ export const products = [
   {
     id: 1012,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "GOLD LADY - LADY MILLON - PACO RABANNE X60ML",
     description: "",
     price: 11900,
@@ -9180,7 +9180,7 @@ export const products = [
   {
     id: 1013,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC LIGHT BLUE - LIGHT BLUE - DOLCE & GABBANA X60ML",
     description: "",
     price: 11900,
@@ -9189,7 +9189,7 @@ export const products = [
   {
     id: 1014,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC BELLA - LA VIDA ES BELLA - LANCÔME X60ML",
     description: "",
     price: 11900,
@@ -9198,7 +9198,7 @@ export const products = [
   {
     id: 1015,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC L'EXTASE - NINA L'EXTASE - NINA RICCI X60ML",
     description: "",
     price: 11900,
@@ -9207,7 +9207,7 @@ export const products = [
   {
     id: 1016,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PERSEA - OLIMPEA - PACO RABANNE X60ML",
     description: "",
     price: 11900,
@@ -9216,7 +9216,7 @@ export const products = [
   {
     id: 1017,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC GOOD - GOOD GIRL - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9225,7 +9225,7 @@ export const products = [
   {
     id: 1018,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "PAULVIC YOUNG - 212 HEROES FOREVER YOUNG - C.H. X60ML",
     description: "",
     price: 11900,
@@ -9234,7 +9234,7 @@ export const products = [
   {
     id: 1019,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/FEMENINAS/IMITACIONES",
+    category: "FRAGANCIAS/FEMENINAS/FRAGANCIAS FEMENINAS IMITACIONES",
     name: "DREAM WAY - MY WAY - ARMANI X60ML",
     description: "",
     price: 11900,
@@ -9243,7 +9243,7 @@ export const products = [
   {
     id: 1020,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "2 A 2 - CK ONE - CALVIN KLEIN UNISEX X60ML",
     description: "",
     price: 11900,
@@ -9252,7 +9252,7 @@ export const products = [
   {
     id: 1021,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "SKÁRF FOR MEN - KENZO POUR HOMME - KENZO X60ML",
     description: "",
     price: 11900,
@@ -9261,7 +9261,7 @@ export const products = [
   {
     id: 1022,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC GENTLEMAN - GENTLEMAN - GIVENCHY X60ML",
     description: "",
     price: 11900,
@@ -9270,7 +9270,7 @@ export const products = [
   {
     id: 1023,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "1,4 MEN - 212 - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9279,7 +9279,7 @@ export const products = [
   {
     id: 1024,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "1,4 SEXY FOR MEN - 212 SEXY MEN - CAROLINA HERRERA X 60ML",
     description: "",
     price: 11900,
@@ -9288,7 +9288,7 @@ export const products = [
   {
     id: 1025,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC GOLD - ONE MILLON - P. RABANNE X60ML",
     description: "",
     price: 11900,
@@ -9297,7 +9297,7 @@ export const products = [
   {
     id: 1026,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC SILVER - 212 VIP MEN - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9306,7 +9306,7 @@ export const products = [
   {
     id: 1027,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC FOR MEN - INVICTUS - PACO RABANNE X60ML",
     description: "",
     price: 11900,
@@ -9315,7 +9315,7 @@ export const products = [
   {
     id: 1028,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC DARK - SAUVAGE - CHRISTIAN DIOR X60ML",
     description: "",
     price: 11900,
@@ -9324,7 +9324,7 @@ export const products = [
   {
     id: 1029,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "BOY BY PAULVIC - BAD BOY - CAROLINA HERRERA X60ML",
     description: "",
     price: 11900,
@@ -9333,7 +9333,7 @@ export const products = [
   {
     id: 1030,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC VICTORY - INVICTUS VICTORY FOR MEN - PACO RABANNE X60ML",
     description: "",
     price: 11900,
@@ -9342,7 +9342,7 @@ export const products = [
   {
     id: 1031,
     brand: "PAULVIC",
-    category: "FRAGANCIAS/MASCULINAS/IMITACIONES",
+    category: "FRAGANCIAS/MASCULINAS/FRAGANCIAS MASCULINAS IMITACIONES",
     name: "PAULVIC PHANTOM - PHANTOM - PACO RABANNE X60ML",
     description: "",
     price: 11900,
@@ -10629,7 +10629,7 @@ export const products = [
   {
     id: 1171,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO polvo desodorante p/pies talquera 100 g",
     description: "",
     price: 2800,
@@ -10638,7 +10638,7 @@ export const products = [
   {
     id: 1172,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO polvo desodorante p/pies talquera 200 g",
     description: "",
     price: 4500,
@@ -10647,7 +10647,7 @@ export const products = [
   {
     id: 1173,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO CONTROL desodorante en polvo clásico 180g (celeste)",
     description: "",
     price: 2700,
@@ -10656,7 +10656,7 @@ export const products = [
   {
     id: 1174,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO CONTROL desodorante en polvo suave 180g (rosa)",
     description: "",
     price: 2700,
@@ -10665,7 +10665,7 @@ export const products = [
   {
     id: 1175,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO CONTROL desodorante en polvo rep. clasico 200g (celeste)",
     description: "",
     price: 2000,
@@ -10674,7 +10674,7 @@ export const products = [
   {
     id: 1176,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO CONTROL desodorante en polvo rep. suave 200g (rosa)",
     description: "",
     price: 2000,
@@ -10683,7 +10683,7 @@ export const products = [
   {
     id: 1177,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO deo p/pies FRESH ANTIB 153 ml",
     description: "",
     price: 3400,
@@ -10692,7 +10692,7 @@ export const products = [
   {
     id: 1178,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO talco perfumado talquera 250g violets",
     description: "",
     price: 2500,
@@ -10701,7 +10701,7 @@ export const products = [
   {
     id: 1179,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO talco perfumado bolsita 200 g floral",
     description: "",
     price: 2500,
@@ -10710,7 +10710,7 @@ export const products = [
   {
     id: 1180,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO talco perfumado bolsita 400 g floral",
     description: "",
     price: 2900,
@@ -10719,7 +10719,7 @@ export const products = [
   {
     id: 1181,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv green tea",
     description: "",
     price: 2500,
@@ -10728,7 +10728,7 @@ export const products = [
   {
     id: 1182,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv citrus splash",
     description: "",
     price: 2500,
@@ -10737,7 +10737,7 @@ export const products = [
   {
     id: 1183,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv floral rain",
     description: "",
     price: 2500,
@@ -10746,7 +10746,7 @@ export const products = [
   {
     id: 1184,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv frutos bosque",
     description: "",
     price: 2500,
@@ -10755,7 +10755,7 @@ export const products = [
   {
     id: 1185,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv coco y vainilla",
     description: "",
     price: 2500,
@@ -10764,7 +10764,7 @@ export const products = [
   {
     id: 1186,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml green tea doy pack",
     description: "",
     price: 1600,
@@ -10773,7 +10773,7 @@ export const products = [
   {
     id: 1187,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml citrus splash doy pack",
     description: "",
     price: 1600,
@@ -10782,7 +10782,7 @@ export const products = [
   {
     id: 1188,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml floral rain doy pack",
     description: "",
     price: 1600,
@@ -10791,7 +10791,7 @@ export const products = [
   {
     id: 1189,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml fruto bosque doy pack",
     description: "",
     price: 1600,
@@ -10800,7 +10800,7 @@ export const products = [
   {
     id: 1190,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml coco/vainilla doy pack",
     description: "",
     price: 1600,
@@ -10809,7 +10809,7 @@ export const products = [
   {
     id: 1191,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv cream",
     description: "",
     price: 2500,
@@ -10818,7 +10818,7 @@ export const products = [
   {
     id: 1192,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml c/valv flower mix",
     description: "",
     price: 2500,
@@ -10827,7 +10827,7 @@ export const products = [
   {
     id: 1193,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml cream doy pack",
     description: "",
     price: 1600,
@@ -10836,7 +10836,7 @@ export const products = [
   {
     id: 1194,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jabon liquido 300 ml flower mix doy pack",
     description: "",
     price: 1600,
@@ -10845,7 +10845,7 @@ export const products = [
   {
     id: 1195,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO jab liq manos Antibacterial 300 ml doy pack",
     description: "",
     price: 1600,
@@ -11043,7 +11043,7 @@ export const products = [
   {
     id: 1217,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO Algodón PREMIUM x 75",
     description: "",
     price: 1800,
@@ -11052,7 +11052,7 @@ export const products = [
   {
     id: 1218,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO Algodón PREMIUM x 150",
     description: "",
     price: 3300,
@@ -11061,7 +11061,7 @@ export const products = [
   {
     id: 1219,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO CONTROL pompones de algodón 50 uns",
     description: "",
     price: 2700,
@@ -11070,7 +11070,7 @@ export const products = [
   {
     id: 1220,
     brand: "ALGABO",
-    category: "HIGIENE PERSONAL/VARIOS",
+    category: "HIGIENE PERSONAL/VARIOS (HIGIENE PERSONAL)",
     name: "ALGABO CONTROL hisopos tubo x 150 unidades",
     description: "",
     price: 3000,
@@ -11295,7 +11295,7 @@ export const products = [
   {
     id: 1245,
     brand: "VARIOS",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "GORROS DE SATEN",
     description:
       "CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
@@ -11323,7 +11323,7 @@ export const products = [
   {
     id: 1248,
     brand: "TYCEL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "GORROS DE LATEX SIN PERFORAR UNIDAD",
     description: "",
     price: 1700,
@@ -11332,7 +11332,7 @@ export const products = [
   {
     id: 1249,
     brand: "TYCEL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "GORROS DE LATEX SIN PERFORAR BOLSA DE 12 UNIDADES",
     description: "",
     price: 16800,
@@ -11341,7 +11341,7 @@ export const products = [
   {
     id: 1250,
     brand: "TYCEL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "GORROS DE LATEX PERFORADOS UNIDAD",
     description: "",
     price: 2000,
@@ -11350,7 +11350,7 @@ export const products = [
   {
     id: 1251,
     brand: "TYCEL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "GORROS DE LATEX PERFORADOS BOLSA DE 12 UNIDADES",
     description: "",
     price: 18000,
@@ -11954,7 +11954,7 @@ export const products = [
   {
     id: 1318,
     brand: "DOVE",
-    category: "HIGIENTE PERSONAL/DAMA",
+    category: "HIGIENE PERSONAL/DAMA",
     name: "DOVE ORIGINAL ROLL ON X50 ML",
     description: "",
     price: 3000,
@@ -12062,7 +12062,7 @@ export const products = [
   {
     id: 1330,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "ASAD EAU DE PARFUM MASCULINO 100ML",
     description: "",
     price: 64900,
@@ -12071,7 +12071,7 @@ export const products = [
   {
     id: 1331,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "FAKHAR PRIDE BLACK MASCULINO 100ML",
     description: "",
     price: 64900,
@@ -12080,7 +12080,7 @@ export const products = [
   {
     id: 1332,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "QAED AL FURSAN MASCULINO EAU 100ML",
     description: "",
     price: 49900,
@@ -12089,7 +12089,7 @@ export const products = [
   {
     id: 1333,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "THE KINGDOM MAN 100ML MASCULINO",
     description: "",
     price: 69900,
@@ -12098,7 +12098,7 @@ export const products = [
   {
     id: 1334,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "AFNAN 9PM BLACK MASCULINO 100ML",
     description: "",
     price: 69900,
@@ -12107,7 +12107,7 @@ export const products = [
   {
     id: 1335,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "BADEE AL OUD HONOR & GLORY 100ML UNISEX",
     description: "",
     price: 69900,
@@ -12116,7 +12116,7 @@ export const products = [
   {
     id: 1336,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "KHAMRAH BLACK 100ML MASCULINO",
     description: "",
     price: 69900,
@@ -12215,7 +12215,7 @@ export const products = [
   {
     id: 1347,
     brand: "DOMPEL",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "GORROS DOMPEL",
     description: "",
     price: 8500,
@@ -12431,7 +12431,7 @@ export const products = [
   {
     id: 1371,
     brand: "MAGICAP",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "MAGICAP GORRO DESECHABLE",
     description: "",
     price: 3900,
@@ -12494,7 +12494,7 @@ export const products = [
   {
     id: 1378,
     brand: "INECTO",
-    category: "CUIDADO CAPILAR/VARIOS",
+    category: "CUIDADO CAPILAR/VARIOS (CUIDADO CAPILAR)",
     name: "LIQUIDO PARA PERMANENTE Cabellos Delicados, NORMALES O FUERTES X500",
     description: "",
     price: 13600,
@@ -12575,7 +12575,7 @@ export const products = [
   {
     id: 1387,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "ASAD ZANZIBAR 100ML MASCULINO",
     description: "",
     price: 45900,
@@ -12584,7 +12584,7 @@ export const products = [
   {
     id: 1388,
     brand: "ARABES",
-    category: "FRAGANCIAS/MASCULINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "Club de nuit intense x105 masculino",
     description: "",
     price: 69900,
@@ -12593,7 +12593,7 @@ export const products = [
   {
     id: 1389,
     brand: "ARABES",
-    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "Haya 100ml femenino",
     description: "",
     price: 64900,
@@ -12602,7 +12602,7 @@ export const products = [
   {
     id: 1390,
     brand: "ARABES",
-    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "Yara rosa 100ml femenino",
     description: "",
     price: 62900,
@@ -12611,7 +12611,7 @@ export const products = [
   {
     id: 1391,
     brand: "ARABES",
-    category: "FRAGANCIAS/FEMENINAS/ARABES-IMPORTADOS",
+    category: "ARABES-IMPORTADOS",
     name: "Bad femme 100ml femenino",
     description: "",
     price: 49900,
