@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { DeliveryBanner } from "@/components/DeliveryBanner"
 
 export const metadata: Metadata = {
   title: 'Permay',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <DeliveryBanner />
+        {children}
+      </body>
     </html>
   )
 }

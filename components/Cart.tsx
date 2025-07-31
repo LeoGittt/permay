@@ -251,17 +251,38 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">Retiro</h4>
-                  <div className="bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">Presencial (única opción)</div>
+                  <h4 className="font-semibold mb-1">Retiro / Envío</h4>
+                  {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" ? (
+                    <div className="bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">
+                      <span className="font-semibold text-red-600">Con tarjeta de crédito solo retiro presencial.</span><br/>
+                      Dirección: San Juan 1248, M5500 Mendoza
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <div className="bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">
+                        <span className="font-semibold">Opción 1:</span> Retiro presencial<br/>
+                        Dirección: San Juan 1248, M5500 Mendoza
+                      </div>
+                      <div className="bg-green-100 rounded px-3 py-2 text-sm text-green-700 border border-green-300">
+                        <span className="font-semibold">Opción 2:</span> Envío con cadetería local<br/>
+                        <span className="text-xs">Coordinaremos el envío por WhatsApp tras tu pedido.</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="flex justify-between items-center text-lg font-bold">
                   <span>Total:</span>
                   <span className="text-permay-primary">{formatPrice(total)}</span>
                 </div>
 
+                {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" && (
+                  <div className="mb-2 text-xs text-red-600 text-center font-semibold">
+                    Con tarjeta de crédito solo podrás retirar presencialmente en San Juan 1248, M5500 Mendoza.
+                  </div>
+                )}
                 <Button
                   onClick={handleSendWhatsApp}
-                  disabled={!isFormValid}
+                  disabled={!(customerInfo.name && customerInfo.phone && cart.length > 0)}
                   className="w-full bg-green-600 hover:bg-green-700"
                 >
                   <MessageCircle className="h-4 w-4 mr-2" />
