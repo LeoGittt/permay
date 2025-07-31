@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Header } from "@/components/Header"
 import { FilterCards } from "@/components/FilterCards"
 import { ProductGrid } from "@/components/ProductGrid"
@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { Filter } from "lucide-react"
 
 export default function PermayHome() {
+
   const { isCartOpen, setIsCartOpen, isMobileFiltersOpen, setIsMobileFiltersOpen } = useUIState()
 
   const {
@@ -38,7 +39,12 @@ export default function PermayHome() {
     setCurrentPage,
     totalPages,
     paginatedProducts,
-  } = useProducts()
+  } = useProducts();
+
+  // Limpiar el término de búsqueda al cargar la página
+  useEffect(() => {
+    setSearchTerm("");
+  }, []);
 
   const { cart, addToCart, removeFromCart, updateQuantity, getCartTotal, getCartItemsCount } = useCart()
 
