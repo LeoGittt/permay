@@ -63,6 +63,7 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
       className="w-72 sm:w-80 flex flex-col p-6 bg-white border-r-2 border-gray-100 shadow-xl"
     >
       <SheetHeader className="pb-6 border-b border-gray-200">
+        <SheetTitle className="sr-only">Menú principal</SheetTitle>
         <div className="flex flex-col items-center gap-2">
           {/* Logo más grande */}
           <div className="w-20 h-20 relative drop-shadow-md rounded-full bg-white overflow-hidden border-2 border-permay-primary">
@@ -74,7 +75,6 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
             />
           </div>
           <div className="flex flex-col text-center">
-            
             <span className="text-sm text-gray-500">Perfumería & Belleza</span>
           </div>
         </div>
@@ -87,6 +87,13 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
           className="group flex items-center gap-4 text-base font-semibold text-permay-primary px-4 py-3 rounded-lg transition-all hover:bg-permay-primary/10 focus:outline-none focus:ring-2 focus:ring-permay-primary/50"
         >
           <Home className="w-5 h-5 text-permay-primary group-hover:scale-110 transition-transform" /> Inicio
+        </a>
+        <a
+          href="/landing-page"
+          className="group flex items-center gap-4 text-base font-semibold text-green-700 px-4 py-3 rounded-lg transition-all hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" /><circle cx="12" cy="12" r="9" /></svg>
+          Información Permay
         </a>
         <a
           href="https://maps.app.goo.gl/3N1SEfpKyNjQaFq38"
