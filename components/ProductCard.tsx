@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ShoppingCart, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
@@ -16,6 +16,24 @@ interface ProductCardProps {
 
 export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: ProductCardProps) {
   const [isLoading, setIsLoading] = useState(false)
+
+  const [showImageModal, setShowImageModal] = useState(false);
+
+  // Cerrar modal de imagen al presionar atrás en móvil
+  useEffect(() => {
+    if (!showImageModal) return;
+    window.history.pushState({ imageModal: true }, "");
+    const handlePopState = (e: PopStateEvent) => {
+      if (showImageModal) setShowImageModal(false);
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      if (window.history.state && window.history.state.imageModal) {
+        window.history.back();
+      }
+    };
+  }, [showImageModal]);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
@@ -83,17 +101,48 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
   return (
     <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
       <CardHeader className="p-0">
-        <div className="relative">
+        <div className="relative flex items-center justify-center border-b rounded-t-lg w-full h-36 sm:h-48 overflow-hidden cursor-zoom-in group" onClick={() => setShowImageModal(true)}>
+          {/* Fondo desenfocado */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background: 'linear-gradient(135deg, #f8fafc 60%, #f1f5f9 100%)',
+              filter: 'blur(16px) saturate(1.2)',
+              opacity: 0.85,
+            }}
+          />
           <img
             src={product.image || "/placeholder.svg?height=200&width=200"}
             alt={product.name}
-            className="w-full h-36 sm:h-48 object-cover rounded-t-lg"
+            className="object-contain w-full h-full max-h-36 sm:max-h-48 z-10 transition-all duration-200 group-hover:scale-105"
+            style={{ position: 'relative' }}
           />
-
-          <Badge className="absolute top-2 left-2 bg-permay-primary text-xs">
+          <Badge className="absolute top-2 left-2 bg-permay-primary text-xs z-20">
             {product.brand}
           </Badge>
         </div>
+
+        {/* Modal de imagen */}
+        {showImageModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowImageModal(false)}>
+            <div className="relative max-w-full max-h-full p-2" onClick={e => e.stopPropagation()}>
+              <img
+                src={product.image || "/placeholder.svg?height=600&width=600"}
+                alt={product.name}
+                className="object-contain rounded-lg shadow-2xl max-h-[90vh] max-w-[90vw] bg-white"
+                style={{ background: 'white' }}
+              />
+              <button
+                className="absolute top-2 right-2 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow text-3xl leading-none flex items-center justify-center"
+                onClick={() => setShowImageModal(false)}
+                aria-label="Cerrar imagen"
+                style={{ width: 44, height: 44 }}
+              >
+                ×
+              </button>
+            </div>
+          </div>
+        )}
       </CardHeader>
 
       <CardContent className="flex-1 p-3 sm:p-4">
