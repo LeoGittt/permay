@@ -50,6 +50,13 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   const [showWarning, setShowWarning] = useState(false)
   const [touched, setTouched] = useState<{ name: boolean; phone: boolean }>({ name: false, phone: false });
 
+  // Mostrar advertencia si ya se eligió forma de pago y retiro/envío, pero falta nombre o teléfono
+  const shouldShowAutoWarning = (
+    paymentMethod &&
+    (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || deliveryOption) &&
+    (!customerInfo.name || !customerInfo.phone)
+  );
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
@@ -209,8 +216,8 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       onBlur={() => setTouched((prev) => ({ ...prev, name: true }))}
                       className={(!customerInfo.name && (touched.name || showWarning)) ? "border-red-500" : ""}
                     />
-                    <div className={(!customerInfo.name && (touched.name || showWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
-                      {(!customerInfo.name && (touched.name || showWarning)) ? "El nombre es obligatorio." : "Este campo es obligatorio."}
+                    <div className={(!customerInfo.name && (touched.name || showWarning || shouldShowAutoWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
+                      {(!customerInfo.name && (touched.name || showWarning || shouldShowAutoWarning)) ? "El nombre es obligatorio." : "Este campo es obligatorio."}
                     </div>
                   </div>
                   <div>
@@ -225,8 +232,8 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       onBlur={() => setTouched((prev) => ({ ...prev, phone: true }))}
                       className={(!customerInfo.phone && (touched.phone || showWarning)) ? "border-red-500" : ""}
                     />
-                    <div className={(!customerInfo.phone && (touched.phone || showWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
-                      {(!customerInfo.phone && (touched.phone || showWarning)) ? "El teléfono es obligatorio." : "Este campo es obligatorio."}
+                    <div className={(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
+                      {(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) ? "El teléfono es obligatorio." : "Este campo es obligatorio."}
                     </div>
                   </div>
                 </div>
