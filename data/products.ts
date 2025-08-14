@@ -30,7 +30,7 @@ export const products = [
       "Biferdil Tintura Kit Sin Amoníaco 0 %\n\nEs una coloración permanente en crema Biocolor, que no contiene amoníaco y es libre de gluten. Ideal para personas con sensibilidad a este compuesto químico y con intolerancia a las glucoproteínas.\n\nLa fórmula contiene Óleo de Argán, que nutre y protege en profundidad cada fibra capilar; y Quinoa, que aporta brillo y suavidad prolongando la efectividad de la coloración.\n\nTiene un gran poder cubritivo, y además posee un delicado aroma. CONSULTAR POR WHATSAPP LOS COLORES PARA UN MEJOR ASESORAMIENTO",
     price: 9900,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1ag_ULc99kPDMf9zs-V8lcs3SVnN_nmSae_jNH87iJetRZI81ApAhlr42gViq_eahjg&usqp=CAU",
+      "https://www.casaflorian.com.ar/wp-content/uploads/2022/07/030-044-04_A.jpg",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ export const products = [
       "Para cabellos tratados quimicamante. Por eso Biferdil crea un aditivo que mejora visiblemente los resultados de la coloración.\nIncluye una combinación exclusiva de agentes tratantes y nutritivos:\nFitoesteroles de Soja, Vitamina A, Beta Caroteno, Siliconas, Melisa y Germen de Trigo (rico en Vitamina E y Ácido Linoleico).\nJuntos, estos ingredientes actúan protegiendo el cabello durante la coloración, y mejoran su textura potenciando el color y el brillo de la tonalidad elegida dejando el pelo más suave y luminoso.",
     price: 3700,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFI5v_083o-NgQeDOwGM7qobbOqltech5TA3QEX3xqMCb4mZeTtWo69djwpyQE483Zsko&usqp=CAU",
+      "https://http2.mlstatic.com/D_NQ_NP_701165-MLA75714927345_042024-O.webp",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const products = [
       "Disminuye la sensación de ardor y picazón durante la coloración. Aditivo para la coloración.",
     price: 5000,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaJv2xO95Xdy0Vk9UJOSCWYrbiXNnRzIqOVrUedEr3i5V4SsdUhP7PzI6MUiN5kqCojWI&usqp=CAU",
+      "https://acdn-us.mitiendanube.com/stores/003/696/056/products/bif-amp-picout-d38924b024dff0019f17188095105289-1024-1024.png",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ export const products = [
     description: "Estimulante. Para caída leve y cabello débiles",
     price: 6400,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHHmxQoFfz_xh4R8e9aVh1xHLI6sAtPuJWiCHmo25GR4UgIQnYfpzA3t2PIxQ-b13RQso&usqp=CAU",
+      "https://simplicityar.vtexassets.com/arquivos/ids/162332/228552_ampolla-biferdil-1007-caida-severa-x-20-ml_imagen-1.jpg?v=638216563331800000",
   },
   {
     id: 8,
