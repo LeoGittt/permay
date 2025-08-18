@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import '../styles/admin.css'
+import '../styles/admin-animations.css'
 import { DeliveryBanner } from "@/components/DeliveryBanner"
 
 export const metadata: Metadata = {

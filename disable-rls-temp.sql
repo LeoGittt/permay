@@ -1,0 +1,4 @@
+-- Deshabilitar RLS temporalmente para migración
+ALTER TABLE products DISABLE ROW LEVEL SECURITY;
+ALTER TABLE brands DISABLE ROW LEVEL SECURITY;
+ALTER TABLE categories DISABLE ROW LEVEL SECURITY;
