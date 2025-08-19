@@ -1,0 +1,281 @@
+/* Estilos adicionales para AdminProductsPanel */
+
+/* Utilidades para truncar texto */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Estilos para filtros */
+.filters-panel {
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-active {
+  background-color: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.filter-badge {
+  transition: all 0.15s ease-in-out;
+}
+
+.filter-badge:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.02);
+}
+
+.filter-badge .remove-icon {
+  opacity: 0.6;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.filter-badge .remove-icon:hover {
+  opacity: 1;
+  color: #ef4444;
+}
+
+/* Transiciones suaves para las tarjetas */
+.product-card {
+  transition: all 0.2s ease-in-out;
+  /* Altura mínima para alineación */
+  min-height: 180px;
+}
+
+.product-card:hover {
+  transform: translateY(-1px);
+}
+
+/* Estilo para grid adaptativo con alineación mejorada */
+.products-grid {
+  display: grid;
+  gap: 0.75rem;
+  /* Asegurar que las tarjetas se alineen en la parte superior */
+  align-items: start;
+}
+
+/* Flexbox para contenido de tarjetas alineado */
+.product-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.product-card-header {
+  flex-shrink: 0;
+}
+
+.product-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* Breakpoints personalizados para el grid */
+@media (min-width: 320px) {
+  .products-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .product-card {
+    min-height: 160px;
+  }
+}
+
+@media (min-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .product-card {
+    min-height: 170px;
+  }
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .product-card {
+    min-height: 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .product-card {
+    min-height: 185px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .products-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .product-card {
+    min-height: 190px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .products-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .product-card {
+    min-height: 195px;
+  }
+}
+
+/* Alineación de elementos dentro de las tarjetas */
+.product-badges {
+  min-height: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.product-info {
+  min-height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-price {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.product-actions {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Optimizaciones para móviles */
+@media (max-width: 640px) {
+  .mobile-compact .card-content {
+    padding: 0.5rem;
+  }
+  
+  .mobile-compact .badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.25rem;
+  }
+  
+  .mobile-compact .button-compact {
+    height: 1.5rem;
+    font-size: 0.625rem;
+    padding: 0 0.25rem;
+  }
+  
+  .product-card {
+    min-height: 150px;
+  }
+  
+  /* Filtros en móvil */
+  .filters-panel {
+    margin: 0 -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* Mejoras para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .product-card:hover,
+  .filter-badge,
+  .filter-badge:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Focus states mejorados */
+.focus-enhanced:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Skeleton loading optimizado */
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Alineación perfecta para grid items */
+.grid-aligned {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+
+.grid-aligned > * {
+  min-width: 0; /* Previene overflow */
+}
+
+/* Animaciones para filtros */
+.filters-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.filters-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.filters-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.filters-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}

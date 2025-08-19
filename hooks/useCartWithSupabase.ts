@@ -21,6 +21,39 @@ export function useCartWithSupabase() {
   const cart = useCart()
   const [isSubmittingOrder, setIsSubmittingOrder] = useState(false)
   const [lastOrderId, setLastOrderId] = useState<number | null>(null)
+  const [cartTotal, setCartTotal] = useState(0)
+
+  // Calcular total del carrito usando productos de Supabase
+  const calculateCartTotal = async () => {
+    if (cart.cart.length === 0) {
+      setCartTotal(0)
+      return 0
+    }
+
+    try {
+      let total = 0
+      for (const cartItem of cart.cart) {
+        const product = await productService.getProductById(cartItem.productId)
+        if (product) {
+          total += product.price * cartItem.quantity
+        }
+      }
+      setCartTotal(total)
+      return total
+    } catch (error) {
+      console.error('Error calculating cart total:', error)
+      setCartTotal(0)
+      return 0
+    }
+  }
+
+  // Recalcular total cuando cambie el carrito
+  useEffect(() => {
+    calculateCartTotal()
+  }, [cart.cart])
+
+  // Función que retorna el total calculado
+  const getCartTotal = () => cartTotal
 
   const submitOrder = async (checkoutData: CheckoutData): Promise<{ success: boolean; orderId?: number; error?: string }> => {
     if (cart.cart.length === 0) {
@@ -98,7 +131,7 @@ export function useCartWithSupabase() {
         `• ${item.name} x${item.quantity} - ${formatPrice(item.price * item.quantity)}`
       ).join('\n')
 
-      const total = formatPrice(cart.getCartTotal())
+      const total = formatPrice(await calculateCartTotal())
       
       const orderInfo = orderId ? `Orden #${orderId}\n\n` : ''
       
@@ -145,6 +178,7 @@ ${checkoutData.notes ? `\n📝 *Notas:* ${checkoutData.notes}` : ''}
 
   return {
     ...cart,
+    getCartTotal,
     submitOrder,
     sendWhatsAppOrder,
     generateWhatsAppMessage,

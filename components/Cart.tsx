@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import type { CartItem } from "@/types/cart"
 import { products } from "@/data/products"
+import { productService } from "@/lib/supabase-services"
 
 interface CartProps {
   isOpen: boolean
@@ -22,6 +23,7 @@ interface CartProps {
 }
 
 export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, total }: CartProps) {
+  const [productCache, setProductCache] = useState<{[key: number]: any}>({})
 
   useEffect(() => {
     if (isOpen) {
@@ -41,6 +43,30 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
       };
     }
   }, [isOpen, onClose]);
+
+  // Cargar productos del carrito desde Supabase
+  useEffect(() => {
+    const loadCartProducts = async () => {
+      const newProductCache = { ...productCache }
+      for (const cartItem of cart) {
+        if (!newProductCache[cartItem.productId]) {
+          try {
+            const product = await productService.getProductById(cartItem.productId)
+            if (product) {
+              newProductCache[cartItem.productId] = product
+            }
+          } catch (error) {
+            console.error('Error loading product:', error)
+          }
+        }
+      }
+      setProductCache(newProductCache)
+    }
+
+    if (cart.length > 0) {
+      loadCartProducts()
+    }
+  }, [cart])
   const [customerInfo, setCustomerInfo] = useState({
     name: "",
     phone: "",
@@ -65,7 +91,8 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   }
 
   const getProduct = (productId: number) => {
-    return products.find((p) => p.id === productId)
+    const product = productCache[productId] || products.find((p) => p.id === productId)
+    return product
   }
 
   const generateWhatsAppMessage = () => {

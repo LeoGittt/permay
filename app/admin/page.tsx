@@ -2,11 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { AdminProductsPanel } from "@/components/AdminProductsPanel"
-import { OrdersPanel } from "@/components/OrdersPanel"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Package, ShoppingCart, Users, TrendingUp, Store } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Package, ShoppingCart, TrendingUp } from "lucide-react"
 import { productService } from "@/lib/supabase-services"
 
 export default function AdminPage() {
@@ -43,80 +40,49 @@ export default function AdminPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header mejorado */}
-        <div className="mb-8 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl shadow-lg">
-              <Store className="h-8 w-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Panel de Administración
-              </h1>
-              <p className="text-gray-600 text-lg">Gestiona tu tienda Permay</p>
-            </div>
+    <div className="min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        
+
+        {/* Header minimalista */}
+        <div className="mb-6">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <img 
+              src="/logo.jpeg" 
+              alt="Permay Logo" 
+              className="h-8 w-8 sm:h-10 sm:w-10 rounded-md object-cover shadow-sm"
+            />
+            <h1 className="text-lg font-semibold text-permay-primary">
+              Dashboard
+            </h1>
           </div>
+          <p className="text-gray-500 text-xs text-center">
+            Gestiona tu tienda y productos
+          </p>
         </div>
 
-        {/* Stats Cards mejoradas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* Stats Cards minimalistas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <StatsCard
-            title="Productos Totales"
+            title="Total de productos"
             value={stats.loading ? "..." : stats.totalProducts.toString()}
-            icon={<Package className="h-6 w-6" />}
-            description="Total en catálogo"
-            color="from-blue-500 to-blue-600"
+            icon={<Package className="h-4 w-4 text-gray-400" />}
           />
           <StatsCard
-            title="Productos Activos"
+            title="Productos activos"
             value={stats.loading ? "..." : stats.activeProducts.toString()}
-            icon={<ShoppingCart className="h-6 w-6" />}
-            description="Disponibles en tienda"
-            color="from-green-500 to-green-600"
+            icon={<ShoppingCart className="h-4 w-4 text-gray-400" />}
           />
           <StatsCard
-            title="Productos Destacados"
+            title="Productos destacados"
             value={stats.loading ? "..." : stats.featuredProducts.toString()}
-            icon={<TrendingUp className="h-6 w-6" />}
-            description="En sección especial"
-            color="from-purple-500 to-purple-600"
+            icon={<TrendingUp className="h-4 w-4 text-gray-400" />}
           />
         </div>
 
-        {/* Main Content con mejor diseño */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-200">
-          <Tabs defaultValue="products" className="w-full">
-            <div className="border-b border-gray-200 bg-gray-50 rounded-t-2xl">
-              <TabsList className="grid w-full grid-cols-2 bg-transparent p-2">
-                <TabsTrigger 
-                  value="products" 
-                  className="data-[state=active]:bg-white data-[state=active]:shadow-md rounded-xl font-semibold"
-                >
-                  <Package className="h-4 w-4 mr-2" />
-                  Productos
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="orders"
-                  className="data-[state=active]:bg-white data-[state=active]:shadow-md rounded-xl font-semibold"
-                >
-                  <ShoppingCart className="h-4 w-4 mr-2" />
-                  Órdenes
-                </TabsTrigger>
-              </TabsList>
-            </div>
-
-            <div className="p-6">
-              <TabsContent value="products" className="mt-0">
-                <AdminProductsPanel />
-              </TabsContent>
-
-              <TabsContent value="orders" className="mt-0">
-                <OrdersPanel />
-              </TabsContent>
-            </div>
-          </Tabs>
+        {/* Main Content minimalista */}
+        <div className="border border-gray-200 rounded-lg bg-white p-6">
+          <AdminProductsPanel />
         </div>
       </div>
     </div>
@@ -126,28 +92,20 @@ export default function AdminPage() {
 function StatsCard({ 
   title, 
   value, 
-  icon, 
-  description,
-  color 
+  icon
 }: { 
   title: string
   value: string
   icon: React.ReactNode
-  description: string
-  color: string
 }) {
   return (
-    <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-      <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${color}`} />
+    <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium text-gray-600">{title}</CardTitle>
-        <div className={`p-2 rounded-lg bg-gradient-to-r ${color} text-white shadow-md`}>
-          {icon}
-        </div>
+        <CardTitle className="text-xs font-medium text-gray-600">{title}</CardTitle>
+        {icon}
       </CardHeader>
-      <CardContent>
-        <div className="text-3xl font-bold text-gray-900 mb-1">{value}</div>
-        <p className="text-xs text-gray-500">{description}</p>
+      <CardContent className="pt-0">
+        <div className="text-lg font-semibold text-gray-900">{value}</div>
       </CardContent>
     </Card>
   )

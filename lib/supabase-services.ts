@@ -4,13 +4,18 @@ import type { Product, CreateProductData, UpdateProductData, Brand, Category, Or
 // ===================== PRODUCTOS =====================
 
 export const productService = {
-  // Obtener todos los productos activos
+  // Obtener todos los productos con filtros avanzados
   async getProducts(filters?: {
     search?: string
+    brand?: string
+    category?: string
     brands?: string[]
     categories?: string[]
     priceRange?: [number, number]
     featured?: boolean
+    active?: boolean
+    minStock?: number
+    maxStock?: number
     limit?: number
     offset?: number
     sortBy?: string
@@ -19,17 +24,35 @@ export const productService = {
     let query = supabase
       .from('products')
       .select('*', { count: 'exact' })
-      .eq('active', true)
+
+    // Filtro de activo (por defecto solo activos, pero ahora es configurable)
+    if (filters?.active !== undefined) {
+      query = query.eq('active', filters.active)
+    } else {
+      query = query.eq('active', true)
+    }
 
     // Aplicar filtros
     if (filters?.search) {
       query = query.or(`name.ilike.%${filters.search}%,description.ilike.%${filters.search}%,brand.ilike.%${filters.search}%`)
     }
 
+    // Filtro por marca individual
+    if (filters?.brand) {
+      query = query.eq('brand', filters.brand)
+    }
+
+    // Filtro por categoría individual  
+    if (filters?.category) {
+      query = query.eq('category', filters.category)
+    }
+
+    // Filtros por múltiples marcas (para compatibilidad)
     if (filters?.brands && filters.brands.length > 0) {
       query = query.in('brand', filters.brands)
     }
 
+    // Filtros por múltiples categorías (para compatibilidad)
     if (filters?.categories && filters.categories.length > 0) {
       query = query.in('category', filters.categories)
     }
@@ -40,6 +63,15 @@ export const productService = {
 
     if (filters?.featured !== undefined) {
       query = query.eq('featured', filters.featured)
+    }
+
+    // Filtros de stock
+    if (filters?.minStock !== undefined) {
+      query = query.gte('stock', filters.minStock)
+    }
+
+    if (filters?.maxStock !== undefined) {
+      query = query.lte('stock', filters.maxStock)
     }
 
     // Ordenamiento

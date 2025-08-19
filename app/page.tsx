@@ -8,6 +8,7 @@ import { Cart } from "@/components/Cart"
 import { WhatsAppFloat } from "@/components/WhatsAppFloat"
 import { useProducts } from "@/hooks/useProductsSupabase"
 import { useCart } from "@/hooks/useCart"
+import { useCartWithSupabase } from "@/hooks/useCartWithSupabase"
 import { useUIState } from "@/hooks/useUIState"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
@@ -46,7 +47,7 @@ export default function PermayHome() {
     setSearchTerm("");
   }, []);
 
-  const { cart, addToCart, removeFromCart, updateQuantity, getCartTotal, getCartItemsCount } = useCart()
+  const { cart, addToCart, removeFromCart, updateQuantity, getCartTotal, getCartItemsCount } = useCartWithSupabase()
 
   // Calcular filtros activos
   const activeFiltersCount = selectedBrands.length + selectedCategories.length + 
