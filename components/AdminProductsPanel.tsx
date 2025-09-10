@@ -12,14 +12,14 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { productService } from "@/lib/supabase-services"
-import type { Product, CreateProductData, UpdateProductData } from "@/types/product"
+import { productService, categoryService } from "@/lib/supabase-services"
+import type { Product, CreateProductData, UpdateProductData, Category } from "@/types/product"
 import "@/styles/admin-products.css"
 
 export function AdminProductsPanel() {
   const [products, setProducts] = useState<Product[]>([])
   const [brands, setBrands] = useState<string[]>([])
-  const [categories, setCategories] = useState<string[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
@@ -92,10 +92,11 @@ export function AdminProductsPanel() {
     try {
       const [brandsData, categoriesData] = await Promise.all([
         productService.getBrands(),
-        productService.getCategories()
+        categoryService.getActiveCategories() // Solo categorías activas para formularios
       ])
       setBrands(brandsData)
       setCategories(categoriesData)
+      console.log('Categorías activas cargadas:', categoriesData) // Debug log
     } catch (error) {
       console.error('Error loading brands and categories:', error)
     }
@@ -150,6 +151,7 @@ export function AdminProductsPanel() {
       await productService.deleteProduct(productToDelete.id)
       console.log('Product deleted successfully')
       await loadProducts() // Recargar productos después de eliminar
+      await loadBrandsAndCategories() // También recargar categorías para actualizar el estado
       setProductToDelete(null)
       alert('Producto desactivado exitosamente')
     } catch (error) {
@@ -281,8 +283,8 @@ export function AdminProductsPanel() {
                     <SelectContent>
                       <SelectItem value="all">Todas las categorías</SelectItem>
                       {categories.map((category) => (
-                        <SelectItem key={category} value={category}>
-                          {category}
+                        <SelectItem key={category.id} value={category.name}>
+                          {category.name}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -856,7 +858,7 @@ function CreateProductModal({
   onClose: () => void
   onSuccess: () => void
   brands: string[]
-  categories: string[]
+  categories: Category[]
 }) {
   const [formData, setFormData] = useState<CreateProductData>({
     name: "",
@@ -955,8 +957,8 @@ function CreateProductModal({
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((category) => (
-                    <SelectItem key={category} value={category}>
-                      {category}
+                    <SelectItem key={category.id} value={category.name}>
+                      {category.name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -1081,7 +1083,7 @@ export function EditProductModal({
   onSuccess: () => void
   product: Product
   brands: string[]
-  categories: string[]
+  categories: Category[]
 }) {
   const [formData, setFormData] = useState<UpdateProductData>({
     name: product.name,
@@ -1160,8 +1162,8 @@ export function EditProductModal({
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((category) => (
-                    <SelectItem key={category} value={category}>
-                      {category}
+                    <SelectItem key={category.id} value={category.name}>
+                      {category.name}
                     </SelectItem>
                   ))}
                 </SelectContent>

@@ -402,6 +402,50 @@ export const categoryService = {
     return data || []
   },
 
+  async getAllCategories(): Promise<Category[]> {
+    const { data, error } = await supabase
+      .from('categories')
+      .select('*')
+      .order('name')
+
+    if (error) {
+      console.error('Error fetching all categories:', error)
+      return []
+    }
+
+    return data || []
+  },
+
+  async getActiveCategories(): Promise<Category[]> {
+    const { data, error } = await supabase
+      .from('categories')
+      .select('*')
+      .eq('active', true)
+      .order('name')
+
+    if (error) {
+      console.error('Error fetching active categories:', error)
+      return []
+    }
+
+    return data || []
+  },
+
+  async getCategoryById(id: number): Promise<Category | null> {
+    const { data, error } = await supabase
+      .from('categories')
+      .select('*')
+      .eq('id', id)
+      .single()
+
+    if (error) {
+      console.error('Error fetching category:', error)
+      return null
+    }
+
+    return data
+  },
+
   async createCategory(category: { name: string; description?: string }): Promise<Category> {
     const slug = category.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
     
@@ -417,5 +461,78 @@ export const categoryService = {
     }
 
     return data
+  },
+
+  async updateCategory(id: number, updates: { name?: string; description?: string; active?: boolean }): Promise<Category> {
+    const updateData: any = { ...updates }
+    
+    // Si se actualiza el nombre, actualizar también el slug
+    if (updates.name) {
+      updateData.slug = updates.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    }
+
+    const { data, error } = await supabase
+      .from('categories')
+      .update(updateData)
+      .eq('id', id)
+      .select()
+      .single()
+
+    if (error) {
+      console.error('Error updating category:', error)
+      throw new Error('Error al actualizar categoría')
+    }
+
+    return data
+  },
+
+  async deleteCategory(id: number): Promise<void> {
+    // Primero obtener el nombre de la categoría para la verificación
+    const category = await this.getCategoryById(id)
+    if (!category) {
+      throw new Error('Categoría no encontrada')
+    }
+
+    // Verificar si hay productos usando esta categoría (buscar por nombre)
+    // Agregamos una pequeña espera para asegurar consistencia de datos
+    await new Promise(resolve => setTimeout(resolve, 100))
+    
+    const { data: products, error: checkError } = await supabase
+      .from('products')
+      .select('id')
+      .eq('category', category.name)
+      .limit(1)
+
+    if (checkError) {
+      console.error('Error checking products:', checkError)
+      throw new Error('Error al verificar productos')
+    }
+
+    console.log(`Verificando productos para categoría "${category.name}":`, products?.length || 0)
+
+    if (products && products.length > 0) {
+      throw new Error('No se puede eliminar la categoría porque tiene productos asociados')
+    }
+
+    const { error } = await supabase
+      .from('categories')
+      .delete()
+      .eq('id', id)
+
+    if (error) {
+      console.error('Error deleting category:', error)
+      throw new Error('Error al eliminar categoría')
+    }
+  },
+
+  async toggleCategoryStatus(id: number): Promise<Category> {
+    // Obtener el estado actual
+    const category = await this.getCategoryById(id)
+    if (!category) {
+      throw new Error('Categoría no encontrada')
+    }
+
+    // Cambiar el estado
+    return await this.updateCategory(id, { active: !category.active })
   }
 }

@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { AdminProductsPanel } from "@/components/AdminProductsPanel"
+import { CategoriesPanel } from "@/components/CategoriesPanel"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Package, ShoppingCart, TrendingUp } from "lucide-react"
 import { productService } from "@/lib/supabase-services"
 
@@ -81,8 +83,35 @@ export default function AdminPage() {
         </div>
 
         {/* Main Content minimalista */}
-        <div className="border border-gray-200 rounded-lg bg-white p-6">
-          <AdminProductsPanel />
+        <div className="border border-gray-200 rounded-lg bg-white">
+          <Tabs defaultValue="products" className="w-full">
+            <div className="border-b border-gray-200">
+              <TabsList className="h-auto p-0 bg-transparent w-full justify-start">
+                <TabsTrigger 
+                  value="products" 
+                  className="px-6 py-4 text-sm font-medium border-b-2 border-transparent data-[state=active]:border-black data-[state=active]:bg-transparent rounded-none"
+                >
+                  Productos
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="categories"
+                  className="px-6 py-4 text-sm font-medium border-b-2 border-transparent data-[state=active]:border-black data-[state=active]:bg-transparent rounded-none"
+                >
+                  Categorías
+                </TabsTrigger>
+              </TabsList>
+            </div>
+
+            <div className="p-6">
+              <TabsContent value="products" className="mt-0">
+                <AdminProductsPanel />
+              </TabsContent>
+
+              <TabsContent value="categories" className="mt-0">
+                <CategoriesPanel />
+              </TabsContent>
+            </div>
+          </Tabs>
         </div>
       </div>
     </div>
