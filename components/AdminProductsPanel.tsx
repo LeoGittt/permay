@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { productService, categoryService } from "@/lib/supabase-services"
+import { productService, categoryService, brandService } from "@/lib/supabase-services"
 import type { Product, CreateProductData, UpdateProductData, Category } from "@/types/product"
 import "@/styles/admin-products.css"
 
@@ -87,15 +87,32 @@ export function AdminProductsPanel() {
     }
   }
 
+  // Función para abrir modal de crear producto y recargar marcas
+  const openCreateModal = async () => {
+    setIsCreateModalOpen(true)
+    // Recargar marcas para asegurar que estén actualizadas
+    await loadBrandsAndCategories()
+  }
+
+  // Función para abrir modal de editar producto y recargar marcas
+  const openEditModal = async (product: Product) => {
+    setSelectedProduct(product)
+    setIsEditModalOpen(true)
+    // Recargar marcas para asegurar que estén actualizadas
+    await loadBrandsAndCategories()
+  }
+
   // Cargar marcas y categorías
   const loadBrandsAndCategories = async () => {
     try {
       const [brandsData, categoriesData] = await Promise.all([
-        productService.getBrands(),
+        brandService.getActiveBrands(), // Cambio: usar brandService en lugar de productService
         categoryService.getActiveCategories() // Solo categorías activas para formularios
       ])
-      setBrands(brandsData)
+      // Extraer solo los nombres de las marcas para mantener compatibilidad
+      setBrands(brandsData.map(brand => brand.name))
       setCategories(categoriesData)
+      console.log('Marcas activas cargadas:', brandsData) // Debug log
       console.log('Categorías activas cargadas:', categoriesData) // Debug log
     } catch (error) {
       console.error('Error loading brands and categories:', error)
@@ -172,7 +189,7 @@ export function AdminProductsPanel() {
           <p className="text-gray-500 text-xs sm:text-sm">{totalProducts} productos en total</p>
         </div>
         <Button 
-          onClick={() => setIsCreateModalOpen(true)}
+          onClick={openCreateModal}
           className="bg-black text-white hover:bg-gray-800 text-sm sm:text-base w-full sm:w-auto"
         >
           <Plus className="h-4 w-4 mr-2" />
@@ -473,7 +490,7 @@ export function AdminProductsPanel() {
                 <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">No hay productos</h3>
                 <p className="text-gray-500 text-sm mb-4">Comienza creando tu primer producto</p>
                 <Button 
-                  onClick={() => setIsCreateModalOpen(true)}
+                  onClick={openCreateModal}
                   className="bg-black text-white hover:bg-gray-800 text-sm"
                 >
                   <Plus className="h-4 w-4 mr-2" />
@@ -559,10 +576,7 @@ export function AdminProductsPanel() {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => {
-                          setSelectedProduct(product)
-                          setIsEditModalOpen(true)
-                        }}
+                        onClick={() => openEditModal(product)}
                         className="flex-1 text-[10px] h-6 px-1 button-compact focus-enhanced"
                         title="Editar producto"
                       >
@@ -676,10 +690,7 @@ export function AdminProductsPanel() {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => {
-                          setSelectedProduct(product)
-                          setIsEditModalOpen(true)
-                        }}
+                        onClick={() => openEditModal(product)}
                         className="text-xs h-7 px-2 focus-enhanced"
                         title="Editar producto"
                       >

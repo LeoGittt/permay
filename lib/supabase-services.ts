@@ -368,7 +368,51 @@ export const brandService = {
     return data || []
   },
 
-  async createBrand(brand: { name: string; description?: string; logo?: string }): Promise<Brand> {
+  async getAllBrands(): Promise<Brand[]> {
+    const { data, error } = await supabase
+      .from('brands')
+      .select('*')
+      .order('name')
+
+    if (error) {
+      console.error('Error fetching all brands:', error)
+      return []
+    }
+
+    return data || []
+  },
+
+  async getActiveBrands(): Promise<Brand[]> {
+    const { data, error } = await supabase
+      .from('brands')
+      .select('*')
+      .eq('active', true)
+      .order('name')
+
+    if (error) {
+      console.error('Error fetching active brands:', error)
+      return []
+    }
+
+    return data || []
+  },
+
+  async getBrandById(id: number): Promise<Brand | null> {
+    const { data, error } = await supabase
+      .from('brands')
+      .select('*')
+      .eq('id', id)
+      .single()
+
+    if (error) {
+      console.error('Error fetching brand:', error)
+      return null
+    }
+
+    return data
+  },
+
+  async createBrand(brand: { name: string; description?: string }): Promise<Brand> {
     const slug = brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
     
     const { data, error } = await supabase
@@ -383,6 +427,78 @@ export const brandService = {
     }
 
     return data
+  },
+
+  async updateBrand(id: number, updates: { name?: string; description?: string; active?: boolean }): Promise<Brand> {
+    const updateData: any = { ...updates }
+    
+    // Si se actualiza el nombre, actualizar también el slug
+    if (updates.name) {
+      updateData.slug = updates.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    }
+
+    const { data, error } = await supabase
+      .from('brands')
+      .update(updateData)
+      .eq('id', id)
+      .select()
+      .single()
+
+    if (error) {
+      console.error('Error updating brand:', error)
+      throw new Error('Error al actualizar marca')
+    }
+
+    return data
+  },
+
+  async deleteBrand(id: number): Promise<void> {
+    // Primero obtener el nombre de la marca para la verificación
+    const brand = await this.getBrandById(id)
+    if (!brand) {
+      throw new Error('Marca no encontrada')
+    }
+
+    // Verificar si hay productos usando esta marca (buscar por nombre)
+    await new Promise(resolve => setTimeout(resolve, 100))
+    
+    const { data: products, error: checkError } = await supabase
+      .from('products')
+      .select('id')
+      .eq('brand', brand.name)
+      .limit(1)
+
+    if (checkError) {
+      console.error('Error checking products:', checkError)
+      throw new Error('Error al verificar productos')
+    }
+
+    console.log(`Verificando productos para marca "${brand.name}":`, products?.length || 0)
+
+    if (products && products.length > 0) {
+      throw new Error('No se puede eliminar la marca porque tiene productos asociados')
+    }
+
+    const { error } = await supabase
+      .from('brands')
+      .delete()
+      .eq('id', id)
+
+    if (error) {
+      console.error('Error deleting brand:', error)
+      throw new Error('Error al eliminar marca')
+    }
+  },
+
+  async toggleBrandStatus(id: number): Promise<Brand> {
+    // Obtener el estado actual
+    const brand = await this.getBrandById(id)
+    if (!brand) {
+      throw new Error('Marca no encontrada')
+    }
+
+    // Cambiar el estado
+    return await this.updateBrand(id, { active: !brand.active })
   }
 }
 

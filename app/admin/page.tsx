@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { AdminProductsPanel } from "@/components/AdminProductsPanel"
 import { CategoriesPanel } from "@/components/CategoriesPanel"
+import { BrandsPanel } from "@/components/BrandsPanel"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Package, ShoppingCart, TrendingUp } from "lucide-react"
@@ -99,6 +100,12 @@ export default function AdminPage() {
                 >
                   Categorías
                 </TabsTrigger>
+                <TabsTrigger 
+                  value="brands"
+                  className="px-6 py-4 text-sm font-medium border-b-2 border-transparent data-[state=active]:border-black data-[state=active]:bg-transparent rounded-none"
+                >
+                  Marcas
+                </TabsTrigger>
               </TabsList>
             </div>
 
@@ -109,6 +116,10 @@ export default function AdminPage() {
 
               <TabsContent value="categories" className="mt-0">
                 <CategoriesPanel />
+              </TabsContent>
+
+              <TabsContent value="brands" className="mt-0">
+                <BrandsPanel />
               </TabsContent>
             </div>
           </Tabs>
