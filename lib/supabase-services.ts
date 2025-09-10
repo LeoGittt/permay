@@ -85,6 +85,7 @@ export const productService = {
     categories?: string[]
     priceRange?: [number, number]
     featured?: boolean
+    on_sale?: boolean
     active?: boolean
     minStock?: number
     maxStock?: number
@@ -137,6 +138,10 @@ export const productService = {
       query = query.eq('featured', filters.featured)
     }
 
+    if (filters?.on_sale !== undefined) {
+      query = query.eq('on_sale', filters.on_sale)
+    }
+
     // Filtros de stock
     if (filters?.minStock !== undefined) {
       query = query.gte('stock', filters.minStock)
@@ -184,6 +189,29 @@ export const productService = {
     }
 
     return data
+  },
+
+  // Obtener productos en oferta
+  async getProductsOnSale(limit?: number): Promise<Product[]> {
+    let query = supabase
+      .from('products')
+      .select('*')
+      .eq('active', true)
+      .eq('on_sale', true)
+      .order('updated_at', { ascending: false })
+
+    if (limit) {
+      query = query.limit(limit)
+    }
+
+    const { data, error } = await query
+
+    if (error) {
+      console.error('Error fetching products on sale:', error)
+      return []
+    }
+
+    return data || []
   },
 
   // Crear un nuevo producto

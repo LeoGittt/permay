@@ -15,16 +15,18 @@ interface FilterState {
   sortBy: string
   viewMode: "grid" | "list"
   currentPage: number
+  showOffers: boolean
 }
 
 const defaultFilters: FilterState = {
   searchTerm: "",
   selectedBrands: [],
   selectedCategories: [],
-  priceRange: [0, 100000],
+  priceRange: [0, 500000],
   sortBy: "name",
   viewMode: "grid",
   currentPage: 1,
+  showOffers: false,
 }
 
 export function useProducts() {
@@ -44,6 +46,7 @@ export function useProducts() {
     sortBy,
     viewMode,
     currentPage,
+    showOffers,
   } = filters
 
   // Cargar marcas y categorías
@@ -79,6 +82,7 @@ export function useProducts() {
           brands: selectedBrands.length > 0 ? selectedBrands : undefined,
           categories: selectedCategories.length > 0 ? selectedCategories : undefined,
           priceRange: priceRange as [number, number],
+          on_sale: showOffers ? true : undefined,
           limit: PRODUCTS_PER_PAGE,
           offset: (currentPage - 1) * PRODUCTS_PER_PAGE,
           sortBy: sortBy === 'price-asc' ? 'price' : sortBy === 'price-desc' ? 'price' : 'name',
@@ -99,7 +103,7 @@ export function useProducts() {
     }
 
     loadProducts()
-  }, [isLoaded, searchTerm, selectedBrands, selectedCategories, priceRange, sortBy, currentPage])
+  }, [isLoaded, searchTerm, selectedBrands, selectedCategories, priceRange, sortBy, currentPage, showOffers])
 
   // Calcular páginas totales
   const totalPages = Math.ceil(totalProducts / PRODUCTS_PER_PAGE)
@@ -169,6 +173,7 @@ export function useProducts() {
     viewMode,
     currentPage,
     totalPages,
+    showOffers,
     
     // Funciones de actualización
     setSearchTerm,
@@ -178,6 +183,7 @@ export function useProducts() {
     setSortBy,
     setViewMode,
     setCurrentPage,
+    setShowOffers: (value: boolean) => setFilters({ ...filters, showOffers: value, currentPage: 1 }),
     clearFilters,
     refreshProducts,
     

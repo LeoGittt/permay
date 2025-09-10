@@ -163,7 +163,7 @@ ${checkoutData.notes ? `\n📝 *Notas:* ${checkoutData.notes}` : ''}
   }
 
   const sendWhatsAppOrder = async (checkoutData: CheckoutData, orderId?: number) => {
-    const phoneNumber = "5492613000787" // Tu número de WhatsApp
+    const phoneNumber = "5492614295880" // Tu número de WhatsApp
     const message = await generateWhatsAppMessage(checkoutData, orderId)
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ShoppingCart, Minus, Plus, X, MessageCircle } from "lucide-react"
+import { ShoppingCart, Minus, Plus, X, MessageCircle, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -16,11 +16,13 @@ interface ProductModalProps {
 
 export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductModalProps) {
   const [quantity, setQuantity] = useState(1)
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false)
 
-  // Resetear la cantidad cuando se abre un nuevo producto
+  // Resetear la cantidad y descripción cuando se abre un nuevo producto
   useEffect(() => {
     if (product) {
       setQuantity(1)
+      setIsDescriptionExpanded(false)
     }
   }, [product])
 
@@ -48,7 +50,7 @@ export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductM
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
-        className="max-w-4xl max-h-[95vh] w-[95vw] sm:w-full overflow-y-auto p-0 gap-0 rounded-xl border-0 shadow-2xl"
+        className="max-w-5xl max-h-[98vh] w-[95vw] sm:w-full overflow-y-auto p-0 gap-0 rounded-xl border-0 shadow-2xl"
         onInteractOutside={(e) => {
           onClose()
         }}
@@ -74,15 +76,15 @@ export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductM
             </div>
           </div>
 
-          <div className="p-4 sm:p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              {/* Imagen del producto */}
-              <div className="space-y-3 sm:space-y-4">
+          <div className="p-4 sm:p-6 pb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+              {/* Imagen del producto - ocupa más espacio */}
+              <div className="lg:col-span-2 space-y-3 sm:space-y-4">
                 <div className="relative">
                   <img
                     src={product.image || "/placeholder.svg?height=400&width=400"}
                     alt={product.name}
-                    className="w-full h-64 sm:h-80 object-cover rounded-xl shadow-md"
+                    className="w-full h-80 sm:h-96 lg:h-[500px] object-contain bg-gray-50 rounded-xl shadow-md"
                   />
                 </div>
 
@@ -97,13 +99,28 @@ export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductM
                 </div>
               </div>
 
-              {/* Información del producto */}
-              <div className="space-y-3 sm:space-y-4">
-                {/* Descripción - solo mostrar si existe */}
+              {/* Información del producto - panel lateral más compacto */}
+              <div className="lg:col-span-1 space-y-3 sm:space-y-4">
+                {/* Descripción colapsable - solo mostrar si existe */}
                 {product.description && product.description.trim() && (
                   <div className="bg-gray-50 rounded-xl p-4">
-                    <h4 className="font-semibold mb-2 text-gray-900 text-sm sm:text-base">Descripción</h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{product.description}</p>
+                    <Button
+                      variant="ghost"
+                      onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                      className="w-full flex items-center justify-between p-0 h-auto font-semibold text-gray-900 text-sm sm:text-base hover:bg-transparent"
+                    >
+                      Ver descripción
+                      <ChevronDown 
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          isDescriptionExpanded ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </Button>
+                    {isDescriptionExpanded && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{product.description}</p>
+                      </div>
+                    )}
                   </div>
                 )}
 

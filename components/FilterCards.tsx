@@ -18,6 +18,8 @@ interface FilterCardsProps {
   setSelectedCategories: (categories: string[]) => void
   priceRange: number[]
   setPriceRange: (range: number[]) => void
+  showOffers: boolean
+  setShowOffers: (value: boolean) => void
   onClearFilters: () => void
 }
 
@@ -30,6 +32,8 @@ export function FilterCards({
   setSelectedCategories,
   priceRange,
   setPriceRange,
+  showOffers,
+  setShowOffers,
   onClearFilters,
 }: FilterCardsProps) {
   const [openBrand, setOpenBrand] = useState(false)
@@ -87,10 +91,11 @@ export function FilterCards({
       return aBase.localeCompare(bBase);
     });
 
-  const totalFilters = selectedBrands.length + selectedCategories.length
+  const totalFilters = selectedBrands.length + selectedCategories.length + (showOffers ? 1 : 0)
 
   // Chips removibles para filtros activos
   const activeChips = [
+    ...(showOffers ? [{ label: "Ofertas", type: "offers" as const, value: "offers" }] : []),
     ...selectedBrands.map((brand) => ({
       label: brand,
       type: "brand" as const,
@@ -103,11 +108,13 @@ export function FilterCards({
     })),
   ]
 
-  const removeChip = (chip: { type: "brand" | "category"; value: string }) => {
+  const removeChip = (chip: { type: "brand" | "category" | "offers"; value: string }) => {
     if (chip.type === "brand") {
       setSelectedBrands(selectedBrands.filter((b) => b !== chip.value))
-    } else {
+    } else if (chip.type === "category") {
       setSelectedCategories(selectedCategories.filter((c) => c !== chip.value))
+    } else if (chip.type === "offers") {
+      setShowOffers(false)
     }
   }
 
@@ -119,67 +126,6 @@ export function FilterCards({
         position: 'sticky',
       }}
     >
-      {/* Tarjetas de categorías funcionales, tipo chip, con popover para ver todas */}
-      <div className="flex flex-wrap gap-1 mb-2 justify-center">
-        {categories.slice(0, 6).map((catLabel) => {
-          const base = catLabel.split("/").pop() ?? catLabel;
-          return (
-            <button
-              key={catLabel}
-              type="button"
-              onClick={() => {
-                if (!selectedCategories.includes(catLabel)) {
-                  setSelectedCategories([...selectedCategories, catLabel]);
-                }
-              }}
-              className="bg-purple-400 hover:bg-purple-500 transition-colors rounded-full px-2 py-0.5 text-white text-[10px] font-semibold shadow focus:outline-none truncate max-w-[110px]"
-              style={{ lineHeight: '1', minHeight: '20px' }}
-              title={base}
-            >
-              <span className="truncate block w-full">{capitalize(toSingular(base))}</span>
-            </button>
-          );
-        })}
-        {categories.length > 6 && (
-          <Popover open={openAllCategories} onOpenChange={setOpenAllCategories}>
-            <PopoverTrigger asChild>
-              <button
-                className="bg-purple-200 hover:bg-purple-300 transition-colors rounded-full px-2 py-0.5 text-purple-800 text-[10px] font-semibold shadow focus:outline-none truncate max-w-[110px] border border-purple-400"
-                style={{ lineHeight: '1', minHeight: '20px' }}
-                title="Ver todas las categorías"
-                type="button"
-              >
-                Ver todas
-              </button>
-            </PopoverTrigger>
-            <PopoverContent className="w-48 max-h-64 overflow-y-auto p-2">
-              <div className="flex flex-col gap-1">
-                {categories.slice(6).map((catLabel) => {
-                  const base = catLabel.split("/").pop() ?? catLabel;
-                  return (
-                    <button
-                      key={catLabel}
-                      type="button"
-                      onClick={() => {
-                        if (!selectedCategories.includes(catLabel)) {
-                          setSelectedCategories([...selectedCategories, catLabel]);
-                        }
-                        setOpenAllCategories(false);
-                      }}
-                      className="bg-purple-100 hover:bg-purple-300 transition-colors rounded-full px-2 py-0.5 text-purple-800 text-[9px] font-semibold focus:outline-none truncate max-w-[160px] border border-purple-300"
-                      style={{ lineHeight: '1', minHeight: '18px' }}
-                      title={base}
-                    >
-                      <span className="truncate block w-full">{capitalize(toSingular(base))}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </PopoverContent>
-          </Popover>
-        )}
-      </div>
-
       {/* Badge general de filtros activos */}
       <div className="flex items-center gap-2 mb-1">
         <span className="font-semibold text-base">Filtros</span>
@@ -212,12 +158,28 @@ export function FilterCards({
       {/* Cards de filtros principales, scroll horizontal en mobile */}
       {(brands.length > 0 || categories.length > 0) ? (
         <div className="flex gap-3 overflow-x-auto pb-1">
+          {/* Filtro de Ofertas */}
+          <Button 
+            variant={showOffers ? "default" : "outline"}
+            onClick={() => setShowOffers(!showOffers)}
+            className={`flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105 ${
+              showOffers 
+                ? "bg-permay-primary hover:bg-permay-primary/90 border-permay-primary text-white" 
+                : "bg-white hover:bg-permay-primary/10 border-permay-primary text-permay-primary"
+            }`}
+          >
+            Ofertas
+          </Button>
+          
           {/* Marcas */}
           <Popover open={openBrand} onOpenChange={setOpenBrand}>
             <PopoverTrigger asChild>
-              <Button variant="outline" className="flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base">
+              <Button 
+                variant="outline" 
+                className="flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-permay-primary hover:bg-permay-primary/80 border-permay-primary text-white font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105"
+              >
                 Marcas
-                {selectedBrands.length > 0 && <Badge variant="secondary">{selectedBrands.length}</Badge>}
+                {selectedBrands.length > 0 && <Badge variant="secondary" className="bg-white text-permay-primary">{selectedBrands.length}</Badge>}
               </Button>
             </PopoverTrigger>
             <PopoverContent
@@ -252,15 +214,30 @@ export function FilterCards({
                   </div>
                 ))}
               </div>
+              {selectedBrands.length > 0 && (
+                <div className="pt-3 border-t mt-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setSelectedBrands([])}
+                    className="w-full text-xs bg-permay-primary hover:bg-permay-primary border-permay-primary text-white"
+                  >
+                    Limpiar filtros
+                  </Button>
+                </div>
+              )}
             </PopoverContent>
           </Popover>
 
           {/* Categorías */}
           <Popover open={openCategory} onOpenChange={setOpenCategory}>
             <PopoverTrigger asChild>
-              <Button variant="outline" className="flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base">
+              <Button 
+                variant="outline" 
+                className="flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-permay-primary hover:bg-permay-primary/80 border-permay-primary text-white font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105"
+              >
                 Categorías
-                {selectedCategories.length > 0 && <Badge variant="secondary">{selectedCategories.length}</Badge>}
+                {selectedCategories.length > 0 && <Badge variant="secondary" className="bg-white text-permay-primary">{selectedCategories.length}</Badge>}
               </Button>
             </PopoverTrigger>
             <PopoverContent
@@ -298,13 +275,28 @@ export function FilterCards({
                   );
                 })}
               </div>
+              {selectedCategories.length > 0 && (
+                <div className="pt-3 border-t mt-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setSelectedCategories([])}
+                    className="w-full text-xs bg-purple-600 hover:bg-purple-700 border-purple-600 text-white"
+                  >
+                    Limpiar filtros
+                  </Button>
+                </div>
+              )}
             </PopoverContent>
           </Popover>
 
           {/* Precio */}
           <Popover open={openPrice} onOpenChange={setOpenPrice}>
             <PopoverTrigger asChild>
-              <Button variant="outline" className="flex items-center gap-2 min-w-[120px]">
+              <Button 
+                variant="outline" 
+                className="flex items-center gap-2 min-w-[120px] h-10 px-3 sm:px-4 text-sm sm:text-base bg-permay-primary hover:bg-permay-primary/80 border-permay-primary text-white font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105"
+              >
                 Precio
               </Button>
             </PopoverTrigger>
@@ -313,7 +305,7 @@ export function FilterCards({
                 <Slider
                   value={priceRange}
                   onValueChange={setPriceRange}
-                  max={100000}
+                  max={500000}
                   min={0}
                   step={1000}
                   className="w-full"
@@ -322,6 +314,18 @@ export function FilterCards({
                   <span>{formatPrice(priceRange[0])}</span>
                   <span>{formatPrice(priceRange[1])}</span>
                 </div>
+                {(priceRange[0] !== 0 || priceRange[1] !== 500000) && (
+                  <div className="pt-3 border-t">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setPriceRange([0, 500000])}
+                      className="w-full text-xs bg-purple-600 hover:bg-purple-700 border-purple-600 text-white"
+                    >
+                      Limpiar filtros
+                    </Button>
+                  </div>
+                )}
               </div>
             </PopoverContent>
           </Popover>

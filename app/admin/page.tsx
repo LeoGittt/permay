@@ -4,12 +4,16 @@ import { useState, useEffect } from "react"
 import { AdminProductsPanel } from "@/components/AdminProductsPanel"
 import { CategoriesPanel } from "@/components/CategoriesPanel"
 import { BrandsPanel } from "@/components/BrandsPanel"
+import { ProtectedRoute } from "@/components/ProtectedRoute"
+import { useAuth } from "@/hooks/useAuth"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Package, ShoppingCart, TrendingUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Package, ShoppingCart, TrendingUp, LogOut, User } from "lucide-react"
 import { productService } from "@/lib/supabase-services"
 
 export default function AdminPage() {
+  const { user, signOut } = useAuth()
   const [stats, setStats] = useState({
     totalProducts: 0,
     activeProducts: 0,
@@ -43,21 +47,40 @@ export default function AdminPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-6">
+    <ProtectedRoute>
+      <div className="min-h-screen bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-6">
         
 
         {/* Header minimalista */}
         <div className="mb-6">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <img 
-              src="/logo.jpeg" 
-              alt="Permay Logo" 
-              className="h-8 w-8 sm:h-10 sm:w-10 rounded-md object-cover shadow-sm"
-            />
-            <h1 className="text-lg font-semibold text-permay-primary">
-              Dashboard
-            </h1>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logo.jpeg" 
+                alt="Permay Logo" 
+                className="h-8 w-8 sm:h-10 sm:w-10 rounded-md object-cover shadow-sm"
+              />
+              <h1 className="text-lg font-semibold text-permay-primary">
+                Dashboard
+              </h1>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex items-center gap-2 text-sm text-gray-600">
+                <User className="h-4 w-4" />
+                <span>{user?.email}</span>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={signOut}
+                className="flex items-center gap-2 text-red-600 border-red-200 hover:bg-red-50"
+              >
+                <LogOut className="h-4 w-4" />
+                <span className="hidden sm:inline">Cerrar Sesión</span>
+              </Button>
+            </div>
           </div>
           <p className="text-gray-500 text-xs text-center">
             Gestiona tu tienda y productos
@@ -124,8 +147,9 @@ export default function AdminPage() {
             </div>
           </Tabs>
         </div>
+        </div>
       </div>
-    </div>
+    </ProtectedRoute>
   )
 }
 

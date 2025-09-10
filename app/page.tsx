@@ -35,6 +35,8 @@ export default function PermayHome() {
     setViewMode,
     brands,
     categories,
+    showOffers,
+    setShowOffers,
     clearFilters,
     currentPage,
     setCurrentPage,
@@ -78,6 +80,8 @@ export default function PermayHome() {
               setSelectedCategories={setSelectedCategories}
               priceRange={priceRange}
               setPriceRange={setPriceRange}
+              showOffers={showOffers}
+              setShowOffers={setShowOffers}
               onClearFilters={clearFilters}
             />
 

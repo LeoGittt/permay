@@ -24,14 +24,14 @@ export default function LandingPage() {
           <div className="flex-1 text-center">
             <h2 className="text-xl font-bold text-green-700 mb-1">Horarios</h2>
             <ul className="text-gray-600">
-              <li>Lunes a Viernes: <span className="font-semibold">9:00 a 13:00</span> y <span className="font-semibold">17:00 a 20:30</span></li>
-              <li>Sábados: <span className="font-semibold">9:30 a 13:30</span></li>
+              <li>Lunes a Viernes: <span className="font-semibold">10:00 a 19:00</span></li>
+              <li>Sábados: <span className="font-semibold">10:00 a 18:00</span></li>
               <li>Domingos y feriados: <span className="font-semibold">Cerrado</span></li>
             </ul>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-4 w-full justify-center items-center mt-4">
-          <a href="https://wa.me/5491123456789" target="_blank" rel="noopener" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow flex items-center gap-2 transition">
+          <a href="https://wa.me/5492614295880" target="_blank" rel="noopener" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow flex items-center gap-2 transition">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 12c0 4.556-3.694 8.25-8.25 8.25A8.207 8.207 0 0 1 4.5 18.2l-1.7.45a.75.75 0 0 1-.92-.92l.45-1.7A8.207 8.207 0 0 1 3.75 12c0-4.556 3.694-8.25 8.25-8.25S20.25 7.444 20.25 12Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 11.25c.273.545.682 1.045 1.125 1.5.443.455.955.864 1.5 1.125l.375.188a.75.75 0 0 0 .75-.062l.75-.563a.375.375 0 0 1 .438-.03l1.125.563a.375.375 0 0 1 .188.438c-.13.52-.52 1.25-1.563 1.25-1.5 0-4.5-3-4.5-4.5 0-1.043.73-1.433 1.25-1.563a.375.375 0 0 1 .438.188l.563 1.125a.375.375 0 0 1-.03.438l-.563.75a.75.75 0 0 0-.062.75l.188.375Z" /></svg>
             WhatsApp
           </a>

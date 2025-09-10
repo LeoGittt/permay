@@ -9,6 +9,7 @@ export interface Product {
   stock?: number
   active?: boolean
   featured?: boolean
+  on_sale?: boolean
   created_at?: string
   updated_at?: string
 }
@@ -41,6 +42,7 @@ export interface CreateProductData {
   image?: string
   stock?: number
   featured?: boolean
+  on_sale?: boolean
 }
 
 export interface UpdateProductData extends Partial<CreateProductData> {

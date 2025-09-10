@@ -24,7 +24,7 @@ export function DeliveryBanner() {
           <span className="text-xs sm:text-sm font-semibold text-center">
             ENVÍOS CON CADETERÍA, ¡CONSULTANOS!<br className="sm:hidden" />
             <span className="font-normal">Estamos en <b>San Juan 1248, M5500 Mendoza</b>.<br className="sm:hidden" />
-            Lunes a Viernes de 9:30 a 15 y de 17:30 a 21 hs. Sábados de 8:30 a 15.</span>
+            Lunes a Viernes de 10 a 19 hs. Sábados de 10 a 18 hs.</span>
           </span>
           <button
             className="ml-3 p-1 rounded-full hover:bg-permay-primary/80 focus:outline-none"

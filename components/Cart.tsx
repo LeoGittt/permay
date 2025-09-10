@@ -139,7 +139,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
     }
     setShowWarning(false);
     const message = generateWhatsAppMessage();
-    const whatsappUrl = `https://wa.me/5491123456789?text=${message}`;
+    const whatsappUrl = `https://wa.me/5492614295880?text=${message}`;
     window.open(whatsappUrl, "_blank");
   }
 
@@ -299,8 +299,8 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       <input
                         type="radio"
                         name="paymentMethod"
-                        value="Tarjeta de crédito"
-                        checked={paymentMethod === "Tarjeta de crédito"}
+                        value="Tarjeta de crédito (hasta 3 cuotas sin interés)"
+                        checked={paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)"}
                         onChange={() => setPaymentMethod("Tarjeta de crédito (hasta 3 cuotas sin interés)")}
                         className="accent-green-600"
                       />

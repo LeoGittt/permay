@@ -37,6 +37,7 @@ export function AdminProductsPanel() {
     category: "all", 
     status: "all", // all, active, inactive
     featured: "all", // all, featured, regular
+    onSale: "all", // all, on-sale, regular
     stock: "all" // all, in-stock, out-of-stock, low-stock
   })
   const [showFilters, setShowFilters] = useState(false)
@@ -66,6 +67,11 @@ export function AdminProductsPanel() {
       if (filters.featured && filters.featured !== "all") {
         if (filters.featured === 'featured') filterParams.featured = true
         if (filters.featured === 'regular') filterParams.featured = false
+      }
+      
+      if (filters.onSale && filters.onSale !== "all") {
+        if (filters.onSale === 'on-sale') filterParams.on_sale = true
+        if (filters.onSale === 'regular') filterParams.on_sale = false
       }
       
       // Filtro de stock
@@ -143,6 +149,7 @@ export function AdminProductsPanel() {
       category: "all",
       status: "all",
       featured: "all",
+      onSale: "all",
       stock: "all"
     })
     setCurrentPage(1)
@@ -349,6 +356,26 @@ export function AdminProductsPanel() {
                   </Select>
                 </div>
 
+                {/* Filtro por ofertas */}
+                <div>
+                  <Label className="text-xs font-medium text-gray-700 mb-1 block">
+                    Ofertas
+                  </Label>
+                  <Select
+                    value={filters.onSale}
+                    onValueChange={(value) => handleFilterChange('onSale', value === 'all' ? '' : value)}
+                  >
+                    <SelectTrigger className="h-8 text-sm">
+                      <SelectValue placeholder="Todos" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Todos</SelectItem>
+                      <SelectItem value="on-sale">En oferta</SelectItem>
+                      <SelectItem value="regular">Sin oferta</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
                 {/* Filtro por stock */}
                 <div>
                   <Label className="text-xs font-medium text-gray-700 mb-1 block">
@@ -425,6 +452,15 @@ export function AdminProductsPanel() {
                 <X 
                   className="h-3 w-3 ml-1 cursor-pointer" 
                   onClick={() => handleFilterChange('featured', 'all')}
+                />
+              </Badge>
+            )}
+            {filters.onSale && filters.onSale !== "all" && (
+              <Badge variant="secondary" className="text-xs">
+                {filters.onSale === 'on-sale' ? 'En oferta' : 'Sin oferta'}
+                <X 
+                  className="h-3 w-3 ml-1 cursor-pointer" 
+                  onClick={() => handleFilterChange('onSale', 'all')}
                 />
               </Badge>
             )}
@@ -641,6 +677,11 @@ export function AdminProductsPanel() {
                                 Destacado
                               </Badge>
                             )}
+                            {product.on_sale && (
+                              <Badge className="bg-red-500 text-white text-[10px] px-1 py-0">
+                                Oferta
+                              </Badge>
+                            )}
                             <Badge 
                               variant={product.active ? "default" : "secondary"} 
                               className="text-[10px] px-1 py-0"
@@ -661,6 +702,11 @@ export function AdminProductsPanel() {
                         {product.featured && (
                           <Badge variant="default" className="text-[10px] px-1 py-0">
                             Destacado
+                          </Badge>
+                        )}
+                        {product.on_sale && (
+                          <Badge className="bg-red-500 text-white text-[10px] px-1 py-0">
+                            Oferta
                           </Badge>
                         )}
                         <Badge 
@@ -880,7 +926,8 @@ function CreateProductModal({
     price: 0,
     image: "",
     stock: 0,
-    featured: false
+    featured: false,
+    on_sale: false
   })
   const [loading, setLoading] = useState(false)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
@@ -1219,6 +1266,18 @@ function CreateProductModal({
             </Label>
           </div>
 
+          {/* Switch oferta */}
+          <div className="flex items-center gap-2 py-2">
+            <Switch
+              id="onSale"
+              checked={formData.on_sale}
+              onCheckedChange={(checked) => setFormData({ ...formData, on_sale: checked })}
+            />
+            <Label htmlFor="onSale" className="text-sm cursor-pointer">
+              Producto en oferta
+            </Label>
+          </div>
+
           {/* Botones */}
           <div className="flex gap-2 pt-3 border-t">
             <Button 
@@ -1275,6 +1334,7 @@ export function EditProductModal({
     image: product.image,
     stock: product.stock,
     featured: product.featured,
+    on_sale: product.on_sale,
     active: product.active
   })
   const [loading, setLoading] = useState(false)
@@ -1615,7 +1675,7 @@ export function EditProductModal({
             </div>
           </div>
 
-          <div className="flex items-center justify-between py-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2">
             <div className="flex items-center gap-2">
               <Switch
                 id="featured"
@@ -1623,6 +1683,14 @@ export function EditProductModal({
                 onCheckedChange={(checked) => setFormData({ ...formData, featured: checked })}
               />
               <Label htmlFor="featured" className="text-sm cursor-pointer">Destacado</Label>
+            </div>
+            <div className="flex items-center gap-2">
+              <Switch
+                id="onSale"
+                checked={formData.on_sale}
+                onCheckedChange={(checked) => setFormData({ ...formData, on_sale: checked })}
+              />
+              <Label htmlFor="onSale" className="text-sm cursor-pointer">En oferta</Label>
             </div>
             <div className="flex items-center gap-2">
               <Switch
@@ -1686,6 +1754,9 @@ function ViewProductModal({
               </Badge>
               {product.featured && (
                 <Badge className="bg-black text-white text-xs">Destacado</Badge>
+              )}
+              {product.on_sale && (
+                <Badge className="bg-red-500 text-white text-xs">Oferta</Badge>
               )}
             </div>
           </div>

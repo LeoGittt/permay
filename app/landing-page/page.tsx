@@ -1,6 +1,7 @@
 "use client";
 import PorQueElegirnos from "./PorQueElegirnos";
 import Testimonios from "./Testimonios";
+import SeccionOfertas from "@/components/SeccionOfertas";
 
 export default function LandingPage() {
   return (
@@ -49,6 +50,10 @@ export default function LandingPage() {
       {/* Contenedor principal para el resto del contenido */}
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
         <PorQueElegirnos />
+        
+        {/* Sección de Ofertas */}
+        <SeccionOfertas limit={6} className="my-16" />
+        
         <Testimonios />
 
         {/* Sección de Contacto y Horarios */}
@@ -81,12 +86,12 @@ export default function LandingPage() {
                 Horarios de Atención
               </h3>
               <ul className="text-gray-600 text-lg space-y-2">
-                <li>Lunes a Viernes: <span className="font-semibold text-permay-primary">9:00 a 13:00</span> y <span className="font-semibold text-permay-primary">17:00 a 20:30</span></li>
-                <li>Sábados: <span className="font-semibold text-permay-primary">9:30 a 13:30</span></li>
+                <li>Lunes a Viernes: <span className="font-semibold text-permay-primary">10:00 a 19:00</span></li>
+                <li>Sábados: <span className="font-semibold text-permay-primary">10:00 a 18:00</span></li>
                 <li>Domingos y feriados: <span className="font-semibold text-red-500">Cerrado</span></li>
               </ul>
               <p className="mt-6 text-sm text-gray-500">
-                <a href="tel:+542613000787" className="hover:underline">Teléfono: +54 261 300-0787</a>
+                <a href="tel:+542614295880" className="hover:underline">Teléfono: +54 261 429-5880</a>
               </p>
             </div>
           </div>
@@ -96,7 +101,7 @@ export default function LandingPage() {
       {/* Pie de página (Footer) */}
       <footer className="w-full py-10 bg-permay-primary/10 border-t border-permay-primary/20 text-center text-permay-primary text-sm mt-12 flex flex-col items-center gap-4">
         <div className="flex flex-wrap gap-4 md:gap-8 justify-center font-medium">
-          <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">WhatsApp</a>
+          <a href="https://wa.me/5492614295880" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">WhatsApp</a>
           <a href="https://www.instagram.com/permayperfumeria/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">Instagram</a>
           <a href="https://www.google.com/maps/place/San+Juan+1248,+M5500+Mendoza/@-32.8945621,-68.8378378,17z/data=!3m1!4b1!4m5!3m4!1s0x967e090f42b3112b:0x7d6c5c0c9c3e9a0c!8m2!3d-32.8945667!4d-68.8356491" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">Ubicación</a>
         </div>

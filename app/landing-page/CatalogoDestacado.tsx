@@ -13,7 +13,7 @@ export default function CatalogoDestacado() {
             <h3 className="font-semibold text-lg text-center text-green-800 line-clamp-2 mb-1">{prod.name}</h3>
             <span className="text-xs text-gray-500 mb-1">{prod.brand}</span>
             <span className="text-permay-primary font-bold text-xl mb-2">${prod.price.toLocaleString("es-AR")}</span>
-            <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20consultar%20por%20{encodeURIComponent(prod.name)}" target="_blank" rel="noopener" className="mt-auto bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full text-sm font-semibold shadow transition">Consultar</a>
+            <a href="https://wa.me/5492614295880?text=Hola!%20Quiero%20consultar%20por%20{encodeURIComponent(prod.name)}" target="_blank" rel="noopener" className="mt-auto bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-full text-sm font-semibold shadow transition">Consultar</a>
           </div>
         ))}
       </div>
