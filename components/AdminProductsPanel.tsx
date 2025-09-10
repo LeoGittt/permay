@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Plus, Edit, Trash2, Search, Eye, Package, ChevronLeft, ChevronRight, Grid3X3, List, Filter, X } from "lucide-react"
+import { Plus, Edit, Trash2, Search, Eye, Package, ChevronLeft, ChevronRight, Grid3X3, List, Filter, X, Upload, Image, Link, Camera, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,7 +12,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { productService, categoryService, brandService } from "@/lib/supabase-services"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { productService, categoryService, brandService, imageService } from "@/lib/supabase-services"
 import type { Product, CreateProductData, UpdateProductData, Category } from "@/types/product"
 import "@/styles/admin-products.css"
 
@@ -882,6 +883,31 @@ function CreateProductModal({
     featured: false
   })
   const [loading, setLoading] = useState(false)
+  const [imagePreview, setImagePreview] = useState<string | null>(null)
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Crear vista previa inmediatamente
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      setImagePreview(event.target?.result as string)
+    }
+    reader.readAsDataURL(file)
+
+    try {
+      setLoading(true)
+      const imageUrl = await imageService.uploadImage(file)
+      setFormData({ ...formData, image: imageUrl })
+    } catch (error) {
+      console.error('Error uploading image:', error)
+      alert(error instanceof Error ? error.message : 'Error al subir la imagen')
+      setImagePreview(null) // Limpiar preview si hay error
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -900,6 +926,7 @@ function CreateProductModal({
         stock: 0,
         featured: false
       })
+      setImagePreview(null) // Limpiar vista previa
     } catch (error) {
       console.error('Error creating product:', error)
       alert('Error al crear el producto')
@@ -908,8 +935,13 @@ function CreateProductModal({
     }
   }
 
+  const handleClose = () => {
+    setImagePreview(null) // Limpiar vista previa al cerrar
+    onClose()
+  }
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-md sm:max-w-lg max-h-[85vh] overflow-y-auto">
         <DialogHeader className="pb-3">
           <DialogTitle className="text-lg font-medium">
@@ -1009,17 +1041,155 @@ function CreateProductModal({
             </div>
 
             <div className="sm:col-span-2">
-              <Label htmlFor="image" className="text-sm">
-                URL imagen
-              </Label>
-              <Input
-                id="image"
-                type="url"
-                value={formData.image}
-                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                placeholder="https://..."
-                className="mt-1"
-              />
+              <Label className="text-sm">Imagen del producto</Label>
+              <Tabs defaultValue="url" className="mt-1">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="url" className="flex items-center gap-2">
+                    <Link className="w-4 h-4" />
+                    URL de imagen
+                  </TabsTrigger>
+                  <TabsTrigger value="upload" className="flex items-center gap-2">
+                    <Upload className="w-4 h-4" />
+                    Subir archivo
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="url" className="mt-2">
+                  <div className="relative">
+                    <Link className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Input
+                      type="url"
+                      value={formData.image}
+                      onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                      placeholder="https://ejemplo.com/imagen.jpg"
+                      className="pl-10 pr-10"
+                    />
+                    {formData.image && (
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, image: "" })}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-red-500 transition-colors"
+                        title="Limpiar URL"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+                  {/* Vista previa de URL */}
+                  {formData.image && formData.image.startsWith('http') && !imagePreview && (
+                    <div className="mt-4">
+                      <p className="text-sm text-gray-600 mb-2">Vista previa:</p>
+                      <div className="relative">
+                        <img 
+                          src={formData.image} 
+                          alt="Vista previa URL" 
+                          className="w-full h-32 object-cover rounded-lg border border-gray-200"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                          }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setFormData({ ...formData, image: "" })}
+                          className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1.5 transition-colors"
+                          title="Eliminar imagen"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </TabsContent>
+                <TabsContent value="upload" className="mt-2">
+                  {!imagePreview ? (
+                    // Mostrar zona de subida solo si no hay imagen
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors duration-200 cursor-pointer group relative">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      />
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-200 transition-colors">
+                          <Upload className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <h3 className="text-lg font-medium text-gray-900 mb-1">
+                          Subir imagen
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-4">
+                          Arrastra tu imagen aquí o haz clic para seleccionar
+                        </p>
+                        <div className="flex items-center space-x-4 text-xs text-gray-500">
+                          <span className="flex items-center">
+                            <Image className="w-4 h-4 mr-1" />
+                            JPG, PNG, WEBP
+                          </span>
+                          <span>Max 5MB</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    // Mostrar vista previa cuando hay imagen
+                    <div className="space-y-3">
+                      <div className="relative">
+                        <img 
+                          src={imagePreview} 
+                          alt="Vista previa" 
+                          className="w-full h-40 object-cover rounded-lg border border-gray-200"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setImagePreview(null)
+                            setFormData({ ...formData, image: "" })
+                          }}
+                          className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1.5 transition-colors"
+                          title="Eliminar imagen"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                        {loading && (
+                          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                            <div className="text-white text-center">
+                              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+                              <p className="text-sm">Subiendo...</p>
+                            </div>
+                          </div>
+                        )}
+                        {formData.image && !loading && (
+                          <div className="absolute top-2 left-2 bg-green-500 text-white rounded-full p-1">
+                            <CheckCircle className="w-4 h-4" />
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Opción para cambiar imagen */}
+                      <div className="flex gap-2">
+                        <label className="flex-1 cursor-pointer">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="hidden"
+                          />
+                          <div className="w-full py-2 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-medium rounded-lg border border-blue-200 text-center transition-colors">
+                            <Upload className="w-4 h-4 inline mr-2" />
+                            Cambiar imagen
+                          </div>
+                        </label>
+                      </div>
+                      
+                      {formData.image && !loading && (
+                        <div className="p-2 bg-green-50 border border-green-200 rounded text-center">
+                          <p className="text-xs text-green-700 font-medium">
+                            ✓ Imagen subida exitosamente
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </TabsContent>
+              </Tabs>
             </div>
 
             <div className="sm:col-span-2">
@@ -1108,6 +1278,31 @@ export function EditProductModal({
     active: product.active
   })
   const [loading, setLoading] = useState(false)
+  const [imagePreview, setImagePreview] = useState<string | null>(null)
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Crear vista previa inmediatamente
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      setImagePreview(event.target?.result as string)
+    }
+    reader.readAsDataURL(file)
+
+    try {
+      setLoading(true)
+      const imageUrl = await imageService.uploadImage(file)
+      setFormData({ ...formData, image: imageUrl })
+    } catch (error) {
+      console.error('Error uploading image:', error)
+      alert(error instanceof Error ? error.message : 'Error al subir la imagen')
+      setImagePreview(null) // Limpiar preview si hay error
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -1123,8 +1318,13 @@ export function EditProductModal({
     }
   }
 
+  const handleClose = () => {
+    setImagePreview(null) // Limpiar vista previa al cerrar
+    onClose()
+  }
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-md sm:max-w-lg max-h-[85vh] overflow-y-auto">
         <DialogHeader className="pb-3">
           <DialogTitle className="text-lg font-medium">Editar producto</DialogTitle>
@@ -1212,14 +1412,195 @@ export function EditProductModal({
             </div>
 
             <div className="sm:col-span-2">
-              <Label htmlFor="image" className="text-sm">URL imagen</Label>
-              <Input
-                id="image"
-                type="url"
-                value={formData.image}
-                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                className="mt-1"
-              />
+              <Label className="text-sm">Imagen del producto</Label>
+              <Tabs defaultValue="url" className="mt-1">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="url" className="flex items-center gap-2">
+                    <Link className="w-4 h-4" />
+                    URL de imagen
+                  </TabsTrigger>
+                  <TabsTrigger value="upload" className="flex items-center gap-2">
+                    <Upload className="w-4 h-4" />
+                    Subir archivo
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="url" className="mt-2">
+                  <div className="relative">
+                    <Link className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Input
+                      type="url"
+                      value={formData.image}
+                      onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                      placeholder="https://ejemplo.com/imagen.jpg"
+                      className="pl-10 pr-10"
+                    />
+                    {formData.image && (
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, image: "" })}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-red-500 transition-colors"
+                        title="Limpiar URL"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+                  {/* Vista previa de URL */}
+                  {formData.image && formData.image.startsWith('http') && !imagePreview && (
+                    <div className="mt-4">
+                      <p className="text-sm text-gray-600 mb-2">Vista previa:</p>
+                      <div className="relative">
+                        <img 
+                          src={formData.image} 
+                          alt="Vista previa URL" 
+                          className="w-full h-32 object-cover rounded-lg border border-gray-200"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                          }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setFormData({ ...formData, image: "" })}
+                          className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1.5 transition-colors"
+                          title="Eliminar imagen"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </TabsContent>
+                <TabsContent value="upload" className="mt-2">
+                  {imagePreview ? (
+                    // Mostrar nueva imagen seleccionada
+                    <div className="space-y-3">
+                      <div className="relative">
+                        <img 
+                          src={imagePreview} 
+                          alt="Nueva imagen" 
+                          className="w-full h-40 object-cover rounded-lg border border-gray-200"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setImagePreview(null)
+                            // Mantener la imagen original en formData
+                          }}
+                          className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1.5 transition-colors"
+                          title="Cancelar cambio"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                        {loading && (
+                          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                            <div className="text-white text-center">
+                              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+                              <p className="text-sm">Subiendo...</p>
+                            </div>
+                          </div>
+                        )}
+                        {formData.image && !loading && (
+                          <div className="absolute top-2 left-2 bg-green-500 text-white rounded-full p-1">
+                            <CheckCircle className="w-4 h-4" />
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Opción para cambiar nuevamente */}
+                      <div className="flex gap-2">
+                        <label className="flex-1 cursor-pointer">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="hidden"
+                          />
+                          <div className="w-full py-2 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-medium rounded-lg border border-blue-200 text-center transition-colors">
+                            <Upload className="w-4 h-4 inline mr-2" />
+                            Seleccionar otra imagen
+                          </div>
+                        </label>
+                      </div>
+                      
+                      {formData.image && !loading && (
+                        <div className="p-2 bg-green-50 border border-green-200 rounded text-center">
+                          <p className="text-xs text-green-700 font-medium">
+                            ✓ Nueva imagen subida exitosamente
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  ) : formData.image && formData.image.startsWith('http') ? (
+                    // Mostrar imagen actual si existe
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-sm text-gray-600 mb-2">Imagen actual:</p>
+                        <div className="relative">
+                          <img 
+                            src={formData.image} 
+                            alt="Imagen actual" 
+                            className="w-full h-40 object-cover rounded-lg border border-gray-200"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setFormData({ ...formData, image: "" })
+                            }}
+                            className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-1.5 transition-colors"
+                            title="Eliminar imagen"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                      
+                      {/* Opción para cambiar imagen */}
+                      <div className="flex gap-2">
+                        <label className="flex-1 cursor-pointer">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="hidden"
+                          />
+                          <div className="w-full py-2 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-medium rounded-lg border border-blue-200 text-center transition-colors">
+                            <Upload className="w-4 h-4 inline mr-2" />
+                            Cambiar imagen
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  ) : (
+                    // Mostrar zona de subida solo si no hay imagen
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors duration-200 cursor-pointer group relative">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      />
+                      <div className="flex flex-col items-center">
+                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-200 transition-colors">
+                          <Upload className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <h3 className="text-lg font-medium text-gray-900 mb-1">
+                          Agregar imagen
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-4">
+                          Arrastra tu imagen aquí o haz clic para seleccionar
+                        </p>
+                        <div className="flex items-center space-x-4 text-xs text-gray-500">
+                          <span className="flex items-center">
+                            <Image className="w-4 h-4 mr-1" />
+                            JPG, PNG, WEBP
+                          </span>
+                          <span>Max 5MB</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </TabsContent>
+              </Tabs>
             </div>
 
             <div className="sm:col-span-2">

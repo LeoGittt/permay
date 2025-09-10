@@ -1,6 +1,78 @@
 import { supabase } from './supabase'
 import type { Product, CreateProductData, UpdateProductData, Brand, Category, Order, CreateOrderData } from '@/types/product'
 
+// ===================== STORAGE DE IMÁGENES =====================
+
+export const imageService = {
+  async uploadImage(file: File): Promise<string> {
+    try {
+      // Validar tipo de archivo
+      if (!file.type.startsWith('image/')) {
+        throw new Error('El archivo debe ser una imagen')
+      }
+
+      // Validar tamaño (máximo 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error('La imagen no puede superar los 5MB')
+      }
+
+      // Crear nombre único para el archivo
+      const timestamp = Date.now()
+      const randomString = Math.random().toString(36).substring(2, 15)
+      const extension = file.name.split('.').pop()
+      const fileName = `product_${timestamp}_${randomString}.${extension}`
+
+      // Subir archivo al bucket 'product-images'
+      const { data, error } = await supabase.storage
+        .from('product-images')
+        .upload(fileName, file, {
+          cacheControl: '3600',
+          upsert: false
+        })
+
+      if (error) {
+        console.error('Error uploading image:', error)
+        throw new Error('Error al subir la imagen')
+      }
+
+      // Obtener URL pública
+      const { data: { publicUrl } } = supabase.storage
+        .from('product-images')
+        .getPublicUrl(data.path)
+
+      return publicUrl
+    } catch (error) {
+      console.error('Error in uploadImage:', error)
+      throw error
+    }
+  },
+
+  async deleteImage(imageUrl: string): Promise<void> {
+    try {
+      // Solo eliminar si es una imagen de nuestro storage
+      if (!imageUrl.includes('supabase') || !imageUrl.includes('product-images')) {
+        return // No es una imagen de nuestro storage, no hacer nada
+      }
+
+      // Extraer el path del archivo de la URL
+      const urlParts = imageUrl.split('/')
+      const fileName = urlParts[urlParts.length - 1]
+
+      const { error } = await supabase.storage
+        .from('product-images')
+        .remove([fileName])
+
+      if (error) {
+        console.error('Error deleting image:', error)
+        // No lanzar error aquí, es mejor que el producto se elimine aunque la imagen no
+      }
+    } catch (error) {
+      console.error('Error in deleteImage:', error)
+      // No lanzar error, es mejor que continue con la operación principal
+    }
+  }
+}
+
 // ===================== PRODUCTOS =====================
 
 export const productService = {
