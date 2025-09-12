@@ -96,7 +96,7 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
           Información Permay
         </a>
         <a
-          href="https://maps.app.goo.gl/3N1SEfpKyNjQaFq38"
+          href="https://maps.app.goo.gl/JPma6Ryj9YS3iR198"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-4 text-base font-semibold text-gray-700 px-4 py-3 rounded-lg transition-all hover:bg-permay-primary/5 hover:text-permay-primary focus:outline-none focus:ring-2 focus:ring-permay-primary/50"
@@ -118,14 +118,14 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
           ¿Dónde estamos?
         </span>
         <a
-          href="https://maps.app.goo.gl/3N1SEfpKyNjQaFq38"
+          href="https://maps.app.goo.gl/JPma6Ryj9YS3iR198"
           target="_blank"
           rel="noopener noreferrer"
           className="block rounded-xl overflow-hidden shadow-md transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-permay-primary"
           aria-label="Abrir ubicación en Google Maps"
         >
           <iframe
-            src="https://www.google.com/maps?q=-38.9516,-68.0591&z=17&output=embed"
+            src="https://www.google.com/maps?q=San+Juan+1248,+M5500+Mendoza&z=17&output=embed"
             width="100%"
             height="180"
             style={{ border: 0 }}

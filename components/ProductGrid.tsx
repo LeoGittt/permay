@@ -43,7 +43,6 @@ export function ProductGrid({
       <div className="bg-white rounded-lg border p-3 sm:p-4 shadow-sm">
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-            <Badge variant="secondary" className="w-fit">{totalProducts} productos</Badge>
 
             <div className="flex items-center gap-1 border rounded-md w-fit">
               <Button

@@ -70,23 +70,36 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   const [customerInfo, setCustomerInfo] = useState({
     name: "",
     phone: "",
+    location: "",
   })
   const [paymentMethod, setPaymentMethod] = useState("Efectivo")
   const [deliveryOption, setDeliveryOption] = useState<"retiro" | "envio">("retiro")
   const [showWarning, setShowWarning] = useState(false)
-  const [touched, setTouched] = useState<{ name: boolean; phone: boolean }>({ name: false, phone: false });
+  const [touched, setTouched] = useState<{ name: boolean; phone: boolean; location: boolean }>({ name: false, phone: false, location: false });
+
+  // Verificar si necesita ubicación (solo para envío con cadetería)
+  const needsLocation = deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia");
 
   // Mostrar advertencia si ya se eligió forma de pago y retiro/envío, pero falta nombre o teléfono
   const shouldShowAutoWarning = (
     paymentMethod &&
-    (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || deliveryOption) &&
-    (!customerInfo.name || !customerInfo.phone)
+    (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito" || deliveryOption) &&
+    (!customerInfo.name || !customerInfo.phone || (needsLocation && !customerInfo.location))
   );
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
+    }).format(price)
+  }
+
+  const formatPriceForWhatsApp = (price: number) => {
+    return new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
     }).format(price)
   }
 
@@ -98,18 +111,24 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   const generateWhatsAppMessage = () => {
     let message = `🛍️ *PEDIDO PERMAY*\n\n`;
     message += `👤 *Cliente:* ${customerInfo.name}\n`;
-    message += `📱 *Teléfono:* ${customerInfo.phone}\n\n`;
+    message += `📱 *Teléfono:* ${customerInfo.phone}\n`;
+    
+    // Agregar ubicación si está disponible (solo para envío con cadetería)
+    if (customerInfo.location && deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia")) {
+      message += `📍 *Ubicación:* ${customerInfo.location}\n`;
+    }
+    message += `\n`;
 
     message += `💳 *Forma de pago:* ${paymentMethod}\n`;
 
-    if (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)") {
+    if (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito") {
       message += `🏬 *Retiro:* Presencial en San Juan 1248, M5500 Mendoza\n\n`;
     } else {
       if (deliveryOption === "retiro") {
         message += `🏬 *Retiro:* Presencial en San Juan 1248, M5500 Mendoza\n\n`;
       } else {
         message += `🚚 *Envío con cadetería local disponible*\n`;
-        message += `Coordinaremos el envío por WhatsApp tras tu pedido.\n\n`;
+        message += `Coordinaremos el envío por WhatsApp tras tu pedido (horarios y valores según la distancia).\n\n`;
       }
     }
 
@@ -120,11 +139,11 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
         message += `• ${product.name}\n`;
         message += `  Marca: ${product.brand}\n`;
         message += `  Cantidad: ${item.quantity}\n`;
-        message += `  Precio: ${formatPrice(product.price * item.quantity)}\n\n`;
+        message += `  Precio: ${formatPriceForWhatsApp(product.price * item.quantity)}\n\n`;
       }
     });
 
-    message += `💰 *TOTAL: ${formatPrice(total)}*\n\n`;
+    message += `💰 *TOTAL: ${formatPriceForWhatsApp(total)}*\n\n`;
 
     message += `¡Gracias por elegir Permay!`;
 
@@ -132,8 +151,10 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   }
 
   const handleSendWhatsApp = () => {
-    setTouched({ name: true, phone: true });
-    if (!customerInfo.name || !customerInfo.phone) {
+    const needsLocation = (paymentMethod === "Efectivo" || paymentMethod === "Débito");
+    setTouched({ name: true, phone: true, location: needsLocation });
+    
+    if (!customerInfo.name || !customerInfo.phone || (needsLocation && !customerInfo.location)) {
       setShowWarning(true);
       return;
     }
@@ -143,7 +164,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
     window.open(whatsappUrl, "_blank");
   }
 
-  const isFormValid = customerInfo.name && customerInfo.phone && cart.length > 0
+  const isFormValid = customerInfo.name && customerInfo.phone && (!needsLocation || customerInfo.location) && cart.length > 0
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -263,6 +284,25 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       {(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) ? "El teléfono es obligatorio." : "Este campo es obligatorio."}
                     </div>
                   </div>
+                  {/* Campo de ubicación para delivery */}
+                  {deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia") && (
+                    <div>
+                      <Label htmlFor="location" className="text-sm">
+                        Ubicación para delivery *
+                      </Label>
+                      <Input
+                        id="location"
+                        placeholder="Dirección o enlace de Google Maps"
+                        value={customerInfo.location}
+                        onChange={(e) => setCustomerInfo({ ...customerInfo, location: e.target.value })}
+                        onBlur={() => setTouched((prev) => ({ ...prev, location: true }))}
+                        className={(!customerInfo.location && (touched.location || showWarning)) ? "border-red-500" : ""}
+                      />
+                      <div className={(!customerInfo.location && (touched.location || showWarning || shouldShowAutoWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
+                        {(!customerInfo.location && (touched.location || showWarning || shouldShowAutoWarning)) ? "La ubicación es obligatoria para delivery." : "Puedes escribir tu dirección o compartir un enlace de Google Maps."}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -306,13 +346,24 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       />
                       Tarjeta de crédito <span className="text-xs text-gray-500">(hasta 3 cuotas sin interés)</span>
                     </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="Tarjeta de débito"
+                        checked={paymentMethod === "Tarjeta de débito"}
+                        onChange={() => setPaymentMethod("Tarjeta de débito")}
+                        className="accent-green-600"
+                      />
+                      Tarjeta de débito
+                    </label>
                   </div>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Retiro / Envío</h4>
-                  {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" ? (
+                  {(paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito") ? (
                     <div className="bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">
-                      <span className="font-semibold text-red-600">Con tarjeta de crédito solo retiro presencial.</span><br/>
+                      <span className="font-semibold text-red-600">Con tarjeta solo retiro presencial.</span><br/>
                       Dirección: San Juan 1248, M5500 Mendoza
                     </div>
                   ) : (
@@ -339,7 +390,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                           className="accent-green-600"
                         />
                         Envío con cadetería local
-                        <span className="text-xs text-green-700 ml-2">Coordinaremos el envío por WhatsApp tras tu pedido.</span>
+                        <span className="text-xs text-green-700 ml-2">Coordinaremos el envío por WhatsApp tras tu pedido (horarios y valores según la distancia).</span>
                       </label>
                     </div>
                   )}
@@ -356,7 +407,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                 )}
                 <Button
                   onClick={handleSendWhatsApp}
-                  disabled={!(customerInfo.name && customerInfo.phone && cart.length > 0)}
+                  disabled={!isFormValid}
                   className="w-full bg-green-600 hover:bg-green-700"
                 >
                   <MessageCircle className="h-4 w-4 mr-2" />

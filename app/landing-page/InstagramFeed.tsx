@@ -4,7 +4,7 @@ export default function InstagramFeed() {
       <h2 className="text-2xl font-bold text-pink-600 mb-4">Últimas novedades en Instagram</h2>
       <div className="w-full max-w-xl rounded-xl overflow-hidden shadow-lg border border-pink-200">
         <iframe
-          src="https://www.instagram.com/permaysalud/embed"
+          src="https://www.instagram.com/permayperfumeria/embed"
           className="w-full h-[500px] bg-white"
           allowTransparency={true}
           frameBorder={0}

@@ -155,9 +155,9 @@ export function FilterCards({
         </div>
       )}
 
-      {/* Cards de filtros principales, scroll horizontal en mobile */}
+      {/* Cards de filtros principales */}
       {(brands.length > 0 || categories.length > 0) ? (
-        <div className="flex gap-3 overflow-x-auto pb-1">
+        <div className="flex flex-wrap gap-3 pb-1">
           {/* Filtro de Ofertas */}
           <Button 
             variant={showOffers ? "default" : "outline"}

@@ -27,7 +27,7 @@ export default function LandingPage() {
         {/* Botones de CTA */}
         <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center z-10 px-4">
           <a
-            href="https://wa.me/5491123456789"
+            href="https://wa.me/5492614295880"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-permay-primary hover:bg-permay-primary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg flex items-center gap-2 transition duration-300 text-base md:text-lg w-full md:w-auto justify-center"
@@ -72,7 +72,7 @@ export default function LandingPage() {
               </p>
               <iframe
                 title="Ubicación Permay"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.508544458925!2d-68.83783778481358!3d-32.89456208038753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e090f42b3112b%3A0x7d6c5c0c9c3e9a0c!2sSan%20Juan%201248%2C%20M5500%20Mendoza!5e0!3m2!1ses-419!2sar!4v1689255675200!5m2!1ses-419!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5085444589253!2d-68.83783778481358!3d-32.89456208038753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e090f7f77d3c3%3A0x8f8b8c8a9a9a9a9a!2sPermay%20Perfumer%C3%ADa%2C%20San%20Juan%201248%2C%20M5500%20Mendoza!5e0!3m2!1ses-419!2sar!4v1694520000000!5m2!1ses-419!2sar"
                 className="w-full h-64 md:h-80 rounded-2xl border border-permay-primary/20"
                 allowFullScreen
                 loading="lazy"
@@ -103,7 +103,7 @@ export default function LandingPage() {
         <div className="flex flex-wrap gap-4 md:gap-8 justify-center font-medium">
           <a href="https://wa.me/5492614295880" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">WhatsApp</a>
           <a href="https://www.instagram.com/permayperfumeria/?hl=es" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">Instagram</a>
-          <a href="https://www.google.com/maps/place/San+Juan+1248,+M5500+Mendoza/@-32.8945621,-68.8378378,17z/data=!3m1!4b1!4m5!3m4!1s0x967e090f42b3112b:0x7d6c5c0c9c3e9a0c!8m2!3d-32.8945667!4d-68.8356491" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">Ubicación</a>
+          <a href="https://maps.app.goo.gl/JPma6Ryj9YS3iR198" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-permay-primary/80">Ubicación</a>
         </div>
         <div className="text-gray-600">
           © {new Date().getFullYear()} Permay. Todos los derechos reservados.
