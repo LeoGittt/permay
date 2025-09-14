@@ -11,10 +11,16 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { LocationPicker } from "@/components/LocationPicker"
+import dynamic from "next/dynamic"
 import type { CartItem } from "@/types/cart"
 import { products } from "@/data/products"
 import { productService } from "@/lib/supabase-services"
+
+// Dynamic import for LocationPicker to avoid SSR issues
+const LocationPicker = dynamic(
+  () => import("@/components/LocationPicker"),
+  { ssr: false }
+)
 
 interface CartProps {
   isOpen: boolean
