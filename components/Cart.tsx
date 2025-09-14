@@ -2,13 +2,16 @@
 
 import { useState } from "react"
 import { useEffect } from "react"
-import { ShoppingCart, Minus, Plus, Trash2, MessageCircle } from "lucide-react"
+import { ShoppingCart, Minus, Plus, Trash2, MessageCircle, ChevronDown, CreditCard, Truck, MapPin, Map } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { LocationPicker } from "@/components/LocationPicker"
 import type { CartItem } from "@/types/cart"
 import { products } from "@/data/products"
 import { productService } from "@/lib/supabase-services"
@@ -24,25 +27,32 @@ interface CartProps {
 
 export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, total }: CartProps) {
   const [productCache, setProductCache] = useState<{[key: number]: any}>({})
+  const [hasAddedHistoryState, setHasAddedHistoryState] = useState(false)
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !hasAddedHistoryState) {
       window.history.pushState({ cartOpen: true }, "");
+      setHasAddedHistoryState(true);
+      
       const handlePopState = (e: PopStateEvent) => {
         if (isOpen) {
           onClose();
+          setHasAddedHistoryState(false);
         }
       };
       window.addEventListener("popstate", handlePopState);
+      
       return () => {
         window.removeEventListener("popstate", handlePopState);
-        // Si el carrito se cierra por otro medio, retroceder el historial para no dejar un estado "extra"
-        if (window.history.state && window.history.state.cartOpen) {
-          window.history.back();
-        }
       };
+    } else if (!isOpen && hasAddedHistoryState) {
+      // Solo manejar el historial cuando el carrito se cierra intencionalmente
+      if (window.history.state && window.history.state.cartOpen) {
+        window.history.back();
+      }
+      setHasAddedHistoryState(false);
     }
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, hasAddedHistoryState]);
 
   // Cargar productos del carrito desde Supabase
   useEffect(() => {
@@ -71,20 +81,43 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
     name: "",
     phone: "",
     location: "",
+    street: "",
+    number: "",
+    city: "",
+    mapsLink: "",
   })
   const [paymentMethod, setPaymentMethod] = useState("Efectivo")
   const [deliveryOption, setDeliveryOption] = useState<"retiro" | "envio">("retiro")
+  const [addressMode, setAddressMode] = useState<"structured" | "maps">("structured")
   const [showWarning, setShowWarning] = useState(false)
-  const [touched, setTouched] = useState<{ name: boolean; phone: boolean; location: boolean }>({ name: false, phone: false, location: false });
+  const [isLocationPickerOpen, setIsLocationPickerOpen] = useState(false)
+  const [touched, setTouched] = useState<{ name: boolean; phone: boolean; location: boolean; street: boolean; number: boolean; city: boolean; mapsLink: boolean }>({ 
+    name: false, 
+    phone: false, 
+    location: false,
+    street: false,
+    number: false,
+    city: false,
+    mapsLink: false
+  });
 
   // Verificar si necesita ubicación (solo para envío con cadetería)
   const needsLocation = deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia");
 
-  // Mostrar advertencia si ya se eligió forma de pago y retiro/envío, pero falta nombre o teléfono
+  // Verificar si la dirección está completa según el modo elegido
+  const isAddressComplete = addressMode === "structured" 
+    ? (customerInfo.street && customerInfo.number && customerInfo.city)
+    : customerInfo.mapsLink;
+    
+  const fullAddress = addressMode === "structured" 
+    ? (isAddressComplete ? `${customerInfo.street} ${customerInfo.number}, ${customerInfo.city}` : "")
+    : customerInfo.mapsLink;
+
+  // Mostrar advertencia si ya se eligió forma de pago y retiro/envío, pero falta información
   const shouldShowAutoWarning = (
     paymentMethod &&
     (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito" || deliveryOption) &&
-    (!customerInfo.name || !customerInfo.phone || (needsLocation && !customerInfo.location))
+    (!customerInfo.name || !customerInfo.phone || (needsLocation && !isAddressComplete))
   );
 
   const formatPrice = (price: number) => {
@@ -114,8 +147,8 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
     message += `📱 *Teléfono:* ${customerInfo.phone}\n`;
     
     // Agregar ubicación si está disponible (solo para envío con cadetería)
-    if (customerInfo.location && deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia")) {
-      message += `📍 *Ubicación:* ${customerInfo.location}\n`;
+    if (isAddressComplete && deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia")) {
+      message += `📍 *Ubicación:* ${fullAddress}\n`;
     }
     message += `\n`;
 
@@ -132,7 +165,11 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
       }
     }
 
-    message += ` *PRODUCTOS:*\n`;
+    // Mensaje sobre envío con cadetería (siempre se incluye)
+    message += `🚚 *Envío con cadetería local disponible*\n`;
+    message += `Envíanos tu ubicación a través de maps para calcular el costo exacto y coordinar horario\n\n`;
+
+    message += `🛍️ *PRODUCTOS:*\n`;
     cart.forEach((item) => {
       const product = getProduct(item.productId);
       if (product) {
@@ -152,9 +189,17 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
 
   const handleSendWhatsApp = () => {
     const needsLocation = (paymentMethod === "Efectivo" || paymentMethod === "Débito");
-    setTouched({ name: true, phone: true, location: needsLocation });
+    setTouched({ 
+      name: true, 
+      phone: true, 
+      location: needsLocation,
+      street: needsLocation && addressMode === "structured",
+      number: needsLocation && addressMode === "structured",
+      city: needsLocation && addressMode === "structured",
+      mapsLink: needsLocation && addressMode === "maps"
+    });
     
-    if (!customerInfo.name || !customerInfo.phone || (needsLocation && !customerInfo.location)) {
+    if (!customerInfo.name || !customerInfo.phone || (needsLocation && !isAddressComplete)) {
       setShowWarning(true);
       return;
     }
@@ -164,75 +209,89 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
     window.open(whatsappUrl, "_blank");
   }
 
-  const isFormValid = customerInfo.name && customerInfo.phone && (!needsLocation || customerInfo.location) && cart.length > 0
+  const handleLocationSelect = (lat: number, lng: number, address?: string) => {
+    setCustomerInfo(prev => ({
+      ...prev,
+      mapsLink: address || `${lat.toFixed(6)}, ${lng.toFixed(6)}`
+    }))
+    setAddressMode("maps")
+  }
+
+  const isFormValid = customerInfo.name && customerInfo.phone && (!needsLocation || isAddressComplete) && cart.length > 0
 
   return (
-    <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent className="w-full sm:max-w-lg">
-        <SheetHeader>
-          <SheetTitle className="flex items-center gap-2">
+    <>
+      <Sheet open={isOpen} onOpenChange={onClose}>
+      <SheetContent className="w-full sm:max-w-xl p-3">
+        <SheetHeader className="pb-3">
+          <SheetTitle className="flex items-center gap-2 text-base">
             <ShoppingCart className="h-5 w-5" />
             Carrito de Compras
           </SheetTitle>
-          <SheetDescription>
+          <SheetDescription className="text-xs">
             {cart.length === 0
               ? "Tu carrito está vacío"
               : `${cart.length} producto${cart.length > 1 ? "s" : ""} en tu carrito`}
           </SheetDescription>
         </SheetHeader>
 
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-[calc(100vh-80px)]">
           {cart.length === 0 ? (
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
-                <ShoppingCart className="h-16 w-16 mx-auto text-gray-300 mb-4" />
+                <ShoppingCart className="h-16 w-16 mx-auto text-gray-300 mb-3" />
                 <p className="text-gray-500">Tu carrito está vacío</p>
-                <p className="text-sm text-gray-400">Agrega productos para comenzar</p>
+                <p className="text-xs text-gray-400">Agrega productos para comenzar</p>
               </div>
             </div>
           ) : (
             <>
               {/* Cart Items */}
-              <div className="flex-1 overflow-y-auto space-y-4 py-4">
+              <div className={`overflow-y-auto space-y-2 pb-2 ${cart.length <= 2 ? 'flex-none' : 'flex-1'}`}>
                 {cart.map((item) => {
                   const product = getProduct(item.productId)
                   if (!product) return null
 
                   return (
-                    <div key={item.productId} className="bg-gray-50 rounded-lg p-3">
-                      <div className="flex gap-2 items-center">
+                    <div key={item.productId} className="bg-white border border-gray-200 rounded-lg p-2 shadow-sm">
+                      <div className="flex gap-2 items-start">
                         <img
-                          src={product.image || "/placeholder.svg?height=40&width=40"}
+                          src={product.image || "/placeholder.svg?height=60&width=60"}
                           alt={product.name}
-                          className="w-10 h-10 object-cover rounded-md flex-shrink-0"
+                          className="w-16 h-16 object-cover rounded-lg flex-shrink-0 border"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-xs line-clamp-2">{product.name}</h4>
-                          <p className="text-[10px] text-gray-500">{product.brand}</p>
-                          <div className="flex items-center justify-between mt-1">
-                            <span className="font-bold text-permay-primary text-sm">{formatPrice(product.price)}</span>
+                          <h4 className="font-semibold text-xs line-clamp-2 mb-1">{product.name}</h4>
+                          <p className="text-xs text-gray-600 mb-1">{product.brand}</p>
+                          <div className="flex items-center justify-between">
+                            <div className="flex flex-col">
+                              <span className="font-bold text-permay-primary text-sm">{formatPrice(product.price)}</span>
+                              <span className="text-[10px] text-gray-500">Precio unitario</span>
+                            </div>
                             <div className="flex items-center gap-1">
-                              <Button
-                                variant="outline"
-                                size="icon"
-                                className="h-5 w-5 bg-transparent"
-                                onClick={() => onUpdateQuantity(item.productId, Math.max(0, item.quantity - 1))}
-                              >
-                                <Minus className="h-3 w-3" />
-                              </Button>
-                              <span className="font-medium w-5 text-center text-xs">{item.quantity}</span>
-                              <Button
-                                variant="outline"
-                                size="icon"
-                                className="h-5 w-5 bg-transparent"
-                                onClick={() => onUpdateQuantity(item.productId, item.quantity + 1)}
-                              >
-                                <Plus className="h-3 w-3" />
-                              </Button>
+                              <div className="flex items-center gap-1 bg-gray-50 rounded-lg p-1">
+                                <Button
+                                  variant="ghost"
+                                  size="icon"
+                                  className="h-6 w-6"
+                                  onClick={() => onUpdateQuantity(item.productId, Math.max(0, item.quantity - 1))}
+                                >
+                                  <Minus className="h-3 w-3" />
+                                </Button>
+                                <span className="font-medium w-6 text-center text-xs">{item.quantity}</span>
+                                <Button
+                                  variant="ghost"
+                                  size="icon"
+                                  className="h-6 w-6"
+                                  onClick={() => onUpdateQuantity(item.productId, item.quantity + 1)}
+                                >
+                                  <Plus className="h-3 w-3" />
+                                </Button>
+                              </div>
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-5 w-5 text-red-500 hover:text-red-700"
+                                className="h-6 w-6 text-red-500 hover:text-red-700 hover:bg-red-50"
                                 onClick={() => onRemoveItem(item.productId)}
                               >
                                 <Trash2 className="h-3 w-3" />
@@ -246,182 +305,303 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                 })}
               </div>
 
-              <Separator />
+              {/* Información y opciones en un contenedor con scroll independiente */}
+              <div className={`border-t bg-white ${cart.length <= 2 ? 'flex-1 flex flex-col justify-center' : ''}`}>
+                <div className={`overflow-y-auto px-1 ${cart.length <= 2 ? '' : 'max-h-72'}`}>
+                  <Separator />
 
-              {/* Customer Info */}
-              <div className="space-y-4 py-4">
-                <h3 className="font-semibold">Información de contacto</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <Label htmlFor="name" className="text-sm">
-                      Nombre *
-                    </Label>
-                    <Input
-                      id="name"
-                      placeholder="Tu nombre"
-                      value={customerInfo.name}
-                      onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                      onBlur={() => setTouched((prev) => ({ ...prev, name: true }))}
-                      className={(!customerInfo.name && (touched.name || showWarning)) ? "border-red-500" : ""}
-                    />
-                    <div className={(!customerInfo.name && (touched.name || showWarning || shouldShowAutoWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
-                      {(!customerInfo.name && (touched.name || showWarning || shouldShowAutoWarning)) ? "El nombre es obligatorio." : "Este campo es obligatorio."}
-                    </div>
-                  </div>
-                  <div>
-                    <Label htmlFor="phone" className="text-sm">
-                      Teléfono *
-                    </Label>
-                    <Input
-                      id="phone"
-                      placeholder="Tu teléfono"
-                      value={customerInfo.phone}
-                      onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
-                      onBlur={() => setTouched((prev) => ({ ...prev, phone: true }))}
-                      className={(!customerInfo.phone && (touched.phone || showWarning)) ? "border-red-500" : ""}
-                    />
-                    <div className={(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
-                      {(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) ? "El teléfono es obligatorio." : "Este campo es obligatorio."}
-                    </div>
-                  </div>
-                  {/* Campo de ubicación para delivery */}
-                  {deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia") && (
-                    <div>
-                      <Label htmlFor="location" className="text-sm">
-                        Ubicación para delivery *
-                      </Label>
-                      <Input
-                        id="location"
-                        placeholder="Dirección o enlace de Google Maps"
-                        value={customerInfo.location}
-                        onChange={(e) => setCustomerInfo({ ...customerInfo, location: e.target.value })}
-                        onBlur={() => setTouched((prev) => ({ ...prev, location: true }))}
-                        className={(!customerInfo.location && (touched.location || showWarning)) ? "border-red-500" : ""}
-                      />
-                      <div className={(!customerInfo.location && (touched.location || showWarning || shouldShowAutoWarning)) ? "text-red-600 text-xs mt-1" : "text-gray-400 text-xs mt-1"}>
-                        {(!customerInfo.location && (touched.location || showWarning || shouldShowAutoWarning)) ? "La ubicación es obligatoria para delivery." : "Puedes escribir tu dirección o compartir un enlace de Google Maps."}
+                  {/* Customer Info */}
+                  <div className="space-y-2 py-2">
+                    <h3 className="font-semibold text-sm">Información de contacto</h3>
+                    <div className="space-y-2">
+                      <div className="grid grid-cols-2 gap-2">
+                        <div>
+                          <Label htmlFor="name" className="text-xs font-medium">
+                            Nombre *
+                          </Label>
+                          <Input
+                            id="name"
+                            placeholder="Tu nombre"
+                            value={customerInfo.name}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
+                            onBlur={() => setTouched((prev) => ({ ...prev, name: true }))}
+                            className={`text-xs h-8 ${(!customerInfo.name && (touched.name || showWarning)) ? "border-red-500" : ""}`}
+                          />
+                          {(!customerInfo.name && (touched.name || showWarning || shouldShowAutoWarning)) && (
+                            <p className="text-red-600 text-[10px] mt-1">Nombre obligatorio</p>
+                          )}
+                        </div>
+                        <div>
+                          <Label htmlFor="phone" className="text-xs font-medium">
+                            Teléfono *
+                          </Label>
+                          <Input
+                            id="phone"
+                            placeholder="Tu teléfono"
+                            value={customerInfo.phone}
+                            onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
+                            onBlur={() => setTouched((prev) => ({ ...prev, phone: true }))}
+                            className={`text-xs h-8 ${(!customerInfo.phone && (touched.phone || showWarning)) ? "border-red-500" : ""}`}
+                          />
+                          {(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) && (
+                            <p className="text-red-600 text-[10px] mt-1">Teléfono obligatorio</p>
+                          )}
+                        </div>
                       </div>
+                      
+                      {/* Campos de dirección para delivery */}
+                      {deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia") && (
+                        <Collapsible>
+                          <CollapsibleTrigger asChild>
+                            <Button variant="outline" className="w-full justify-between h-8 text-xs">
+                              <span className="flex items-center gap-1">
+                                <MapPin className="h-3 w-3" />
+                                Agregar dirección
+                              </span>
+                              <ChevronDown className="h-3 w-3" />
+                            </Button>
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="space-y-2 mt-2">
+                            {/* Selector de modo de dirección */}
+                            <div className="flex gap-1">
+                              <Button 
+                                type="button"
+                                variant={addressMode === "structured" ? "default" : "outline"} 
+                                size="sm" 
+                                className="flex-1 h-7 text-xs"
+                                onClick={() => setAddressMode("structured")}
+                              >
+                                <MapPin className="h-3 w-3 mr-1" />
+                                Dirección
+                              </Button>
+                              <Button 
+                                type="button"
+                                variant={addressMode === "maps" ? "default" : "outline"} 
+                                size="sm" 
+                                className="flex-1 h-7 text-xs"
+                                onClick={() => setAddressMode("maps")}
+                              >
+                                <Map className="h-3 w-3 mr-1" />
+                                Maps
+                              </Button>
+                              <Button 
+                                type="button"
+                                variant="outline" 
+                                size="sm" 
+                                className="h-7 text-xs px-2"
+                                onClick={() => setIsLocationPickerOpen(true)}
+                                title="Seleccionar en mapa"
+                              >
+                                <Map className="h-3 w-3" />
+                              </Button>
+                            </div>
+
+                            {addressMode === "structured" ? (
+                              <div className="space-y-2">
+                                <div className="grid grid-cols-2 gap-2">
+                                  <div>
+                                    <Label htmlFor="street" className="text-xs font-medium">
+                                      Calle *
+                                    </Label>
+                                    <Input
+                                      id="street"
+                                      placeholder="Ej: San Martín"
+                                      value={customerInfo.street}
+                                      onChange={(e) => setCustomerInfo({ ...customerInfo, street: e.target.value })}
+                                      onBlur={() => setTouched((prev) => ({ ...prev, street: true }))}
+                                      className={`text-xs h-7 ${(!customerInfo.street && (touched.street || showWarning)) ? "border-red-500" : ""}`}
+                                    />
+                                    {(!customerInfo.street && (touched.street || showWarning || shouldShowAutoWarning)) && (
+                                      <p className="text-red-600 text-[10px] mt-1">Calle obligatoria</p>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <Label htmlFor="number" className="text-xs font-medium">
+                                      Número *
+                                    </Label>
+                                    <Input
+                                      id="number"
+                                      placeholder="Ej: 1248"
+                                      value={customerInfo.number}
+                                      onChange={(e) => setCustomerInfo({ ...customerInfo, number: e.target.value })}
+                                      onBlur={() => setTouched((prev) => ({ ...prev, number: true }))}
+                                      className={`text-xs h-7 ${(!customerInfo.number && (touched.number || showWarning)) ? "border-red-500" : ""}`}
+                                    />
+                                    {(!customerInfo.number && (touched.number || showWarning || shouldShowAutoWarning)) && (
+                                      <p className="text-red-600 text-[10px] mt-1">Número obligatorio</p>
+                                    )}
+                                  </div>
+                                </div>
+                                <div>
+                                  <Label htmlFor="city" className="text-xs font-medium">
+                                    Localidad *
+                                  </Label>
+                                  <Input
+                                    id="city"
+                                    placeholder="Ej: Mendoza"
+                                    value={customerInfo.city}
+                                    onChange={(e) => setCustomerInfo({ ...customerInfo, city: e.target.value })}
+                                    onBlur={() => setTouched((prev) => ({ ...prev, city: true }))}
+                                    className={`text-xs h-7 ${(!customerInfo.city && (touched.city || showWarning)) ? "border-red-500" : ""}`}
+                                  />
+                                  {(!customerInfo.city && (touched.city || showWarning || shouldShowAutoWarning)) && (
+                                    <p className="text-red-600 text-[10px] mt-1">Localidad obligatoria</p>
+                                  )}
+                                </div>
+                              </div>
+                            ) : (
+                              <div>
+                                <Label htmlFor="mapsLink" className="text-xs font-medium">
+                                  Enlace de Google Maps *
+                                </Label>
+                                <Input
+                                  id="mapsLink"
+                                  placeholder="Pega aquí tu enlace de Google Maps"
+                                  value={customerInfo.mapsLink}
+                                  onChange={(e) => setCustomerInfo({ ...customerInfo, mapsLink: e.target.value })}
+                                  onBlur={() => setTouched((prev) => ({ ...prev, mapsLink: true }))}
+                                  className={`text-xs h-7 ${(!customerInfo.mapsLink && (touched.mapsLink || showWarning)) ? "border-red-500" : ""}`}
+                                />
+                                {(!customerInfo.mapsLink && (touched.mapsLink || showWarning || shouldShowAutoWarning)) && (
+                                  <p className="text-red-600 text-[10px] mt-1">Enlace obligatorio</p>
+                                )}
+                                <p className="text-gray-500 text-[10px] mt-1">
+                                  📍 Ve a Google Maps, busca tu ubicación y comparte el enlace
+                                </p>
+                              </div>
+                            )}
+
+                            {isAddressComplete && (
+                              <div className="bg-green-50 border border-green-200 rounded p-2">
+                                <p className="text-green-700 text-xs font-medium">
+                                  {addressMode === "structured" ? "Dirección:" : "Maps:"}
+                                </p>
+                                <p className="text-green-600 text-[10px] break-all">{fullAddress}</p>
+                              </div>
+                            )}
+                            
+                            {!isAddressComplete && (touched.street || touched.number || touched.city || touched.mapsLink || showWarning || shouldShowAutoWarning) && (
+                              <p className="text-gray-600 text-[10px]">
+                                {addressMode === "structured" 
+                                  ? "Complete todos los campos"
+                                  : "Pegue enlace de Maps"
+                                }
+                              </p>
+                            )}
+                          </CollapsibleContent>
+                        </Collapsible>
+                      )}
                     </div>
-                  )}
-                </div>
-              </div>
+                  </div>
 
-              <Separator />
+                  <Separator />
 
-              {/* Pago y Total */}
-              <div className="space-y-4 py-4">
-                <div>
-                  <h4 className="font-semibold mb-1">Forma de pago</h4>
-                  <div className="flex flex-col gap-2">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="Efectivo"
-                        checked={paymentMethod === "Efectivo"}
-                        onChange={() => setPaymentMethod("Efectivo")}
-                        className="accent-green-600"
-                      />
-                      Efectivo
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="Transferencia"
-                        checked={paymentMethod === "Transferencia"}
-                        onChange={() => setPaymentMethod("Transferencia")}
-                        className="accent-green-600"
-                      />
-                      Transferencia bancaria
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="Tarjeta de crédito (hasta 3 cuotas sin interés)"
-                        checked={paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)"}
-                        onChange={() => setPaymentMethod("Tarjeta de crédito (hasta 3 cuotas sin interés)")}
-                        className="accent-green-600"
-                      />
-                      Tarjeta de crédito <span className="text-xs text-gray-500">(hasta 3 cuotas sin interés)</span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="Tarjeta de débito"
-                        checked={paymentMethod === "Tarjeta de débito"}
-                        onChange={() => setPaymentMethod("Tarjeta de débito")}
-                        className="accent-green-600"
-                      />
-                      Tarjeta de débito
-                    </label>
+                  {/* Pago y Total */}
+                  <div className="space-y-2 py-2">
+                    <div>
+                      <h4 className="font-semibold mb-1 flex items-center gap-1 text-sm">
+                        <CreditCard className="h-3 w-3" />
+                        Forma de pago
+                      </h4>
+                      <Select value={paymentMethod} onValueChange={setPaymentMethod}>
+                        <SelectTrigger className="w-full h-8 text-xs">
+                          <SelectValue placeholder="Selecciona método de pago" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Efectivo">💵 Efectivo</SelectItem>
+                          <SelectItem value="Transferencia">🏦 Transferencia</SelectItem>
+                          <SelectItem value="Tarjeta de crédito (hasta 3 cuotas sin interés)">💳 Crédito (3 cuotas)</SelectItem>
+                          <SelectItem value="Tarjeta de débito">💳 Débito</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold mb-1 flex items-center gap-1 text-sm">
+                        <Truck className="h-3 w-3" />
+                        Retiro / Envío
+                      </h4>
+                      {(paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito") ? (
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-2 text-xs">
+                          <div className="flex items-center gap-1 text-red-700 font-semibold mb-1">
+                            <MapPin className="h-3 w-3" />
+                            Solo retiro presencial
+                          </div>
+                          <p className="text-red-600 text-[10px]">Con tarjeta solo retiro en tienda</p>
+                          <p className="text-gray-600 text-[10px] mt-1">📍 San Juan 1248, Mendoza</p>
+                        </div>
+                      ) : (
+                        <Select value={deliveryOption} onValueChange={(value: "retiro" | "envio") => setDeliveryOption(value)}>
+                          <SelectTrigger className="w-full h-8 text-xs">
+                            <SelectValue placeholder="Selecciona opción de entrega" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="retiro">
+                              <div className="flex items-center gap-1">
+                                <MapPin className="h-3 w-3" />
+                                <div>
+                                  <div className="font-medium text-xs">Retiro presencial</div>
+                                  <div className="text-[10px] text-gray-500">San Juan 1248, Mendoza</div>
+                                </div>
+                              </div>
+                            </SelectItem>
+                            <SelectItem value="envio">
+                              <div className="flex items-center gap-1">
+                                <Truck className="h-3 w-3" />
+                                <div>
+                                  <div className="font-medium text-xs">Envío con cadetería</div>
+                                  <div className="text-[10px] text-gray-500">Coordinaremos por WhatsApp</div>
+                                </div>
+                              </div>
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      )}
+                    </div>
+                    
+                    {/* Total y Botón de Envío */}
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-2 border border-green-200">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-semibold">Total:</span>
+                        <span className="text-base font-bold text-green-600">{formatPrice(total)}</span>
+                      </div>
+
+                      {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" && (
+                        <div className="mb-1 text-[9px] text-amber-700 bg-amber-50 border border-amber-200 rounded p-1 text-center">
+                          💳 Con tarjeta crédito solo retiro presencial
+                        </div>
+                      )}
+
+                      <Button
+                        onClick={handleSendWhatsApp}
+                        disabled={!isFormValid}
+                        className="w-full bg-green-600 hover:bg-green-700 h-8 text-xs font-semibold"
+                      >
+                        <MessageCircle className="h-3 w-3 mr-1" />
+                        Enviar pedido por WhatsApp
+                      </Button>
+
+                      <p className="text-[9px] text-gray-500 text-center mt-0.5">
+                        Al enviar serás redirigido a WhatsApp
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Retiro / Envío</h4>
-                  {(paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito") ? (
-                    <div className="bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">
-                      <span className="font-semibold text-red-600">Con tarjeta solo retiro presencial.</span><br/>
-                      Dirección: San Juan 1248, M5500 Mendoza
-                    </div>
-                  ) : (
-                    <div className="flex flex-col gap-2">
-                      <label className="flex items-center gap-2 cursor-pointer bg-gray-100 rounded px-3 py-2 text-sm text-gray-700">
-                        <input
-                          type="radio"
-                          name="deliveryOption"
-                          value="retiro"
-                          checked={deliveryOption === "retiro"}
-                          onChange={() => setDeliveryOption("retiro")}
-                          className="accent-green-600"
-                        />
-                        Retiro presencial
-                        <span className="text-xs text-gray-500 ml-2">San Juan 1248, M5500 Mendoza</span>
-                      </label>
-                      <label className="flex items-center gap-2 cursor-pointer bg-green-100 rounded px-3 py-2 text-sm text-green-700 border border-green-300">
-                        <input
-                          type="radio"
-                          name="deliveryOption"
-                          value="envio"
-                          checked={deliveryOption === "envio"}
-                          onChange={() => setDeliveryOption("envio")}
-                          className="accent-green-600"
-                        />
-                        Envío con cadetería local
-                        <span className="text-xs text-green-700 ml-2">Coordinaremos el envío por WhatsApp tras tu pedido (horarios y valores según la distancia).</span>
-                      </label>
-                    </div>
-                  )}
-                </div>
-                <div className="flex justify-between items-center text-lg font-bold">
-                  <span>Total:</span>
-                  <span className="text-permay-primary">{formatPrice(total)}</span>
-                </div>
-
-                {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" && (
-                  <div className="mb-2 text-xs text-red-600 text-center font-semibold">
-                    Con tarjeta de crédito solo podrás retirar presencialmente en San Juan 1248, M5500 Mendoza.
-                  </div>
-                )}
-                <Button
-                  onClick={handleSendWhatsApp}
-                  disabled={!isFormValid}
-                  className="w-full bg-green-600 hover:bg-green-700"
-                >
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  Enviar pedido por WhatsApp
-                </Button>
-
-                <p className="text-xs text-gray-500 text-center">Al enviar el pedido serás redirigido a WhatsApp</p>
               </div>
             </>
           )}
         </div>
       </SheetContent>
     </Sheet>
+    
+    <LocationPicker
+      isOpen={isLocationPickerOpen}
+      onClose={() => setIsLocationPickerOpen(false)}
+      onLocationSelect={handleLocationSelect}
+    />
+    </>
   )
+  
   // Sincronizar opción de retiro/envío al cambiar método de pago
   useEffect(() => {
     if (paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)") {
