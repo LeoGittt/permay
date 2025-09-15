@@ -334,16 +334,16 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
 
               {/* Información y opciones - con scroll independiente */}
               <div className="border-t bg-white flex-shrink-0">
-                <div className="overflow-y-auto px-1 max-h-80">
+                <div className="overflow-y-auto px-4 max-h-[600px]">
                   <Separator />
 
                   {/* Customer Info */}
-                  <div className="space-y-2 py-2">
-                    <h3 className="font-semibold text-sm">Información de contacto</h3>
-                    <div className="space-y-2">
-                      <div className="grid grid-cols-2 gap-2">
+                  <div className="space-y-4 py-4">
+                    <h3 className="font-semibold text-base mb-3">Información de contacto</h3>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="name" className="text-xs font-medium">
+                          <Label htmlFor="name" className="text-sm font-medium mb-2 block">
                             Nombre *
                           </Label>
                           <Input
@@ -352,14 +352,14 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                             value={customerInfo.name}
                             onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
                             onBlur={() => setTouched((prev) => ({ ...prev, name: true }))}
-                            className={`text-xs h-8 ${(!customerInfo.name && (touched.name || showWarning)) ? "border-red-500" : ""}`}
+                            className={`text-sm h-10 ${(!customerInfo.name && (touched.name || showWarning)) ? "border-red-500" : ""}`}
                           />
                           {(!customerInfo.name && (touched.name || showWarning || shouldShowAutoWarning)) && (
-                            <p className="text-red-600 text-[10px] mt-1">Nombre obligatorio</p>
+                            <p className="text-red-600 text-xs mt-2">Nombre obligatorio</p>
                           )}
                         </div>
                         <div>
-                          <Label htmlFor="phone" className="text-xs font-medium">
+                          <Label htmlFor="phone" className="text-sm font-medium mb-2 block">
                             Teléfono *
                           </Label>
                           <Input
@@ -368,10 +368,10 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                             value={customerInfo.phone}
                             onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
                             onBlur={() => setTouched((prev) => ({ ...prev, phone: true }))}
-                            className={`text-xs h-8 ${(!customerInfo.phone && (touched.phone || showWarning)) ? "border-red-500" : ""}`}
+                            className={`text-sm h-10 ${(!customerInfo.phone && (touched.phone || showWarning)) ? "border-red-500" : ""}`}
                           />
                           {(!customerInfo.phone && (touched.phone || showWarning || shouldShowAutoWarning)) && (
-                            <p className="text-red-600 text-[10px] mt-1">Teléfono obligatorio</p>
+                            <p className="text-red-600 text-xs mt-2">Teléfono obligatorio</p>
                           )}
                         </div>
                       </div>
@@ -380,54 +380,54 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       {deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia") && (
                         <Collapsible>
                           <CollapsibleTrigger asChild>
-                            <Button variant="outline" className="w-full justify-between h-8 text-xs">
-                              <span className="flex items-center gap-1">
-                                <MapPin className="h-3 w-3" />
+                            <Button variant="outline" className="w-full justify-between h-10 text-sm font-medium">
+                              <span className="flex items-center gap-2">
+                                <MapPin className="h-4 w-4" />
                                 Agregar dirección
                               </span>
-                              <ChevronDown className="h-3 w-3" />
+                              <ChevronDown className="h-4 w-4" />
                             </Button>
                           </CollapsibleTrigger>
-                          <CollapsibleContent className="space-y-2 mt-2">
+                          <CollapsibleContent className="space-y-4 mt-4">
                             {/* Selector de modo de dirección */}
-                            <div className="flex gap-1">
+                            <div className="flex gap-2">
                               <Button 
                                 type="button"
                                 variant={addressMode === "structured" ? "default" : "outline"} 
                                 size="sm" 
-                                className="flex-1 h-7 text-xs"
+                                className="flex-1 h-9 text-sm"
                                 onClick={() => setAddressMode("structured")}
                               >
-                                <MapPin className="h-3 w-3 mr-1" />
+                                <MapPin className="h-4 w-4 mr-2" />
                                 Dirección
                               </Button>
                               <Button 
                                 type="button"
                                 variant={addressMode === "maps" ? "default" : "outline"} 
                                 size="sm" 
-                                className="flex-1 h-7 text-xs"
+                                className="flex-1 h-9 text-sm"
                                 onClick={() => setAddressMode("maps")}
                               >
-                                <Map className="h-3 w-3 mr-1" />
+                                <Map className="h-4 w-4 mr-2" />
                                 Maps
                               </Button>
                               <Button 
                                 type="button"
                                 variant="outline" 
                                 size="sm" 
-                                className="h-7 text-xs px-2"
+                                className="h-9 text-sm px-3"
                                 onClick={() => setIsLocationPickerOpen(true)}
                                 title="Seleccionar en mapa"
                               >
-                                <Map className="h-3 w-3" />
+                                <Map className="h-4 w-4" />
                               </Button>
                             </div>
 
                             {addressMode === "structured" ? (
-                              <div className="space-y-2">
-                                <div className="grid grid-cols-2 gap-2">
+                              <div className="space-y-4">
+                                <div className="grid grid-cols-2 gap-4">
                                   <div>
-                                    <Label htmlFor="street" className="text-xs font-medium">
+                                    <Label htmlFor="street" className="text-sm font-medium mb-2 block">
                                       Calle *
                                     </Label>
                                     <Input
@@ -436,14 +436,14 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                                       value={customerInfo.street}
                                       onChange={(e) => setCustomerInfo({ ...customerInfo, street: e.target.value })}
                                       onBlur={() => setTouched((prev) => ({ ...prev, street: true }))}
-                                      className={`text-xs h-7 ${(!customerInfo.street && (touched.street || showWarning)) ? "border-red-500" : ""}`}
+                                      className={`text-sm h-10 ${(!customerInfo.street && (touched.street || showWarning)) ? "border-red-500" : ""}`}
                                     />
                                     {(!customerInfo.street && (touched.street || showWarning || shouldShowAutoWarning)) && (
-                                      <p className="text-red-600 text-[10px] mt-1">Calle obligatoria</p>
+                                      <p className="text-red-600 text-xs mt-2">Calle obligatoria</p>
                                     )}
                                   </div>
                                   <div>
-                                    <Label htmlFor="number" className="text-xs font-medium">
+                                    <Label htmlFor="number" className="text-sm font-medium mb-2 block">
                                       Número *
                                     </Label>
                                     <Input
@@ -452,15 +452,15 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                                       value={customerInfo.number}
                                       onChange={(e) => setCustomerInfo({ ...customerInfo, number: e.target.value })}
                                       onBlur={() => setTouched((prev) => ({ ...prev, number: true }))}
-                                      className={`text-xs h-7 ${(!customerInfo.number && (touched.number || showWarning)) ? "border-red-500" : ""}`}
+                                      className={`text-sm h-10 ${(!customerInfo.number && (touched.number || showWarning)) ? "border-red-500" : ""}`}
                                     />
                                     {(!customerInfo.number && (touched.number || showWarning || shouldShowAutoWarning)) && (
-                                      <p className="text-red-600 text-[10px] mt-1">Número obligatorio</p>
+                                      <p className="text-red-600 text-xs mt-2">Número obligatorio</p>
                                     )}
                                   </div>
                                 </div>
                                 <div>
-                                  <Label htmlFor="city" className="text-xs font-medium">
+                                  <Label htmlFor="city" className="text-sm font-medium mb-2 block">
                                     Localidad *
                                   </Label>
                                   <Input
@@ -469,16 +469,16 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                                     value={customerInfo.city}
                                     onChange={(e) => setCustomerInfo({ ...customerInfo, city: e.target.value })}
                                     onBlur={() => setTouched((prev) => ({ ...prev, city: true }))}
-                                    className={`text-xs h-7 ${(!customerInfo.city && (touched.city || showWarning)) ? "border-red-500" : ""}`}
+                                    className={`text-sm h-10 ${(!customerInfo.city && (touched.city || showWarning)) ? "border-red-500" : ""}`}
                                   />
                                   {(!customerInfo.city && (touched.city || showWarning || shouldShowAutoWarning)) && (
-                                    <p className="text-red-600 text-[10px] mt-1">Localidad obligatoria</p>
+                                    <p className="text-red-600 text-xs mt-2">Localidad obligatoria</p>
                                   )}
                                 </div>
                               </div>
                             ) : (
                               <div>
-                                <Label htmlFor="mapsLink" className="text-xs font-medium">
+                                <Label htmlFor="mapsLink" className="text-sm font-medium mb-2 block">
                                   Enlace de Google Maps *
                                 </Label>
                                 <Input
@@ -487,28 +487,28 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                                   value={customerInfo.mapsLink}
                                   onChange={(e) => setCustomerInfo({ ...customerInfo, mapsLink: e.target.value })}
                                   onBlur={() => setTouched((prev) => ({ ...prev, mapsLink: true }))}
-                                  className={`text-xs h-7 ${(!customerInfo.mapsLink && (touched.mapsLink || showWarning)) ? "border-red-500" : ""}`}
+                                  className={`text-sm h-10 ${(!customerInfo.mapsLink && (touched.mapsLink || showWarning)) ? "border-red-500" : ""}`}
                                 />
                                 {(!customerInfo.mapsLink && (touched.mapsLink || showWarning || shouldShowAutoWarning)) && (
-                                  <p className="text-red-600 text-[10px] mt-1">Enlace obligatorio</p>
+                                  <p className="text-red-600 text-xs mt-2">Enlace obligatorio</p>
                                 )}
-                                <p className="text-gray-500 text-[10px] mt-1">
+                                <p className="text-gray-500 text-xs mt-2">
                                   📍 Ve a Google Maps, busca tu ubicación y comparte el enlace
                                 </p>
                               </div>
                             )}
 
                             {isAddressComplete && (
-                              <div className="bg-green-50 border border-green-200 rounded p-2">
-                                <p className="text-green-700 text-xs font-medium">
+                              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                                <p className="text-green-700 text-sm font-medium">
                                   {addressMode === "structured" ? "Dirección:" : "Maps:"}
                                 </p>
-                                <p className="text-green-600 text-[10px] break-all">{fullAddress}</p>
+                                <p className="text-green-600 text-xs break-all">{fullAddress}</p>
                               </div>
                             )}
                             
                             {!isAddressComplete && (touched.street || touched.number || touched.city || touched.mapsLink || showWarning || shouldShowAutoWarning) && (
-                              <p className="text-gray-600 text-[10px]">
+                              <p className="text-gray-600 text-xs">
                                 {addressMode === "structured" 
                                   ? "Complete todos los campos"
                                   : "Pegue enlace de Maps"
@@ -524,14 +524,14 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                   <Separator />
 
                   {/* Pago y Total */}
-                  <div className="space-y-2 py-2">
+                  <div className="space-y-4 py-4">
                     <div>
-                      <h4 className="font-semibold mb-1 flex items-center gap-1 text-sm">
-                        <CreditCard className="h-3 w-3" />
+                      <h4 className="font-semibold mb-3 flex items-center gap-2 text-base">
+                        <CreditCard className="h-4 w-4" />
                         Forma de pago
                       </h4>
                       <Select value={paymentMethod} onValueChange={setPaymentMethod}>
-                        <SelectTrigger className="w-full h-8 text-xs">
+                        <SelectTrigger className="w-full h-10 text-sm">
                           <SelectValue placeholder="Selecciona método de pago" />
                         </SelectTrigger>
                         <SelectContent>
@@ -544,40 +544,40 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                     </div>
                     
                     <div>
-                      <h4 className="font-semibold mb-1 flex items-center gap-1 text-sm">
-                        <Truck className="h-3 w-3" />
+                      <h4 className="font-semibold mb-3 flex items-center gap-2 text-base">
+                        <Truck className="h-4 w-4" />
                         Retiro / Envío
                       </h4>
                       {(paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" || paymentMethod === "Tarjeta de débito") ? (
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-2 text-xs">
-                          <div className="flex items-center gap-1 text-red-700 font-semibold mb-1">
-                            <MapPin className="h-3 w-3" />
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm">
+                          <div className="flex items-center gap-2 text-red-700 font-semibold mb-2">
+                            <MapPin className="h-4 w-4" />
                             Solo retiro presencial
                           </div>
-                          <p className="text-red-600 text-[10px]">Con tarjeta solo retiro en tienda</p>
-                          <p className="text-gray-600 text-[10px] mt-1">📍 San Juan 1248, Mendoza</p>
+                          <p className="text-red-600 text-xs">Con tarjeta solo retiro en tienda</p>
+                          <p className="text-gray-600 text-xs mt-1">📍 San Juan 1248, Mendoza</p>
                         </div>
                       ) : (
                         <Select value={deliveryOption} onValueChange={(value: "retiro" | "envio") => setDeliveryOption(value)}>
-                          <SelectTrigger className="w-full h-8 text-xs">
+                          <SelectTrigger className="w-full h-10 text-sm">
                             <SelectValue placeholder="Selecciona opción de entrega" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="retiro">
-                              <div className="flex items-center gap-1">
-                                <MapPin className="h-3 w-3" />
+                              <div className="flex items-center gap-2">
+                                <MapPin className="h-4 w-4" />
                                 <div>
-                                  <div className="font-medium text-xs">Retiro presencial</div>
-                                  <div className="text-[10px] text-gray-500">San Juan 1248, Mendoza</div>
+                                  <div className="font-medium text-sm">Retiro presencial</div>
+                                  <div className="text-xs text-gray-500">San Juan 1248, Mendoza</div>
                                 </div>
                               </div>
                             </SelectItem>
                             <SelectItem value="envio">
-                              <div className="flex items-center gap-1">
-                                <Truck className="h-3 w-3" />
+                              <div className="flex items-center gap-2">
+                                <Truck className="h-4 w-4" />
                                 <div>
-                                  <div className="font-medium text-xs">Envío con cadetería</div>
-                                  <div className="text-[10px] text-gray-500">Coordinaremos por WhatsApp</div>
+                                  <div className="font-medium text-sm">Envío con cadetería</div>
+                                  <div className="text-xs text-gray-500">Coordinaremos por WhatsApp</div>
                                 </div>
                               </div>
                             </SelectItem>
@@ -587,16 +587,16 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                     </div>
                     
                     {/* Total y Botón de Envío - Siempre visible */}
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-2 border border-green-200 mt-2">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-semibold">Total:</span>
-                        <span className="text-base font-bold text-green-600">
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4 border border-green-200 mt-4">
+                      <div className="flex justify-between items-center mb-3">
+                        <span className="text-base font-semibold">Total:</span>
+                        <span className="text-lg font-bold text-green-600">
                           {total ? formatPrice(total) : formatPrice(0)}
                         </span>
                       </div>
 
                       {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" && (
-                        <div className="mb-1 text-[9px] text-amber-700 bg-amber-50 border border-amber-200 rounded p-1 text-center">
+                        <div className="mb-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2 text-center">
                           💳 Con tarjeta crédito solo retiro presencial
                         </div>
                       )}
@@ -604,13 +604,13 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       <Button
                         onClick={handleSendWhatsApp}
                         disabled={!isFormValid}
-                        className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 h-8 text-xs font-semibold"
+                        className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 h-12 text-sm font-semibold my-6"
                       >
-                        <MessageCircle className="h-3 w-3 mr-1" />
+                        <MessageCircle className="h-4 w-4 mr-2" />
                         Enviar pedido por WhatsApp
                       </Button>
 
-                      <p className="text-[9px] text-gray-500 text-center mt-0.5">
+                      <p className="text-xs text-gray-500 text-center mt-2">
                         Al enviar serás redirigido a WhatsApp
                       </p>
                     </div>

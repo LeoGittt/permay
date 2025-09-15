@@ -306,10 +306,14 @@ export function AdminProductsPanel() {
                       <SelectValue placeholder="Todas las categorías" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">Todas las categorías</SelectItem>
-                      {categories.map((category) => (
+                      <SelectItem value="all">
+                        <span className="font-medium">Todas las categorías</span>
+                      </SelectItem>
+                      {categories
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((category) => (
                         <SelectItem key={category.id} value={category.name}>
-                          {category.name}
+                          <span className="truncate">{category.name}</span>
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -1043,12 +1047,27 @@ function CreateProductModal({
                 onValueChange={(value) => setFormData({ ...formData, category: value })}
               >
                 <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Categoría" />
+                  <SelectValue placeholder="Selecciona una categoría..." />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map((category) => (
-                    <SelectItem key={category.id} value={category.name}>
-                      {category.name}
+                  {categories
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((category) => (
+                    <SelectItem 
+                      key={category.id} 
+                      value={category.name}
+                      className="category-item-long"
+                    >
+                      <div className="flex flex-col">
+                        <span className="font-medium text-gray-900 text-sm">
+                          {category.name}
+                        </span>
+                        {category.description && (
+                          <span className="text-xs text-gray-500 mt-0.5 truncate max-w-[240px]">
+                            {category.description}
+                          </span>
+                        )}
+                      </div>
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -1429,12 +1448,27 @@ export function EditProductModal({
                 onValueChange={(value) => setFormData({ ...formData, category: value })}
               >
                 <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Categoría" />
+                  <SelectValue placeholder="Selecciona una categoría..." />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map((category) => (
-                    <SelectItem key={category.id} value={category.name}>
-                      {category.name}
+                  {categories
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((category) => (
+                    <SelectItem 
+                      key={category.id} 
+                      value={category.name}
+                      className="category-item-long"
+                    >
+                      <div className="flex flex-col">
+                        <span className="font-medium text-gray-900 text-sm">
+                          {category.name}
+                        </span>
+                        {category.description && (
+                          <span className="text-xs text-gray-500 mt-0.5 truncate max-w-[240px]">
+                            {category.description}
+                          </span>
+                        )}
+                      </div>
                     </SelectItem>
                   ))}
                 </SelectContent>

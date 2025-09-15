@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importar estilos personalizados */
+@import '../styles/select-custom.css';
+
 @layer base {
   :root {
     --background: 0 0% 100%;

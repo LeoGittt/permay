@@ -1,0 +1,95 @@
+/* Estilos personalizados para el componente Select */
+
+/* Scrollbar personalizada para el dropdown */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 6px;
+}
+
+.scrollbar-track-gray-100::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+}
+
+.hover\:scrollbar-thumb-gray-400:hover::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+}
+
+/* Webkit scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Efecto de hover suave para los items */
+[data-radix-select-item] {
+  transition: all 0.15s ease-in-out;
+}
+
+[data-radix-select-item]:hover {
+  transform: translateX(2px);
+}
+
+/* Animación para el icono de chevron */
+[data-radix-select-trigger] [data-radix-select-icon] {
+  transition: transform 0.2s ease-in-out;
+}
+
+[data-radix-select-trigger][data-state="open"] [data-radix-select-icon] {
+  transform: rotate(180deg);
+}
+
+/* Sombra mejorada para el dropdown */
+[data-radix-select-content] {
+  box-shadow: 0 10px 38px -10px rgba(22, 23, 24, 0.35), 0 10px 20px -15px rgba(22, 23, 24, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Separador visual para categorías largas */
+.category-item-long {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.category-item-long:last-child {
+  border-bottom: none;
+}
+
+/* Efecto de focus mejorado */
+[data-radix-select-item][data-highlighted] {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #1e40af;
+  outline: none;
+}
+
+/* Indicador de selección mejorado */
+[data-radix-select-item-indicator] {
+  animation: checkmark 0.2s ease-in-out;
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
