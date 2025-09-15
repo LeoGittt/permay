@@ -253,7 +253,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
           ) : (
             <>
               {/* Cart Items */}
-              <div className={`overflow-y-auto space-y-2 pb-2 ${cart.length <= 2 ? 'flex-none' : 'flex-1'}`}>
+              <div className="overflow-y-auto space-y-2 pb-2 flex-1 min-h-0">
                 {cart.map((item) => {
                   const product = getProduct(item.productId)
                   if (!product) return null
@@ -311,9 +311,9 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                 })}
               </div>
 
-              {/* Información y opciones en un contenedor con scroll independiente */}
-              <div className={`border-t bg-white ${cart.length <= 2 ? 'flex-1 flex flex-col justify-center' : ''}`}>
-                <div className={`overflow-y-auto px-1 ${cart.length <= 2 ? '' : 'max-h-72'}`}>
+              {/* Información y opciones - con scroll independiente */}
+              <div className="border-t bg-white flex-shrink-0">
+                <div className="overflow-y-auto px-1 max-h-80">
                   <Separator />
 
                   {/* Customer Info */}
@@ -565,11 +565,13 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       )}
                     </div>
                     
-                    {/* Total y Botón de Envío */}
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-2 border border-green-200">
+                    {/* Total y Botón de Envío - Siempre visible */}
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-2 border border-green-200 mt-2">
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-sm font-semibold">Total:</span>
-                        <span className="text-base font-bold text-green-600">{formatPrice(total)}</span>
+                        <span className="text-base font-bold text-green-600">
+                          {total ? formatPrice(total) : formatPrice(0)}
+                        </span>
                       </div>
 
                       {paymentMethod === "Tarjeta de crédito (hasta 3 cuotas sin interés)" && (
@@ -581,7 +583,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                       <Button
                         onClick={handleSendWhatsApp}
                         disabled={!isFormValid}
-                        className="w-full bg-green-600 hover:bg-green-700 h-8 text-xs font-semibold"
+                        className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 h-8 text-xs font-semibold"
                       >
                         <MessageCircle className="h-3 w-3 mr-1" />
                         Enviar pedido por WhatsApp
