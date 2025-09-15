@@ -216,14 +216,35 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   }
 
   const handleLocationSelect = (lat: number, lng: number, address?: string) => {
+    const mapsLink = address || `${lat.toFixed(6)}, ${lng.toFixed(6)}`
     setCustomerInfo(prev => ({
       ...prev,
-      mapsLink: address || `${lat.toFixed(6)}, ${lng.toFixed(6)}`
+      mapsLink
     }))
     setAddressMode("maps")
+    setIsLocationPickerOpen(false)
+    
+    // Forzar actualización del estado touched para revalidar el formulario
+    setTouched(prev => ({
+      ...prev,
+      mapsLink: true
+    }))
   }
 
   const isFormValid = customerInfo.name && customerInfo.phone && (!needsLocation || isAddressComplete) && cart.length > 0
+
+  // Debug: log para verificar estado del formulario
+  useEffect(() => {
+    console.log('Form validation state:', {
+      name: customerInfo.name,
+      phone: customerInfo.phone,
+      needsLocation,
+      isAddressComplete,
+      addressMode,
+      mapsLink: customerInfo.mapsLink,
+      isFormValid
+    })
+  }, [customerInfo.name, customerInfo.phone, needsLocation, isAddressComplete, addressMode, customerInfo.mapsLink, isFormValid])
 
   return (
     <>
