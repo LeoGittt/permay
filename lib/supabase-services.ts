@@ -233,12 +233,7 @@ export const productService = {
       query = query.order('name', { ascending: true })
     }
 
-    // Paginación
-    if (filters?.limit) {
-      query = query.range(filters.offset || 0, (filters.offset || 0) + filters.limit - 1)
-    }
-
-    // Si hay búsqueda con múltiples palabras, necesitamos obtener más resultados y filtrar
+    // Determinar si necesitamos búsqueda fuzzy
     let needsFuzzySearch = false
     if (filters?.search) {
       const searchTerms = filters.search.toLowerCase().split(/\s+/).filter(term => term.length > 0)
@@ -249,6 +244,11 @@ export const productService = {
         const searchTerm = filters.search.toLowerCase()
         query = query.or(`name.ilike.%${searchTerm}%,description.ilike.%${searchTerm}%,brand.ilike.%${searchTerm}%,category.ilike.%${searchTerm}%`)
       }
+    }
+
+    // Paginación - Solo aplicar si no necesitamos búsqueda fuzzy
+    if (filters?.limit && !needsFuzzySearch) {
+      query = query.range(filters.offset || 0, (filters.offset || 0) + filters.limit - 1)
     }
 
     // Si necesitamos búsqueda fuzzy, obtenemos más resultados sin límite de paginación
@@ -268,8 +268,8 @@ export const productService = {
     let products = data || []
     let totalCount = count || 0
 
-    // Si hay búsqueda, aplicar filtrado fuzzy en JavaScript
-    if (filters?.search && products.length > 0) {
+    // Solo aplicar búsqueda fuzzy si realmente es necesario (múltiples palabras)
+    if (needsFuzzySearch && filters?.search && products.length > 0) {
       products = this.applyFuzzySearch(products, filters.search)
       totalCount = products.length
       
