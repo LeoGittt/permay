@@ -89,14 +89,26 @@ export const productService = {
         .trim()
     }
 
-    // Dividir el término de búsqueda en palabras individuales
-    const searchTerms = normalizeText(searchTerm)
+    // Lista de palabras de parada/conectores que no son relevantes para la búsqueda
+    const stopWords = new Set([
+      'de', 'del', 'la', 'el', 'en', 'con', 'para', 'por', 'sin', 'y', 'o', 'un', 'una', 'los', 'las'
+    ])
+
+    // Dividir el término de búsqueda en palabras individuales y filtrar palabras de parada
+    const allSearchTerms = normalizeText(searchTerm)
       .split(/\s+/)
       .filter(term => term.length > 0)
+    
+    // Separar palabras importantes de las palabras de parada
+    const importantTerms = allSearchTerms.filter(term => !stopWords.has(term))
+    const hasStopWords = allSearchTerms.length > importantTerms.length
+
+    // Si no hay términos importantes, usar todos los términos
+    const searchTerms = importantTerms.length > 0 ? importantTerms : allSearchTerms
 
     if (searchTerms.length === 0) return products
 
-    // Filtrar productos que contengan todas las palabras buscadas
+    // Filtrar productos que contengan las palabras importantes
     const filteredProducts = products.filter(product => {
       // Combinar todos los campos de texto del producto y normalizarlos
       const productText = normalizeText([
@@ -106,7 +118,14 @@ export const productService = {
         product.category || ''
       ].join(' '))
 
-      // Verificar que todas las palabras de búsqueda estén presentes
+      // Si hay palabras de parada, ser más flexible: al menos el 70% de palabras importantes deben estar
+      if (hasStopWords && searchTerms.length > 1) {
+        const matches = searchTerms.filter(term => productText.includes(term)).length
+        const threshold = Math.max(1, Math.ceil(searchTerms.length * 0.7))
+        return matches >= threshold
+      }
+      
+      // Para búsquedas sin palabras de parada, mantener la lógica original (todas las palabras)
       return searchTerms.every(term => productText.includes(term))
     })
 
@@ -117,7 +136,7 @@ export const productService = {
       const aBrand = normalizeText(a.brand || '')
       const bBrand = normalizeText(b.brand || '')
       
-      // Calcular puntuación de relevancia
+      // Calcular puntuación de relevancia usando solo palabras importantes
       const calculateScore = (product: Product): number => {
         const name = normalizeText(product.name || '')
         const brand = normalizeText(product.brand || '')
@@ -125,6 +144,7 @@ export const productService = {
         
         let score = 0
         
+        // Usar solo las palabras importantes para el cálculo de relevancia
         searchTerms.forEach(term => {
           // Coincidencias en el nombre tienen mayor peso
           if (name.includes(term)) {
