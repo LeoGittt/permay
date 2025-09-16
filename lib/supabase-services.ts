@@ -76,6 +76,85 @@ export const imageService = {
 // ===================== PRODUCTOS =====================
 
 export const productService = {
+  // Función helper para búsqueda fuzzy
+  applyFuzzySearch(products: Product[], searchTerm: string): Product[] {
+    // Función para normalizar texto (remover acentos, convertir a minúsculas)
+    const normalizeText = (text: string): string => {
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '') // Remover acentos
+        .replace(/[^\w\s]/g, ' ') // Reemplazar caracteres especiales con espacios
+        .replace(/\s+/g, ' ') // Normalizar espacios múltiples
+        .trim()
+    }
+
+    // Dividir el término de búsqueda en palabras individuales
+    const searchTerms = normalizeText(searchTerm)
+      .split(/\s+/)
+      .filter(term => term.length > 0)
+
+    if (searchTerms.length === 0) return products
+
+    // Filtrar productos que contengan todas las palabras buscadas
+    const filteredProducts = products.filter(product => {
+      // Combinar todos los campos de texto del producto y normalizarlos
+      const productText = normalizeText([
+        product.name || '',
+        product.description || '',
+        product.brand || '',
+        product.category || ''
+      ].join(' '))
+
+      // Verificar que todas las palabras de búsqueda estén presentes
+      return searchTerms.every(term => productText.includes(term))
+    })
+
+    // Ordenar por relevancia
+    return filteredProducts.sort((a, b) => {
+      const aName = normalizeText(a.name || '')
+      const bName = normalizeText(b.name || '')
+      const aBrand = normalizeText(a.brand || '')
+      const bBrand = normalizeText(b.brand || '')
+      
+      // Calcular puntuación de relevancia
+      const calculateScore = (product: Product): number => {
+        const name = normalizeText(product.name || '')
+        const brand = normalizeText(product.brand || '')
+        const description = normalizeText(product.description || '')
+        
+        let score = 0
+        
+        searchTerms.forEach(term => {
+          // Coincidencias en el nombre tienen mayor peso
+          if (name.includes(term)) {
+            score += name.startsWith(term) ? 10 : 5 // Inicio del nombre = más relevante
+          }
+          // Coincidencias en la marca
+          if (brand.includes(term)) {
+            score += brand.startsWith(term) ? 8 : 3
+          }
+          // Coincidencias en la descripción
+          if (description.includes(term)) {
+            score += 1
+          }
+        })
+        
+        return score
+      }
+      
+      const aScore = calculateScore(a)
+      const bScore = calculateScore(b)
+      
+      if (aScore !== bScore) {
+        return bScore - aScore // Mayor puntuación = mayor prioridad
+      }
+      
+      // Si tienen la misma puntuación, ordenar alfabéticamente por nombre
+      return aName.localeCompare(bName)
+    })
+  },
+
   // Obtener todos los productos con filtros avanzados
   async getProducts(filters?: {
     search?: string
@@ -103,11 +182,6 @@ export const productService = {
       query = query.eq('active', filters.active)
     } else {
       query = query.eq('active', true)
-    }
-
-    // Aplicar filtros
-    if (filters?.search) {
-      query = query.or(`name.ilike.%${filters.search}%,description.ilike.%${filters.search}%,brand.ilike.%${filters.search}%`)
     }
 
     // Filtro por marca individual
@@ -164,6 +238,26 @@ export const productService = {
       query = query.range(filters.offset || 0, (filters.offset || 0) + filters.limit - 1)
     }
 
+    // Si hay búsqueda con múltiples palabras, necesitamos obtener más resultados y filtrar
+    let needsFuzzySearch = false
+    if (filters?.search) {
+      const searchTerms = filters.search.toLowerCase().split(/\s+/).filter(term => term.length > 0)
+      needsFuzzySearch = searchTerms.length > 1
+      
+      // Si no necesitamos búsqueda fuzzy, hacer búsqueda normal optimizada
+      if (!needsFuzzySearch) {
+        const searchTerm = filters.search.toLowerCase()
+        query = query.or(`name.ilike.%${searchTerm}%,description.ilike.%${searchTerm}%,brand.ilike.%${searchTerm}%,category.ilike.%${searchTerm}%`)
+      }
+    }
+
+    // Si necesitamos búsqueda fuzzy, obtenemos más resultados sin límite de paginación
+    if (needsFuzzySearch) {
+      // Obtenemos hasta 1000 productos para hacer el filtrado fuzzy
+      // Esto es un balance entre performance y funcionalidad
+      query = query.limit(1000)
+    }
+
     const { data, error, count } = await query
 
     if (error) {
@@ -171,7 +265,21 @@ export const productService = {
       throw new Error('Error al obtener productos')
     }
 
-    return { data: data || [], count: count || 0 }
+    let products = data || []
+    let totalCount = count || 0
+
+    // Si hay búsqueda, aplicar filtrado fuzzy en JavaScript
+    if (filters?.search && products.length > 0) {
+      products = this.applyFuzzySearch(products, filters.search)
+      totalCount = products.length
+      
+      // Aplicar paginación después del filtrado fuzzy
+      if (filters?.limit && filters?.offset !== undefined) {
+        products = products.slice(filters.offset, filters.offset + filters.limit)
+      }
+    }
+
+    return { data: products, count: totalCount }
   },
 
   // Obtener un producto por ID
