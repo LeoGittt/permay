@@ -167,13 +167,10 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
         message += `🏬 *Retiro:* Presencial en San Juan 1248, M5500 Mendoza\n\n`;
       } else {
         message += `🚚 *Envío con cadetería local disponible*\n`;
-        message += `Coordinaremos el envío por WhatsApp tras tu pedido (horarios y valores según la distancia).\n\n`;
+        message += `Coordinaremos el envío por WhatsApp tras tu pedido (horarios y valores según la distancia).\n`;
+        message += `Envíanos tu ubicación a través de maps para calcular el costo exacto y coordinar horario\n\n`;
       }
     }
-
-    // Mensaje sobre envío con cadetería (siempre se incluye)
-    message += `🚚 *Envío con cadetería local disponible*\n`;
-    message += `Envíanos tu ubicación a través de maps para calcular el costo exacto y coordinar horario\n\n`;
 
     message += `🛍️ *PRODUCTOS:*\n`;
     cart.forEach((item) => {
@@ -194,7 +191,7 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
   }
 
   const handleSendWhatsApp = () => {
-    const needsLocation = (paymentMethod === "Efectivo" || paymentMethod === "Débito");
+    const needsLocation = deliveryOption === "envio" && (paymentMethod === "Efectivo" || paymentMethod === "Débito" || paymentMethod === "Transferencia");
     setTouched({ 
       name: true, 
       phone: true, 
