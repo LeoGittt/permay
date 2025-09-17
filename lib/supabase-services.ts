@@ -253,17 +253,16 @@ export const productService = {
       query = query.order('name', { ascending: true })
     }
 
-    // Determinar si necesitamos búsqueda fuzzy
+    // Manejar la búsqueda
     let needsFuzzySearch = false
     if (filters?.search) {
       const searchTerms = filters.search.toLowerCase().split(/\s+/).filter(term => term.length > 0)
       needsFuzzySearch = searchTerms.length > 1
-      
-      // Si no necesitamos búsqueda fuzzy, hacer búsqueda normal optimizada
-      if (!needsFuzzySearch) {
-        const searchTerm = filters.search.toLowerCase()
-        query = query.or(`name.ilike.%${searchTerm}%,description.ilike.%${searchTerm}%,brand.ilike.%${searchTerm}%,category.ilike.%${searchTerm}%`)
-      }
+
+      // Construir condiciones OR con AND implícito entre términos
+      searchTerms.forEach(term => {
+        query = query.or(`name.ilike.%${term}%,description.ilike.%${term}%,brand.ilike.%${term}%,category.ilike.%${term}%`)
+      })
     }
 
     // Paginación - Solo aplicar si no necesitamos búsqueda fuzzy
