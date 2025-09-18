@@ -555,31 +555,47 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
                           <p className="text-gray-600 text-xs mt-1">📍 San Juan 1248, Mendoza</p>
                         </div>
                       ) : (
-                        <Select value={deliveryOption} onValueChange={(value: "retiro" | "envio") => setDeliveryOption(value)}>
-                          <SelectTrigger className="w-full h-10 text-sm">
-                            <SelectValue placeholder="Selecciona opción de entrega" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="retiro">
-                              <div className="flex items-center gap-2">
-                                <MapPin className="h-4 w-4" />
-                                <div>
-                                  <div className="font-medium text-sm">Retiro presencial</div>
-                                  <div className="text-xs text-gray-500">San Juan 1248, Mendoza</div>
+                        <div>
+                          <Select 
+                            value={deliveryOption} 
+                            onValueChange={(value: "retiro" | "envio") => {
+                              setDeliveryOption(value);
+                              if (value === "envio") {
+                                // Mostrar alerta cuando se selecciona envío
+                                window.alert("⚠️ IMPORTANTE: Para envíos con cadetería, es necesario que proporciones tu dirección exacta.\n\nPor favor, presiona el botón 'Agregar dirección' que aparecerá debajo y completa los datos.");
+                              }
+                            }}>
+                            <SelectTrigger className="w-full h-10 text-sm">
+                              <SelectValue placeholder="Selecciona opción de entrega" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="retiro">
+                                <div className="flex items-center gap-2">
+                                  <MapPin className="h-4 w-4" />
+                                  <div>
+                                    <div className="font-medium text-sm">Retiro presencial</div>
+                                    <div className="text-xs text-gray-500">San Juan 1248, Mendoza</div>
+                                  </div>
                                 </div>
-                              </div>
-                            </SelectItem>
-                            <SelectItem value="envio">
-                              <div className="flex items-center gap-2">
-                                <Truck className="h-4 w-4" />
-                                <div>
-                                  <div className="font-medium text-sm">Envío con cadetería</div>
-                                  <div className="text-xs text-gray-500">Coordinaremos por WhatsApp</div>
+                              </SelectItem>
+                              <SelectItem value="envio">
+                                <div className="flex items-center gap-2">
+                                  <Truck className="h-4 w-4" />
+                                  <div>
+                                    <div className="font-medium text-sm">Envío con cadetería</div>
+                                    <div className="text-xs text-gray-500">Coordinaremos por WhatsApp</div>
+                                  </div>
                                 </div>
-                              </div>
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+                          {deliveryOption === "envio" && !isAddressComplete && (
+                            <div className="mt-2 p-3 bg-amber-50 border border-amber-300 rounded-lg">
+                              <p className="text-amber-800 text-sm font-medium mb-1">⚠️ Atención: Dirección requerida</p>
+                              <p className="text-amber-700 text-xs">Para envíos con cadetería, es necesario que indiques tu dirección exacta usando el botón "Agregar dirección" que aparece arriba.</p>
+                            </div>
+                          )}
+                        </div>
                       )}
                     </div>
                     
