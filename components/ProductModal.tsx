@@ -117,7 +117,7 @@ export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductM
                       />
                     </Button>
                     {isDescriptionExpanded && (
-                      <div className="mt-3 pt-3 border-t border-gray-200">
+                      <div className="mt-3 pt-3 border-t border-gray-200" style={{ paddingTop: '2.5rem' }}>
                         <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{product.description}</p>
                       </div>
                     )}
