@@ -31,7 +31,7 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
     <header className="bg-white border-b shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
         {/* Logo arriba, centrado y mejorado visualmente */}
-        <div className="flex justify-center items-center mb-2">
+        <div className="flex flex-col justify-center items-center mb-2">
           <a href="/" aria-label="Ir a la página principal">
             <div className="w-28 h-28 sm:w-32 sm:h-32 relative transition-transform hover:scale-105 mx-auto shadow-lg border-4 border-white rounded-full bg-white">
               <Image
@@ -43,6 +43,9 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
               />
             </div>
           </a>
+          <p className="text-permay-primary font-bold text-xs mt-1 tracking-wide uppercase italic drop-shadow-sm" style={{ fontFamily: 'Dancing Script, cursive' }}>
+            La Mejor Atención
+          </p>
         </div>
         {/* Menú hamburguesa, buscador y carrito */}
         <div className="flex flex-row w-full gap-3 items-center sm:justify-between sm:gap-6">

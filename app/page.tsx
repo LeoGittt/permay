@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Header } from "@/components/Header"
 import { FilterCards } from "@/components/FilterCards"
 import { ProductGrid } from "@/components/ProductGrid"
+import { StoreGallery } from "@/components/StoreGallery"
 import { Cart } from "@/components/Cart"
 import { WhatsAppFloat } from "@/components/WhatsAppFloat"
 import { useProducts } from "@/hooks/useProductsSupabase"
@@ -100,6 +101,9 @@ export default function PermayHome() {
           </main>
         </div>
       </div>
+
+      {/* Galería del local */}
+      <StoreGallery />
 
       {/* Cart Sidebar */}
       <Cart
