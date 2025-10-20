@@ -1,30 +1,25 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import { TrustBanner } from "./TrustBanner"
+import { X } from "lucide-react"
 
 export function StoreGallery() {
+  const [selectedImage, setSelectedImage] = useState<{src: string, alt: string, title: string} | null>(null)
   const storeImages = [
+    
     {
-      src: "/fotos/interior-1.jpg",
-      alt: "Interior de Permay - Vista principal",
-      title: "Nuestro showroom"
-    },
-    {
-      src: "/fotos/productos-1.jpg", 
+      src: "/SS.jpeg", 
       alt: "Productos en exhibición",
       title: "Amplia variedad"
     },
     {
-      src: "/fotos/atencion-1.jpg",
+      src: "/S.jpeg",
       alt: "Atención personalizada",
-      title: "Asesoramiento experto"
+      title: "Asesoramiento"
     },
-    {
-      src: "/fotos/exterior-1.jpg",
-      alt: "Fachada de Permay",
-      title: "Nuestra ubicación"
-    }
+    
   ]
 
   return (
@@ -54,11 +49,12 @@ export function StoreGallery() {
         </div>
 
         {/* Galería de fotos mejorada */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
           {storeImages.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 aspect-square bg-gradient-to-br from-gray-100 to-gray-200 hover:scale-105"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 aspect-square bg-gradient-to-br from-gray-100 to-gray-200 hover:scale-105 cursor-pointer"
+              onClick={() => setSelectedImage(image)}
             >
               <Image
                 src={image.src}
@@ -97,6 +93,53 @@ export function StoreGallery() {
           </a>
         </div>
       </div>
+
+      {/* Modal para imagen ampliada */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedImage(null)
+            }
+          }}
+        >
+          <div className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center">
+            {/* Botón cerrar */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:scale-110"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            {/* Imagen ampliada */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative max-w-full max-h-full">
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  width={800}
+                  height={600}
+                  className="object-contain rounded-xl shadow-2xl max-w-full max-h-[85vh]"
+                  sizes="(max-width: 768px) 95vw, 85vw"
+                  priority
+                  onError={(e) => {
+                    console.log('Error loading image:', selectedImage.src)
+                  }}
+                />
+                
+                {/* Título flotante */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
+                  <h3 className="text-white text-base font-semibold text-center whitespace-nowrap">
+                    {selectedImage.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
