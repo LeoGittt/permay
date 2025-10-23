@@ -12,12 +12,27 @@ export function StoreGallery() {
     {
       src: "/SS.jpeg", 
       alt: "Productos en exhibición",
-      title: "Amplia variedad"
+      title: "Conocé nuestro local"
     },
     {
       src: "/S.jpeg",
       alt: "Atención personalizada",
       title: "Asesoramiento"
+    },
+    {
+      src: "/SS.jpg",
+      alt: "Atención personalizada",
+      title: "El mejor asesoramiento personalizado"
+    },
+    {
+      src: "/SSS.jpg",
+      alt: "Atención personalizada",
+      title: "la mayor variedad de tinturas y productos capilares"
+    },
+     {
+      src: "/SSSS.jpg",
+      alt: "Atención personalizada",
+      title: "Perfumes árabes originales al mejor precio"
     },
     
   ]
