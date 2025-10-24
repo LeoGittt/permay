@@ -14,11 +14,11 @@ export function StoreGallery() {
       alt: "Productos en exhibición",
       title: "Conocé nuestro local"
     },
-    {
-      src: "/S.jpeg",
-      alt: "Atención personalizada",
-      title: "Asesoramiento"
-    },
+    // {
+    //   src: "/S.jpeg",
+    //   alt: "Atención personalizada",
+    //   title: "Asesoramiento"
+    // },
     {
       src: "/SS.jpg",
       alt: "Atención personalizada",
