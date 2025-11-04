@@ -170,12 +170,12 @@ export function ProductModal({ product, isOpen, onClose, onAddToCart }: ProductM
                       />
                     </Button>
                     <div className={cn(
-                      "transition-all duration-300 overflow-hidden",
-                      isDescriptionExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      "transition-all duration-300",
+                      isDescriptionExpanded ? "max-h-96 opacity-100 overflow-auto" : "max-h-0 opacity-0 overflow-hidden"
                     )}>
                       <div className="px-3 pb-3 border-t border-gray-100/60">
                         <div className="bg-white/60 rounded-lg p-3 mt-2">
-                          <p className="text-gray-700 leading-relaxed text-sm font-normal">{product.description}</p>
+                          <p className="text-gray-700 leading-relaxed text-sm font-normal whitespace-pre-wrap break-words">{product.description}</p>
                         </div>
                       </div>
                     </div>
