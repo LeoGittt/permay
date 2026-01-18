@@ -68,37 +68,40 @@ export function Header({ searchTerm, setSearchTerm, cartItemsCount, onCartClick 
                     <Menu className="w-5 h-5 sm:w-7 sm:h-7" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-full sm:max-w-md p-0 flex flex-col bg-white border-r-0">
+                {/* Menú móvil más chico */}
+                <SheetContent side="left" className="w-72 sm:max-w-xs p-0 flex flex-col bg-white border-r-0">
                   <div className="flex flex-col h-full">
-                    <SheetHeader className="p-8 bg-gradient-to-br from-permay-primary/5 via-white to-white border-b text-center">
+                    <SheetHeader className="p-4 bg-gradient-to-br from-permay-primary/5 via-white to-white border-b text-center">
                       <SheetTitle className="sr-only">Explorar Permay</SheetTitle>
-                      <div className="flex flex-col items-center justify-center gap-4">
-                        <div className="w-40 h-40 relative">
+                      <div className="flex flex-col items-center justify-center gap-2">
+                        {/* Logo más chico */}
+                        <div className="w-20 h-20 relative">
                           <Image src="/logonuevo.png" alt="Permay" fill className="object-contain" />
                         </div>
                       </div>
                     </SheetHeader>
-                    <div className="flex-1 overflow-y-auto py-8 px-6 space-y-3">
+                    <div className="flex-1 overflow-y-auto py-4 px-3 space-y-2">
                       <SidebarLink href="/" icon={Home} label="Inicio" active={pathname === "/"} />
                       <SidebarLink href="/landing-page" icon={Phone} label="Nosotros" active={pathname === "/landing-page"} />
                       <SidebarLink href="https://maps.app.goo.gl/JPma6Ryj9YS3iR198" icon={MapPin} label="Nuestra Tienda" external />
                       <SidebarLink href="https://www.instagram.com/permayperfumeria/?hl=es" icon={Instagram} label="Síguenos en Instagram" external color="text-pink-500" />
                     </div>
-                    <div className="border-t p-6 bg-gray-50">
-                      <h3 className="font-bold text-gray-900 mb-3 text-sm">Nuestra Ubicación</h3>
+                    <div className="border-t p-3 bg-gray-50">
+                      <h3 className="font-bold text-gray-900 mb-2 text-xs">Nuestra Ubicación</h3>
+                      {/* Mapa más chico */}
                       <iframe 
                         src="https://maps.google.com/maps?q=San+Juan+1248+Mendoza+Argentina&z=15&output=embed"
                         width="100%"
-                        height="200"
+                        height="120"
                         style={{ border: 0, borderRadius: "8px" }}
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                       ></iframe>
-                      <div className="flex justify-center mt-4">
+                      <div className="flex justify-center mt-2">
                         <SheetClose asChild>
-                          <Button variant="ghost" size="icon" className="rounded-full h-12 w-12">
-                            <X className="w-6 h-6 text-gray-400" />
+                          <Button variant="ghost" size="icon" className="rounded-full h-10 w-10">
+                            <X className="w-5 h-5 text-gray-400" />
                           </Button>
                         </SheetClose>
                       </div>
