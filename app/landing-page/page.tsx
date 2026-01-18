@@ -9,12 +9,12 @@ export default function LandingPage() {
       
       {/* Sección Hero: Encabezado */}
       <section className="w-full bg-gradient-to-b from-permay-primary/10 to-white py-16 md:py-24 flex flex-col items-center relative overflow-hidden shadow-lg mb-12">
-        <div className="absolute inset-0 opacity-5 bg-[url('/logo.jpeg')] bg-center bg-no-repeat bg-contain pointer-events-none" />
+        <div className="absolute inset-0 opacity-5 bg-[url('/logonuevo.png')] bg-center bg-no-repeat bg-contain pointer-events-none" />
         <a href="/" aria-label="Ir al catálogo">
           <img
-            src="/logo.jpeg"
+            src="/logonuevo.png"
             alt="Permay Logo"
-            className="w-36 h-36 md:w-48 md:h-48 rounded-full shadow-2xl border-6 border-permay-primary mb-6 bg-white z-10 hover:scale-105 transition-transform duration-300"
+            className="w-40 h-40 md:w-64 md:h-64 object-contain drop-shadow-[0_10px_30px_rgba(196,51,212,0.3)] mb-6 z-10 hover:scale-105 transition-transform duration-500"
           />
         </a>
         <h1 className="text-4xl md:text-7xl font-extrabold text-permay-primary text-center drop-shadow-xl z-10 tracking-tight">

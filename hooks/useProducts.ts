@@ -6,6 +6,14 @@ import { useLocalStorage } from "@/hooks/useLocalStorage"
 
 const PRODUCTS_PER_PAGE = 12
 
+// Función para normalizar acentos y tildes
+const normalizeString = (str: string): string => {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+}
+
 interface FilterState {
   searchTerm: string
   selectedBrands: string[]
@@ -61,10 +69,12 @@ export function useProducts() {
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
+      const normalizedSearch = normalizeString(searchTerm)
+      
       const matchesSearch =
-        (product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false) ||
-        (product.brand?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false) ||
-        (product.description?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false)
+        (product.name && normalizeString(product.name).includes(normalizedSearch)) ||
+        (product.brand && normalizeString(product.brand).includes(normalizedSearch)) ||
+        (product.description && normalizeString(product.description).includes(normalizedSearch))
 
       const matchesBrand = selectedBrands.length === 0 || (product.brand && selectedBrands.includes(product.brand))
       const matchesCategory = selectedCategories.length === 0 || (product.category && selectedCategories.includes(product.category))

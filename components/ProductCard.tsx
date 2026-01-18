@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ShoppingCart, Eye } from "lucide-react"
+import { ShoppingCart, Eye, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 import type { Product } from "@/types/product"
 
 interface ProductCardProps {
@@ -99,83 +100,55 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
   }
 
   return (
-    <Card className="hover:shadow-md transition-shadow h-full flex flex-col">
+    <Card 
+      onClick={() => onViewDetails(product)}
+      className="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col overflow-hidden border-permay-primary/5 rounded-lg sm:rounded-2xl bg-white cursor-pointer group"
+    >
       <CardHeader className="p-0">
-        <div className="relative flex items-center justify-center border-b rounded-t-lg w-full h-36 sm:h-48 overflow-hidden cursor-zoom-in group" onClick={() => setShowImageModal(true)}>
-          {/* Fondo desenfocado */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              background: 'linear-gradient(135deg, #f8fafc 60%, #f1f5f9 100%)',
-              filter: 'blur(16px) saturate(1.2)',
-              opacity: 0.85,
-            }}
-          />
+        <div className="relative flex items-center justify-center border-b border-permay-primary/5 w-full h-24 sm:h-48 overflow-hidden">
+          {/* Fondo decorativo minimalista */}
+          <div className="absolute inset-0 z-0 bg-gray-50/50" />
           <img
-            src={product.image || "/placeholder.svg?height=200&width=200"}
+            src={product.image || "/placeholder.svg"}
             alt={product.name}
-            className="object-contain w-full h-full max-h-36 sm:max-h-48 z-10 transition-all duration-200 group-hover:scale-105"
-            style={{ position: 'relative' }}
+            className="object-contain w-full h-full p-1.5 sm:p-4 z-10 transition-transform duration-500 group-hover:scale-110"
           />
-          <Badge className="absolute top-2 left-2 bg-permay-primary text-xs z-20">
-            {product.brand}
-          </Badge>
-        </div>
-
-        {/* Modal de imagen */}
-        {showImageModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowImageModal(false)}>
-            <div className="relative max-w-full max-h-full p-2" onClick={e => e.stopPropagation()}>
-              <img
-                src={product.image || "/placeholder.svg?height=600&width=600"}
-                alt={product.name}
-                className="object-contain rounded-lg shadow-2xl max-h-[90vh] max-w-[90vw] bg-white"
-                style={{ background: 'white' }}
-              />
-              <button
-                className="absolute top-2 right-2 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow text-3xl leading-none flex items-center justify-center"
-                onClick={() => setShowImageModal(false)}
-                aria-label="Cerrar imagen"
-                style={{ width: 44, height: 44 }}
-              >
-                ×
-              </button>
-            </div>
+          <div className="absolute top-1 left-1 z-20">
+            <span className="bg-white/90 backdrop-blur-sm text-permay-primary text-[7px] sm:text-xs font-bold px-1 py-0.5 rounded border border-permay-primary/5 shadow-sm uppercase tracking-tighter">
+              {product.brand}
+            </span>
           </div>
-        )}
+        </div>
       </CardHeader>
 
-      <CardContent className="flex-1 p-3 sm:p-4">
-        <div className="space-y-1 sm:space-y-2">
-          <h3 className="font-semibold text-sm sm:text-base line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">{product.name}</h3>
-          <p className="text-xs text-gray-500 capitalize truncate">{product.category.split("/").pop()}</p>
-          {product.description && product.description.trim() && (
-            <p className="text-xs text-gray-600 line-clamp-2 hidden sm:block">{product.description}</p>
-          )}
+      <CardContent className="flex-1 p-1 sm:p-4 pb-0 sm:pb-2">
+        <div className="space-y-0.5 sm:space-y-2">
+          <h3 className="font-bold text-[10px] sm:text-base leading-[1.1] line-clamp-2 min-h-[22px] sm:min-h-[3rem] text-gray-900 group-hover:text-permay-primary transition-colors">{product.name}</h3>
+          <p className="text-[8px] sm:text-xs text-permay-primary/60 font-medium uppercase tracking-tighter truncate">
+            {product.category.split("/").pop()}
+          </p>
         </div>
       </CardContent>
-
-      <CardFooter className="p-3 sm:p-4 pt-0 flex flex-col gap-2 sm:gap-3">
-        <div className="w-full text-center">
-          <span className="text-base sm:text-lg font-bold text-permay-primary">{formatPrice(product.price)}</span>
+      <CardFooter className="p-1 sm:p-4 pt-1 flex flex-col gap-1 sm:gap-3 items-center">
+        <div className="w-full text-center sm:text-left mb-0.5 sm:mb-0">
+          <span className="text-sm sm:text-lg font-black text-permay-primary leading-none">{formatPrice(product.price)}</span>
         </div>
 
-        <div className="flex gap-2 w-full">
-          <Button variant="outline" size="sm" onClick={() => onViewDetails(product)} className="flex-1 text-xs sm:text-sm">
-            <Eye className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
-            <span className="hidden sm:inline">Ver más</span>
-            <span className="sm:hidden">Ver</span>
-          </Button>
-          <Button
-            size="sm"
-            onClick={handleAddToCart}
-            disabled={isLoading}
-            className="flex-1 bg-permay-primary hover:bg-permay-primary/90 text-xs sm:text-sm"
-          >
-            <ShoppingCart className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
-            {isLoading ? "..." : "Comprar"}
-          </Button>
-        </div>
+        <Button
+          size="sm"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleAddToCart();
+          }}
+          disabled={isLoading}
+          className={cn(
+            "w-[90%] sm:w-full h-6 sm:h-10 text-[9px] sm:text-sm rounded-full font-bold shadow-md shadow-permay-primary/10 transition-all active:scale-95",
+            "bg-gradient-to-br from-permay-primary via-[#D84AE8] to-permay-primary bg-[length:200%_auto] hover:bg-right text-white p-0 px-2 sm:px-4"
+          )}
+        >
+          <ShoppingCart className="h-2.5 w-2.5 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+          <span className="leading-none">{isLoading ? "..." : "Comprar"}</span>
+        </Button>
       </CardFooter>
     </Card>
   )

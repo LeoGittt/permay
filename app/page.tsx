@@ -57,7 +57,16 @@ export default function PermayHome() {
     (priceRange[0] > 0 || priceRange[1] < 100000 ? 1 : 0)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen relative bg-white overflow-hidden">
+      {/* Fondo decorativo con gradientes y orbes */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-permay-primary/5 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-permay-primary/10 blur-[120px]" />
+        <div className="absolute top-[20%] right-[5%] w-[30%] h-[30%] rounded-full bg-[#D84AE8]/5 blur-[100px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-permay-primary/[0.02]" />
+      </div>
+
+      <div className="relative z-10">
       <Header
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -65,7 +74,7 @@ export default function PermayHome() {
         onCartClick={() => setIsCartOpen(true)}
       />
 
-      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
+      <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-6">
         <div className="flex gap-4 lg:gap-6">
 
 
@@ -117,6 +126,7 @@ export default function PermayHome() {
 
       {/* WhatsApp Float Button */}
       <WhatsAppFloat />
+      </div>
     </div>
   )
 }

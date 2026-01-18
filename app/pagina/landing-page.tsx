@@ -4,7 +4,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-green-50 flex flex-col items-center px-4 py-8">
       <section className="max-w-2xl w-full bg-white/80 rounded-2xl shadow-xl p-8 flex flex-col items-center gap-6 border border-green-100">
-        <img src="/logo.jpeg" alt="Permay Logo" className="w-24 h-24 rounded-full shadow-lg border-4 border-green-200 mb-2" />
+        <img src="/logonuevo.png" alt="Permay Logo" className="w-32 h-32 object-contain drop-shadow-lg mb-2" />
         <h1 className="text-3xl md:text-4xl font-extrabold text-permay-primary text-center">¡Bienvenido a Permay!</h1>
         <p className="text-lg text-gray-700 text-center max-w-xl">
           Somos tu tienda de productos naturales y saludables en Mendoza. Encontrá calidad, atención personalizada y los mejores precios.

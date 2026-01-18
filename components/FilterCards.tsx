@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Slider } from "@/components/ui/slider"
 import { X, Search } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface FilterCardsProps {
   brands: string[]
@@ -120,238 +121,174 @@ export function FilterCards({
 
   return (
     <div
-      className="sticky top-16 z-30 bg-gray-50/95 backdrop-blur flex flex-col gap-2 mb-6 px-1 sm:px-2 py-2 sm:py-3 rounded-lg shadow-sm border"
-      style={{
-        // sticky solo en desktop
-        position: 'sticky',
-      }}
+      className="sticky top-12 sm:top-16 z-30 bg-white/95 backdrop-blur-md flex flex-col gap-1.5 mb-3 px-2 py-1.5 rounded-2xl shadow-[0_2px_15px_-3px_rgba(196,51,212,0.07)] border border-permay-primary/10 transition-all duration-300"
     >
-      {/* Badge general de filtros activos */}
-      <div className="flex items-center gap-2 mb-1">
-        <span className="font-semibold text-base">Filtros</span>
+      {/* Top Row: Info & Clear */}
+      <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 mb-0.5">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+          <div className="flex items-center gap-1.5 shrink-0 pr-2 border-r border-gray-100">
+            <span className="text-[11px] font-black text-permay-primary uppercase tracking-tighter">Filtros</span>
+            {totalFilters > 0 && (
+              <span className="bg-permay-primary text-white text-[9px] h-3.5 min-w-[14px] px-1 flex items-center justify-center rounded-full font-bold">
+                {totalFilters}
+              </span>
+            )}
+          </div>
+          
+          <div className="flex items-center gap-1.5">
+            {activeChips.length > 0 ? (
+              activeChips.map((chip) => (
+                <button
+                  key={chip.type + chip.value}
+                  onClick={() => removeChip(chip)}
+                  className="flex items-center gap-1 bg-gray-50 text-gray-600 hover:text-permay-primary hover:bg-permay-primary/5 rounded-full px-2 py-0.5 text-[10px] font-medium border border-gray-100 transition-all active:scale-95 whitespace-nowrap"
+                >
+                  {chip.label}
+                  <X size={10} />
+                </button>
+              ))
+            ) : (
+              <span className="text-[10px] text-gray-400 font-medium">Personalizá tu búsqueda</span>
+            )}
+          </div>
+        </div>
+
         {totalFilters > 0 && (
-          <Badge variant="default" className="bg-blue-600 text-white animate-pulse">{totalFilters} activos</Badge>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onClearFilters}
+            className="h-6 text-[10px] font-bold text-red-500 hover:bg-red-50 px-2 rounded-full"
+          >
+            Limpiar
+          </Button>
         )}
       </div>
 
-      {/* Chips de filtros activos */}
-      {activeChips.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-1">
-          {activeChips.map((chip) => (
-            <span
-              key={chip.type + chip.value}
-              className="flex items-center bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-xs font-medium shadow-sm border border-blue-200 active:scale-95 transition-transform"
+      {/* Main Filter Buttons */}
+      <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">
+        <Button 
+          variant={showOffers ? "default" : "outline"}
+          onClick={() => setShowOffers(!showOffers)}
+          className={cn(
+            "h-8 px-3 rounded-xl text-[11px] font-bold transition-all shrink-0 border-permay-primary/10",
+            showOffers 
+              ? "bg-permay-primary text-white shadow-sm" 
+              : "bg-white text-gray-600 hover:bg-permay-primary/5"
+          )}
+        >
+          Ofertas ✨
+        </Button>
+        
+        <Popover open={openBrand} onOpenChange={setOpenBrand}>
+          <PopoverTrigger asChild>
+            <Button 
+              variant="outline" 
+              className={cn(
+                "h-8 px-3 rounded-xl text-[11px] font-bold transition-all shrink-0 border-permay-primary/10",
+                selectedBrands.length > 0 ? "bg-permay-primary/5 text-permay-primary border-permay-primary/20" : "bg-white text-gray-600"
+              )}
             >
-              {chip.label}
-              <button
-                className="ml-1 hover:text-red-500 focus:outline-none"
-                onClick={() => removeChip(chip)}
-                aria-label={`Quitar filtro ${chip.label}`}
-              >
-                <X size={14} />
-              </button>
-            </span>
-          ))}
-        </div>
-      )}
-
-      {/* Cards de filtros principales */}
-      {(brands.length > 0 || categories.length > 0) ? (
-        <div className="flex flex-wrap gap-3 pb-1">
-          {/* Filtro de Ofertas */}
-          <Button 
-            variant={showOffers ? "default" : "outline"}
-            onClick={() => setShowOffers(!showOffers)}
-            className={`flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105 ${
-              showOffers 
-                ? "bg-permay-primary hover:bg-permay-primary/90 border-permay-primary text-white" 
-                : "bg-white hover:bg-permay-primary/10 border-permay-primary text-permay-primary"
-            }`}
-          >
-            Ofertas
-          </Button>
-          
-          {/* Marcas */}
-          <Popover open={openBrand} onOpenChange={setOpenBrand}>
-            <PopoverTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-permay-primary hover:bg-permay-primary/80 border-permay-primary text-white font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105"
-              >
-                Marcas
-                {selectedBrands.length > 0 && <Badge variant="secondary" className="bg-white text-permay-primary">{selectedBrands.length}</Badge>}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent
-              className="w-[95vw] max-w-xs sm:w-64 sm:max-w-xs max-h-[70vh] animate-fade-in p-4"
-              sideOffset={8}
-              align="start"
-            >
-              <div className="mb-2 mt-2 flex items-center gap-2 bg-gray-100 rounded px-2 py-1">
-                <Search size={16} className="text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Buscar marca..."
-                  value={brandSearch}
-                  onChange={e => setBrandSearch(e.target.value)}
-                  className="bg-transparent outline-none text-sm flex-1"
-                  tabIndex={-1} // <-- evita foco automático
-                />
-              </div>
-              <div className="space-y-2 max-h-48 overflow-y-auto">
-                {filteredBrands.length === 0 ? (
-                  <div className="text-xs text-gray-400 text-center py-2">No hay resultados</div>
-                ) : filteredBrands.map((brand) => (
-                  <div key={brand} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={brand}
-                      checked={selectedBrands.includes(brand)}
-                      onCheckedChange={(checked) => handleBrandChange(brand, checked as boolean)}
-                    />
-                    <Label htmlFor={brand} className="text-sm cursor-pointer">
-                      {brand}
-                    </Label>
+              Marcas {selectedBrands.length > 0 && `(${selectedBrands.length})`}
+            </Button>
+          </PopoverTrigger>
+          {/* ... PopoverContent remains similar but more compact ... */}
+          <PopoverContent className="w-[260px] p-0 rounded-2xl shadow-xl border-permay-primary/10" sideOffset={8} align="start">
+             <div className="p-2 border-b bg-gray-50/50">
+               <input
+                 type="text"
+                 placeholder="Buscar marca..."
+                 value={brandSearch}
+                 onChange={e => setBrandSearch(e.target.value)}
+                 className="w-full bg-white border border-gray-200 rounded-lg py-1.5 px-3 text-xs outline-none focus:border-permay-primary/30 transition-all"
+               />
+             </div>
+             <div className="p-1 max-h-[240px] overflow-y-auto custom-scrollbar">
+                {filteredBrands.map(brand => (
+                  <div key={brand} onClick={() => handleBrandChange(brand, !selectedBrands.includes(brand))} className={cn("flex items-center justify-between p-2 rounded-lg text-xs cursor-pointer transition-colors", selectedBrands.includes(brand) ? "bg-permay-primary/5 text-permay-primary font-bold" : "hover:bg-gray-50 text-gray-600")}>
+                    {brand}
+                    <Checkbox checked={selectedBrands.includes(brand)} onCheckedChange={(c) => handleBrandChange(brand, !!c)} className="h-3.5 w-3.5" />
                   </div>
                 ))}
-              </div>
-              {selectedBrands.length > 0 && (
-                <div className="pt-3 border-t mt-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setSelectedBrands([])}
-                    className="w-full text-xs bg-permay-primary hover:bg-permay-primary border-permay-primary text-white"
-                  >
-                    Limpiar filtros
-                  </Button>
-                </div>
-              )}
-            </PopoverContent>
-          </Popover>
+             </div>
+          </PopoverContent>
+        </Popover>
 
-          {/* Categorías */}
-          <Popover open={openCategory} onOpenChange={setOpenCategory}>
-            <PopoverTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="flex items-center gap-2 min-w-[110px] sm:min-w-[120px] h-10 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-permay-primary hover:bg-permay-primary/80 border-permay-primary text-white font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105"
-              >
-                Categorías
-                {selectedCategories.length > 0 && <Badge variant="secondary" className="bg-white text-permay-primary">{selectedCategories.length}</Badge>}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent
-              className="w-[95vw] max-w-xs sm:w-64 sm:max-w-xs max-h-[70vh] animate-fade-in p-4"
-              sideOffset={8}
-              align="start"
+        <Popover open={openCategory} onOpenChange={setOpenCategory}>
+          <PopoverTrigger asChild>
+            <Button 
+              variant="outline" 
+              className={cn(
+                "h-8 px-3 rounded-xl text-[11px] font-bold transition-all shrink-0 border-permay-primary/10",
+                selectedCategories.length > 0 ? "bg-permay-primary/5 text-permay-primary border-permay-primary/20" : "bg-white text-gray-600"
+              )}
             >
-              <div className="mb-2 mt-2 flex items-center gap-2 bg-gray-100 rounded px-2 py-1">
-                <Search size={16} className="text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Buscar categoría..."
-                  value={categorySearch}
-                  onChange={e => setCategorySearch(e.target.value)}
-                  className="bg-transparent outline-none text-sm flex-1"
-                  tabIndex={-1} // <-- evita foco automático
-                />
-              </div>
-              <div className="space-y-2 max-h-48 overflow-y-auto">
-                {filteredCategories.length === 0 ? (
-                  <div className="text-xs text-gray-400 text-center py-2">No hay resultados</div>
-                ) : filteredCategories.map((category) => {
-                  const base = category.split("/").pop() ?? category;
-                  return (
-                    <div key={category} className="flex items-center space-x-2">
-                      <Checkbox
-                        id={category}
-                        checked={selectedCategories.includes(category)}
-                        onCheckedChange={(checked) => handleCategoryChange(category, checked as boolean)}
-                      />
-                      <Label htmlFor={category} className="text-sm cursor-pointer">
-                        {capitalize(toSingular(base))}
-                      </Label>
+              Categorías {selectedCategories.length > 0 && `(${selectedCategories.length})`}
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[260px] p-0 rounded-2xl shadow-xl border-permay-primary/10" sideOffset={8} align="start">
+             <div className="p-2 border-b bg-gray-50/50">
+               <input
+                 type="text"
+                 placeholder="Buscar categoría..."
+                 value={categorySearch}
+                 onChange={e => setCategorySearch(e.target.value)}
+                 className="w-full bg-white border border-gray-200 rounded-lg py-1.5 px-3 text-xs outline-none focus:border-permay-primary/30 transition-all"
+               />
+             </div>
+             <div className="p-1 max-h-[240px] overflow-y-auto custom-scrollbar">
+                {filteredCategories.map(cat => {
+                   const label = capitalize(toSingular(cat.split("/").pop() ?? cat));
+                   return (
+                    <div key={cat} onClick={() => handleCategoryChange(cat, !selectedCategories.includes(cat))} className={cn("flex items-center justify-between p-2 rounded-lg text-xs cursor-pointer transition-colors", selectedCategories.includes(cat) ? "bg-permay-primary/5 text-permay-primary font-bold" : "hover:bg-gray-50 text-gray-600")}>
+                      {label}
+                      <Checkbox checked={selectedCategories.includes(cat)} onCheckedChange={(c) => handleCategoryChange(cat, !!c)} className="h-3.5 w-3.5" />
                     </div>
                   );
                 })}
-              </div>
-              {selectedCategories.length > 0 && (
-                <div className="pt-3 border-t mt-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setSelectedCategories([])}
-                    className="w-full text-xs bg-purple-600 hover:bg-purple-700 border-purple-600 text-white"
-                  >
-                    Limpiar filtros
-                  </Button>
-                </div>
-              )}
-            </PopoverContent>
-          </Popover>
+             </div>
+          </PopoverContent>
+        </Popover>
 
-          {/* Precio */}
-          <Popover open={openPrice} onOpenChange={setOpenPrice}>
-            <PopoverTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="flex items-center gap-2 min-w-[120px] h-10 px-3 sm:px-4 text-sm sm:text-base bg-permay-primary hover:bg-permay-primary/80 border-permay-primary text-white font-semibold rounded-lg shadow-sm transition-all duration-200 hover:scale-105"
-              >
-                Precio
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-64 animate-fade-in p-4">
-              <div className="space-y-4">
-                <Slider
-                  value={priceRange}
-                  onValueChange={setPriceRange}
-                  max={500000}
-                  min={0}
-                  step={1000}
-                  className="w-full"
-                />
-                <div className="flex justify-between text-sm text-gray-600">
-                  <span>{formatPrice(priceRange[0])}</span>
-                  <span>{formatPrice(priceRange[1])}</span>
-                </div>
-                {(priceRange[0] !== 0 || priceRange[1] !== 500000) && (
-                  <div className="pt-3 border-t">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setPriceRange([0, 500000])}
-                      className="w-full text-xs bg-purple-600 hover:bg-purple-700 border-purple-600 text-white"
-                    >
-                      Limpiar filtros
-                    </Button>
-                  </div>
-                )}
-              </div>
-            </PopoverContent>
-          </Popover>
-
-          {/* Limpiar filtros */}
-          <div className="flex items-center">
-            <div className="relative group">
-              <Button
-                variant="ghost"
-                onClick={onClearFilters}
-                className="min-w-[120px]"
-                disabled={totalFilters === 0}
-              >
-                Limpiar filtros
-              </Button>
-              {totalFilters === 0 && (
-                <span className="absolute left-1/2 -translate-x-1/2 top-full mt-1 px-2 py-1 rounded bg-gray-800 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
-                  No hay filtros para limpiar
-                </span>
+        {/* Precio - Más integrado y compacto */}
+        <Popover open={openPrice} onOpenChange={setOpenPrice}>
+          <PopoverTrigger asChild>
+            <Button 
+              variant="outline" 
+              className={cn(
+                "h-8 px-3 rounded-xl text-[11px] font-bold transition-all shrink-0 border-permay-primary/10",
+                (priceRange[0] !== 0 || priceRange[1] !== 500000) ? "bg-permay-primary/5 text-permay-primary border-permay-primary/20" : "bg-white text-gray-600"
               )}
+            >
+              Precio
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-56 p-4 rounded-2xl shadow-xl border-permay-primary/10" sideOffset={8} align="start">
+            <div className="space-y-4">
+              <div className="flex justify-between items-end">
+                <div className="flex flex-col">
+                  <span className="text-[9px] uppercase font-bold text-gray-400">Rango</span>
+                  <span className="text-xs font-black text-permay-primary">
+                    ${priceRange[0].toLocaleString()} - ${priceRange[1].toLocaleString()}
+                  </span>
+                </div>
+              </div>
+              <Slider
+                value={priceRange}
+                onValueChange={setPriceRange}
+                max={500000}
+                min={0}
+                step={5000}
+                className="w-full py-2"
+              />
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                 <Button size="sm" onClick={() => setOpenPrice(false)} className="h-7 text-[10px] bg-permay-primary rounded-lg font-bold">Aplicar</Button>
+                 <Button size="sm" variant="ghost" onClick={() => setPriceRange([0, 500000])} className="h-7 text-[10px] text-gray-400 hover:text-red-500 rounded-lg">Reset</Button>
+              </div>
             </div>
-          </div>
-        </div>
-      ) : (
-        <div className="text-center text-gray-400 py-4">No hay filtros disponibles</div>
-      )}
+          </PopoverContent>
+        </Popover>
+      </div>
     </div>
   )
 }

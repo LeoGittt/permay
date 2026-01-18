@@ -8,6 +8,7 @@ import { ProductModal } from "@/components/ProductModal"
 import { Pagination } from "@/components/Pagination"
 import { Badge } from "@/components/ui/badge"
 import { useModalHistory } from "@/hooks/useModalHistory"
+import { cn } from "@/lib/utils"
 import type { Product } from "@/types/product"
 
 interface ProductGridProps {
@@ -38,41 +39,44 @@ export function ProductGrid({
   const { selectedItem: selectedProduct, isOpen, openModal, closeModal } = useModalHistory<Product>()
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Controls */}
-      <div className="bg-white rounded-lg border p-3 sm:p-4 shadow-sm">
-        <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-
-            <div className="flex items-center gap-1 border rounded-md w-fit">
-              <Button
-                variant={viewMode === "grid" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setViewMode("grid")}
-                className="rounded-r-none text-xs sm:text-sm"
-              >
-                <Grid className="h-3 w-3 sm:h-4 sm:w-4" />
-              </Button>
-              <Button
-                variant={viewMode === "list" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setViewMode("list")}
-                className="rounded-l-none text-xs sm:text-sm"
-              >
-                <List className="h-3 w-3 sm:h-4 sm:w-4" />
-              </Button>
-            </div>
+      <div className="bg-white rounded-xl border border-permay-primary/10 p-2 sm:p-3 shadow-sm">
+        <div className="flex flex-row justify-between items-center gap-2">
+          <div className="flex items-center gap-1.5 border border-gray-100 p-0.5 rounded-lg bg-gray-50/50">
+            <Button
+              variant={viewMode === "grid" ? "default" : "ghost"}
+              size="icon"
+              onClick={() => setViewMode("grid")}
+              className={cn(
+                "w-8 h-8 rounded-md transition-all",
+                viewMode === "grid" ? "bg-permay-primary text-white shadow-sm" : "text-gray-400 hover:text-permay-primary"
+              )}
+            >
+              <Grid className="h-4 w-4" />
+            </Button>
+            <Button
+              variant={viewMode === "list" ? "default" : "ghost"}
+              size="icon"
+              onClick={() => setViewMode("list")}
+              className={cn(
+                "w-8 h-8 rounded-md transition-all",
+                viewMode === "list" ? "bg-permay-primary text-white shadow-sm" : "text-gray-400 hover:text-permay-primary"
+              )}
+            >
+              <List className="h-4 w-4" />
+            </Button>
           </div>
 
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className="w-full sm:w-48">
+            <SelectTrigger className="w-[160px] sm:w-48 h-9 text-xs sm:text-sm border-gray-100 bg-gray-50/50 focus:ring-permay-primary/20 rounded-lg">
               <SelectValue placeholder="Ordenar por" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="name">Nombre A-Z</SelectItem>
-              <SelectItem value="brand">Marca</SelectItem>
-              <SelectItem value="price-asc">Precio: Menor a Mayor</SelectItem>
-              <SelectItem value="price-desc">Precio: Mayor a Menor</SelectItem>
+            <SelectContent className="rounded-xl shadow-xl border-gray-100">
+              <SelectItem value="name" className="text-xs sm:text-sm">Nombre A-Z</SelectItem>
+              <SelectItem value="brand" className="text-xs sm:text-sm">Marca</SelectItem>
+              <SelectItem value="price-asc" className="text-xs sm:text-sm">Precio: Menor a Mayor</SelectItem>
+              <SelectItem value="price-desc" className="text-xs sm:text-sm">Precio: Mayor a Menor</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -90,8 +94,8 @@ export function ProductGrid({
           <div
             className={
               viewMode === "grid" 
-                ? "grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4" 
-                : "space-y-3 sm:space-y-4"
+                ? "grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 px-1 sm:px-0" 
+                : "space-y-2 sm:space-y-4"
             }
           >
             {products.map((product) => (

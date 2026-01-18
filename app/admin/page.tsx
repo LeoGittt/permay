@@ -57,9 +57,9 @@ export default function AdminPage() {
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-3">
               <img 
-                src="/logo.jpeg" 
+                src="/logonuevo.png" 
                 alt="Permay Logo" 
-                className="h-8 w-8 sm:h-10 sm:w-10 rounded-md object-cover shadow-sm"
+                className="h-8 w-8 sm:h-10 sm:w-10 rounded-md object-contain shadow-sm"
               />
               <h1 className="text-lg font-semibold text-permay-primary">
                 Dashboard
