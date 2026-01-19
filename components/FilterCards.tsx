@@ -1,13 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Slider } from "@/components/ui/slider"
-import { X, Search } from "lucide-react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { X, Search, Grid, List, ArrowUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface FilterCardsProps {
@@ -22,6 +23,13 @@ interface FilterCardsProps {
   showOffers: boolean
   setShowOffers: (value: boolean) => void
   onClearFilters: () => void
+  searchTerm: string
+  setSearchTerm: (term: string) => void
+  products: any[]
+  viewMode: "grid" | "list"
+  setViewMode: (mode: "grid" | "list") => void
+  sortBy: string
+  setSortBy: (sort: string) => void
 }
 
 export function FilterCards({
@@ -36,13 +44,24 @@ export function FilterCards({
   showOffers,
   setShowOffers,
   onClearFilters,
+  searchTerm,
+  setSearchTerm,
+  products,
+  viewMode,
+  setViewMode,
+  sortBy,
+  setSortBy,
 }: FilterCardsProps) {
   const [openBrand, setOpenBrand] = useState(false)
   const [openCategory, setOpenCategory] = useState(false)
   const [openPrice, setOpenPrice] = useState(false)
-  const [openAllCategories, setOpenAllCategories] = useState(false)
   const [brandSearch, setBrandSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Función para normalizar texto (quitar acentos)
+  const normalize = (text: string) => 
+    text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
@@ -67,7 +86,6 @@ export function FilterCards({
     }
   }
 
-  // Capitalizar y singularizar
   function toSingular(word: string) {
     if (word.endsWith('es')) return word.slice(0, -2);
     if (word.endsWith('s')) return word.slice(0, -1);
@@ -77,7 +95,6 @@ export function FilterCards({
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  // Ordenar y filtrar marcas/categorías
   const filteredBrands = brands
     .filter((b) => b.toLowerCase().includes(brandSearch.toLowerCase()))
     .sort((a, b) => a.localeCompare(b));
@@ -94,7 +111,6 @@ export function FilterCards({
 
   const totalFilters = selectedBrands.length + selectedCategories.length + (showOffers ? 1 : 0)
 
-  // Chips removibles para filtros activos
   const activeChips = [
     ...(showOffers ? [{ label: "Ofertas", type: "offers" as const, value: "offers" }] : []),
     ...selectedBrands.map((brand) => ({
@@ -109,6 +125,20 @@ export function FilterCards({
     })),
   ]
 
+  // Sugerencias basadas en el término de búsqueda (Productos)
+  const suggestions = useMemo(() => {
+    if (searchTerm.length < 2) return [];
+    
+    return products
+      .filter(p => 
+        normalize(p.name || "").includes(normalize(searchTerm)) || 
+        normalize(p.brand || "").includes(normalize(searchTerm))
+      )
+      .slice(0, 6);
+  }, [searchTerm, products]);
+
+  const hasSuggestions = suggestions.length > 0;
+
   const removeChip = (chip: { type: "brand" | "category" | "offers"; value: string }) => {
     if (chip.type === "brand") {
       setSelectedBrands(selectedBrands.filter((b) => b !== chip.value))
@@ -120,53 +150,136 @@ export function FilterCards({
   }
 
   return (
-    <div
-      className="sticky top-12 sm:top-16 z-30 bg-white/95 backdrop-blur-md flex flex-col gap-1.5 mb-3 px-2 py-1.5 rounded-2xl shadow-[0_2px_15px_-3px_rgba(196,51,212,0.07)] border border-permay-primary/10 transition-all duration-300"
-    >
-      {/* Top Row: Info & Clear */}
-      <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 mb-0.5">
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
-          <div className="flex items-center gap-1.5 shrink-0 pr-2 border-r border-gray-100">
-            <span className="text-[11px] font-black text-permay-primary uppercase tracking-tighter">Filtros</span>
-            {totalFilters > 0 && (
-              <span className="bg-permay-primary text-white text-[9px] h-3.5 min-w-[14px] px-1 flex items-center justify-center rounded-full font-bold">
-                {totalFilters}
-              </span>
+    <div className="sticky top-12 sm:top-16 z-30 bg-white/95 backdrop-blur-md flex flex-col gap-1.5 mb-3 px-2 py-1.5 rounded-2xl shadow-[0_2px_15px_-3px_rgba(196,51,212,0.07)] border border-permay-primary/10 transition-all duration-300">
+      {/* Top Row: Search & Chips */}
+      <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 mb-0.5 px-1 relative">
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          <div className="relative flex items-center w-full max-w-[280px] group">
+            <div className="absolute left-3 text-permay-primary/40 group-focus-within:text-permay-primary transition-colors">
+              <Search size={14} />
+            </div>
+            <input
+              type="text"
+              placeholder="Buscar..."
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onFocus={() => setShowSuggestions(true)}
+              className="w-full bg-permay-primary/[0.03] border border-permay-primary/10 rounded-full py-1.5 pl-9 pr-8 text-[11px] outline-none focus:border-permay-primary/30 focus:bg-white focus:ring-4 focus:ring-permay-primary/5 transition-all font-medium placeholder:text-gray-400"
+            />
+            {searchTerm && (
+              <button 
+                onClick={() => {
+                  setSearchTerm("");
+                  setShowSuggestions(false);
+                }}
+                className="absolute right-2 w-5 h-5 flex items-center justify-center rounded-full bg-gray-100 text-gray-400 hover:bg-red-500 hover:text-white transition-all transform hover:scale-110"
+              >
+                <X size={10} />
+              </button>
+            )}
+
+            {/* Suggestions Dropdown */}
+            {showSuggestions && hasSuggestions && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-permay-primary/10 z-[100] overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200 w-[max-content] min-w-full max-w-[400px]">
+                <div className="p-1">
+                  <div className="px-2 py-1 text-[9px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1">Productos sugeridos</div>
+                  {suggestions.map(product => (
+                    <button
+                      key={product.id}
+                      onClick={() => {
+                        setSearchTerm(product.name);
+                        setShowSuggestions(false);
+                      }}
+                      className="w-full text-left px-3 py-2 text-[11px] hover:bg-permay-primary/5 text-gray-700 transition-colors flex items-center justify-between group/item"
+                    >
+                      <div className="flex flex-col gap-0.5 min-w-0">
+                        <span className="font-bold truncate group-hover/item:text-permay-primary transition-colors">{product.name}</span>
+                        <span className="text-[9px] text-gray-400 uppercase font-medium">{product.brand}</span>
+                      </div>
+                      <div className="shrink-0 ml-4 opacity-0 group-hover/item:opacity-100 transition-opacity">
+                        <Search size={10} className="text-permay-primary" />
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
           
-          <div className="flex items-center gap-1.5">
-            {activeChips.length > 0 ? (
-              activeChips.map((chip) => (
-                <button
-                  key={chip.type + chip.value}
-                  onClick={() => removeChip(chip)}
-                  className="flex items-center gap-1 bg-gray-50 text-gray-600 hover:text-permay-primary hover:bg-permay-primary/5 rounded-full px-2 py-0.5 text-[10px] font-medium border border-gray-100 transition-all active:scale-95 whitespace-nowrap"
-                >
-                  {chip.label}
-                  <X size={10} />
-                </button>
-              ))
-            ) : (
-              <span className="text-[10px] text-gray-400 font-medium">Personalizá tu búsqueda</span>
-            )}
+          <div className="h-4 w-[1px] bg-gray-200 shrink-0 mx-1" />
+
+          {/* Compact Sort */}
+          <Select value={sortBy} onValueChange={setSortBy}>
+            <SelectTrigger className="h-8 w-8 sm:w-[110px] text-[10px] font-bold border-permay-primary/10 bg-white rounded-xl shadow-sm focus:ring-permay-primary/10 px-0 sm:px-3">
+              <div className="flex items-center gap-1.5 justify-center sm:justify-start">
+                <ArrowUpDown size={12} className="text-permay-primary/60 shrink-0" />
+                <span className="hidden sm:inline truncate leading-none">
+                  {sortBy === "name" ? "A-Z" : sortBy === "price-asc" ? "$ Min" : "$ Max"}
+                </span>
+              </div>
+            </SelectTrigger>
+            <SelectContent className="rounded-xl shadow-xl border-gray-100">
+              <SelectItem value="name" className="text-[11px]">Nombre A-Z</SelectItem>
+              <SelectItem value="price-asc" className="text-[11px]">Precio: Menor</SelectItem>
+              <SelectItem value="price-desc" className="text-[11px]">Precio: Mayor</SelectItem>
+            </SelectContent>
+          </Select>
+
+          {/* Compact View Mode */}
+          <div className="flex items-center gap-0.5 border border-permay-primary/10 p-0.5 rounded-xl bg-white shadow-sm">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setViewMode("grid")}
+              className={cn(
+                "w-7 h-7 rounded-lg transition-all",
+                viewMode === "grid" ? "bg-permay-primary/10 text-permay-primary" : "text-gray-300 hover:text-permay-primary/60"
+              )}
+            >
+              <Grid className="h-3.5 w-3.5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setViewMode("list")}
+              className={cn(
+                "w-7 h-7 rounded-lg transition-all",
+                viewMode === "list" ? "bg-permay-primary/10 text-permay-primary" : "text-gray-300 hover:text-permay-primary/60"
+              )}
+            >
+              <List className="h-3.5 w-3.5" />
+            </Button>
           </div>
         </div>
 
-        {totalFilters > 0 && (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClearFilters}
-            className="h-6 text-[10px] font-bold text-red-500 hover:bg-red-50 px-2 rounded-full"
-          >
-            Limpiar
-          </Button>
-        )}
+        <div className="flex items-center gap-2 shrink-0 ml-1">
+          {totalFilters > 0 && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={onClearFilters}
+              className="h-7 text-[10px] font-black text-red-500 hover:bg-red-50 px-2 rounded-full uppercase tracking-tighter"
+            >
+              Limpiar
+            </Button>
+          )}
+        </div>
       </div>
 
-      {/* Main Filter Buttons */}
+      {/* Bottom Row: Filter Label & Buttons */}
       <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">
+        <div className="flex items-center gap-1.5 shrink-0 bg-gray-50/80 px-2.5 py-1 rounded-xl border border-gray-100 mr-0.5">
+          <span className="text-[10px] font-black text-permay-primary uppercase tracking-tighter">Filtros</span>
+          {totalFilters > 0 && (
+            <span className="bg-permay-primary text-white text-[9px] h-3.5 min-w-[14px] px-1 flex items-center justify-center rounded-full font-bold animate-in zoom-in duration-300 shadow-sm">
+              {totalFilters}
+            </span>
+          )}
+        </div>
+
         <Button 
           variant={showOffers ? "default" : "outline"}
           onClick={() => setShowOffers(!showOffers)}
@@ -192,7 +305,6 @@ export function FilterCards({
               Marcas {selectedBrands.length > 0 && `(${selectedBrands.length})`}
             </Button>
           </PopoverTrigger>
-          {/* ... PopoverContent remains similar but more compact ... */}
           <PopoverContent className="w-[260px] p-0 rounded-2xl shadow-xl border-permay-primary/10" sideOffset={8} align="start">
              <div className="p-2 border-b bg-gray-50/50">
                <input
@@ -200,7 +312,7 @@ export function FilterCards({
                  placeholder="Buscar marca..."
                  value={brandSearch}
                  onChange={e => setBrandSearch(e.target.value)}
-                 className="w-full bg-white border border-gray-200 rounded-lg py-1.5 px-3 text-xs outline-none focus:border-permay-primary/30 transition-all"
+                 className="w-full bg-white border border-gray-200 rounded-lg py-1.5 px-3 text-xs outline-none focus:border-permay-primary/30 transition-all shadow-sm"
                />
              </div>
              <div className="p-1 max-h-[240px] overflow-y-auto custom-scrollbar">
@@ -233,7 +345,7 @@ export function FilterCards({
                  placeholder="Buscar categoría..."
                  value={categorySearch}
                  onChange={e => setCategorySearch(e.target.value)}
-                 className="w-full bg-white border border-gray-200 rounded-lg py-1.5 px-3 text-xs outline-none focus:border-permay-primary/30 transition-all"
+                 className="w-full bg-white border border-gray-200 rounded-lg py-1.5 px-3 text-xs outline-none focus:border-permay-primary/30 transition-all shadow-sm"
                />
              </div>
              <div className="p-1 max-h-[240px] overflow-y-auto custom-scrollbar">
@@ -250,7 +362,6 @@ export function FilterCards({
           </PopoverContent>
         </Popover>
 
-        {/* Precio - Más integrado y compacto */}
         <Popover open={openPrice} onOpenChange={setOpenPrice}>
           <PopoverTrigger asChild>
             <Button 
@@ -288,7 +399,34 @@ export function FilterCards({
             </div>
           </PopoverContent>
         </Popover>
+
+        <div className="h-4 w-[1px] bg-gray-200 shrink-0 mx-0.5" />
+
+        {/* Active Chips Row Integrated */}
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-1 min-w-0 py-0.5 ml-1">
+          {activeChips.length > 0 ? (
+            activeChips.map((chip) => (
+              <button
+                key={chip.type + chip.value}
+                onClick={() => removeChip(chip)}
+                className="flex items-center gap-1 bg-white text-gray-600 hover:text-permay-primary hover:bg-permay-primary/5 rounded-full px-2 py-0.5 text-[10px] font-medium border border-gray-100 transition-all hover:border-permay-primary/20 active:scale-95 whitespace-nowrap shadow-sm"
+              >
+                {chip.label}
+                <X size={10} />
+              </button>
+            ))
+          ) : (
+            <span className="text-[9px] text-gray-300 font-bold uppercase tracking-widest hidden sm:block opacity-50">Explora nuestra colección</span>
+          )}
+          {products.length > 0 && (
+            <span className="text-[10px] text-permay-primary/30 font-black whitespace-nowrap">
+              {products.length}
+            </span>
+          )}
+        </div>
       </div>
+      {/* Click outside to close suggestions */}
+      {showSuggestions && <div className="fixed inset-0 z-[90]" onClick={() => setShowSuggestions(false)} />}
     </div>
   )
 }

@@ -98,7 +98,7 @@ export const productService = {
     const allSearchTerms = normalizeText(searchTerm)
       .split(/\s+/)
       .filter(term => term.length > 0)
-    
+
     // Separar palabras importantes de las palabras de parada
     const importantTerms = allSearchTerms.filter(term => !stopWords.has(term))
     const hasStopWords = allSearchTerms.length > importantTerms.length
@@ -108,7 +108,7 @@ export const productService = {
 
     if (searchTerms.length === 0) return products
 
-    // Filtrar productos que contengan las palabras importantes
+    // Para búsquedas de cualquier longitud, intentamos ser flexibles
     const filteredProducts = products.filter(product => {
       // Combinar todos los campos de texto del producto y normalizarlos
       const productText = normalizeText([
@@ -118,15 +118,15 @@ export const productService = {
         product.category || ''
       ].join(' '))
 
-      // Si hay palabras de parada, ser más flexible: al menos el 70% de palabras importantes deben estar
-      if (hasStopWords && searchTerms.length > 1) {
-        const matches = searchTerms.filter(term => productText.includes(term)).length
-        const threshold = Math.max(1, Math.ceil(searchTerms.length * 0.7))
-        return matches >= threshold
+      // Si es una sola palabra, simplemente verificamos si está incluida
+      if (searchTerms.length === 1) {
+        return productText.includes(searchTerms[0])
       }
-      
-      // Para búsquedas sin palabras de parada, mantener la lógica original (todas las palabras)
-      return searchTerms.every(term => productText.includes(term))
+
+      // Si hay varias palabras, requerimos que al menos el 70% coincidan (más flexible)
+      const matches = searchTerms.filter(term => productText.includes(term)).length
+      const threshold = Math.max(1, Math.ceil(searchTerms.length * 0.7))
+      return matches >= threshold
     })
 
     // Ordenar por relevancia
@@ -135,15 +135,15 @@ export const productService = {
       const bName = normalizeText(b.name || '')
       const aBrand = normalizeText(a.brand || '')
       const bBrand = normalizeText(b.brand || '')
-      
+
       // Calcular puntuación de relevancia usando solo palabras importantes
       const calculateScore = (product: Product): number => {
         const name = normalizeText(product.name || '')
         const brand = normalizeText(product.brand || '')
         const description = normalizeText(product.description || '')
-        
+
         let score = 0
-        
+
         // Usar solo las palabras importantes para el cálculo de relevancia
         searchTerms.forEach(term => {
           // Coincidencias en el nombre tienen mayor peso
@@ -159,17 +159,17 @@ export const productService = {
             score += 1
           }
         })
-        
+
         return score
       }
-      
+
       const aScore = calculateScore(a)
       const bScore = calculateScore(b)
-      
+
       if (aScore !== bScore) {
         return bScore - aScore // Mayor puntuación = mayor prioridad
       }
-      
+
       // Si tienen la misma puntuación, ordenar alfabéticamente por nombre
       return aName.localeCompare(bName)
     })
@@ -256,12 +256,16 @@ export const productService = {
     // Manejar la búsqueda
     let needsFuzzySearch = false
     if (filters?.search) {
-      const searchTerms = filters.search.toLowerCase().split(/\s+/).filter(term => term.length > 0)
-      needsFuzzySearch = searchTerms.length > 1
+      needsFuzzySearch = true
+      // Función para ensanchar la búsqueda en la DB (reemplazar vocales con _ para saltar acentos)
+      const broadenTerm = (term: string) => term.replace(/[aeiouáéíóúü]/gi, '_')
 
-      // Construir condiciones OR con AND implícito entre términos
+      const searchTerms = filters.search.toLowerCase().trim().split(/\s+/).filter(term => term.length > 0)
+
+      // Construir condiciones OR con un patrón más flexible para Supabase
       searchTerms.forEach(term => {
-        query = query.or(`name.ilike.%${term}%,description.ilike.%${term}%,brand.ilike.%${term}%,category.ilike.%${term}%`)
+        const broad = broadenTerm(term)
+        query = query.or(`name.ilike.%${broad}%,description.ilike.%${broad}%,brand.ilike.%${broad}%,category.ilike.%${broad}%`)
       })
     }
 
@@ -291,7 +295,7 @@ export const productService = {
     if (needsFuzzySearch && filters?.search && products.length > 0) {
       products = this.applyFuzzySearch(products, filters.search)
       totalCount = products.length
-      
+
       // Aplicar paginación después del filtrado fuzzy
       if (filters?.limit && filters?.offset !== undefined) {
         products = products.slice(filters.offset, filters.offset + filters.limit)
@@ -378,7 +382,7 @@ export const productService = {
   async deleteProduct(id: number | string): Promise<void> {
     try {
       const productId = typeof id === 'string' ? parseInt(id) : id
-      
+
       if (isNaN(productId)) {
         throw new Error('ID de producto inválido')
       }
@@ -413,7 +417,7 @@ export const productService = {
   async deleteProductPermanently(id: number | string): Promise<void> {
     try {
       const productId = typeof id === 'string' ? parseInt(id) : id
-      
+
       if (isNaN(productId)) {
         throw new Error('ID de producto inválido')
       }
@@ -641,7 +645,7 @@ export const brandService = {
 
   async createBrand(brand: { name: string; description?: string }): Promise<Brand> {
     const slug = brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-    
+
     const { data, error } = await supabase
       .from('brands')
       .insert({ ...brand, slug })
@@ -658,7 +662,7 @@ export const brandService = {
 
   async updateBrand(id: number, updates: { name?: string; description?: string; active?: boolean }): Promise<Brand> {
     const updateData: any = { ...updates }
-    
+
     // Si se actualiza el nombre, actualizar también el slug
     if (updates.name) {
       updateData.slug = updates.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -688,7 +692,7 @@ export const brandService = {
 
     // Verificar si hay productos usando esta marca (buscar por nombre)
     await new Promise(resolve => setTimeout(resolve, 100))
-    
+
     const { data: products, error: checkError } = await supabase
       .from('products')
       .select('id')
@@ -791,7 +795,7 @@ export const categoryService = {
 
   async createCategory(category: { name: string; description?: string }): Promise<Category> {
     const slug = category.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-    
+
     const { data, error } = await supabase
       .from('categories')
       .insert({ ...category, slug })
@@ -808,7 +812,7 @@ export const categoryService = {
 
   async updateCategory(id: number, updates: { name?: string; description?: string; active?: boolean }): Promise<Category> {
     const updateData: any = { ...updates }
-    
+
     // Si se actualiza el nombre, actualizar también el slug
     if (updates.name) {
       updateData.slug = updates.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -839,7 +843,7 @@ export const categoryService = {
     // Verificar si hay productos usando esta categoría (buscar por nombre)
     // Agregamos una pequeña espera para asegurar consistencia de datos
     await new Promise(resolve => setTimeout(resolve, 100))
-    
+
     const { data: products, error: checkError } = await supabase
       .from('products')
       .select('id')

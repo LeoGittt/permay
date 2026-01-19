@@ -105,13 +105,13 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
       className="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col overflow-hidden border-permay-primary/5 rounded-lg sm:rounded-2xl bg-white cursor-pointer group"
     >
       <CardHeader className="p-0">
-        <div className="relative flex items-center justify-center border-b border-permay-primary/5 w-full h-24 sm:h-48 overflow-hidden">
+        <div className="relative flex items-center justify-center border-b border-permay-primary/5 w-full h-44 sm:h-64 overflow-hidden bg-white">
           {/* Fondo decorativo minimalista */}
-          <div className="absolute inset-0 z-0 bg-gray-50/50" />
+          <div className="absolute inset-0 z-0 bg-gray-50/20" />
           <img
             src={product.image || "/placeholder.svg"}
             alt={product.name}
-            className="object-contain w-full h-full p-1.5 sm:p-4 z-10 transition-transform duration-500 group-hover:scale-110"
+            className="object-contain w-full h-full p-2 sm:p-5 z-10 transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-1 left-1 z-20">
             <span className="bg-white/90 backdrop-blur-sm text-permay-primary text-[7px] sm:text-xs font-bold px-1 py-0.5 rounded border border-permay-primary/5 shadow-sm uppercase tracking-tighter">
@@ -121,33 +121,38 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
         </div>
       </CardHeader>
 
-      <CardContent className="flex-1 p-1 sm:p-4 pb-0 sm:pb-2">
+      <CardContent className="flex-1 p-2 sm:p-4 pb-1 sm:pb-2">
         <div className="space-y-0.5 sm:space-y-2">
-          <h3 className="font-bold text-[10px] sm:text-base leading-[1.1] line-clamp-2 min-h-[22px] sm:min-h-[3rem] text-gray-900 group-hover:text-permay-primary transition-colors">{product.name}</h3>
-          <p className="text-[8px] sm:text-xs text-permay-primary/60 font-medium uppercase tracking-tighter truncate">
+          <h3 className="font-bold text-[11px] sm:text-base leading-tight line-clamp-2 min-h-[1.5rem] sm:min-h-[3rem] text-gray-900 group-hover:text-permay-primary transition-colors">{product.name}</h3>
+          <p className="text-[8px] sm:text-[10px] text-permay-primary/50 font-semibold uppercase tracking-widest truncate">
             {product.category.split("/").pop()}
           </p>
         </div>
       </CardContent>
-      <CardFooter className="p-1 sm:p-4 pt-1 flex flex-col gap-1 sm:gap-3 items-center">
-        <div className="w-full text-center sm:text-left mb-0.5 sm:mb-0">
-          <span className="text-sm sm:text-lg font-black text-permay-primary leading-none">{formatPrice(product.price)}</span>
+      <CardFooter className="p-2 sm:p-4 pt-0 flex flex-row items-center justify-between gap-2">
+        <div className="flex-1 min-w-0">
+          <span className="text-lg sm:text-2xl font-black text-permay-primary leading-none block truncate">
+            {formatPrice(product.price)}
+          </span>
         </div>
 
         <Button
-          size="sm"
+          size="icon"
           onClick={(e) => {
             e.stopPropagation();
             handleAddToCart();
           }}
           disabled={isLoading}
           className={cn(
-            "w-[90%] sm:w-full h-6 sm:h-10 text-[9px] sm:text-sm rounded-full font-bold shadow-md shadow-permay-primary/10 transition-all active:scale-95",
-            "bg-gradient-to-br from-permay-primary via-[#D84AE8] to-permay-primary bg-[length:200%_auto] hover:bg-right text-white p-0 px-2 sm:px-4"
+            "w-8 h-8 sm:w-10 sm:h-10 rounded-xl font-bold shadow-lg shadow-permay-primary/10 transition-all active:scale-95 shrink-0",
+            "bg-gradient-to-br from-permay-primary via-[#D84AE8] to-permay-primary bg-[length:200%_auto] hover:bg-right text-white"
           )}
         >
-          <ShoppingCart className="h-2.5 w-2.5 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-          <span className="leading-none">{isLoading ? "..." : "Comprar"}</span>
+          {isLoading ? (
+            <span className="text-[8px] animate-pulse">...</span>
+          ) : (
+            <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
+          )}
         </Button>
       </CardFooter>
     </Card>

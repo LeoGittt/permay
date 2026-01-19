@@ -68,8 +68,6 @@ export default function PermayHome() {
 
       <div className="relative z-10">
       <Header
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
         cartItemsCount={getCartItemsCount()}
         onCartClick={() => setIsCartOpen(true)}
       />
@@ -93,15 +91,19 @@ export default function PermayHome() {
               showOffers={showOffers}
               setShowOffers={setShowOffers}
               onClearFilters={clearFilters}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              products={filteredProducts}
+              viewMode={viewMode}
+              setViewMode={setViewMode}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
             />
 
             <ProductGrid
               products={paginatedProducts}
               totalProducts={filteredProducts.length}
               viewMode={viewMode}
-              setViewMode={setViewMode}
-              sortBy={sortBy}
-              setSortBy={setSortBy}
               onAddToCart={addToCart}
               currentPage={currentPage}
               totalPages={totalPages}
