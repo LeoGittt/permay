@@ -1,22 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ShoppingCart, Eye, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
-import type { Product } from "@/types/product"
+import { useState, useEffect } from "react";
+import { ShoppingCart, Eye, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import type { Product } from "@/types/product";
 
 interface ProductCardProps {
-  product: Product
-  onAddToCart: (productId: number, quantity?: number) => void
-  onViewDetails: (product: Product) => void
-  viewMode: "grid" | "list"
+  product: Product;
+  onAddToCart: (productId: number, quantity?: number) => void;
+  onViewDetails: (product: Product) => void;
+  viewMode: "grid" | "list";
 }
 
-export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: ProductCardProps) {
-  const [isLoading, setIsLoading] = useState(false)
+export function ProductCard({
+  product,
+  onAddToCart,
+  onViewDetails,
+  viewMode,
+}: ProductCardProps) {
+  const [isLoading, setIsLoading] = useState(false);
 
   const [showImageModal, setShowImageModal] = useState(false);
 
@@ -40,15 +50,15 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
-    }).format(price)
-  }
+    }).format(price);
+  };
 
   const handleAddToCart = async () => {
-    setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 300))
-    onAddToCart(product.id)
-    setIsLoading(false)
-  }
+    setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    onAddToCart(product.id);
+    setIsLoading(false);
+  };
 
   if (viewMode === "list") {
     return (
@@ -66,20 +76,34 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
             <div>
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-4">
                 <div className="flex-1 min-w-0">
-                  <Badge variant="secondary" className="mb-1 text-xs">
+                  <Badge
+                    variant="secondary"
+                    className="mb-1 text-xs sm:text-sm font-bold px-2 py-0.5"
+                  >
                     {product.brand}
                   </Badge>
-                  <h3 className="font-semibold text-sm sm:text-base line-clamp-2 sm:line-clamp-1">{product.name}</h3>
-                  <p className="text-xs text-gray-500 capitalize truncate">{product.category.split("/").pop()}</p>
+                  <h3 className="font-semibold text-sm sm:text-base line-clamp-2 sm:line-clamp-1">
+                    {product.name}
+                  </h3>
+                  <p className="text-xs text-gray-500 capitalize truncate">
+                    {product.category.split("/").pop()}
+                  </p>
                 </div>
                 <div className="flex-shrink-0">
-                  <span className="text-base sm:text-lg font-bold text-permay-primary">{formatPrice(product.price)}</span>
+                  <span className="text-base sm:text-lg font-bold text-permay-primary">
+                    {formatPrice(product.price)}
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="flex gap-2 mt-2">
-              <Button variant="outline" size="sm" onClick={() => onViewDetails(product)} className="flex-1 text-xs sm:text-sm">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => onViewDetails(product)}
+                className="flex-1 text-xs sm:text-sm"
+              >
                 <Eye className="h-3 w-3 mr-1" />
                 Ver
               </Button>
@@ -96,11 +120,11 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
           </div>
         </div>
       </Card>
-    )
+    );
   }
 
   return (
-    <Card 
+    <Card
       onClick={() => onViewDetails(product)}
       className="hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col overflow-hidden border-permay-primary/5 rounded-lg sm:rounded-2xl bg-white cursor-pointer group"
     >
@@ -113,8 +137,8 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
             alt={product.name}
             className="object-contain w-full h-full p-2 sm:p-5 z-10 transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute top-1 left-1 z-20">
-            <span className="bg-white/90 backdrop-blur-sm text-permay-primary text-[7px] sm:text-xs font-bold px-1 py-0.5 rounded border border-permay-primary/5 shadow-sm uppercase tracking-tighter">
+          <div className="absolute top-2 left-2 z-20">
+            <span className="bg-white/95 backdrop-blur-sm text-permay-primary text-[10px] sm:text-sm font-black px-2 py-1 rounded-md border border-permay-primary/10 shadow-md uppercase tracking-tight">
               {product.brand}
             </span>
           </div>
@@ -123,7 +147,9 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
 
       <CardContent className="flex-1 p-2 sm:p-4 pb-1 sm:pb-2">
         <div className="space-y-0.5 sm:space-y-2">
-          <h3 className="font-bold text-[11px] sm:text-base leading-tight line-clamp-2 min-h-[1.5rem] sm:min-h-[3rem] text-gray-900 group-hover:text-permay-primary transition-colors">{product.name}</h3>
+          <h3 className="font-bold text-[11px] sm:text-base leading-tight line-clamp-2 min-h-[1.5rem] sm:min-h-[3rem] text-gray-900 group-hover:text-permay-primary transition-colors">
+            {product.name}
+          </h3>
           <p className="text-[8px] sm:text-[10px] text-permay-primary/50 font-semibold uppercase tracking-widest truncate">
             {product.category.split("/").pop()}
           </p>
@@ -145,7 +171,7 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
           disabled={isLoading}
           className={cn(
             "w-8 h-8 sm:w-10 sm:h-10 rounded-xl font-bold shadow-lg shadow-permay-primary/10 transition-all active:scale-95 shrink-0",
-            "bg-gradient-to-br from-permay-primary via-[#D84AE8] to-permay-primary bg-[length:200%_auto] hover:bg-right text-white"
+            "bg-gradient-to-br from-permay-primary via-[#D84AE8] to-permay-primary bg-[length:200%_auto] hover:bg-right text-white",
           )}
         >
           {isLoading ? (
@@ -156,5 +182,5 @@ export function ProductCard({ product, onAddToCart, onViewDetails, viewMode }: P
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }
