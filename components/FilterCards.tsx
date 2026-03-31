@@ -154,12 +154,21 @@ export function FilterCards({
       {/* Top Row: Search & Chips */}
       <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 mb-0.5 px-1 relative">
         <div className="flex items-center gap-2 flex-1 min-w-0">
-          <div className="relative flex items-center w-full max-w-[280px] group">
-            <div className="absolute left-3 text-permay-primary/40 group-focus-within:text-permay-primary transition-colors">
+          <form
+            className="relative flex items-center w-full max-w-[280px] group"
+            onSubmit={(e) => {
+              e.preventDefault()
+              setShowSuggestions(false)
+              ;(e.currentTarget.querySelector("input") as HTMLInputElement | null)?.blur()
+            }}
+          >
+            <div className="absolute left-3 text-permay-primary/40 group-focus-within:text-permay-primary transition-colors pointer-events-none">
               <Search size={14} />
             </div>
             <input
               type="text"
+              enterKeyHint="search"
+              autoComplete="off"
               placeholder="Buscar..."
               value={searchTerm}
               onChange={(e) => {
@@ -167,10 +176,14 @@ export function FilterCards({
                 setShowSuggestions(true);
               }}
               onFocus={() => setShowSuggestions(true)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") setShowSuggestions(false)
+              }}
               className="w-full bg-permay-primary/[0.03] border border-permay-primary/10 rounded-full py-1.5 pl-9 pr-8 text-[11px] outline-none focus:border-permay-primary/30 focus:bg-white focus:ring-4 focus:ring-permay-primary/5 transition-all font-medium placeholder:text-gray-400"
             />
             {searchTerm && (
-              <button 
+              <button
+                type="button"
                 onClick={() => {
                   setSearchTerm("");
                   setShowSuggestions(false);
@@ -188,6 +201,7 @@ export function FilterCards({
                   <div className="px-2 py-1 text-[9px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1">Productos sugeridos</div>
                   {suggestions.map(product => (
                     <button
+                      type="button"
                       key={product.id}
                       onClick={() => {
                         setSearchTerm(product.name);
@@ -207,7 +221,7 @@ export function FilterCards({
                 </div>
               </div>
             )}
-          </div>
+          </form>
           
           <div className="h-4 w-[1px] bg-gray-200 shrink-0 mx-1" />
 
