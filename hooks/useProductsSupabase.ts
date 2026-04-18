@@ -1,11 +1,23 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, useRef } from "react"
 import { productService } from "@/lib/supabase-services"
 import type { Product } from "@/types/product"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
 
 const PRODUCTS_PER_PAGE = 12
+
+// Hook de debounce para evitar queries en cada tecla
+function useDebouncedValue<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState(value)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay)
+    return () => clearTimeout(timer)
+  }, [value, delay])
+
+  return debouncedValue
+}
 
 interface FilterState {
   searchTerm: string
@@ -49,6 +61,9 @@ export function useProducts() {
     showOffers,
   } = filters
 
+  // Debounce del término de búsqueda: espera 400ms después de que el usuario deja de escribir
+  const debouncedSearchTerm = useDebouncedValue(searchTerm, 400)
+
   // Cargar marcas y categorías
   useEffect(() => {
     const loadBrandsAndCategories = async () => {
@@ -78,7 +93,7 @@ export function useProducts() {
       try {
         // Preparar filtros para la consulta
         const queryFilters = {
-          search: searchTerm || undefined,
+          search: debouncedSearchTerm || undefined,
           brands: selectedBrands.length > 0 ? selectedBrands : undefined,
           categories: selectedCategories.length > 0 ? selectedCategories : undefined,
           priceRange: priceRange as [number, number],
@@ -103,7 +118,7 @@ export function useProducts() {
     }
 
     loadProducts()
-  }, [isLoaded, searchTerm, selectedBrands, selectedCategories, priceRange, sortBy, currentPage, showOffers])
+  }, [isLoaded, debouncedSearchTerm, selectedBrands, selectedCategories, priceRange, sortBy, currentPage, showOffers])
 
   // Calcular páginas totales
   const totalPages = Math.ceil(totalProducts / PRODUCTS_PER_PAGE)
@@ -134,7 +149,7 @@ export function useProducts() {
     setLoading(true)
     try {
       const queryFilters = {
-        search: searchTerm || undefined,
+        search: debouncedSearchTerm || undefined,
         brands: selectedBrands.length > 0 ? selectedBrands : undefined,
         categories: selectedCategories.length > 0 ? selectedCategories : undefined,
         priceRange: priceRange as [number, number],

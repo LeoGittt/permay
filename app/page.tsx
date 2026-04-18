@@ -43,6 +43,7 @@ export default function PermayHome() {
     setCurrentPage,
     totalPages,
     paginatedProducts,
+    loading,
   } = useProducts();
 
   // Limpiar el término de búsqueda al cargar la página
@@ -108,6 +109,7 @@ export default function PermayHome() {
               currentPage={currentPage}
               totalPages={totalPages}
               onPageChange={setCurrentPage}
+              loading={loading}
             />
           </main>
         </div>

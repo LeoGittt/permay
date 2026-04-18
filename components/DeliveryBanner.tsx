@@ -35,15 +35,7 @@ export function DeliveryBanner() {
           </button>
         </div>
       )}
-      {showBubble && (
-        <button
-          className="fixed bottom-24 right-4 z-[101] bg-permay-primary border border-permay-primary shadow-lg rounded-full p-3 flex items-center justify-center hover:bg-permay-primary/80 transition-all animate-fade-in"
-          onClick={handleBubbleClick}
-          aria-label="Mostrar información de envíos"
-        >
-          <Truck className="w-6 h-6 text-white animate-bounce" />
-        </button>
-      )}
+      {showBubble && null}
     </>
   );
 }

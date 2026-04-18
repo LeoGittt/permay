@@ -76,103 +76,212 @@ export const imageService = {
 // ===================== PRODUCTOS =====================
 
 export const productService = {
-  // Función helper para búsqueda fuzzy
-  applyFuzzySearch(products: Product[], searchTerm: string): Product[] {
-    // Función para normalizar texto (remover acentos, convertir a minúsculas)
-    const normalizeText = (text: string): string => {
-      return text
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '') // Remover acentos
-        .replace(/[^\w\s]/g, ' ') // Reemplazar caracteres especiales con espacios
-        .replace(/\s+/g, ' ') // Normalizar espacios múltiples
-        .trim()
-    }
+  // Función helper para normalizar texto (remover acentos, minúsculas)
+  normalizeText(text: string): string {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+  },
 
-    // Lista de palabras de parada/conectores que no son relevantes para la búsqueda
+  // Normalizar singular/plural para mejorar búsquedas
+  toSingular(word: string): string {
+    if (word.length <= 2) return word
+    if (word.endsWith('iones')) return word.slice(0, -5) + 'ion' // lociones → locion
+    if (word.endsWith('ces')) return word.slice(0, -3) + 'z' // lapices → lapiz
+    if (word.endsWith('es') && word.length > 4) return word.slice(0, -2) // cremes → crem
+    if (word.endsWith('s') && !word.endsWith('ss')) return word.slice(0, -1) // perfumes → perfume
+    return word
+  },
+
+  // Sinónimos comunes de perfumería y cosmética
+  synonyms: {
+    'perfume': ['fragancia', 'eau', 'toilette', 'parfum', 'colonia', 'aroma'],
+    'fragancia': ['perfume', 'eau', 'toilette', 'parfum', 'colonia'],
+    'crema': ['locion', 'hidratante', 'humectante', 'emulsion'],
+    'locion': ['crema', 'hidratante', 'humectante', 'body'],
+    'labial': ['labios', 'lipstick', 'lip', 'gloss'],
+    'sombra': ['sombras', 'eyeshadow', 'ojos'],
+    'base': ['foundation', 'maquillaje', 'cobertura'],
+    'rimel': ['mascara', 'pestanas'],
+    'mascara': ['rimel', 'pestanas'],
+    'esmalte': ['unas', 'nail', 'barniz'],
+    'shampoo': ['champu', 'cabello', 'pelo'],
+    'champu': ['shampoo', 'cabello', 'pelo'],
+    'desodorante': ['antitranspirante', 'deo'],
+    'deo': ['desodorante', 'antitranspirante'],
+    'serum': ['suero', 'tratamiento'],
+    'protector': ['proteccion', 'solar', 'fps', 'sunscreen'],
+    'solar': ['protector', 'proteccion', 'fps', 'sunscreen'],
+    'colorete': ['rubor', 'blush', 'mejillas'],
+    'rubor': ['colorete', 'blush', 'mejillas'],
+    'polvo': ['polvos', 'compact', 'compacto'],
+    'bronceador': ['bronzer', 'bronceante', 'autobronceante'],
+    'kit': ['set', 'estuche', 'pack', 'cofre'],
+    'set': ['kit', 'estuche', 'pack', 'cofre'],
+    'regalo': ['gift', 'obsequio', 'present'],
+    'hombre': ['masculino', 'man', 'men', 'caballero', 'him'],
+    'mujer': ['femenino', 'woman', 'women', 'dama', 'her', 'ella'],
+  } as Record<string, string[]>,
+
+  // Expandir un término de búsqueda con sinónimos
+  expandWithSynonyms(term: string): string[] {
+    const normalized = this.normalizeText(term)
+    const singular = this.toSingular(normalized)
+    const results = new Set([normalized, singular])
+    
+    // Buscar sinónimos del término y de su forma singular
+    for (const key of [normalized, singular]) {
+      if (this.synonyms[key]) {
+        for (const syn of this.synonyms[key]) {
+          results.add(syn)
+        }
+      }
+    }
+    
+    return Array.from(results)
+  },
+
+  // Calcular distancia de Levenshtein entre dos strings (para tolerancia a errores tipográficos)
+  levenshteinDistance(a: string, b: string): number {
+    const matrix: number[][] = []
+    for (let i = 0; i <= b.length; i++) matrix[i] = [i]
+    for (let j = 0; j <= a.length; j++) matrix[0][j] = j
+    for (let i = 1; i <= b.length; i++) {
+      for (let j = 1; j <= a.length; j++) {
+        const cost = a[j - 1] === b[i - 1] ? 0 : 1
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j - 1] + cost
+        )
+      }
+    }
+    return matrix[b.length][a.length]
+  },
+
+  // Verificar si un término hace match parcial/fuzzy con una palabra
+  fuzzyWordMatch(searchWord: string, targetWord: string): boolean {
+    // Match exacto de substring
+    if (targetWord.includes(searchWord)) return true
+    // Si la palabra buscada es muy corta, solo aceptar substring match
+    if (searchWord.length <= 2) return false
+    // Si la palabra del target empieza con el término de búsqueda (tipeo parcial)
+    if (targetWord.startsWith(searchWord)) return true
+    // Tolerancia a errores tipográficos: permitir 1 error cada 4 caracteres
+    const maxDistance = Math.floor(searchWord.length / 4) + (searchWord.length >= 4 ? 1 : 0)
+    if (maxDistance > 0) {
+      // Comparar contra substrings del target de longitud similar
+      for (let i = 0; i <= targetWord.length - searchWord.length + maxDistance; i++) {
+        const sub = targetWord.substring(i, i + searchWord.length + 1)
+        if (this.levenshteinDistance(searchWord, sub) <= maxDistance) return true
+      }
+    }
+    return false
+  },
+
+  // Búsqueda fuzzy mejorada aplicada client-side sobre los resultados de la DB
+  applyFuzzySearch(products: Product[], searchTerm: string): Product[] {
     const stopWords = new Set([
       'de', 'del', 'la', 'el', 'en', 'con', 'para', 'por', 'sin', 'y', 'o', 'un', 'una', 'los', 'las'
     ])
 
-    // Dividir el término de búsqueda en palabras individuales y filtrar palabras de parada
-    const allSearchTerms = normalizeText(searchTerm)
-      .split(/\s+/)
-      .filter(term => term.length > 0)
-
-    // Separar palabras importantes de las palabras de parada
-    const importantTerms = allSearchTerms.filter(term => !stopWords.has(term))
-    const hasStopWords = allSearchTerms.length > importantTerms.length
-
-    // Si no hay términos importantes, usar todos los términos
-    const searchTerms = importantTerms.length > 0 ? importantTerms : allSearchTerms
+    const normalizedSearch = this.normalizeText(searchTerm)
+    const allTerms = normalizedSearch.split(/\s+/).filter(t => t.length > 0)
+    const importantTerms = allTerms.filter(t => !stopWords.has(t))
+    const searchTerms = importantTerms.length > 0 ? importantTerms : allTerms
 
     if (searchTerms.length === 0) return products
 
-    // Para búsquedas de cualquier longitud, intentamos ser flexibles
-    const filteredProducts = products.filter(product => {
-      // Combinar todos los campos de texto del producto y normalizarlos
-      const productText = normalizeText([
-        product.name || '',
-        product.description || '',
-        product.brand || '',
-        product.category || ''
-      ].join(' '))
+    // Pre-expandir cada término con sinónimos para no recalcular por producto
+    const expandedTermsMap = searchTerms.map(term => ({
+      original: term,
+      variants: this.expandWithSynonyms(term)
+    }))
 
-      // Si es una sola palabra, simplemente verificamos si está incluida
-      if (searchTerms.length === 1) {
-        return productText.includes(searchTerms[0])
+    // Puntuar cada producto
+    const scored = products.map(product => {
+      const name = this.normalizeText(product.name || '')
+      const brand = this.normalizeText(product.brand || '')
+      const description = this.normalizeText(product.description || '')
+      const category = this.normalizeText(product.category || '')
+      const allText = `${name} ${brand} ${description} ${category}`
+      const allWords = allText.split(/\s+/)
+
+      let score = 0
+      let matchedTerms = 0
+
+      // Búsqueda del término completo original (sin dividir) — mayor peso
+      if (name.includes(normalizedSearch)) {
+        score += 50
+        matchedTerms = searchTerms.length
+      } else if (brand.includes(normalizedSearch)) {
+        score += 40
+        matchedTerms = searchTerms.length
+      } else {
+        // Búsqueda por palabras individuales con expansión de sinónimos
+        for (const { original, variants } of expandedTermsMap) {
+          let termMatched = false
+          let bestScore = 0
+
+          for (const variant of variants) {
+            const isOriginal = variant === original
+            const weight = isOriginal ? 1 : 0.6 // Sinónimos pesan menos
+
+            // Match en nombre
+            if (name.includes(variant)) {
+              const s = (name.startsWith(variant) ? 20 : 10) * weight
+              bestScore = Math.max(bestScore, s)
+              termMatched = true
+            }
+            // Match en marca
+            if (brand.includes(variant)) {
+              const s = (brand.startsWith(variant) ? 15 : 8) * weight
+              bestScore = Math.max(bestScore, s)
+              termMatched = true
+            }
+            // Match en categoría
+            if (category.includes(variant)) {
+              bestScore = Math.max(bestScore, 5 * weight)
+              termMatched = true
+            }
+            // Match en descripción
+            if (description.includes(variant)) {
+              bestScore = Math.max(bestScore, 2 * weight)
+              termMatched = true
+            }
+          }
+
+          // Si no hubo match con sinónimos, intentar fuzzy match con el término original
+          if (!termMatched) {
+            for (const word of allWords) {
+              if (this.fuzzyWordMatch(original, word)) {
+                bestScore = Math.max(bestScore, 3)
+                termMatched = true
+                break
+              }
+            }
+          }
+
+          score += bestScore
+          if (termMatched) matchedTerms++
+        }
       }
 
-      // Si hay varias palabras, requerimos que al menos el 70% coincidan (más flexible)
-      const matches = searchTerms.filter(term => productText.includes(term)).length
-      const threshold = Math.max(1, Math.ceil(searchTerms.length * 0.7))
-      return matches >= threshold
+      // Requisito mínimo: al menos el 60% de los términos deben hacer match
+      const minRequired = searchTerms.length === 1 ? 1 : Math.max(1, Math.ceil(searchTerms.length * 0.6))
+      const passes = matchedTerms >= minRequired
+
+      return { product, score, passes }
     })
 
-    // Ordenar por relevancia
-    return filteredProducts.sort((a, b) => {
-      const aName = normalizeText(a.name || '')
-      const bName = normalizeText(b.name || '')
-      const aBrand = normalizeText(a.brand || '')
-      const bBrand = normalizeText(b.brand || '')
-
-      // Calcular puntuación de relevancia usando solo palabras importantes
-      const calculateScore = (product: Product): number => {
-        const name = normalizeText(product.name || '')
-        const brand = normalizeText(product.brand || '')
-        const description = normalizeText(product.description || '')
-
-        let score = 0
-
-        // Usar solo las palabras importantes para el cálculo de relevancia
-        searchTerms.forEach(term => {
-          // Coincidencias en el nombre tienen mayor peso
-          if (name.includes(term)) {
-            score += name.startsWith(term) ? 10 : 5 // Inicio del nombre = más relevante
-          }
-          // Coincidencias en la marca
-          if (brand.includes(term)) {
-            score += brand.startsWith(term) ? 8 : 3
-          }
-          // Coincidencias en la descripción
-          if (description.includes(term)) {
-            score += 1
-          }
-        })
-
-        return score
-      }
-
-      const aScore = calculateScore(a)
-      const bScore = calculateScore(b)
-
-      if (aScore !== bScore) {
-        return bScore - aScore // Mayor puntuación = mayor prioridad
-      }
-
-      // Si tienen la misma puntuación, ordenar alfabéticamente por nombre
-      return aName.localeCompare(bName)
-    })
+    return scored
+      .filter(s => s.passes && s.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map(s => s.product)
   },
 
   // Obtener todos los productos con filtros avanzados
@@ -257,16 +366,32 @@ export const productService = {
     let needsFuzzySearch = false
     if (filters?.search) {
       needsFuzzySearch = true
-      // Función para ensanchar la búsqueda en la DB (reemplazar vocales con _ para saltar acentos)
-      const broadenTerm = (term: string) => term.replace(/[aeiouáéíóúü]/gi, '_')
+      
+      // Normalizar solo los acentos (á→a, é→e, etc.) para la query DB, sin destruir la palabra
+      const normalizeForDb = (term: string) => term
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
 
-      const searchTerms = filters.search.toLowerCase().trim().split(/\s+/).filter(term => term.length > 0)
+      const searchTerms = normalizeForDb(filters.search).trim().split(/\s+/).filter(term => term.length > 0)
 
-      // Construir condiciones OR con un patrón más flexible para Supabase
-      searchTerms.forEach(term => {
-        const broad = broadenTerm(term)
-        query = query.or(`name.ilike.%${broad}%,description.ilike.%${broad}%,brand.ilike.%${broad}%,category.ilike.%${broad}%`)
-      })
+      // Expandir cada término con sinónimos y singular/plural para la DB query
+      const allDbTerms: string[] = []
+      for (const term of searchTerms) {
+        if (term.length < 2) continue
+        const expanded = this.expandWithSynonyms(term)
+        allDbTerms.push(...expanded)
+      }
+
+      // Crear condiciones OR para todos los términos expandidos
+      if (allDbTerms.length > 0) {
+        // Limitar a los 8 primeros para no hacer queries gigantes
+        const termsForQuery = allDbTerms.slice(0, 8)
+        const orConditions = termsForQuery
+          .map(term => `name.ilike.%${term}%,brand.ilike.%${term}%,description.ilike.%${term}%,category.ilike.%${term}%`)
+          .join(',')
+        query = query.or(orConditions)
+      }
     }
 
     // Paginación - Solo aplicar si no necesitamos búsqueda fuzzy

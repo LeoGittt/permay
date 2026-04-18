@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Slider } from "@/components/ui/slider"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { X, Search, Grid, List, ArrowUpDown } from "lucide-react"
+import { X, Search, Grid, List, ArrowUpDown, Tag, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface FilterCardsProps {
@@ -125,19 +125,72 @@ export function FilterCards({
     })),
   ]
 
-  // Sugerencias basadas en el término de búsqueda (Productos)
+  // Sugerencias basadas en el término de búsqueda (Productos, Marcas, Categorías)
   const suggestions = useMemo(() => {
-    if (searchTerm.length < 2) return [];
+    if (searchTerm.length < 2) return { products: [], brands: [], categories: [] };
     
-    return products
-      .filter(p => 
-        normalize(p.name || "").includes(normalize(searchTerm)) || 
-        normalize(p.brand || "").includes(normalize(searchTerm))
-      )
-      .slice(0, 6);
-  }, [searchTerm, products]);
+    const normalizedSearch = normalize(searchTerm)
+    const searchWords = normalizedSearch.split(/\s+/).filter(w => w.length > 0)
+    
+    // Productos puntuados por relevancia
+    const scoredProducts = products.map(product => {
+      const name = normalize(product.name || "")
+      const brand = normalize(product.brand || "")
+      const category = normalize(product.category || "")
+      let score = 0
 
-  const hasSuggestions = suggestions.length > 0;
+      if (name.includes(normalizedSearch)) {
+        score += name.startsWith(normalizedSearch) ? 100 : 50
+      } else if (brand.includes(normalizedSearch)) {
+        score += 40
+      } else {
+        for (const word of searchWords) {
+          if (name.includes(word)) score += 10
+          if (brand.includes(word)) score += 5
+          if (category.includes(word)) score += 2
+        }
+      }
+
+      return { product, score }
+    })
+
+    const topProducts = scoredProducts
+      .filter(s => s.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map(s => s.product)
+
+    // Marcas que matchean
+    const matchingBrands = brands
+      .filter(b => normalize(b).includes(normalizedSearch))
+      .slice(0, 3)
+    
+    // Categorías que matchean
+    const matchingCategories = categories
+      .filter(c => {
+        const catName = normalize(c.split("/").pop() ?? c)
+        return catName.includes(normalizedSearch)
+      })
+      .slice(0, 3)
+
+    return { products: topProducts, brands: matchingBrands, categories: matchingCategories }
+  }, [searchTerm, products, brands, categories]);
+
+  const hasSuggestions = suggestions.products.length > 0 || suggestions.brands.length > 0 || suggestions.categories.length > 0;
+
+  // Función para resaltar el texto que matchea
+  const highlightMatch = useCallback((text: string, query: string) => {
+    if (!query || query.length < 2) return text
+    const normalizedQuery = normalize(query)
+    const normalizedText = normalize(text)
+    const idx = normalizedText.indexOf(normalizedQuery)
+    if (idx === -1) return text
+    
+    const before = text.slice(0, idx)
+    const match = text.slice(idx, idx + query.length)
+    const after = text.slice(idx + query.length)
+    return <>{before}<span className="text-permay-primary font-black bg-permay-primary/10 rounded px-0.5">{match}</span>{after}</>
+  }, []);
 
   const removeChip = (chip: { type: "brand" | "category" | "offers"; value: string }) => {
     if (chip.type === "brand") {
@@ -155,7 +208,7 @@ export function FilterCards({
       <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 mb-0.5 px-1 relative">
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <form
-            className="relative flex items-center w-full max-w-[280px] group"
+            className="relative flex items-center w-full max-w-[280px] sm:max-w-[380px] group"
             onSubmit={(e) => {
               e.preventDefault()
               setShowSuggestions(false)
@@ -195,29 +248,91 @@ export function FilterCards({
             )}
 
             {/* Suggestions Dropdown */}
-            {showSuggestions && hasSuggestions && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-permay-primary/10 z-[100] overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200 w-[max-content] min-w-full max-w-[400px]">
-                <div className="p-1">
-                  <div className="px-2 py-1 text-[9px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1">Productos sugeridos</div>
-                  {suggestions.map(product => (
-                    <button
-                      type="button"
-                      key={product.id}
-                      onClick={() => {
-                        setSearchTerm(product.name);
-                        setShowSuggestions(false);
-                      }}
-                      className="w-full text-left px-3 py-2 text-[11px] hover:bg-permay-primary/5 text-gray-700 transition-colors flex items-center justify-between group/item"
-                    >
-                      <div className="flex flex-col gap-0.5 min-w-0">
-                        <span className="font-bold truncate group-hover/item:text-permay-primary transition-colors">{product.name}</span>
-                        <span className="text-[9px] text-gray-400 uppercase font-medium">{product.brand}</span>
+            {showSuggestions && searchTerm.length >= 2 && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-permay-primary/10 z-[100] overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200 w-[max-content] min-w-full max-w-[420px]">
+                <div className="p-1 max-h-[350px] overflow-y-auto">
+                  {/* Marcas que matchean */}
+                  {suggestions.brands.length > 0 && (
+                    <>
+                      <div className="px-2 py-1 text-[9px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1 flex items-center gap-1">
+                        <Tag size={8} /> Marcas
                       </div>
-                      <div className="shrink-0 ml-4 opacity-0 group-hover/item:opacity-100 transition-opacity">
-                        <Search size={10} className="text-permay-primary" />
+                      {suggestions.brands.map(brand => (
+                        <button
+                          type="button"
+                          key={`brand-${brand}`}
+                          onClick={() => {
+                            setSelectedBrands([...selectedBrands.filter(b => b !== brand), brand])
+                            setSearchTerm("")
+                            setShowSuggestions(false)
+                          }}
+                          className="w-full text-left px-3 py-1.5 text-[11px] hover:bg-permay-primary/5 text-gray-700 transition-colors flex items-center gap-2 group/item"
+                        >
+                          <Tag size={10} className="text-permay-primary/40 shrink-0" />
+                          <span className="font-bold group-hover/item:text-permay-primary transition-colors">{highlightMatch(brand, searchTerm)}</span>
+                        </button>
+                      ))}
+                    </>
+                  )}
+
+                  {/* Categorías que matchean */}
+                  {suggestions.categories.length > 0 && (
+                    <>
+                      <div className="px-2 py-1 text-[9px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1 mt-1 flex items-center gap-1">
+                        <Layers size={8} /> Categorías
                       </div>
-                    </button>
-                  ))}
+                      {suggestions.categories.map(cat => (
+                        <button
+                          type="button"
+                          key={`cat-${cat}`}
+                          onClick={() => {
+                            setSelectedCategories([...selectedCategories.filter(c => c !== cat), cat])
+                            setSearchTerm("")
+                            setShowSuggestions(false)
+                          }}
+                          className="w-full text-left px-3 py-1.5 text-[11px] hover:bg-permay-primary/5 text-gray-700 transition-colors flex items-center gap-2 group/item"
+                        >
+                          <Layers size={10} className="text-permay-primary/40 shrink-0" />
+                          <span className="font-bold group-hover/item:text-permay-primary transition-colors">{highlightMatch(cat.split("/").pop() ?? cat, searchTerm)}</span>
+                        </button>
+                      ))}
+                    </>
+                  )}
+
+                  {/* Productos sugeridos */}
+                  {suggestions.products.length > 0 && (
+                    <>
+                      <div className="px-2 py-1 text-[9px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1 mt-1">Productos sugeridos</div>
+                      {suggestions.products.map(product => (
+                        <button
+                          type="button"
+                          key={product.id}
+                          onClick={() => {
+                            setSearchTerm(product.name);
+                            setShowSuggestions(false);
+                          }}
+                          className="w-full text-left px-3 py-2 text-[11px] hover:bg-permay-primary/5 text-gray-700 transition-colors flex items-center justify-between group/item"
+                        >
+                          <div className="flex flex-col gap-0.5 min-w-0">
+                            <span className="font-bold truncate group-hover/item:text-permay-primary transition-colors">{highlightMatch(product.name, searchTerm)}</span>
+                            <span className="text-[9px] text-gray-400 uppercase font-medium">{product.brand}</span>
+                          </div>
+                          <div className="shrink-0 ml-4 opacity-0 group-hover/item:opacity-100 transition-opacity">
+                            <Search size={10} className="text-permay-primary" />
+                          </div>
+                        </button>
+                      ))}
+                    </>
+                  )}
+
+                  {/* Sin resultados */}
+                  {!hasSuggestions && (
+                    <div className="px-3 py-4 text-center">
+                      <p className="text-xs text-gray-400 font-medium">No encontramos resultados para</p>
+                      <p className="text-xs font-bold text-gray-600 mt-0.5">"{searchTerm}"</p>
+                      <p className="text-[10px] text-gray-400 mt-2">Probá con otro término, una marca o categoría</p>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
