@@ -72,11 +72,11 @@ export default function LandingPage() {
               </p>
               <iframe
                 title="Ubicación Permay"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5085444589253!2d-68.83783778481358!3d-32.89456208038753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e090f7f77d3c3%3A0x8f8b8c8a9a9a9a9a!2sPermay%20Perfumer%C3%ADa%2C%20San%20Juan%201248%2C%20M5500%20Mendoza!5e0!3m2!1ses-419!2sar!4v1694520000000!5m2!1ses-419!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13401.373014946774!2d-68.85553677654603!3d-32.88909172589997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0918574d9cc9%3A0xa7f26986a33482b5!2sPerfumer%C3%ADa%20Permay!5e0!3m2!1ses!2sar!4v1788537037132!5m2!1ses!2sar"
                 className="w-full h-64 md:h-80 rounded-2xl border border-permay-primary/20"
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
             
@@ -86,7 +86,7 @@ export default function LandingPage() {
                 Horarios de Atención
               </h3>
               <ul className="text-gray-600 text-lg space-y-2">
-                <li>Lunes a Viernes: <span className="font-semibold text-permay-primary">10:00 a 19:00</span></li>
+                <li>Lunes a Viernes: <span className="font-semibold text-permay-primary">9:30 a 20:00</span></li>
                 <li>Sábados: <span className="font-semibold text-permay-primary">10:00 a 18:00</span></li>
                 <li>Domingos y feriados: <span className="font-semibold text-red-500">Cerrado</span></li>
               </ul>

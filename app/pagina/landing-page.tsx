@@ -15,16 +15,16 @@ export default function LandingPage() {
             <p className="text-gray-600">San Juan 1248, M5500 Mendoza</p>
             <iframe
               title="Ubicación Permay"
-              src="https://www.google.com/maps?q=San+Juan+1248,+Mendoza,+Argentina&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13401.373014946774!2d-68.85553677654603!3d-32.88909172589997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0918574d9cc9%3A0xa7f26986a33482b5!2sPerfumer%C3%ADa%20Permay!5e0!3m2!1ses!2sar!4v1788537037132!5m2!1ses!2sar"
               className="w-full h-40 rounded-lg mt-2 border border-green-200"
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
           <div className="flex-1 text-center">
             <h2 className="text-xl font-bold text-green-700 mb-1">Horarios</h2>
             <ul className="text-gray-600">
-              <li>Lunes a Viernes: <span className="font-semibold">10:00 a 19:00</span></li>
+              <li>Lunes a Viernes: <span className="font-semibold">9:30 a 20:00</span></li>
               <li>Sábados: <span className="font-semibold">10:00 a 18:00</span></li>
               <li>Domingos y feriados: <span className="font-semibold">Cerrado</span></li>
             </ul>

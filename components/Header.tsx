@@ -83,13 +83,13 @@ export function Header({ cartItemsCount, onCartClick }: HeaderProps) {
                     <h3 className="font-bold text-gray-900 mb-2 text-xs">Nuestra Ubicación</h3>
                     {/* Mapa más chico */}
                     <iframe 
-                      src="https://maps.google.com/maps?q=San+Juan+1248+Mendoza+Argentina&z=15&output=embed"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13401.373014946774!2d-68.85553677654603!3d-32.88909172589997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0918574d9cc9%3A0xa7f26986a33482b5!2sPerfumer%C3%ADa%20Permay!5e0!3m2!1ses!2sar!4v1788537037132!5m2!1ses!2sar"
                       width="100%"
                       height="120"
                       style={{ border: 0, borderRadius: "8px" }}
                       allowFullScreen
                       loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
+                      referrerPolicy="strict-origin-when-cross-origin"
                     ></iframe>
                     <div className="flex justify-center mt-2">
                       <SheetClose asChild>
