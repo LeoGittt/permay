@@ -96,12 +96,12 @@ export function FilterCards({
   }
 
   const filteredBrands = brands
-    .filter((b) => b.toLowerCase().includes(brandSearch.toLowerCase()))
+    .filter((b) => normalize(b).includes(normalize(brandSearch)))
     .sort((a, b) => a.localeCompare(b));
   const filteredCategories = categories
     .filter((c) => {
       const base = c.split("/").pop() ?? c;
-      return base.toLowerCase().includes(categorySearch.toLowerCase());
+      return normalize(base).includes(normalize(categorySearch));
     })
     .sort((a, b) => {
       const aBase = a.split("/").pop() ?? a;

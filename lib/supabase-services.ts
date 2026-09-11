@@ -367,13 +367,25 @@ export const productService = {
     if (filters?.search) {
       needsFuzzySearch = true
       
-      // Normalizar solo los acentos (á→a, é→e, etc.) para la query DB, sin destruir la palabra
-      const normalizeForDb = (term: string) => term
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
+      // La DB distingue acentos ("parm" no encuentra "Párm"), así que cada letra se busca
+      // con todas sus variantes acentuadas: parm → p[aáàâäãÁÀÂÄÃ]rm
+      const accentVariants: Record<string, string> = {
+        a: 'aáàâäãÁÀÂÄÃ',
+        e: 'eéèêëÉÈÊË',
+        i: 'iíìîïÍÌÎÏ',
+        o: 'oóòôöõÓÒÔÖÕ',
+        u: 'uúùûüÚÙÛÜ',
+        n: 'nñÑ',
+        c: 'cçÇ',
+      }
+      const toAccentInsensitivePattern = (term: string) => term
+        .split('')
+        .map(char => accentVariants[char] ? `[${accentVariants[char]}]` : char)
+        // Separadores opcionales entre letras: "loreal" encuentra "L'Oréal"
+        .join('[^a-zA-Z0-9]?')
 
-      const searchTerms = normalizeForDb(filters.search).trim().split(/\s+/).filter(term => term.length > 0)
+      // normalizeText deja solo letras sin acento, números y espacios: seguro para la query y el patrón
+      const searchTerms = this.normalizeText(filters.search).split(' ').filter(term => term.length > 0)
 
       // Expandir cada término con sinónimos y singular/plural para la DB query
       const allDbTerms: string[] = []
@@ -388,7 +400,8 @@ export const productService = {
         // Limitar a los 8 primeros para no hacer queries gigantes
         const termsForQuery = allDbTerms.slice(0, 8)
         const orConditions = termsForQuery
-          .map(term => `name.ilike.%${term}%,brand.ilike.%${term}%,description.ilike.%${term}%,category.ilike.%${term}%`)
+          .map(term => toAccentInsensitivePattern(term))
+          .map(pattern => `name.imatch.${pattern},brand.imatch.${pattern},description.imatch.${pattern},category.imatch.${pattern}`)
           .join(',')
         query = query.or(orConditions)
       }
