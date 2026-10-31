@@ -4,6 +4,51 @@ import type { Product, CreateProductData, UpdateProductData, Brand, Category, Or
 // ===================== STORAGE DE IMÁGENES =====================
 
 export const imageService = {
+  // Achica y recomprime la imagen en el navegador antes de subirla, para que cada
+  // foto pese ~100 KB y no gaste la cuota de tráfico de Storage.
+  // Si algo falla (formato no soportado, navegador viejo), se sube el original.
+  async compressImage(file: File): Promise<File> {
+    const MAX_DIMENSION = 1200
+    const QUALITY = 0.82
+
+    try {
+      // GIF y SVG perderían la animación o la nitidez al pasar por canvas
+      if (file.type === 'image/gif' || file.type === 'image/svg+xml') return file
+
+      const bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' })
+      const scale = Math.min(1, MAX_DIMENSION / Math.max(bitmap.width, bitmap.height))
+      const width = Math.round(bitmap.width * scale)
+      const height = Math.round(bitmap.height * scale)
+
+      const canvas = document.createElement('canvas')
+      canvas.width = width
+      canvas.height = height
+      const context = canvas.getContext('2d')
+      if (!context) return file
+
+      // Fondo blanco para que los PNG transparentes no queden negros en JPEG
+      context.fillStyle = '#ffffff'
+      context.fillRect(0, 0, width, height)
+      context.drawImage(bitmap, 0, 0, width, height)
+      bitmap.close()
+
+      const toBlob = (type: string) =>
+        new Promise<Blob | null>(resolve => canvas.toBlob(resolve, type, QUALITY))
+
+      // Safari no genera WebP desde canvas (devuelve PNG): en ese caso, JPEG
+      let blob = await toBlob('image/webp')
+      if (!blob || blob.type !== 'image/webp') blob = await toBlob('image/jpeg')
+      if (!blob || blob.size >= file.size) return file
+
+      const extension = blob.type === 'image/webp' ? 'webp' : 'jpg'
+      const baseName = file.name.replace(/\.[^.]+$/, '')
+      return new File([blob], `${baseName}.${extension}`, { type: blob.type })
+    } catch (error) {
+      console.warn('No se pudo comprimir la imagen, se sube el original:', error)
+      return file
+    }
+  },
+
   async uploadImage(file: File): Promise<string> {
     try {
       // Validar tipo de archivo
@@ -16,17 +61,20 @@ export const imageService = {
         throw new Error('La imagen no puede superar los 5MB')
       }
 
+      const imageToUpload = await this.compressImage(file)
+
       // Crear nombre único para el archivo
       const timestamp = Date.now()
       const randomString = Math.random().toString(36).substring(2, 15)
-      const extension = file.name.split('.').pop()
+      const extension = imageToUpload.name.split('.').pop()
       const fileName = `product_${timestamp}_${randomString}.${extension}`
 
       // Subir archivo al bucket 'product-images'
       const { data, error } = await supabase.storage
         .from('product-images')
-        .upload(fileName, file, {
-          cacheControl: '3600',
+        .upload(fileName, imageToUpload, {
+          // El nombre es único en cada subida, así que el navegador puede guardarla un año
+          cacheControl: '31536000',
           upsert: false
         })
 

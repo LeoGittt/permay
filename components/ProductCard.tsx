@@ -68,6 +68,8 @@ export function ProductCard({
             <img
               src={product.image || "/placeholder.svg?height=96&width=96"}
               alt={product.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover rounded-md"
             />
           </div>
@@ -135,6 +137,8 @@ export function ProductCard({
           <img
             src={product.image || "/placeholder.svg"}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
             className="object-contain w-full h-full p-2 sm:p-5 z-10 transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-2 left-2 z-20">
