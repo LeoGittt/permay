@@ -73,7 +73,49 @@ export const imageService = {
   }
 }
 
+// ===================== RESPALDO LOCAL DE PRODUCTOS =====================
+// Copia de los productos activos (data/products-snapshot.json) para seguir
+// mostrando el catálogo cuando Supabase no responde (proyecto restringido,
+// caído o sin red). Se carga solo cuando hace falta.
+
+let productsSnapshotPromise: Promise<Product[]> | null = null
+
+function loadProductsSnapshot(): Promise<Product[]> {
+  if (!productsSnapshotPromise) {
+    productsSnapshotPromise = import('@/data/products-snapshot.json')
+      .then(module => module.default as Product[])
+      .catch(error => {
+        productsSnapshotPromise = null
+        throw error
+      })
+  }
+  return productsSnapshotPromise
+}
+
+// Distingue "el servicio no está disponible" de "el dato no existe"
+function isServiceUnavailable(status: number): boolean {
+  return status === 0 || status === 402 || status === 429 || status >= 500
+}
+
 // ===================== PRODUCTOS =====================
+
+type ProductFilters = {
+  search?: string
+  brand?: string
+  category?: string
+  brands?: string[]
+  categories?: string[]
+  priceRange?: [number, number]
+  featured?: boolean
+  on_sale?: boolean
+  active?: boolean
+  minStock?: number
+  maxStock?: number
+  limit?: number
+  offset?: number
+  sortBy?: string
+  sortOrder?: 'asc' | 'desc'
+}
 
 export const productService = {
   // Función helper para normalizar texto (remover acentos, minúsculas)
@@ -284,24 +326,100 @@ export const productService = {
       .map(s => s.product)
   },
 
+  // Replica en memoria los filtros de getProducts sobre la copia local
+  filterProductsSnapshot(snapshot: Product[], filters?: ProductFilters): { data: Product[], count: number } {
+    const active = filters?.active !== undefined ? filters.active : true
+    let products = snapshot.filter(p => (p.active ?? true) === active)
+
+    if (filters?.brand) {
+      products = products.filter(p => p.brand === filters.brand)
+    }
+    if (filters?.category) {
+      products = products.filter(p => p.category === filters.category)
+    }
+    if (filters?.brands && filters.brands.length > 0) {
+      const brands = filters.brands
+      products = products.filter(p => brands.includes(p.brand))
+    }
+    if (filters?.categories && filters.categories.length > 0) {
+      const categories = filters.categories
+      products = products.filter(p => categories.includes(p.category))
+    }
+    if (filters?.priceRange) {
+      const [min, max] = filters.priceRange
+      products = products.filter(p => p.price >= min && p.price <= max)
+    }
+    if (filters?.featured !== undefined) {
+      products = products.filter(p => (p.featured ?? false) === filters.featured)
+    }
+    if (filters?.on_sale !== undefined) {
+      products = products.filter(p => (p.on_sale ?? false) === filters.on_sale)
+    }
+    if (filters?.minStock !== undefined) {
+      const minStock = filters.minStock
+      products = products.filter(p => (p.stock ?? 0) >= minStock)
+    }
+    if (filters?.maxStock !== undefined) {
+      const maxStock = filters.maxStock
+      products = products.filter(p => (p.stock ?? 0) <= maxStock)
+    }
+
+    // Mismo orden que la query: por el campo pedido, o por nombre ascendente
+    const sortBy = (filters?.sortBy || 'name') as keyof Product
+    const direction = filters?.sortBy && filters.sortOrder === 'desc' ? -1 : 1
+    products.sort((a, b) => {
+      const x = a[sortBy]
+      const y = b[sortBy]
+      if (typeof x === 'number' && typeof y === 'number') return (x - y) * direction
+      return String(x ?? '').localeCompare(String(y ?? '')) * direction
+    })
+
+    if (filters?.search) {
+      // Mismo prefiltro que el OR con ilike de la query, y después el fuzzy
+      const searchTerms = filters.search
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .trim()
+        .split(/\s+/)
+        .filter(term => term.length > 0)
+
+      const allDbTerms: string[] = []
+      for (const term of searchTerms) {
+        if (term.length < 2) continue
+        allDbTerms.push(...this.expandWithSynonyms(term))
+      }
+
+      const termsForQuery = allDbTerms.slice(0, 8)
+      if (termsForQuery.length > 0) {
+        products = products.filter(p => {
+          const fields = [p.name, p.brand, p.description, p.category].map(field => (field || '').toLowerCase())
+          return termsForQuery.some(term => fields.some(field => field.includes(term)))
+        })
+      }
+
+      products = products.slice(0, 1000)
+      if (products.length > 0) {
+        products = this.applyFuzzySearch(products, filters.search)
+      }
+
+      const count = products.length
+      if (filters.limit && filters.offset !== undefined) {
+        products = products.slice(filters.offset, filters.offset + filters.limit)
+      }
+      return { data: products, count }
+    }
+
+    const count = products.length
+    if (filters?.limit) {
+      const offset = filters.offset || 0
+      products = products.slice(offset, offset + filters.limit)
+    }
+    return { data: products, count }
+  },
+
   // Obtener todos los productos con filtros avanzados
-  async getProducts(filters?: {
-    search?: string
-    brand?: string
-    category?: string
-    brands?: string[]
-    categories?: string[]
-    priceRange?: [number, number]
-    featured?: boolean
-    on_sale?: boolean
-    active?: boolean
-    minStock?: number
-    maxStock?: number
-    limit?: number
-    offset?: number
-    sortBy?: string
-    sortOrder?: 'asc' | 'desc'
-  }): Promise<{ data: Product[], count: number }> {
+  async getProducts(filters?: ProductFilters): Promise<{ data: Product[], count: number }> {
     let query = supabase
       .from('products')
       .select('*', { count: 'exact' })
@@ -419,9 +537,13 @@ export const productService = {
       query = query.limit(1000)
     }
 
-    const { data, error, count } = await query
+    const { data, error, count, status } = await query
 
     if (error) {
+      if (isServiceUnavailable(status)) {
+        console.warn('Supabase no disponible, usando la copia local de productos:', error.message)
+        return this.filterProductsSnapshot(await loadProductsSnapshot(), filters)
+      }
       console.error('Error fetching products:', error)
       throw new Error('Error al obtener productos')
     }
@@ -445,7 +567,7 @@ export const productService = {
 
   // Obtener un producto por ID
   async getProductById(id: number): Promise<Product | null> {
-    const { data, error } = await supabase
+    const { data, error, status } = await supabase
       .from('products')
       .select('*')
       .eq('id', id)
@@ -453,6 +575,10 @@ export const productService = {
       .single()
 
     if (error) {
+      if (isServiceUnavailable(status)) {
+        const snapshot = await loadProductsSnapshot()
+        return snapshot.find(p => p.id === Number(id) && p.active !== false) ?? null
+      }
       console.error('Error fetching product:', error)
       return null
     }
@@ -473,9 +599,15 @@ export const productService = {
       query = query.limit(limit)
     }
 
-    const { data, error } = await query
+    const { data, error, status } = await query
 
     if (error) {
+      if (isServiceUnavailable(status)) {
+        const onSale = (await loadProductsSnapshot())
+          .filter(p => p.active !== false && p.on_sale)
+          .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
+        return limit ? onSale.slice(0, limit) : onSale
+      }
       console.error('Error fetching products on sale:', error)
       return []
     }
@@ -577,12 +709,16 @@ export const productService = {
 
   // Obtener marcas únicas
   async getBrands(): Promise<string[]> {
-    const { data, error } = await supabase
+    const { data, error, status } = await supabase
       .from('products')
       .select('brand')
       .eq('active', true)
 
     if (error) {
+      if (isServiceUnavailable(status)) {
+        const snapshot = await loadProductsSnapshot()
+        return [...new Set(snapshot.filter(p => p.active !== false).map(p => p.brand))].sort()
+      }
       console.error('Error fetching brands:', error)
       return []
     }
@@ -593,12 +729,16 @@ export const productService = {
 
   // Obtener categorías únicas
   async getCategories(): Promise<string[]> {
-    const { data, error } = await supabase
+    const { data, error, status } = await supabase
       .from('products')
       .select('category')
       .eq('active', true)
 
     if (error) {
+      if (isServiceUnavailable(status)) {
+        const snapshot = await loadProductsSnapshot()
+        return [...new Set(snapshot.filter(p => p.active !== false).map(p => p.category))].sort()
+      }
       console.error('Error fetching categories:', error)
       return []
     }
