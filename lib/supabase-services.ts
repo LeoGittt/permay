@@ -326,6 +326,42 @@ export const productService = {
       .map(s => s.product)
   },
 
+  // La DB distingue acentos ("parm" no encuentra "Párm"), así que cada letra se busca
+  // con todas sus variantes acentuadas: parm → p[aáàâäãÁÀÂÄÃ]rm
+  toAccentInsensitivePattern(term: string): string {
+    const accentVariants: Record<string, string> = {
+      a: 'aáàâäãÁÀÂÄÃ',
+      e: 'eéèêëÉÈÊË',
+      i: 'iíìîïÍÌÎÏ',
+      o: 'oóòôöõÓÒÔÖÕ',
+      u: 'uúùûüÚÙÛÜ',
+      n: 'nñÑ',
+      c: 'cçÇ',
+    }
+    return term
+      .split('')
+      .map(char => accentVariants[char] ? `[${accentVariants[char]}]` : char)
+      // Separadores opcionales entre letras: "loreal" encuentra "L'Oréal"
+      .join('[^a-zA-Z0-9]?')
+  },
+
+  // Términos de búsqueda que van a la DB (y al prefiltro de la copia local)
+  getDbSearchTerms(search: string): string[] {
+    // normalizeText deja solo letras sin acento, números y espacios: seguro para la query y el patrón
+    const searchTerms = this.normalizeText(search).split(' ').filter(term => term.length > 0)
+
+    // Expandir cada término con sinónimos y singular/plural para la DB query
+    const allDbTerms: string[] = []
+    for (const term of searchTerms) {
+      if (term.length < 2) continue
+      const expanded = this.expandWithSynonyms(term)
+      allDbTerms.push(...expanded)
+    }
+
+    // Limitar a los 8 primeros para no hacer queries gigantes
+    return allDbTerms.slice(0, 8)
+  },
+
   // Replica en memoria los filtros de getProducts sobre la copia local
   filterProductsSnapshot(snapshot: Product[], filters?: ProductFilters): { data: Product[], count: number } {
     const active = filters?.active !== undefined ? filters.active : true
@@ -375,27 +411,15 @@ export const productService = {
     })
 
     if (filters?.search) {
-      // Mismo prefiltro que el OR con ilike de la query, y después el fuzzy
-      const searchTerms = filters.search
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[̀-ͯ]/g, '')
-        .trim()
-        .split(/\s+/)
-        .filter(term => term.length > 0)
-
-      const allDbTerms: string[] = []
-      for (const term of searchTerms) {
-        if (term.length < 2) continue
-        allDbTerms.push(...this.expandWithSynonyms(term))
-      }
-
-      const termsForQuery = allDbTerms.slice(0, 8)
-      if (termsForQuery.length > 0) {
-        products = products.filter(p => {
-          const fields = [p.name, p.brand, p.description, p.category].map(field => (field || '').toLowerCase())
-          return termsForQuery.some(term => fields.some(field => field.includes(term)))
-        })
+      // Mismo prefiltro que el OR con imatch de la query, y después el fuzzy
+      const patterns = this.getDbSearchTerms(filters.search)
+        .map(term => new RegExp(this.toAccentInsensitivePattern(term), 'i'))
+      if (patterns.length > 0) {
+        products = products.filter(p =>
+          [p.name, p.brand, p.description, p.category].some(field =>
+            patterns.some(pattern => pattern.test(field || ''))
+          )
+        )
       }
 
       products = products.slice(0, 1000)
@@ -484,41 +508,12 @@ export const productService = {
     let needsFuzzySearch = false
     if (filters?.search) {
       needsFuzzySearch = true
-      
-      // La DB distingue acentos ("parm" no encuentra "Párm"), así que cada letra se busca
-      // con todas sus variantes acentuadas: parm → p[aáàâäãÁÀÂÄÃ]rm
-      const accentVariants: Record<string, string> = {
-        a: 'aáàâäãÁÀÂÄÃ',
-        e: 'eéèêëÉÈÊË',
-        i: 'iíìîïÍÌÎÏ',
-        o: 'oóòôöõÓÒÔÖÕ',
-        u: 'uúùûüÚÙÛÜ',
-        n: 'nñÑ',
-        c: 'cçÇ',
-      }
-      const toAccentInsensitivePattern = (term: string) => term
-        .split('')
-        .map(char => accentVariants[char] ? `[${accentVariants[char]}]` : char)
-        // Separadores opcionales entre letras: "loreal" encuentra "L'Oréal"
-        .join('[^a-zA-Z0-9]?')
-
-      // normalizeText deja solo letras sin acento, números y espacios: seguro para la query y el patrón
-      const searchTerms = this.normalizeText(filters.search).split(' ').filter(term => term.length > 0)
-
-      // Expandir cada término con sinónimos y singular/plural para la DB query
-      const allDbTerms: string[] = []
-      for (const term of searchTerms) {
-        if (term.length < 2) continue
-        const expanded = this.expandWithSynonyms(term)
-        allDbTerms.push(...expanded)
-      }
 
       // Crear condiciones OR para todos los términos expandidos
-      if (allDbTerms.length > 0) {
-        // Limitar a los 8 primeros para no hacer queries gigantes
-        const termsForQuery = allDbTerms.slice(0, 8)
+      const termsForQuery = this.getDbSearchTerms(filters.search)
+      if (termsForQuery.length > 0) {
         const orConditions = termsForQuery
-          .map(term => toAccentInsensitivePattern(term))
+          .map(term => this.toAccentInsensitivePattern(term))
           .map(pattern => `name.imatch.${pattern},brand.imatch.${pattern},description.imatch.${pattern},category.imatch.${pattern}`)
           .join(',')
         query = query.or(orConditions)
