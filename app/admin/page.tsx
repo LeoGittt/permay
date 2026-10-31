@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { AdminProductsPanel } from "@/components/AdminProductsPanel"
 import { CategoriesPanel } from "@/components/CategoriesPanel"
 import { BrandsPanel } from "@/components/BrandsPanel"
+import { StatsPanel } from "@/components/StatsPanel"
 import { ProtectedRoute } from "@/components/ProtectedRoute"
 import { useAuth } from "@/hooks/useAuth"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -110,7 +111,7 @@ export default function AdminPage() {
         <div className="border border-gray-200 rounded-lg bg-white">
           <Tabs defaultValue="products" className="w-full">
             <div className="border-b border-gray-200">
-              <TabsList className="h-auto p-0 bg-transparent w-full justify-start">
+              <TabsList className="h-auto p-0 bg-transparent w-full justify-start overflow-x-auto">
                 <TabsTrigger 
                   value="products" 
                   className="px-6 py-4 text-sm font-medium border-b-2 border-transparent data-[state=active]:border-black data-[state=active]:bg-transparent rounded-none"
@@ -129,6 +130,12 @@ export default function AdminPage() {
                 >
                   Marcas
                 </TabsTrigger>
+                <TabsTrigger
+                  value="stats"
+                  className="px-6 py-4 text-sm font-medium border-b-2 border-transparent data-[state=active]:border-black data-[state=active]:bg-transparent rounded-none"
+                >
+                  Estadísticas
+                </TabsTrigger>
               </TabsList>
             </div>
 
@@ -143,6 +150,10 @@ export default function AdminPage() {
 
               <TabsContent value="brands" className="mt-0">
                 <BrandsPanel />
+              </TabsContent>
+
+              <TabsContent value="stats" className="mt-0">
+                <StatsPanel />
               </TabsContent>
             </div>
           </Tabs>

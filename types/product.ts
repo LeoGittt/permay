@@ -88,6 +88,36 @@ export interface CreateOrderData {
   }[]
 }
 
+export type ProductEventType = 'view' | 'whatsapp_query' | 'add_to_cart' | 'whatsapp_order'
+
+export interface ProductStatsItem {
+  id: number
+  name: string
+  brand: string
+  image: string | null
+  views: number
+  whatsapp_queries: number
+  cart_adds: number
+  orders: number
+  units: number
+}
+
+export interface ProductStats {
+  totals: {
+    views: number
+    whatsapp_queries: number
+    cart_adds: number
+    units: number
+    products_without_views: number
+    tracking_since: string | null
+  }
+  most_viewed: ProductStatsItem[]
+  least_viewed: ProductStatsItem[]
+  most_queried: ProductStatsItem[]
+  most_added: ProductStatsItem[]
+  most_ordered: ProductStatsItem[]
+}
+
 // # Configuración de Supabase
 // NEXT_PUBLIC_SUPABASE_URL=https://rqejopgdigifoyohmnke.supabase.co
 // NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxZWpvcGdkaWdpZm95b2htbmtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU1MzMzODcsImV4cCI6MjA3MTEwOTM4N30.jbGgL-UHwworOJMRDcN5E0FJ5xpJq9bBCF_-bvDNrcA

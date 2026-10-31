@@ -19,6 +19,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { statsService } from "@/lib/supabase-services";
 import type { Product } from "@/types/product";
 
 interface ProductModalProps {
@@ -48,6 +49,13 @@ export function ProductModal({
     }
   }, [product]);
 
+  // Registrar la consulta del producto para las estadísticas del admin
+  useEffect(() => {
+    if (isOpen && product) {
+      statsService.trackView(product.id);
+    }
+  }, [isOpen, product?.id]);
+
   if (!product) return null;
 
   const formatPrice = (price: number) => {
@@ -63,6 +71,7 @@ export function ProductModal({
   };
 
   const handleWhatsAppContact = () => {
+    statsService.trackEvents([{ productId: product.id, type: "whatsapp_query" }]);
     const phoneNumber = "5492614295880";
     const message = `Hola! Me interesa el producto: ${product.name} - ${product.brand}. ¿Podrías darme más información?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

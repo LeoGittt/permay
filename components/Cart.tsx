@@ -14,7 +14,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import dynamic from "next/dynamic"
 import type { CartItem } from "@/types/cart"
 import { products } from "@/data/products"
-import { productService } from "@/lib/supabase-services"
+import { productService, statsService } from "@/lib/supabase-services"
 
 // Dynamic import for LocationPicker to avoid SSR issues
 const LocationPicker = dynamic(
@@ -207,6 +207,10 @@ export function Cart({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, to
       return;
     }
     setShowWarning(false);
+    // Registrar los productos pedidos para las estadísticas del admin
+    statsService.trackEvents(
+      cart.map((item) => ({ productId: item.productId, type: "whatsapp_order" as const, quantity: item.quantity }))
+    );
     const message = generateWhatsAppMessage();
     const whatsappUrl = `https://wa.me/5492614295880?text=${message}`;
     window.open(whatsappUrl, "_blank");

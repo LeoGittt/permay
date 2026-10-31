@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useCart } from "@/hooks/useCart"
-import { orderService, productService } from "@/lib/supabase-services"
+import { orderService, productService, statsService } from "@/lib/supabase-services"
 import type { CreateOrderData, Product } from "@/types/product"
 
 interface CustomerInfo {
@@ -176,8 +176,15 @@ ${checkoutData.notes ? `\n📝 *Notas:* ${checkoutData.notes}` : ''}
     }).format(price)
   }
 
+  // Agregar al carrito registrando el evento para las estadísticas del admin
+  const addToCart = (productId: number, quantity = 1) => {
+    statsService.trackEvents([{ productId, type: 'add_to_cart', quantity }])
+    cart.addToCart(productId, quantity)
+  }
+
   return {
     ...cart,
+    addToCart,
     getCartTotal,
     submitOrder,
     sendWhatsAppOrder,

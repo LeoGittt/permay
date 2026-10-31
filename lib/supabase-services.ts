@@ -1,5 +1,5 @@
 import { supabase } from './supabase'
-import type { Product, CreateProductData, UpdateProductData, Brand, Category, Order, CreateOrderData } from '@/types/product'
+import type { Product, CreateProductData, UpdateProductData, Brand, Category, Order, CreateOrderData, ProductEventType, ProductStats } from '@/types/product'
 
 // ===================== STORAGE DE IMÁGENES =====================
 
@@ -1202,5 +1202,53 @@ export const categoryService = {
 
     // Cambiar el estado
     return await this.updateCategory(id, { active: !category.active })
+  }
+}
+
+// ===================== ESTADÍSTICAS =====================
+
+export const statsService = {
+  // Registra eventos sin bloquear la interfaz: si falla, la tienda sigue funcionando igual
+  trackEvents(events: { productId: number; type: ProductEventType; quantity?: number }[]): void {
+    if (events.length === 0) return
+
+    supabase
+      .from('product_events')
+      .insert(events.map(event => ({
+        product_id: event.productId,
+        event_type: event.type,
+        // La base acepta de 1 a 1000 unidades; un valor fuera de rango haría fallar todo el lote
+        quantity: Math.min(Math.max(Math.round(event.quantity ?? 1), 1), 1000)
+      })))
+      .then(({ error }) => {
+        if (error) console.warn('No se pudo registrar la estadística:', error.message)
+      })
+  },
+
+  // Una vista por producto y por sesión del navegador, para no inflar el conteo al reabrirlo
+  trackView(productId: number): void {
+    const key = `permay-viewed-${productId}`
+    try {
+      if (sessionStorage.getItem(key)) return
+      sessionStorage.setItem(key, '1')
+    } catch {
+      // Sin sessionStorage (modo privado estricto) se registra igual
+    }
+    this.trackEvents([{ productId, type: 'view' }])
+  },
+
+  // Resumen para el admin: totales y rankings de productos desde la fecha indicada
+  async getProductStats(since: Date, limit = 10): Promise<ProductStats> {
+    const { data, error } = await supabase.rpc('get_product_stats', {
+      p_since: since.toISOString(),
+      p_limit: limit
+    })
+
+    if (error) {
+      console.error('Error fetching product stats:', error)
+      throw new Error('Error al obtener estadísticas')
+    }
+
+    return data as ProductStats
   }
 }
