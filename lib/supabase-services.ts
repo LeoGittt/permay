@@ -750,44 +750,37 @@ export const productService = {
     }
   },
 
-  // Obtener marcas únicas
+  // Obtener marcas únicas. La base arma la lista completa: leer los productos desde acá
+  // dejaba afuera marcas, porque la API devuelve como máximo 1000 filas
   async getBrands(): Promise<string[]> {
-    const { data, error, status } = await supabase
-      .from('products')
-      .select('brand')
-      .eq('active', true)
+    const { data, error, status } = await supabase.rpc('get_active_brands')
 
     if (error) {
       if (isServiceUnavailable(status)) {
         const snapshot = await loadProductsSnapshot()
-        return [...new Set(snapshot.filter(p => p.active !== false).map(p => p.brand))].sort()
+        return [...new Set(snapshot.filter(p => p.active !== false && p.brand.trim()).map(p => p.brand))].sort()
       }
       console.error('Error fetching brands:', error)
       return []
     }
 
-    const uniqueBrands = [...new Set(data.map(item => item.brand))].sort()
-    return uniqueBrands
+    return [...(data as string[])].sort()
   },
 
-  // Obtener categorías únicas
+  // Obtener categorías únicas (misma razón que getBrands)
   async getCategories(): Promise<string[]> {
-    const { data, error, status } = await supabase
-      .from('products')
-      .select('category')
-      .eq('active', true)
+    const { data, error, status } = await supabase.rpc('get_active_categories')
 
     if (error) {
       if (isServiceUnavailable(status)) {
         const snapshot = await loadProductsSnapshot()
-        return [...new Set(snapshot.filter(p => p.active !== false).map(p => p.category))].sort()
+        return [...new Set(snapshot.filter(p => p.active !== false && p.category.trim()).map(p => p.category))].sort()
       }
       console.error('Error fetching categories:', error)
       return []
     }
 
-    const uniqueCategories = [...new Set(data.map(item => item.category))].sort()
-    return uniqueCategories
+    return [...(data as string[])].sort()
   },
 
   // Actualizar stock de un producto
